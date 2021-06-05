@@ -151,7 +151,7 @@ const AdminLandingPage = () => {
   //   console.log(newFiles[1].cvfile[0]?.filePath);
   // }, []);
 
-  const url = "http://localhost:3000";
+  const url = "http://oxetest.tk";
 
   return (
     <div>
