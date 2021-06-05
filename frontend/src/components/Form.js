@@ -29,7 +29,7 @@ const Form = () => {
   // const dispatch = useDispatch();
   // const user = useSelector((state) => ({ ...state.user }));
 
-  const userinfo = localStorage.getItem("userInfo");
+  // const userinfo = localStorage.getItem("userInfo");
   // console.log("info>>>>>", userinfo);
   // const [singleFiles, setSingleFiles] = useState([]);
   const [cvFiles, setCvFiles] = useState([]);
@@ -69,48 +69,103 @@ const Form = () => {
 
   function onCvFileUpload(e) {
     e.preventDefault();
-    setCvFiles(e.target?.files[0]);
-    setCvFileName(e.target?.files[0]?.name);
+    if (e.target?.files[0].size > 1042678) {
+      toast.error("File size greater than 1 MB");
+      setCvFiles("");
+      history.push("/upload");
+    } else {
+      setCvFiles(e.target?.files[0]);
+      console.log("cv file size>>>>>>>>", e.target?.files[0].size);
+      setCvFileName(e.target?.files[0]?.name);
+    }
   }
   function onPsFileUpload(e) {
     e.preventDefault();
-    setPsFiles(e.target?.files[0]);
-    setPassportFileName(e.target?.files[0]?.name);
+    if (e.target?.files[0].size > 1042678) {
+      toast.error("File size greater than 1 MB");
+      setPsFiles("");
+      history.push("/upload");
+    } else {
+      setPsFiles(e.target?.files[0]);
+      setPassportFileName(e.target?.files[0]?.name);
+    }
   }
   function onSslcFileUpload(e) {
     e.preventDefault();
-    setSslcFiles(e.target?.files[0]);
-    setSslcFileName(e.target?.files[0]?.name);
+    if (e.target?.files[0].size > 1042678) {
+      toast.error("File size greater than 1 MB");
+      setSslcFiles("");
+      history.push("/upload");
+    } else {
+      setSslcFiles(e.target?.files[0]);
+      setSslcFileName(e.target?.files[0]?.name);
+    }
   }
   function onPlusTwoFileUpload(e) {
     e.preventDefault();
-    setPlusTwoFiles(e.target?.files[0]);
-    setPlustwoFileName(e.target?.files[0]?.name);
+    if (e.target?.files[0].size > 1042678) {
+      toast.error("File size greater than 1 MB");
+      setPlusTwoFiles("");
+      history.push("/upload");
+    } else {
+      setPlusTwoFiles(e.target?.files[0]);
+      setPlustwoFileName(e.target?.files[0]?.name);
+    }
   }
   function onDegreeFileUpload(e) {
     e.preventDefault();
-    setDegreeFiles(e.target?.files[0]);
-    setDegreeFileName(e.target?.files[0]?.name);
+    if (e.target?.files[0].size > 1042678) {
+      toast.error("File size greater than 1 MB");
+      setDegreeFiles("");
+      history.push("/upload");
+    } else {
+      setDegreeFiles(e.target?.files[0]);
+      setDegreeFileName(e.target?.files[0]?.name);
+    }
   }
   function onIeltsFileUpload(e) {
     e.preventDefault();
-    setIeltsFiles(e.target?.files[0]);
-    setIeltsFileName(e.target?.files[0]?.name);
+    if (e.target?.files[0].size > 1042678) {
+      toast.error("File size greater than 1 MB");
+      setIeltsFiles("");
+      history.push("/upload");
+    } else {
+      setIeltsFiles(e.target?.files[0]);
+      setIeltsFileName(e.target?.files[0]?.name);
+    }
   }
   function onExperienceFileUpload(e) {
     e.preventDefault();
-    setExperienceFiles(e.target?.files[0]);
-    setExperienceFileName(e.target?.files[0]?.name);
+    if (e.target?.files[0].size > 1042678) {
+      toast.error("File size greater than 1 MB");
+      setExperienceFiles("");
+      history.push("/upload");
+    } else {
+      setExperienceFiles(e.target?.files[0]);
+      setExperienceFileName(e.target?.files[0]?.name);
+    }
   }
   function onSopFileUpload(e) {
     e.preventDefault();
-    setSopFiles(e.target?.files[0]);
-    setSopFileName(e.target?.files[0].name);
+    if (e.target?.files[0].size > 1042678) {
+      toast.error("File size greater than 1 MB");
+      setSopFiles("");
+      history.push("/upload");
+    } else {
+      setSopFiles(e.target?.files[0]);
+      setSopFileName(e.target?.files[0].name);
+    }
   }
   function onLorFileUpload(e) {
     e.preventDefault();
-    setLorFiles(e.target?.files[0]);
-    setLorFileName(e.target?.files[0]?.name);
+    if (e.target?.files[0].size > 1042678) {
+      toast.error("File size greater than 1 MB");
+      setLorFiles("");
+      history.push("/upload");
+    } else {
+      setLorFiles(e.target?.files[0]);
+      setLorFileName(e.target?.files[0]?.name);
+    }
   }
 
   const uploadCvFile = async () => {
@@ -231,6 +286,9 @@ const Form = () => {
       <div className="row">
         <div className="col-md-6 m-auto">
           <h1 className="text-center display-4 my-4 form__h1">File Uploads</h1>
+          <small className="p-5">
+            Uploading documents should be less than 1 MB!
+          </small>
 
           <form onSubmit={(e) => UploadMultipleFiles(e)}>
             <div className="mb-2 fileInput__item">

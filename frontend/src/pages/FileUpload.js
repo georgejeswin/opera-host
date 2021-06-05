@@ -6,10 +6,8 @@ import { toast } from "react-toastify";
 
 export const FileUpload = () => {
   // const user = JSON.parse(localStorage.getItem('userInfo'))
-  const [fileUploaded , setFileUploaded] = useState(false)
+  const [fileUploaded, setFileUploaded] = useState(false);
   const user = useSelector((state) => ({ ...state.user }));
-  const files = useSelector((state)=> ({...state.files}))
-  console.log("files state>>",files)
 
   let history = useHistory();
   useEffect(() => {
@@ -17,9 +15,9 @@ export const FileUpload = () => {
       history.push("/user");
       toast.dark("Update your full name before file submission");
     }
-    if(fileUploaded){
-      history.push("/payments")
+    if (fileUploaded) {
+      history.push("/payments");
     }
   }, [user, history]);
-  return <Form /> ;
+  return <Form />;
 };

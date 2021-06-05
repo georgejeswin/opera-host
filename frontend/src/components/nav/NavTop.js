@@ -14,7 +14,6 @@ const NavTop = () => {
     }
     files.filter((file) => {
       if (file.user === currentuser._id) {
-        console.log("file uploaded>>>>");
         history.push("/user/status");
       } else {
         history.push("/upload");

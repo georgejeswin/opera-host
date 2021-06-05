@@ -8,9 +8,6 @@ const UserStatus = () => {
   const user = useSelector((state) => ({ ...state.user }));
   const files = useSelector((state) => state.files);
   const history = useHistory();
-  console.log("status files>>>>><<<<<", files);
-  // console.log("user>>>>><<<<<", user);
-  const dispatch = useDispatch();
 
   useEffect(async () => {
     filesUploaded(user);
@@ -24,13 +21,10 @@ const UserStatus = () => {
 
   const filesUploaded = (currentuser) => {
     files.filter((file) => {
-      // console.log("found him>>>>", file.user === user._id);
       if (file.user === currentuser._id) {
         setFileUploaded(true);
-        console.log("file uploaded>>>>");
         if (file.paided === true) {
           setPaymentDone(true);
-          console.log("paided");
         } else {
           console.log("not paid");
         }

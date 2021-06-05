@@ -16,7 +16,6 @@ const ForgotPassword = ({ history }) => {
   }, [user, history]);
 
   const handleSubmit = async (e) => {
-    console.log(process.env.REACT_APP_FORGOT_PASSWORD_REDIRECT);
     e.preventDefault();
     setLoading(true);
     const config = {

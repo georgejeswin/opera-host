@@ -36,21 +36,14 @@ function App() {
     dispatch(getFiles());
   }, []);
 
-  // const user = useSelector(state => state.user)
-  // useEffect(() => {
-  //   dispatch(updateUser);
-  // }, [dispatch]);
   useEffect(() => {
     const unSubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
         const idTokenResult = await user.getIdTokenResult();
-        // console.log("user>>>", user);
         currentUser(idTokenResult.token)
           .then((res) => {
             const { data } = res;
-            // console.log("res>>>>>>>>>>", data);
             localStorage.setItem("user-info", JSON.stringify(data));
-            // console.log("item>>>", localStorage.getItem("user-info"));
             dispatch({
               type: "LOGGEED_IN_USER",
               payload: {
