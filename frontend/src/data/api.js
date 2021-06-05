@@ -21,7 +21,7 @@ export const getSingleFiles = async () => {
 export const cvFileUpload = async (data, userInfo) => {
   const id = userInfo._id;
   try {
-    await axios.post(`cvFiles/${id}`, data);
+    await axios.post(`${uploadUrl}/cvFiles/${id}`, data);
   } catch (error) {
     throw error;
   }

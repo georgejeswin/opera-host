@@ -40,9 +40,10 @@ const Payment = () => {
       body: JSON.stringify({ amount: amount }),
     };
 
-    const data = await fetch("http://oxetest.tk/razorpay", requestOptions).then(
-      (t) => t.json()
-    );
+    const data = await fetch(
+      "https://oxetest.tk/razorpay",
+      requestOptions
+    ).then((t) => t.json());
 
     if (!data) {
       alert("Server error. Are you online?");
