@@ -18,7 +18,7 @@ function loadScript(src) {
   });
 }
 
-const __DEV__ = document.domain === "localhost";
+const __DEV__ = document.domain === "oxetest.tk";
 
 const Payment = () => {
   const history = useHistory();
@@ -40,10 +40,9 @@ const Payment = () => {
       body: JSON.stringify({ amount: amount }),
     };
 
-    const data = await fetch(
-      "http://localhost:3000/razorpay",
-      requestOptions
-    ).then((t) => t.json());
+    const data = await fetch("http://oxetest.tk/razorpay", requestOptions).then(
+      (t) => t.json()
+    );
 
     if (!data) {
       alert("Server error. Are you online?");
