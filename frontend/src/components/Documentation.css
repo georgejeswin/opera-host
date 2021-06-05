@@ -1,0 +1,30 @@
+.documentation .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+.documentation__right {
+  align-items: center;
+  justify-content: center;
+}
+.documentation__right h1 {
+  color: rgb(47, 172, 47);
+  font-weight: 700;
+}
+.documentation__left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 600px) {
+  .documentation__right {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .documentation__left img {
+    max-width: 300px;
+  }
+}

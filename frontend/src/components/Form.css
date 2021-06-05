@@ -1,0 +1,49 @@
+.form__h1 {
+  color: rgb(98, 49, 143);
+  font-weight: 500;
+}
+.uploadFile__button {
+  color: #000;
+  padding: 15px;
+  font-size: 13px;
+  background-image: url("./images/upload.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  /* background: rgb(139, 125, 125); */
+  border-radius: 50px;
+  border: 1px solid rgb(103, 38, 163);
+  width: 500px;
+  outline: none;
+}
+::-webkit-file-upload-button {
+  display: none;
+  /* color: white;
+    background-color: rgb(111, 34, 184);
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    background-image: url("./components/images/upload.png"); */
+}
+/* ::-webkit-file-upload-button:hover {
+    background-color: rgb(126, 71, 146);
+  } */
+.fileInput__item {
+  display: flex;
+  flex-direction: column;
+}
+.upload__right {
+  display: flex;
+  align-items: center;
+}
+@media only screen and (max-width: 650px) {
+  .uploadFile__button {
+    width: 330px;
+  }
+  .upload__right img {
+    display: none;
+  }
+}

@@ -1,0 +1,41 @@
+.user__profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.user__profile h1 {
+  color: rgb(85, 39, 128);
+}
+.user__status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.status__h1 {
+  color: rgb(85, 39, 128);
+  font-family: "Poppins", sans-serif;
+}
+.user__statusImg-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user__statusImg {
+  max-width: 500px;
+}
+.payment__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+/* .payment__button {
+  padding: 200px;
+} */
+@media only screen and (max-width: 850px) {
+  .user__statusImg {
+    max-width: 250px;
+  }
+}

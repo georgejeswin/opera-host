@@ -1,0 +1,365 @@
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteMultipleFile, getFiles } from "../../actions/fileActions";
+import DeleteIcon from "@material-ui/icons/Delete";
+import DeleteOutlineOutlinedIcon from "@material-ui/icons/DeleteOutlineOutlined";
+// import { getMultipleFiles } from "../../data/api";
+import { useHistory } from "react-router-dom";
+import { confirmAlert } from "react-confirm-alert"; // Import
+import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
+import "./AdminLandingPage.css";
+import { IconButton } from "@material-ui/core";
+import { deleteUsers } from "../../actions/userActions";
+
+const AdminLandingPage = () => {
+  // const user = useSelector((state) => ({ ...state.user }));
+  const files = useSelector((state) => state.files);
+  const history = useHistory();
+  // console.log("redux files>>>>>", files);
+
+  const dispatch = useDispatch();
+  const [showFiles, setShowFiles] = useState(false);
+  // const [singleFile, setSingleFile] = useState([]);
+  const [fileList, setFileList] = useState({});
+  // const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    dispatch(getFiles());
+    // console.log("redux files>>>>>", files);
+  }, []);
+
+  const submit = (file) => {
+    confirmAlert({
+      title: `Are you sure to delete ${file?.name}`,
+      message:
+        "User's files and account will be deleted, confirm before deletion",
+      buttons: [
+        {
+          label: "Yes",
+          onClick: () => {
+            dispatch(deleteUsers(file.user));
+            dispatch(deleteMultipleFile(file._id));
+            console.log("file id>>>>", file._id);
+            setShowFiles(false);
+          },
+        },
+        {
+          label: "No",
+          onClick: () => history.push("/admin/dashboard"),
+        },
+      ],
+    });
+  };
+
+  const handleClick = async (file) => {
+    console.log(file);
+    const list = {
+      name: file.name,
+      user: file.user,
+      cvfile: [
+        {
+          fileName: file?.cvfile[0]?.fileName,
+          filePath: file?.cvfile[0]?.filePath,
+          fileSize: file?.cvfile[0]?.fileSize,
+          fileType: file?.cvfile[0]?.fileType,
+        },
+      ],
+      degreefile: [
+        {
+          fileName: file?.degreefile[0]?.fileName,
+          filePath: file?.degreefile[0]?.filePath,
+          fileSize: file?.degreefile[0]?.fileSize,
+          fileType: file?.degreefile[0]?.fileType,
+        },
+      ],
+      experiencefile: [
+        {
+          fileName: file?.experiencefile[0]?.fileName,
+          filePath: file?.experiencefile[0]?.filePath,
+          fileSize: file?.experiencefile[0]?.fileSize,
+          fileType: file?.experiencefile[0]?.fileType,
+        },
+      ],
+      ieltsfile: [
+        {
+          fileName: file?.ieltsfile[0]?.fileName,
+          filePath: file?.ieltsfile[0]?.filePath,
+          fileSize: file?.ieltsfile[0]?.fileSize,
+          fileType: file?.ieltsfile[0]?.fileType,
+        },
+      ],
+      lorfile: [
+        {
+          fileName: file?.lorfile[0]?.fileName,
+          filePath: file?.lorfile[0]?.filePath,
+          fileSize: file?.lorfile[0]?.fileSize,
+          fileType: file?.lorfile[0]?.fileType,
+        },
+      ],
+      plustwofile: [
+        {
+          fileName: file?.plustwofile[0]?.fileName,
+          filePath: file?.plustwofile[0]?.filePath,
+          fileSize: file?.plustwofile[0]?.fileSize,
+          fileType: file?.plustwofile[0]?.fileType,
+        },
+      ],
+      psfile: [
+        {
+          fileName: file?.psfile[0]?.fileName,
+          filePath: file?.psfile[0]?.filePath,
+          fileSize: file?.psfile[0]?.fileSize,
+          fileType: file?.psfile[0]?.fileType,
+        },
+      ],
+      sopfile: [
+        {
+          fileName: file?.sopfile[0]?.fileName,
+          filePath: file?.sopfile[0]?.filePath,
+          fileSize: file?.sopfile[0]?.fileSize,
+          fileType: file?.sopfile[0]?.fileType,
+        },
+      ],
+      sslcfile: [
+        {
+          fileName: file?.sslcfile[0]?.fileName,
+          filePath: file?.sslcfile[0]?.filePath,
+          fileSize: file?.sslcfile[0]?.fileSize,
+          fileType: file?.sslcfile[0]?.fileType,
+        },
+      ],
+      amount: file?.amount,
+      paided: file?.paided,
+    };
+    await setFileList(list);
+    console.log(fileList);
+
+    // console.log(value);
+    // setSingleFile(value);
+    setShowFiles(!showFiles);
+    // console.log("valueeeee>>>>", singleFile.cvfile[0]?.fileName);
+  };
+
+  const handleDelete = (file) => {
+    submit(file);
+  };
+  // useEffect(async () => {
+  //   setLoading(true);
+  //   var newFiles = await getMultipleFiles();
+  //   setFiles(newFiles);
+  //   setLoading(false);
+  //   console.log(newFiles[1].cvfile[0]?.filePath);
+  // }, []);
+
+  const url = "http://localhost:8000";
+
+  return (
+    <div>
+      <div className="admin__head">
+        {/* <h1 className="form__h1">Admin</h1> */}
+        {/* <Link to="/admin/messages">
+          <button className="register__button">View Messages</button>
+        </Link> */}
+      </div>
+      {/* <h2>{user.name}</h2> */}
+      {/* <h2>{user.email}</h2> */}
+
+      <div className="container-fluid ">
+        <div className="row">
+          <div className="col-md-4 col-sm-12 margin__none">
+            <table className="admin__userName-table col-sm-12">
+              <tbody className="pt-5 mt-5">
+                {files.map((file) => (
+                  <tr className="files__row margin__none">
+                    <td>
+                      <div
+                        className="user__name"
+                        onClick={() => handleClick(file)}
+                      >
+                        <h3 className="userName__h1">{file?.name}</h3>
+                        <IconButton
+                          className="pl-3"
+                          onClick={() => handleDelete(file)}
+                        >
+                          <small>
+                            <i className="fas fa-trash-alt fa-1x delete__icon"></i>
+                          </small>
+                        </IconButton>
+                      </div>
+                    </td>
+                    <br />
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="col-md-6">
+            {showFiles ? (
+              <ul className="show__files mt-5">
+                <h1 className="userName__show-h1">{fileList?.name}</h1>
+                {fileList.paided ? (
+                  <h4 className="text-success">Payment : Done</h4>
+                ) : (
+                  <h4 className="text-danger">Payment : Not Done</h4>
+                )}
+
+                <h5 className="text-danger">Amount : {fileList?.amount} </h5>
+                <h5>1. Updated curriculum vitae ( CV )</h5>
+                {fileList.cvfile[0].filePath ? (
+                  <li>
+                    <p>{fileList?.cvfile[0]?.fileName}</p>
+                    <embed
+                      className="pdf__files"
+                      src={`${url}/${fileList.cvfile[0].filePath}`}
+                      type="application/pdf"
+                      width="100%"
+                      height="300px"
+                    />
+                  </li>
+                ) : (
+                  <h3 className="p-2">File Not uploaded</h3>
+                )}
+
+                <li>
+                  <h5>2. Front and back page of passport copy</h5>
+                  <p>{fileList?.psfile[0]?.fileName}</p>
+                  <embed
+                    className="pdf__files"
+                    src={`${url}/${fileList?.psfile[0]?.filePath}`}
+                    type="application/pdf"
+                    width="100%"
+                    height="300px"
+                  />
+                </li>
+                <li>
+                  <h5>3. SSLC Certificate</h5>
+
+                  <p>{fileList?.sslcfile[0]?.fileName}</p>
+                  <embed
+                    className="pdf__files"
+                    src={`${url}/${fileList?.sslcfile[0]?.filePath}`}
+                    type="application/pdf"
+                    width="100%"
+                    height="300px"
+                  />
+                </li>
+                <li>
+                  <h5>4. Plus two Certificate</h5>
+
+                  <p>{fileList?.plustwofile[0]?.fileName}</p>
+                  <embed
+                    className="pdf__files"
+                    src={`${url}/${fileList?.plustwofile[0]?.filePath}`}
+                    type="application/pdf"
+                    width="100%"
+                    height="300px"
+                  />
+                </li>
+                <h5>
+                  5. Degree certificate with consolidated mark sheet and
+                  semester certificates
+                </h5>
+                {fileList?.degreefile[0]?.filePath ? (
+                  <li>
+                    <p>{fileList?.degreefile[0]?.fileName}</p>
+                    <embed
+                      className="pdf__files"
+                      src={`${url}/${fileList?.degreefile[0]?.filePath}`}
+                      type="application/pdf"
+                      width="100%"
+                      height="300px"
+                    />
+                  </li>
+                ) : (
+                  <h3 className="p-5">File Not uploaded</h3>
+                )}
+
+                <h5>6. English language test result -IELTS ( If any )</h5>
+
+                {fileList.ieltsfile[0].filePath ? (
+                  <li>
+                    <p>{fileList.ieltsfile[0].fileName}</p>
+                    <embed
+                      className="pdf__files"
+                      src={`${url}/${fileList.ieltsfile[0].filePath}`}
+                      type="application/pdf"
+                      width="100%"
+                      height="300px"
+                    />
+                  </li>
+                ) : (
+                  <h3 className="p-5">File Not uploaded</h3>
+                )}
+                <h5>9. Letter of reccomendation</h5>
+                {fileList?.lorfile[0]?.filePath ? (
+                  <li>
+                    <p>{fileList?.lorfile[0]?.fileName}</p>
+                    <embed
+                      className="pdf__files"
+                      src={`${url}/${fileList?.lorfile[0]?.filePath}`}
+                      type="application/pdf"
+                      width="100%"
+                      height="300px"
+                    />
+                  </li>
+                ) : (
+                  <h3 className="p-5">File Not uploaded</h3>
+                )}
+
+                <h5>7. Experience letter ( If any )</h5>
+
+                {fileList.experiencefile[0].filePath ? (
+                  <li>
+                    <p>{fileList?.experiencefile[0]?.fileName}</p>
+                    <embed
+                      className="pdf__files"
+                      src={`${url}/${fileList?.experiencefile[0]?.filePath}`}
+                      type="application/pdf"
+                      width="100%"
+                      height="300px"
+                    />
+                  </li>
+                ) : (
+                  <h3 className="p-5">File Not uploaded</h3>
+                )}
+                {/* <li>
+
+
+                  <p>{fileList?.experiencefile[0]?.fileName}</p>
+                  <embed
+                    className="pdf__files"
+                    src={`${url}/${fileList?.experiencefile[0]?.filePath}`}
+                    type="application/pdf"
+                    width="100%"
+                    height="300px"
+                  />
+                </li> */}
+                <h5>
+                  8. Statement of purpose - SOP for your selected programmes
+                </h5>
+                {fileList?.sopfile[0]?.filePath ? (
+                  <li>
+                    <p>{fileList?.sopfile[0]?.fileName}</p>
+                    <embed
+                      className="pdf__files"
+                      src={`${url}/${fileList?.sopfile[0]?.filePath}`}
+                      type="application/pdf"
+                      width="100%"
+                      height="300px"
+                    />
+                  </li>
+                ) : (
+                  <h3 className="p-5">File Not uploaded</h3>
+                )}
+              </ul>
+            ) : (
+              ""
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AdminLandingPage;

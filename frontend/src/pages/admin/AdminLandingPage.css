@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+.admin__head {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0px 0;
+}
+.show__files {
+  list-style: none;
+}
+.delete__icon {
+  color: rgb(90, 51, 126);
+}
+.userName__h1 {
+  font-size: 21px;
+  font-family: "Poppins", sans-serif;
+  color: rgb(90, 51, 126);
+}
+.userName__show-h1 {
+  font-size: 31px;
+  font-family: "Poppins", sans-serif;
+  color: rgb(90, 51, 126);
+}
+.margin__none {
+  margin: 0 !important;
+  padding: 0;
+}
+.files__row {
+  display: flex;
+  flex-direction: column;
+
+  /* width: 97%; */
+  flex-wrap: wrap;
+  /* border: 1px solid rgb(0, 0, 0); */
+  /* border-radius: 50px; */
+  padding: 10px;
+  margin: 10px;
+}
+.pdf__files {
+  min-width: 350px;
+  min-height: 500px;
+  /* margin: 10px; */
+}
+.user__name {
+  /* flex: 0.4; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-left: 20px;
+  margin-right: -10px;
+  /* margin-top: 20px; */
+  justify-content: space-between;
+}
+.user__name:hover {
+  background-color: #fff !important;
+  border-radius: 30px 0 0 30px;
+  box-shadow: -6px 16px 16px 1px rgba(192, 192, 192, 0.75);
+  -webkit-box-shadow: -6px 16px 16px 1px rgba(192, 192, 192, 0.75);
+  -moz-box-shadow: -6px 16px 16px 1px rgba(192, 192, 192, 0.75);
+}
+.admin__userName-table {
+  background-color: rgb(238, 236, 236);
+  height: 100%;
+  /* width: 100%; */
+}
+embed {
+  border-radius: 20px;
+  border: none;
+}
+@media only screen and (max-width: 650px) {
+  .pdf__files {
+    min-width: 250px;
+  }
+  .show__files {
+    flex-direction: column;
+  }
+  .user__name {
+    flex-direction: column;
+  }
+  .admin__userName-table {
+    width: 100%;
+  }
+}
