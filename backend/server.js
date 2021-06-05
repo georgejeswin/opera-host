@@ -24,6 +24,8 @@ app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 const __dirname = path.resolve();
+
+app.use(express.static(path.join(__dirname, "../frontend/build")));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 console.log(__dirname);
 
@@ -31,16 +33,19 @@ console.log(__dirname);
 app.use("/api", authRouter);
 app.use("/api", userRouter);
 app.use("/api", uploadRouter);
-app.use("/user", userRouter);
-app.use("/uploads", uploadRouter);
-app.use("/messages", messageRouter);
+app.use("/backenduser", userRouter);
+app.use("/backenduploads", uploadRouter);
+app.use("/backendmessages", messageRouter);
 
 //routes
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "../frontend/build", "index.html"));
+});
 app.get("/", (req, res) => {
   res.send("<h1>OPERA</h1>");
 });
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 3000;
 
 const razorpay = new Razorpay({
   key_id: process.env.RAZORPAY_KEY,
@@ -88,9 +93,7 @@ app.post("/verification", async (req, res) => {
     }
   } else {
     // pass it
-    
   }
-
 });
 
 app.post("/razorpay", async (req, res) => {
@@ -126,6 +129,6 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    app.listen(PORT, () => console.log(`server listening on port 8000`));
+    app.listen(PORT, () => console.log(`server listening on port ${PORT}`));
   })
   .catch((err) => console.log(err));

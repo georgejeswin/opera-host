@@ -41,14 +41,14 @@ const Payment = () => {
     };
 
     const data = await fetch(
-      "http://localhost:8000/razorpay",
+      "http://localhost:3000/razorpay",
       requestOptions
     ).then((t) => t.json());
 
     if (!data) {
-            alert("Server error. Are you online?");
-            return;
-        }
+      alert("Server error. Are you online?");
+      return;
+    }
 
     const options = {
       key: __DEV__ ? process.env.RAZORPAY_KEY : "PRODUCTION_KEY",
@@ -57,9 +57,10 @@ const Payment = () => {
       order_id: data.id,
       name: "Opera International",
       description: "Thank you for paying to Opera International",
-      image:'https://operainternational.in/public/frontend/opera/images/logo-opera.png',
+      image:
+        "https://operainternational.in/public/frontend/opera/images/logo-opera.png",
       handler: function (response) {
-          console.log(response)
+        console.log(response);
         alert(response.razorpay_payment_id);
         alert(response.razorpay_order_id);
         alert(response.razorpay_signature);

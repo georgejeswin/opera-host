@@ -43,7 +43,7 @@ const cvFileUpload = async (req, res, next) => {
   } catch (error) {
     res.status(400).send(error.message);
   }
-}
+};
 const psFileUpload = async (req, res, next) => {
   try {
     const user = await UserModel.findById(req.params.id);
@@ -59,7 +59,7 @@ const psFileUpload = async (req, res, next) => {
     const multipleFiles = new MultipleFile({
       user: req.params.id,
       name: user.name,
-      psfile:filesArray,
+      psfile: filesArray,
     });
     await multipleFiles.save();
     res.status(201).send("Files Uploaded Successfully");

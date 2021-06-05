@@ -9,6 +9,9 @@ const NavTop = () => {
   const history = useHistory();
 
   const handleClick = (currentuser) => {
+    if (files.length === 0) {
+      history.push("/upload");
+    }
     files.filter((file) => {
       if (file.user === currentuser._id) {
         console.log("file uploaded>>>>");

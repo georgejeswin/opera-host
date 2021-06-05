@@ -15,7 +15,7 @@ const UserStatus = () => {
   useEffect(async () => {
     filesUploaded(user);
     if (files.length <= 0) {
-      history.push("/user");
+      history.push("/user-profile");
     }
   }, []);
 
@@ -59,7 +59,7 @@ const UserStatus = () => {
           ) : (
             <div>
               <h1 className="status__h1">Files Not Uploaded</h1>
-              <Link to="/upload">
+              <Link to="/fileupload">
                 <button className="register__button">Apply Now</button>
               </Link>
             </div>

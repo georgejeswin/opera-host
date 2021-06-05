@@ -44,12 +44,18 @@ const UserLandingPage = () => {
     firebase.auth().signOut();
     localStorage.removeItem("userInfo");
     localStorage.removeItem("user-info");
-
     dispatch({
       type: "LOGOUT",
       payload: null,
     });
     history.push("/login");
+  };
+  const handleClick = () => {
+    if (files.length === 0) {
+      history.push("/upload");
+      console.log("empty files...");
+    }
+    history.push("/user/status");
   };
 
   const handleNameUpdate = (e) => {
@@ -120,11 +126,9 @@ const UserLandingPage = () => {
         )} */}
           </div>
           <div className="user__status-button">
-            <Link to="/user/status">
-              <button className="register__button mb-5">
-                Application Status
-              </button>
-            </Link>
+            <button onClick={handleClick} className="register__button mb-5">
+              Application Status
+            </button>
           </div>
           <div className="container">
             {!user.name && (

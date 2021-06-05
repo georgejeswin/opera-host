@@ -29,8 +29,8 @@ const Form = () => {
   // const dispatch = useDispatch();
   // const user = useSelector((state) => ({ ...state.user }));
 
-  const userinfo = localStorage.getItem("user-info");
-  console.log("info>>>>>", userinfo);
+  const userinfo = localStorage.getItem("userInfo");
+  // console.log("info>>>>>", userinfo);
   // const [singleFiles, setSingleFiles] = useState([]);
   const [cvFiles, setCvFiles] = useState([]);
   const [psFiles, setPsFiles] = useState([]);

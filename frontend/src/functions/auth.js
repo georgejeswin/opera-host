@@ -1,8 +1,10 @@
 import axios from "axios";
 
+const url = "http://localhost:3000";
+
 export const createOrUpdateUser = async (authToken) => {
   return await axios.post(
-    `/create-or-update-user`,
+    `/api/create-or-update-user`,
     {},
     { headers: { authToken: authToken } }
   );
@@ -10,7 +12,7 @@ export const createOrUpdateUser = async (authToken) => {
 
 export const currentUser = async (authToken) => {
   return await axios.post(
-    `/current-user`,
+    `/api/current-user`,
     {},
     { headers: { authToken: authToken } }
   );
