@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const uploadUrl = "http://oxetest.tk/backenduploads";
+const uploadUrl = "https://oxetest.tk/backenduploads";
 
 export const singleFileUpload = async (data) => {
   try {
@@ -104,7 +104,7 @@ export const getMultipleFilesRedux = async () =>
   await axios.get(`${uploadUrl}//getMultipleFiles`);
 
 export const deleteMultipleFiles = (id) =>
-  axios.delete(`http://oxetest.tk/backenduploads/getMultipleFiles/${id}`);
+  axios.delete(`https://oxetest.tk/backenduploads/getMultipleFiles/${id}`);
 
 // User name update
 
@@ -113,11 +113,11 @@ export const updateUserName = async (id, updatedUser) => {
 };
 
 export const deleteUser = (id) =>
-  axios.delete(`http://oxetest.tk/backenduser/${id}`);
+  axios.delete(`https://oxetest.tk/backenduser/${id}`);
 
 //messages api
 
-const url = "http://oxetest.tk/backendmessages";
+const url = "https://oxetest.tk/backendmessages";
 
 export const fetchMessages = () => axios.get(url);
 

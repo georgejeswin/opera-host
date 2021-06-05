@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://oxetest.tk";
+const url = "https://oxetest.tk";
 
 export const createOrUpdateUser = async (authToken) => {
   return await axios.post(
