@@ -110,7 +110,7 @@ export const deleteMultipleFiles = (id) =>
 // export const fetchUsers = () => axios.get("http://localhost:8000/user");
 
 export const updateUserName = async (id, updatedUser) => {
-  await axios.patch(`http://localhost:3000/backenduser/${id}`, updatedUser);
+  await axios.patch(`https://oxetest.tk/backenduser/${id}`, updatedUser);
 };
 
 export const deleteUser = (id) =>
