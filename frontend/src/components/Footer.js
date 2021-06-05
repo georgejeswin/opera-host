@@ -28,7 +28,7 @@ const Footer = () => {
           <div className="footer__third col-md-4 p-5">
             <h1>Quick Links</h1>
             <h5>About Us</h5>
-            <h5>Services</h5>
+            <h5>Our Services</h5>
             <h5>Student Register</h5>
             <h5>Contact Us</h5>
             <h5>Terms & Conditions</h5>
