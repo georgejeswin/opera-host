@@ -33,7 +33,7 @@ const LandingPage = () => {
             handleClick(user);
           }}
         >
-          Register Now!
+          Register Now!!!
         </button>
       </div>
     </div>
