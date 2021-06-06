@@ -1,6 +1,5 @@
 {
   "files": {
-<<<<<<< HEAD
     "main.css": "/static/css/main.4c9b0b60.chunk.css",
     "main.js": "/static/js/main.31d38b32.chunk.js",
     "main.js.map": "/static/js/main.31d38b32.chunk.js.map",
@@ -11,22 +10,10 @@
     "static/js/2.9fd03570.chunk.js.map": "/static/js/2.9fd03570.chunk.js.map",
     "static/js/3.6b7f4a74.chunk.js": "/static/js/3.6b7f4a74.chunk.js",
     "static/js/3.6b7f4a74.chunk.js.map": "/static/js/3.6b7f4a74.chunk.js.map",
-=======
-    "main.css": "/static/css/main.bbb5b5a5.chunk.css",
-    "main.js": "/static/js/main.b7269a61.chunk.js",
-    "main.js.map": "/static/js/main.b7269a61.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.cd9eb3b7.js",
-    "runtime-main.js.map": "/static/js/runtime-main.cd9eb3b7.js.map",
-    "static/css/2.5bc19289.chunk.css": "/static/css/2.5bc19289.chunk.css",
-    "static/js/2.16a2f525.chunk.js": "/static/js/2.16a2f525.chunk.js",
-    "static/js/2.16a2f525.chunk.js.map": "/static/js/2.16a2f525.chunk.js.map",
-    "static/js/3.97d5d93c.chunk.js": "/static/js/3.97d5d93c.chunk.js",
-    "static/js/3.97d5d93c.chunk.js.map": "/static/js/3.97d5d93c.chunk.js.map",
->>>>>>> 0745893002c80a5bdbe181d796890ad2f77c0f62
     "index.html": "/index.html",
-    "static/css/2.5bc19289.chunk.css.map": "/static/css/2.5bc19289.chunk.css.map",
-    "static/css/main.bbb5b5a5.chunk.css.map": "/static/css/main.bbb5b5a5.chunk.css.map",
-    "static/js/2.16a2f525.chunk.js.LICENSE.txt": "/static/js/2.16a2f525.chunk.js.LICENSE.txt",
+    "static/css/2.b06753f4.chunk.css.map": "/static/css/2.b06753f4.chunk.css.map",
+    "static/css/main.4c9b0b60.chunk.css.map": "/static/css/main.4c9b0b60.chunk.css.map",
+    "static/js/2.9fd03570.chunk.js.LICENSE.txt": "/static/js/2.9fd03570.chunk.js.LICENSE.txt",
     "static/media/10.8301e419.png": "/static/media/10.8301e419.png",
     "static/media/11.e937f73e.png": "/static/media/11.e937f73e.png",
     "static/media/12.83b94d7c.png": "/static/media/12.83b94d7c.png",
@@ -39,18 +26,10 @@
     "static/media/upload-right.5bd1fbd0.png": "/static/media/upload-right.5bd1fbd0.png"
   },
   "entrypoints": [
-<<<<<<< HEAD
     "static/js/runtime-main.07f7ea75.js",
     "static/css/2.b06753f4.chunk.css",
     "static/js/2.9fd03570.chunk.js",
     "static/css/main.4c9b0b60.chunk.css",
     "static/js/main.31d38b32.chunk.js"
-=======
-    "static/js/runtime-main.cd9eb3b7.js",
-    "static/css/2.5bc19289.chunk.css",
-    "static/js/2.16a2f525.chunk.js",
-    "static/css/main.bbb5b5a5.chunk.css",
-    "static/js/main.b7269a61.chunk.js"
->>>>>>> 0745893002c80a5bdbe181d796890ad2f77c0f62
   ]
 }
