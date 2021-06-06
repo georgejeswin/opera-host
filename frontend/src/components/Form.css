@@ -47,6 +47,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 .upload__form {
   display: flex;
@@ -63,8 +64,11 @@
   .form__h1 {
     font-size: xx-large;
   }
+  .upload__form {
+    max-width: 350px;
+  }
 }
 .uploading__img {
-  max-height: 300px;
+  max-height: 280px;
   margin-top: 20px;
 }
