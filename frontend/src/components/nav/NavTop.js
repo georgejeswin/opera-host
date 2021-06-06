@@ -29,7 +29,7 @@ const NavTop = () => {
       <div className="navTop__right">
         <button
           onClick={() => {
-            user.length > 0 ? handleClick(user) : history.push("/login");
+            user ? handleClick(user) : history.push("/login");
           }}
         >
           Apply Now!!
