@@ -27,7 +27,7 @@ import Uploader from "./Uploader";
 
 const Form = () => {
   let history = useHistory();
-  const [uploading,setUploading] = useState(false)
+  const [uploading, setUploading] = useState(false);
   // const dispatch = useDispatch();
   // const user = useSelector((state) => ({ ...state.user }));
 
@@ -71,8 +71,8 @@ const Form = () => {
 
   function onCvFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1042678) {
-      toast.error("File size greater than 1 MB");
+    if (e.target?.files[0]?.size > 1042678) {
+      toast.error("File size greater than 1 MB, Please compress and upload");
       // console.log("cv size>>>>", e.target?.files[0].size); 1242678
       e.target.value = "";
       setCvFiles("");
@@ -83,8 +83,8 @@ const Form = () => {
   }
   function onPsFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1042678) {
-      toast.error("File size greater than 1 MB");
+    if (e.target?.files[0]?.size > 1042678) {
+      toast.error("File size greater than 1 MB, Please compress and upload");
       e.target.value = "";
       setPsFiles("");
     } else {
@@ -94,8 +94,8 @@ const Form = () => {
   }
   function onSslcFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1042678) {
-      toast.error("File size greater than 1 MB");
+    if (e.target?.files[0]?.size > 1042678) {
+      toast.error("File size greater than 1 MB, Please compress and upload");
       e.target.value = "";
 
       setSslcFiles("");
@@ -106,8 +106,8 @@ const Form = () => {
   }
   function onPlusTwoFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1042678) {
-      toast.error("File size greater than 1 MB");
+    if (e.target?.files[0]?.size > 1042678) {
+      toast.error("File size greater than 1 MB, Please compress and upload");
       e.target.value = "";
 
       setPlusTwoFiles("");
@@ -118,8 +118,8 @@ const Form = () => {
   }
   function onDegreeFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1042678) {
-      toast.error("File size greater than 1 MB");
+    if (e.target?.files[0]?.size > 1042678) {
+      toast.error("File size greater than 1 MB, Please compress and upload");
       e.target.value = "";
 
       setDegreeFiles("");
@@ -130,8 +130,8 @@ const Form = () => {
   }
   function onIeltsFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1042678) {
-      toast.error("File size greater than 1 MB");
+    if (e.target?.files[0]?.size > 1042678) {
+      toast.error("File size greater than 1 MB, Please compress and upload");
       e.target.value = "";
 
       setIeltsFiles("");
@@ -142,8 +142,8 @@ const Form = () => {
   }
   function onExperienceFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1042678) {
-      toast.error("File size greater than 1 MB");
+    if (e.target?.files[0]?.size > 1042678) {
+      toast.error("File size greater than 1 MB, Please compress and upload");
       e.target.value = "";
 
       setExperienceFiles("");
@@ -154,8 +154,8 @@ const Form = () => {
   }
   function onSopFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1042678) {
-      toast.error("File size greater than 1 MB");
+    if (e.target?.files[0]?.size > 1042678) {
+      toast.error("File size greater than 1 MB, Please compress and upload");
       e.target.value = "";
 
       setSopFiles("");
@@ -166,8 +166,8 @@ const Form = () => {
   }
   function onLorFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1042678) {
-      toast.error("File size greater than 1 MB");
+    if (e.target?.files[0]?.size > 1042678) {
+      toast.error("File size greater than 1 MB, Please compress and upload");
       e.target.value = "";
 
       setLorFiles("");
@@ -242,32 +242,17 @@ const Form = () => {
   const UploadMultipleFiles = async (e) => {
     e.preventDefault();
     try {
-      setUploading(true)
+      setUploading(true);
       await uploadPsFile();
-      uploadCvFile();
-      uploadSslcFile();
-      uploadPlusTwoFile();
-      uploadDegreeFile();
-      uploadIeltsFile();
-      uploadExperienceFile();
-      uploadSopFile();
-      uploadLorFile();
-     
-      // createOrUpdateUser(user.token)
-      //   .then((res) => {
-      //     const { data } = res;
-      //     localStorage.setItem("userInfo", JSON.stringify(data));
-      //     dispatch({
-      //       type: "LOGGEED_IN_USER",
-      //       payload: {
-      //         ...user,
-      //         files: true,
-      //       },
-      //     });
-      //     dispatch(updateUser(user._id, { ...user, files: true }));
-      //   })
-      //   .catch((err) => console.log(err));
-      setUploading(false)
+      await uploadCvFile();
+      await uploadSslcFile();
+      await uploadPlusTwoFile();
+      await uploadDegreeFile();
+      await uploadIeltsFile();
+      await uploadExperienceFile();
+      await uploadSopFile();
+      await uploadLorFile();
+      setUploading(false);
       toast.success("Upload Success, Continue To payment");
       history.push("/payments");
     } catch (error) {
@@ -296,149 +281,153 @@ const Form = () => {
   return (
     <div className="container">
       <div className="row">
-      {uploading ? <Uploader/> : 
-        <div className="col-md-6 m-auto upload__top">
-          <h1 className="text-center display-4 my-3 form__h1">File Uploads</h1>
-          
-          <small className="form__small mb-3">
-            Documents should be less than 1MB!
-          </small>
+        {uploading ? (
+          <Uploader />
+        ) : (
+          <div className="col-md-6 m-auto upload__top">
+            <h1 className="text-center display-4 my-3 form__h1">
+              File Uploads
+            </h1>
 
-          <form
-            onSubmit={(e) => UploadMultipleFiles(e)}
-            className="upload__form"
-          >
-            <div className="mb-2 fileInput__item">
-              <label>1. Updated curriculum vitae ( CV )</label>
-              <input
-                type="file"
-                className="uploadFile__button"
-                onChange={(e) => onCvFileUpload(e)}
-                accept=".pdf"
-              />
-              {/* <label className="label" htmlFor="customFile">
+            <small className="form__small mb-3">
+              Documents should be less than 1MB!
+            </small>
+
+            <form
+              onSubmit={(e) => UploadMultipleFiles(e)}
+              className="upload__form"
+            >
+              <div className="mb-2 fileInput__item">
+                <label>1. Updated curriculum vitae ( CV )</label>
+                <input
+                  type="file"
+                  className="uploadFile__button"
+                  onChange={(e) => onCvFileUpload(e)}
+                  accept=".pdf"
+                />
+                {/* <label className="label" htmlFor="customFile">
                 {cvFileName}
               </label> */}
-            </div>
-            <div className="mb-2 fileInput__item">
-              <label>2. Front and back page of passport copy *</label>
-              <input
-                type="file"
-                required
-                className="uploadFile__button"
-                onChange={(e) => onPsFileUpload(e)}
-                accept=".pdf"
-              />
-              {/* <label className="label" htmlFor="customFile">
+              </div>
+              <div className="mb-2 fileInput__item">
+                <label>2. Front and back page of passport copy *</label>
+                <input
+                  type="file"
+                  required
+                  className="uploadFile__button"
+                  onChange={(e) => onPsFileUpload(e)}
+                  accept=".pdf"
+                />
+                {/* <label className="label" htmlFor="customFile">
                 {passportFileName}
               </label> */}
-            </div>
-            <div className="mb-2 fileInput__item">
-              <label>3. SSLC Certificate *</label>
+              </div>
+              <div className="mb-2 fileInput__item">
+                <label>3. SSLC Certificate *</label>
 
-              <input
-                type="file"
-                required
-                className="uploadFile__button"
-                onChange={(e) => onSslcFileUpload(e)}
-                accept=".pdf"
-              />
-              {/* <label className="label" htmlFor="customFile">
+                <input
+                  type="file"
+                  required
+                  className="uploadFile__button"
+                  onChange={(e) => onSslcFileUpload(e)}
+                  accept=".pdf"
+                />
+                {/* <label className="label" htmlFor="customFile">
                 {sslcFileName}
               </label> */}
-            </div>
-            <div className="mb-2 fileInput__item">
-              <label>4. Plus two Certificate *</label>
+              </div>
+              <div className="mb-2 fileInput__item">
+                <label>4. Plus two Certificate *</label>
 
-              <input
-                type="file"
-                required
-                className="uploadFile__button"
-                onChange={(e) => onPlusTwoFileUpload(e)}
-                accept=".pdf"
-              />
-              {/* <label className="label" htmlFor="customFile">
+                <input
+                  type="file"
+                  required
+                  className="uploadFile__button"
+                  onChange={(e) => onPlusTwoFileUpload(e)}
+                  accept=".pdf"
+                />
+                {/* <label className="label" htmlFor="customFile">
                 {plustwoFileName}
               </label> */}
-            </div>
-            <div className="mb-2 fileInput__item">
-              <label>
-                5. Degree certificate with consolidated mark sheet and semester
-                certificates
-              </label>
+              </div>
+              <div className="mb-2 fileInput__item">
+                <label>
+                  5. Degree certificate with consolidated mark sheet and
+                  semester certificates
+                </label>
 
-              <input
-                type="file"
-                className="uploadFile__button"
-                onChange={(e) => onDegreeFileUpload(e)}
-                accept=".pdf"
-              />
-              {/* <label className="label" htmlFor="customFile">
+                <input
+                  type="file"
+                  className="uploadFile__button"
+                  onChange={(e) => onDegreeFileUpload(e)}
+                  accept=".pdf"
+                />
+                {/* <label className="label" htmlFor="customFile">
                 {degreeFileName}
               </label> */}
-            </div>
-            <div className="mb-2 fileInput__item">
-              <label>6. English language test result -IELTS ( If any )</label>
+              </div>
+              <div className="mb-2 fileInput__item">
+                <label>6. English language test result -IELTS ( If any )</label>
 
-              <input
-                type="file"
-                className="uploadFile__button"
-                onChange={(e) => onIeltsFileUpload(e)}
-                accept=".pdf"
-              />
-              {/* <label className="label" htmlFor="customFile">
+                <input
+                  type="file"
+                  className="uploadFile__button"
+                  onChange={(e) => onIeltsFileUpload(e)}
+                  accept=".pdf"
+                />
+                {/* <label className="label" htmlFor="customFile">
                 {ietlsFileName}
               </label> */}
-            </div>
-            <div className="mb-2 fileInput__item">
-              <label>7. Experience letter ( If any )</label>
+              </div>
+              <div className="mb-2 fileInput__item">
+                <label>7. Experience letter ( If any )</label>
 
-              <input
-                type="file"
-                className="uploadFile__button"
-                onChange={(e) => onExperienceFileUpload(e)}
-                accept=".pdf"
-              />
-              {/* <label className="label" htmlFor="customFile">
+                <input
+                  type="file"
+                  className="uploadFile__button"
+                  onChange={(e) => onExperienceFileUpload(e)}
+                  accept=".pdf"
+                />
+                {/* <label className="label" htmlFor="customFile">
                 {experienceFileName}
               </label> */}
-            </div>
-            <div className="mb-2 fileInput__item">
-              <label>
-                8. Statement of purpose - SOP for your selected programmes
-              </label>
+              </div>
+              <div className="mb-2 fileInput__item">
+                <label>
+                  8. Statement of purpose - SOP for your selected programmes
+                </label>
 
-              <input
-                type="file"
-                className="uploadFile__button"
-                onChange={(e) => onSopFileUpload(e)}
-                accept=".pdf"
-              />
-              {/* <label className="label" htmlFor="customFile">
+                <input
+                  type="file"
+                  className="uploadFile__button"
+                  onChange={(e) => onSopFileUpload(e)}
+                  accept=".pdf"
+                />
+                {/* <label className="label" htmlFor="customFile">
                 {sopFileName}
               </label> */}
-            </div>
-            <div className="mb-2 fileInput__item">
-              <label>9. Letter of reccomendation</label>
+              </div>
+              <div className="mb-2 fileInput__item">
+                <label>9. Letter of reccomendation</label>
 
-              <input
-                type="file"
-                className="uploadFile__button"
-                onChange={(e) => onLorFileUpload(e)}
-                accept=".pdf"
-              />
-              {/* <label className="label" htmlFor="customFile">
+                <input
+                  type="file"
+                  className="uploadFile__button"
+                  onChange={(e) => onLorFileUpload(e)}
+                  accept=".pdf"
+                />
+                {/* <label className="label" htmlFor="customFile">
                 {lorFileName}
               </label> */}
-            </div>
-            <input
-              type="submit"
-              value="Submit"
-              className="register__button w-100"
-            />
-          </form>
-          <hr />
-          {/* {singleFiles.map((file)=>{
+              </div>
+              <input
+                type="submit"
+                value="Submit"
+                className="register__button w-100"
+              />
+            </form>
+            <hr />
+            {/* {singleFiles.map((file)=>{
            return(
              <div>
             <h4>{file.fileName}</h4>
@@ -446,9 +435,8 @@ const Form = () => {
             </div>
            )
      })} */}
-        </div>
-      } 
-        
+          </div>
+        )}
       </div>
     </div>
   );
