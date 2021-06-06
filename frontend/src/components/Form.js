@@ -177,10 +177,14 @@ const Form = () => {
   }
 
   const uploadCvFile = async () => {
-    const formData = new FormData();
-    formData.append("cvfile", cvFiles);
-    await cvFileUpload(formData, userInfo);
-    console.log("uploaded");
+    if (cvFiles) {
+      const formData = new FormData();
+      formData.append("cvfile", cvFiles);
+      await cvFileUpload(formData, userInfo);
+      console.log("uploaded");
+    } else {
+      console.log("no cv file");
+    }
   };
   const uploadPsFile = async () => {
     const formData = new FormData();
@@ -201,34 +205,54 @@ const Form = () => {
     console.log("uploaded");
   };
   const uploadDegreeFile = async () => {
-    const formData = new FormData();
-    formData.append("degreefile", degreeFiles);
-    await DegreeFileUpload(formData, userInfo);
-    console.log("uploaded");
+    if (degreeFiles) {
+      const formData = new FormData();
+      formData.append("degreefile", degreeFiles);
+      await DegreeFileUpload(formData, userInfo);
+      console.log("uploaded");
+    } else {
+      console.log("no degree file");
+    }
   };
   const uploadIeltsFile = async () => {
-    const formData = new FormData();
-    formData.append("ieltsfile", ieltsFiles);
-    await IeltsFileUpload(formData, userInfo);
-    console.log("uploaded");
+    if (ieltsFiles) {
+      const formData = new FormData();
+      formData.append("ieltsfile", ieltsFiles);
+      await IeltsFileUpload(formData, userInfo);
+      console.log("uploaded");
+    } else {
+      console.log("no ielts file");
+    }
   };
   const uploadExperienceFile = async () => {
-    const formData = new FormData();
-    formData.append("experiencefile", experienceFiles);
-    await ExperienceFileUpload(formData, userInfo);
-    console.log("uploaded");
+    if (experienceFiles) {
+      const formData = new FormData();
+      formData.append("experiencefile", experienceFiles);
+      await ExperienceFileUpload(formData, userInfo);
+      console.log("uploaded");
+    } else {
+      console.log("no experience file");
+    }
   };
   const uploadSopFile = async () => {
-    const formData = new FormData();
-    formData.append("sopfile", sopFiles);
-    await SopFileUpload(formData, userInfo);
-    console.log("uploaded");
+    if (sopFiles) {
+      const formData = new FormData();
+      formData.append("sopfile", sopFiles);
+      await SopFileUpload(formData, userInfo);
+      console.log("uploaded");
+    } else {
+      console.log("no sop file");
+    }
   };
   const uploadLorFile = async () => {
-    const formData = new FormData();
-    formData.append("lorfile", lorFiles);
-    await LorFileUpload(formData, userInfo);
-    console.log("uploaded");
+    if (lorFiles) {
+      const formData = new FormData();
+      formData.append("lorfile", lorFiles);
+      await LorFileUpload(formData, userInfo);
+      console.log("uploaded");
+    } else {
+      console.log("no lor file");
+    }
   };
 
   // const uploadSingleFile =  async(e)=>{
@@ -245,22 +269,22 @@ const Form = () => {
       await uploadPsFile();
       await uploadSslcFile();
       await uploadPlusTwoFile();
-      if (cvFiles) {
+      if (cvFiles.length > 0) {
         uploadCvFile();
       }
-      if (degreeFiles) {
+      if (degreeFiles.length > 0) {
         uploadDegreeFile();
       }
-      if (ieltsFiles) {
+      if (ieltsFiles.length > 0) {
         uploadIeltsFile();
       }
-      if (experienceFiles) {
+      if (experienceFiles.length > 0) {
         uploadExperienceFile();
       }
-      if (sopFiles) {
+      if (sopFiles.length > 0) {
         uploadSopFile();
       }
-      if (lorFiles) {
+      if (lorFiles.length > 0) {
         uploadLorFile();
       }
       setUploading(false);
