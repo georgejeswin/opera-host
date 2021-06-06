@@ -8,10 +8,13 @@
 }
 .navTop__left {
   display: flex;
+  margin-top: 9px;
   align-items: center;
   justify-content: space-between;
   font-size: 17px;
   font-weight: 500;
+  /* color: rgb(201, 201, 201); */
+  opacity: 0.7;
 }
 .navTop__right {
   justify-content: flex-end;
