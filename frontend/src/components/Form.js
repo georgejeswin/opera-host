@@ -121,7 +121,6 @@ const Form = () => {
     if (e.target?.files[0]?.size > 1042678) {
       toast.error("File size greater than 1 MB, Please compress and upload");
       e.target.value = "";
-
       setDegreeFiles("");
     } else {
       setDegreeFiles(e.target?.files[0]);
@@ -293,7 +292,6 @@ const Form = () => {
   useEffect(() => {}, []);
   return (
     <div className="container">
-      <Uploader />
       <div className="row">
         {uploading ? (
           <Uploader />
