@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteMultipleFile, getFiles } from "../../actions/fileActions";
-import DeleteIcon from "@material-ui/icons/Delete";
-import DeleteOutlineOutlinedIcon from "@material-ui/icons/DeleteOutlineOutlined";
-// import { getMultipleFiles } from "../../data/api";
 import { useHistory } from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css

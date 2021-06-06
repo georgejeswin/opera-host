@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import UploadIMG from "../../components/images/upload-right.png";
 
@@ -14,7 +14,7 @@ const UserStatus = () => {
     if (files.length <= 0) {
       history.push("/user");
     }
-  }, []);
+  }, [files.length]);
 
   const [fileUploaded, setFileUploaded] = useState(false);
   const [paymentDone, setPaymentDone] = useState(false);

@@ -290,13 +290,16 @@ const Form = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-6 m-auto">
-          <h1 className="text-center display-4 my-4 form__h1">File Uploads</h1>
-          <small className="p-5 mt-4 mb-5" style={{ textAlign: "center" }}>
-            Uploading documents should be less than 1 MB!
+        <div className="col-md-6 m-auto upload__top">
+          <h1 className="text-center display-4 my-3 form__h1">File Uploads</h1>
+          <small className="form__small mb-3">
+            Documents should be less than 1MB!
           </small>
 
-          <form onSubmit={(e) => UploadMultipleFiles(e)}>
+          <form
+            onSubmit={(e) => UploadMultipleFiles(e)}
+            className="upload__form"
+          >
             <div className="mb-2 fileInput__item">
               <label>1. Updated curriculum vitae ( CV )</label>
               <input
@@ -310,7 +313,7 @@ const Form = () => {
               </label> */}
             </div>
             <div className="mb-2 fileInput__item">
-              <label>2. Front and back page of passport copy</label>
+              <label>2. Front and back page of passport copy *</label>
               <input
                 type="file"
                 required
@@ -323,7 +326,7 @@ const Form = () => {
               </label> */}
             </div>
             <div className="mb-2 fileInput__item">
-              <label>3. SSLC Certificate</label>
+              <label>3. SSLC Certificate *</label>
 
               <input
                 type="file"
@@ -337,7 +340,7 @@ const Form = () => {
               </label> */}
             </div>
             <div className="mb-2 fileInput__item">
-              <label>4. Plus two Certificate</label>
+              <label>4. Plus two Certificate *</label>
 
               <input
                 type="file"
@@ -420,7 +423,11 @@ const Form = () => {
                 {lorFileName}
               </label> */}
             </div>
-            <input type="submit" value="Submit" className="register__button" />
+            <input
+              type="submit"
+              value="Submit"
+              className="register__button w-100"
+            />
           </form>
           <hr />
           {/* {singleFiles.map((file)=>{

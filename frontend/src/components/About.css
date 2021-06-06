@@ -30,6 +30,9 @@
   .about__left img {
     max-width: 300px;
   }
+  .about__right h1 {
+    font-size: xx-large;
+  }
 }
 
 @media screen and (max-width: 1000px) and (min-width: 600px) {

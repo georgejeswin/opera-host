@@ -27,7 +27,13 @@ const NavTop = () => {
         <p className="ml-5">+91 75598 80999</p>
       </div>
       <div className="navTop__right">
-        <button onClick={() => handleClick(user)}>Apply Now!!</button>
+        <button
+          onClick={() => {
+            user.length > 0 ? handleClick(user) : history.push("/login");
+          }}
+        >
+          Apply Now!!
+        </button>
       </div>
     </div>
   );

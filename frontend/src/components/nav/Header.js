@@ -150,13 +150,15 @@ const Header = () => {
             )}
           </li>
           {!user && (
-            <Link
-              className="nav-links"
-              to="/register"
-              onClick={closeMobileMenu}
-            >
-              Register
-            </Link>
+            <li className="nav-item">
+              <Link
+                className="nav-links"
+                to="/register"
+                onClick={closeMobileMenu}
+              >
+                Register
+              </Link>
+            </li>
           )}
           <li className="nav-item" onClick={closeMobileMenu}>
             {user && user.role === "admin" ? (

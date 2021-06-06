@@ -1,7 +1,6 @@
-import { Button } from "@material-ui/core";
 import React from "react";
 import { useSelector } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./LandingPage.css";
 
 const LandingPage = () => {
@@ -10,6 +9,8 @@ const LandingPage = () => {
   const history = useHistory();
 
   const handleClick = (currentuser) => {
+    console.log("fuckkkk");
+    console.log(currentuser);
     if (files.length === 0) {
       history.push("/upload");
     }
@@ -28,7 +29,7 @@ const LandingPage = () => {
         <h1>Opera International</h1>
         <button
           onClick={() => {
-            handleClick(user);
+            user.length > 0 ? handleClick(user) : history.push("/login");
           }}
         >
           Register Now!!!

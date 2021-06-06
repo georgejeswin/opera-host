@@ -16,6 +16,10 @@
   width: 500px;
   outline: none;
 }
+.form__small {
+  color: rgb(111, 34, 184);
+  align-items: center;
+}
 ::-webkit-file-upload-button {
   display: none;
   /* color: white;
@@ -39,11 +43,26 @@
   display: flex;
   align-items: center;
 }
+.upload__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.upload__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 @media only screen and (max-width: 650px) {
   .uploadFile__button {
     width: 330px;
   }
   .upload__right img {
     display: none;
+  }
+  .form__h1 {
+    font-size: xx-large;
+  }
+  .form__small {
   }
 }

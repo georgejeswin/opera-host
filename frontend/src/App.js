@@ -9,7 +9,7 @@ import RegisterComplete from "./pages/auth/RegisterComplete";
 import Header from "./components/nav/Header";
 
 import { auth } from "./firebase";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import { currentUser } from "./functions/auth";
@@ -23,7 +23,6 @@ import Footer from "./components/Footer";
 import AdminLandingPage from "./pages/admin/AdminLandingPage";
 import AdminViewMessages from "./pages/admin/AdminViewMessages";
 import Payment from "./pages/Payment";
-import { updateUser } from "./actions/userActions";
 import UserStatus from "./pages/user/UserStatus";
 import { getFiles } from "./actions/fileActions";
 import About from "./components/About";
