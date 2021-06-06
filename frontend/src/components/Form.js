@@ -20,12 +20,14 @@ import {
   LorFileUpload,
   // getMultipleFiles,
 } from "../data/api";
+import Uploader from "./Uploader";
 // import { updateUser } from "../actions/userActions";
 // import { createOrUpdateUser } from "../functions/auth";
 // const api = "http://localhost:8000/";
 
 const Form = () => {
   let history = useHistory();
+  const [uploading,setUploading] = useState(false)
   // const dispatch = useDispatch();
   // const user = useSelector((state) => ({ ...state.user }));
 
@@ -240,6 +242,7 @@ const Form = () => {
   const UploadMultipleFiles = async (e) => {
     e.preventDefault();
     try {
+      setUploading(true)
       await uploadPsFile();
       uploadCvFile();
       uploadSslcFile();
@@ -249,6 +252,7 @@ const Form = () => {
       uploadExperienceFile();
       uploadSopFile();
       uploadLorFile();
+     
       // createOrUpdateUser(user.token)
       //   .then((res) => {
       //     const { data } = res;
@@ -263,6 +267,7 @@ const Form = () => {
       //     dispatch(updateUser(user._id, { ...user, files: true }));
       //   })
       //   .catch((err) => console.log(err));
+      setUploading(false)
       toast.success("Upload Success, Continue To payment");
       history.push("/payments");
     } catch (error) {
@@ -291,8 +296,10 @@ const Form = () => {
   return (
     <div className="container">
       <div className="row">
+      {uploading ? <Uploader/> : 
         <div className="col-md-6 m-auto upload__top">
           <h1 className="text-center display-4 my-3 form__h1">File Uploads</h1>
+          
           <small className="form__small mb-3">
             Documents should be less than 1MB!
           </small>
@@ -440,6 +447,8 @@ const Form = () => {
            )
      })} */}
         </div>
+      } 
+        
       </div>
     </div>
   );

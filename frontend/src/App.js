@@ -31,6 +31,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Services from "./components/Services";
 
+
 function App() {
   const dispatch = useDispatch();
 
@@ -79,6 +80,7 @@ function App() {
           <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/services" component={Services} />
+
 
           <Route exact path="/privacy" component={Privacy} />
           <Route exact path="/terms&conditions" component={Terms} />
