@@ -38,8 +38,9 @@
     align-items: center;
   }
 }
-@media only screen and (max-width: 550px) {
+/* @media only screen and (max-width: 550px) {
   .navTop {
+    display: none;
     flex-direction: column;
     align-items: center;
   }
@@ -53,6 +54,11 @@
     margin-bottom: 20px;
   }
   .navTop__right {
+    display: none;
+  }
+} */
+@media screen and (max-width: 960px) {
+  .navTop {
     display: none;
   }
 }

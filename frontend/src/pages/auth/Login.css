@@ -111,6 +111,11 @@
 .register__right img {
   max-width: 700px;
 }
+.createandforgot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 @media only screen and (max-width: 600px) {
   .login__username,
   .login__password,
