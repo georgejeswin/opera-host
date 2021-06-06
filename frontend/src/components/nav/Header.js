@@ -87,7 +87,11 @@ const Header = () => {
           </li>
 
           <li className="nav-item">
-            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+            <Link
+              to="/services"
+              className="nav-links"
+              onClick={closeMobileMenu}
+            >
               Services
             </Link>
             {/* <a href="#services" className="nav-links" onClick={closeMobileMenu}>
