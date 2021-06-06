@@ -71,11 +71,10 @@ const Form = () => {
     e.preventDefault();
     if (e.target?.files[0].size > 1042678) {
       toast.error("File size greater than 1 MB");
-      // console.log("cv size>>>>", e.target?.files[0].size); 1042678
+      // console.log("cv size>>>>", e.target?.files[0].size); 1242678
       e.target.value = "";
       setCvFiles("");
     } else {
-      console.log("fffff filesize", e.target?.files[0].size);
       setCvFiles(e.target?.files[0]);
       setCvFileName(e.target?.files[0]?.name);
     }
