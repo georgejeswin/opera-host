@@ -264,21 +264,6 @@ const AdminLandingPage = () => {
                 ) : (
                   <h3 className="p-5">File Not uploaded</h3>
                 )}
-                <h5>9. Letter of reccomendation</h5>
-                {fileList?.lorfile[0]?.filePath ? (
-                  <li>
-                    <p>{fileList?.lorfile[0]?.fileName}</p>
-                    <embed
-                      className="pdf__files"
-                      src={`${url}/${fileList?.lorfile[0]?.filePath}`}
-                      type="application/pdf"
-                      width="100%"
-                      height="300px"
-                    />
-                  </li>
-                ) : (
-                  <h3 className="p-5">File Not uploaded</h3>
-                )}
 
                 <h5>7. Experience letter ( If any )</h5>
 
@@ -317,6 +302,21 @@ const AdminLandingPage = () => {
                     <embed
                       className="pdf__files"
                       src={`${url}/${fileList?.sopfile[0]?.filePath}`}
+                      type="application/pdf"
+                      width="100%"
+                      height="300px"
+                    />
+                  </li>
+                ) : (
+                  <h3 className="p-5">File Not uploaded</h3>
+                )}
+                <h5>9. Letter of reccomendation</h5>
+                {fileList?.lorfile[0]?.filePath ? (
+                  <li>
+                    <p>{fileList?.lorfile[0]?.fileName}</p>
+                    <embed
+                      className="pdf__files"
+                      src={`${url}/${fileList?.lorfile[0]?.filePath}`}
                       type="application/pdf"
                       width="100%"
                       height="300px"
