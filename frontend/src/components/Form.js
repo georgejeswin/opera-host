@@ -290,14 +290,12 @@ const Form = () => {
   //     console.log(error);
   //   }
   // }
-  useEffect(() => {}, []);
   return (
     <div className="container">
-      <Uploader />
       <div className="row">
-        {uploading ? (
+        {uploading ? 
           <Uploader />
-        ) : (
+         : 
           <div className="col-md-6 m-auto upload__top">
             <h1 className="text-center display-4 my-3 form__h1">
               File Uploads
@@ -450,7 +448,7 @@ const Form = () => {
            )
      })} */}
           </div>
-        )}
+        }
       </div>
     </div>
   );
