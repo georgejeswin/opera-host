@@ -8,15 +8,15 @@ const storage = multer.diskStorage({
         cb(null, new Date().toISOString().replace(/:/g, '-') + '-' + file.originalname);
     }
 });
-const filefilter = (req, file, cb) => {
-    if (file.mimetype === 'application/pdf'){
-            cb(null, true);
-        }else {
-            cb(null, false);
-            console.log('ples upload pdf')
-        }
-}
+// const filefilter = (req, file, cb) => {
+//     if (file.mimetype === 'application/pdf'){
+//             cb(null, true);
+//         }else {
+//             cb(null, false);
+//             console.log('ples upload pdf')
+//         }
+// }
 
-const upload = multer({storage: storage, fileFilter: filefilter});
+const upload = multer({storage: storage});
 
 export {upload}
