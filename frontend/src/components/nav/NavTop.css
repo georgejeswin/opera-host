@@ -4,12 +4,17 @@
   justify-content: space-between;
   background-color: rgb(77, 29, 105);
   color: #fff;
+  max-height: 60px;
 }
 .navTop__left {
   display: flex;
+  margin-top: 9px;
+  align-items: center;
   justify-content: space-between;
   font-size: 17px;
   font-weight: 500;
+  /* color: rgb(201, 201, 201); */
+  opacity: 0.7;
 }
 .navTop__right {
   justify-content: flex-end;
@@ -19,7 +24,7 @@
   color: #fff;
   background-color: rgb(84, 175, 84);
   border: none;
-  min-height: 80px;
+  min-height: 60px;
   min-width: 180px;
   margin: 0 !important;
   font-size: 24px;
