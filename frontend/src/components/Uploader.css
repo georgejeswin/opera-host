@@ -1,0 +1,29 @@
+.uploader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.uploader img{
+   height: 70vh;
+   margin-bottom: 10px;
+}
+.uploader h1{
+    color: #62318f;
+}
+.uploader h1:hover{
+   color:#7b49aa;
+}
+
+@media only screen and (max-width: 650px) {
+    .uploader{
+        height: 70vh;
+
+    }
+    .uploader img{
+        height: 40vh;
+        width: 100vw;
+     }
+  }
