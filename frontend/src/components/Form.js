@@ -244,14 +244,26 @@ const Form = () => {
     try {
       setUploading(true);
       await uploadPsFile();
-      await uploadCvFile();
+      if (cvFiles) {
+        await uploadCvFile();
+      }
       await uploadSslcFile();
       await uploadPlusTwoFile();
-      await uploadDegreeFile();
-      await uploadIeltsFile();
-      await uploadExperienceFile();
-      await uploadSopFile();
-      await uploadLorFile();
+      if (degreeFiles) {
+        await uploadDegreeFile();
+      }
+      if (ieltsFiles) {
+        await uploadIeltsFile();
+      }
+      if (experienceFiles) {
+        await uploadExperienceFile();
+      }
+      if (sopFiles) {
+        await uploadSopFile();
+      }
+      if (lorFiles) {
+        await uploadLorFile();
+      }
       setUploading(false);
       toast.success("Upload Success, Continue To payment");
       history.push("/payments");
@@ -280,6 +292,7 @@ const Form = () => {
   useEffect(() => {}, []);
   return (
     <div className="container">
+      <Uploader />
       <div className="row">
         {uploading ? (
           <Uploader />
