@@ -256,6 +256,7 @@ const Form = () => {
       toast.success("Upload Success, Continue To payment");
       history.push("/payments");
     } catch (error) {
+      setUploading(false);
       toast.error("Upload failed, Please Try Again");
     }
   };
