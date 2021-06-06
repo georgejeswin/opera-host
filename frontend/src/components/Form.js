@@ -121,7 +121,6 @@ const Form = () => {
     if (e.target?.files[0]?.size > 1042678) {
       toast.error("File size greater than 1 MB, Please compress and upload");
       e.target.value = "";
-
       setDegreeFiles("");
     } else {
       setDegreeFiles(e.target?.files[0]);
@@ -178,10 +177,14 @@ const Form = () => {
   }
 
   const uploadCvFile = async () => {
-    const formData = new FormData();
-    formData.append("cvfile", cvFiles);
-    await cvFileUpload(formData, userInfo);
-    console.log("uploaded");
+    if (cvFiles) {
+      const formData = new FormData();
+      formData.append("cvfile", cvFiles);
+      await cvFileUpload(formData, userInfo);
+      console.log("uploaded");
+    } else {
+      console.log("no cv file");
+    }
   };
   const uploadPsFile = async () => {
     const formData = new FormData();
@@ -202,34 +205,54 @@ const Form = () => {
     console.log("uploaded");
   };
   const uploadDegreeFile = async () => {
-    const formData = new FormData();
-    formData.append("degreefile", degreeFiles);
-    await DegreeFileUpload(formData, userInfo);
-    console.log("uploaded");
+    if (degreeFiles) {
+      const formData = new FormData();
+      formData.append("degreefile", degreeFiles);
+      await DegreeFileUpload(formData, userInfo);
+      console.log("uploaded");
+    } else {
+      console.log("no degree file");
+    }
   };
   const uploadIeltsFile = async () => {
-    const formData = new FormData();
-    formData.append("ieltsfile", ieltsFiles);
-    await IeltsFileUpload(formData, userInfo);
-    console.log("uploaded");
+    if (ieltsFiles) {
+      const formData = new FormData();
+      formData.append("ieltsfile", ieltsFiles);
+      await IeltsFileUpload(formData, userInfo);
+      console.log("uploaded");
+    } else {
+      console.log("no ielts file");
+    }
   };
   const uploadExperienceFile = async () => {
-    const formData = new FormData();
-    formData.append("experiencefile", experienceFiles);
-    await ExperienceFileUpload(formData, userInfo);
-    console.log("uploaded");
+    if (experienceFiles) {
+      const formData = new FormData();
+      formData.append("experiencefile", experienceFiles);
+      await ExperienceFileUpload(formData, userInfo);
+      console.log("uploaded");
+    } else {
+      console.log("no experience file");
+    }
   };
   const uploadSopFile = async () => {
-    const formData = new FormData();
-    formData.append("sopfile", sopFiles);
-    await SopFileUpload(formData, userInfo);
-    console.log("uploaded");
+    if (sopFiles) {
+      const formData = new FormData();
+      formData.append("sopfile", sopFiles);
+      await SopFileUpload(formData, userInfo);
+      console.log("uploaded");
+    } else {
+      console.log("no sop file");
+    }
   };
   const uploadLorFile = async () => {
-    const formData = new FormData();
-    formData.append("lorfile", lorFiles);
-    await LorFileUpload(formData, userInfo);
-    console.log("uploaded");
+    if (lorFiles) {
+      const formData = new FormData();
+      formData.append("lorfile", lorFiles);
+      await LorFileUpload(formData, userInfo);
+      console.log("uploaded");
+    } else {
+      console.log("no lor file");
+    }
   };
 
   // const uploadSingleFile =  async(e)=>{
@@ -244,25 +267,25 @@ const Form = () => {
     try {
       setUploading(true);
       await uploadPsFile();
-      if (cvFiles) {
-        await uploadCvFile();
-      }
       await uploadSslcFile();
       await uploadPlusTwoFile();
-      if (degreeFiles) {
-        await uploadDegreeFile();
+      if (cvFiles.length > 0) {
+        uploadCvFile();
       }
-      if (ieltsFiles) {
-        await uploadIeltsFile();
+      if (degreeFiles.length > 0) {
+        uploadDegreeFile();
       }
-      if (experienceFiles) {
-        await uploadExperienceFile();
+      if (ieltsFiles.length > 0) {
+        uploadIeltsFile();
       }
-      if (sopFiles) {
-        await uploadSopFile();
+      if (experienceFiles.length > 0) {
+        uploadExperienceFile();
       }
-      if (lorFiles) {
-        await uploadLorFile();
+      if (sopFiles.length > 0) {
+        uploadSopFile();
+      }
+      if (lorFiles.length > 0) {
+        uploadLorFile();
       }
       setUploading(false);
       toast.success("Upload Success, Continue To payment");
@@ -293,9 +316,9 @@ const Form = () => {
   return (
     <div className="container">
       <div className="row">
-        {uploading ? 
+        {uploading ? (
           <Uploader />
-         : 
+        ) : (
           <div className="col-md-6 m-auto upload__top">
             <h1 className="text-center display-4 my-3 form__h1">
               File Uploads
@@ -439,7 +462,7 @@ const Form = () => {
            )
      })} */}
           </div>
-        }
+        )}
       </div>
     </div>
   );
