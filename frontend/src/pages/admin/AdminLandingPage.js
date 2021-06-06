@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteMultipleFile, getFiles } from "../../actions/fileActions";
-import DeleteIcon from "@material-ui/icons/Delete";
-import DeleteOutlineOutlinedIcon from "@material-ui/icons/DeleteOutlineOutlined";
-// import { getMultipleFiles } from "../../data/api";
 import { useHistory } from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
@@ -12,20 +9,16 @@ import { IconButton } from "@material-ui/core";
 import { deleteUsers } from "../../actions/userActions";
 
 const AdminLandingPage = () => {
-  // const user = useSelector((state) => ({ ...state.user }));
   const files = useSelector((state) => state.files);
   const history = useHistory();
-  // console.log("redux files>>>>>", files);
 
   const dispatch = useDispatch();
   const [showFiles, setShowFiles] = useState(false);
-  // const [singleFile, setSingleFile] = useState([]);
   const [fileList, setFileList] = useState({});
   // const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     dispatch(getFiles());
-    // console.log("redux files>>>>>", files);
   }, []);
 
   const submit = (file) => {
@@ -39,7 +32,6 @@ const AdminLandingPage = () => {
           onClick: () => {
             dispatch(deleteUsers(file.user));
             dispatch(deleteMultipleFile(file._id));
-            console.log("file id>>>>", file._id);
             setShowFiles(false);
           },
         },
@@ -52,7 +44,6 @@ const AdminLandingPage = () => {
   };
 
   const handleClick = async (file) => {
-    console.log(file);
     const list = {
       name: file.name,
       user: file.user,
@@ -132,38 +123,18 @@ const AdminLandingPage = () => {
       paided: file?.paided,
     };
     await setFileList(list);
-    console.log(fileList);
 
-    // console.log(value);
-    // setSingleFile(value);
     setShowFiles(!showFiles);
-    // console.log("valueeeee>>>>", singleFile.cvfile[0]?.fileName);
   };
 
   const handleDelete = (file) => {
     submit(file);
   };
-  // useEffect(async () => {
-  //   setLoading(true);
-  //   var newFiles = await getMultipleFiles();
-  //   setFiles(newFiles);
-  //   setLoading(false);
-  //   console.log(newFiles[1].cvfile[0]?.filePath);
-  // }, []);
 
   const url = "https://oxetest.tk";
 
   return (
     <div>
-      <div className="admin__head">
-        {/* <h1 className="form__h1">Admin</h1> */}
-        {/* <Link to="/admin/messages">
-          <button className="register__button">View Messages</button>
-        </Link> */}
-      </div>
-      {/* <h2>{user.name}</h2> */}
-      {/* <h2>{user.email}</h2> */}
-
       <div className="container-fluid ">
         <div className="row">
           <div className="col-md-4 col-sm-12 margin__none">
@@ -290,21 +261,6 @@ const AdminLandingPage = () => {
                 ) : (
                   <h3 className="p-5">File Not uploaded</h3>
                 )}
-                <h5>9. Letter of reccomendation</h5>
-                {fileList?.lorfile[0]?.filePath ? (
-                  <li>
-                    <p>{fileList?.lorfile[0]?.fileName}</p>
-                    <embed
-                      className="pdf__files"
-                      src={`${url}/${fileList?.lorfile[0]?.filePath}`}
-                      type="application/pdf"
-                      width="100%"
-                      height="300px"
-                    />
-                  </li>
-                ) : (
-                  <h3 className="p-5">File Not uploaded</h3>
-                )}
 
                 <h5>7. Experience letter ( If any )</h5>
 
@@ -343,6 +299,21 @@ const AdminLandingPage = () => {
                     <embed
                       className="pdf__files"
                       src={`${url}/${fileList?.sopfile[0]?.filePath}`}
+                      type="application/pdf"
+                      width="100%"
+                      height="300px"
+                    />
+                  </li>
+                ) : (
+                  <h3 className="p-5">File Not uploaded</h3>
+                )}
+                <h5>9. Letter of reccomendation</h5>
+                {fileList?.lorfile[0]?.filePath ? (
+                  <li>
+                    <p>{fileList?.lorfile[0]?.fileName}</p>
+                    <embed
+                      className="pdf__files"
+                      src={`${url}/${fileList?.lorfile[0]?.filePath}`}
                       type="application/pdf"
                       width="100%"
                       height="300px"

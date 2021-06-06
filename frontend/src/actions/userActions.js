@@ -1,4 +1,4 @@
-import { deleteUser, fetchUsers, updateUserName } from "../data/api";
+import { deleteUser, updateUserName } from "../data/api";
 
 // export const getUsers = () => async (dispatch) => {
 //   try {

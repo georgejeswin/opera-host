@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import UploadIMG from "../../components/images/upload-right.png";
 
@@ -8,29 +8,23 @@ const UserStatus = () => {
   const user = useSelector((state) => ({ ...state.user }));
   const files = useSelector((state) => state.files);
   const history = useHistory();
-  console.log("status files>>>>><<<<<", files);
-  // console.log("user>>>>><<<<<", user);
-  const dispatch = useDispatch();
 
   useEffect(async () => {
     filesUploaded(user);
     if (files.length <= 0) {
       history.push("/user");
     }
-  }, []);
+  }, [files.length]);
 
   const [fileUploaded, setFileUploaded] = useState(false);
   const [paymentDone, setPaymentDone] = useState(false);
 
   const filesUploaded = (currentuser) => {
     files.filter((file) => {
-      // console.log("found him>>>>", file.user === user._id);
       if (file.user === currentuser._id) {
         setFileUploaded(true);
-        console.log("file uploaded>>>>");
         if (file.paided === true) {
           setPaymentDone(true);
-          console.log("paided");
         } else {
           console.log("not paid");
         }

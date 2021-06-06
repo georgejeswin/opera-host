@@ -52,4 +52,7 @@
     min-width: 180px;
     margin-bottom: 20px;
   }
+  .navTop__right {
+    display: none;
+  }
 }

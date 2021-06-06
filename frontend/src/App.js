@@ -9,7 +9,7 @@ import RegisterComplete from "./pages/auth/RegisterComplete";
 import Header from "./components/nav/Header";
 
 import { auth } from "./firebase";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import { currentUser } from "./functions/auth";
@@ -23,7 +23,6 @@ import Footer from "./components/Footer";
 import AdminLandingPage from "./pages/admin/AdminLandingPage";
 import AdminViewMessages from "./pages/admin/AdminViewMessages";
 import Payment from "./pages/Payment";
-import { updateUser } from "./actions/userActions";
 import UserStatus from "./pages/user/UserStatus";
 import { getFiles } from "./actions/fileActions";
 import About from "./components/About";
@@ -36,21 +35,14 @@ function App() {
     dispatch(getFiles());
   }, []);
 
-  // const user = useSelector(state => state.user)
-  // useEffect(() => {
-  //   dispatch(updateUser);
-  // }, [dispatch]);
   useEffect(() => {
     const unSubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
         const idTokenResult = await user.getIdTokenResult();
-        // console.log("user>>>", user);
         currentUser(idTokenResult.token)
           .then((res) => {
             const { data } = res;
-            // console.log("res>>>>>>>>>>", data);
             localStorage.setItem("user-info", JSON.stringify(data));
-            // console.log("item>>>", localStorage.getItem("user-info"));
             dispatch({
               type: "LOGGEED_IN_USER",
               payload: {

@@ -13,7 +13,7 @@ const AdminViewMessages = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getMessages());
-  }, []);
+  }, [dispatch]);
 
   const submit = (id) => {
     confirmAlert({

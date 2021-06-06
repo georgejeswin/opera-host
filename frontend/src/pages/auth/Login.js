@@ -16,39 +16,10 @@ import REGISTERIMG from "../../components/images/register.jpg";
 
 const Login = ({ history }) => {
   const dispatch = useDispatch();
-  // useEffect(() => {
-  //   const unSubscribe = auth.onAuthStateChanged(async (user) => {
-  //     if (user) {
-  //       const idTokenResult = await user.getIdTokenResult();
-  //       // console.log("user>>>", user);
 
-  //       currentUser(idTokenResult.token)
-  //         .then((res) => {
-  //           const {data}=res;
-  //           localStorage.setItem("userInfo", JSON.stringify(data));
-
-  //           dispatch({
-  //             type: "LOGGEED_IN_USER",
-  //             payload: {
-  //               name: res.data.name,
-  //               email: res.data.email,
-  //               picture: res.data.picture,
-  //               token: idTokenResult.token,
-  //               role: res.data.role,
-  //               _id: res.data._id,
-  //             },
-  //           });
-  //         })
-  //         .catch((err) => console.log(err));
-  //     }
-  //   });
-
-  //   return () => unSubscribe();
-  // }, [dispatch]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  // const dispatch = useDispatch();
   const { user } = useSelector((state) => ({ ...state }));
   if (user) {
     var userName = user.name;
@@ -56,7 +27,6 @@ const Login = ({ history }) => {
   useEffect(() => {
     if (user && user.token) {
       history.push("/");
-      // console.log("user>>>>>>.....", user);
     }
   }, [user, history]);
 
@@ -75,7 +45,6 @@ const Login = ({ history }) => {
     setLoading(true);
     try {
       const result = await auth.signInWithEmailAndPassword(email, password);
-      // console.log(result);
       const { user } = result;
       const idTokenResult = await user.getIdTokenResult();
 
@@ -97,8 +66,6 @@ const Login = ({ history }) => {
           roleBasedRedirect(res);
         })
         .catch((err) => console.log(err));
-
-      // history.push("/");
     } catch (error) {
       setLoading(false);
       console.log(error);
@@ -128,8 +95,6 @@ const Login = ({ history }) => {
             roleBasedRedirect(res);
           })
           .catch((err) => console.log(err));
-
-        // history.push("/");
       })
       .catch((error) => {
         console.log(error);

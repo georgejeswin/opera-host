@@ -4,7 +4,7 @@ const url = "https://oxetest.tk";
 
 export const createOrUpdateUser = async (authToken) => {
   return await axios.post(
-    `/api/create-or-update-user`,
+    `${url}/api/create-or-update-user`,
     {},
     { headers: { authToken: authToken } }
   );
@@ -12,7 +12,7 @@ export const createOrUpdateUser = async (authToken) => {
 
 export const currentUser = async (authToken) => {
   return await axios.post(
-    `/api/current-user`,
+    `${url}/api/current-user`,
     {},
     { headers: { authToken: authToken } }
   );

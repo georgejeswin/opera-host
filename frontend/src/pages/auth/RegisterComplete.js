@@ -35,7 +35,6 @@ const RegisterComplete = ({ history }) => {
         email,
         window.location.href
       );
-      console.log("result>>", result);
 
       if (result.user.emailVerified) {
         //remove user email from local storge
@@ -46,7 +45,7 @@ const RegisterComplete = ({ history }) => {
         await user.updatePassword(password);
         const idTokenResult = await user.getIdTokenResult();
         //redux store
-        console.log("user>>>", user, "idTokenResult>>>", idTokenResult);
+        // console.log("user>>>", user, "idTokenResult>>>", idTokenResult);
         createOrUpdateUser(idTokenResult.token)
           .then((res) => {
             const { data } = res;
@@ -77,14 +76,7 @@ const RegisterComplete = ({ history }) => {
   const completeRegistrationForm = () => (
     <form onSubmit={handleSubmit}>
       <input type="email" className="register__mail" disabled value={email} />
-      {/* <input
-        type="text"
-        className="register__mail"
-        value={fullName}
-        onChange={(e) => setfullName(e.target.value)}
-        placeholder="Full Name"
-        autoFocus
-      /> */}
+
       <input
         type="password"
         className="register__mail"

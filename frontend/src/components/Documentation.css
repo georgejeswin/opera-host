@@ -27,4 +27,7 @@
   .documentation__left img {
     max-width: 300px;
   }
+  .documentation__right h1 {
+    font-size: xx-large;
+  }
 }

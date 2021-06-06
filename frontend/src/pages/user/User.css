@@ -38,4 +38,7 @@
   .user__statusImg {
     max-width: 250px;
   }
+  .status__h1 {
+    font-size: x-large;
+  }
 }

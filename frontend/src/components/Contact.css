@@ -58,4 +58,10 @@
   iframe {
     max-width: 300px;
   }
+  .contact__right h5 {
+    font-size: 16px;
+  }
+  .contact h1 {
+    font-size: xx-large;
+  }
 }

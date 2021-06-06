@@ -29,7 +29,7 @@ const Form = () => {
   // const dispatch = useDispatch();
   // const user = useSelector((state) => ({ ...state.user }));
 
-  const userinfo = localStorage.getItem("userInfo");
+  // const userinfo = localStorage.getItem("userInfo");
   // console.log("info>>>>>", userinfo);
   // const [singleFiles, setSingleFiles] = useState([]);
   const [cvFiles, setCvFiles] = useState([]);
@@ -69,48 +69,109 @@ const Form = () => {
 
   function onCvFileUpload(e) {
     e.preventDefault();
-    setCvFiles(e.target?.files[0]);
-    setCvFileName(e.target?.files[0]?.name);
+    if (e.target?.files[0].size > 1042678) {
+      toast.error("File size greater than 1 MB");
+      e.target.value = "";
+      setCvFiles("");
+    } else {
+      setCvFiles(e.target?.files[0]);
+      setCvFileName(e.target?.files[0]?.name);
+    }
   }
   function onPsFileUpload(e) {
     e.preventDefault();
-    setPsFiles(e.target?.files[0]);
-    setPassportFileName(e.target?.files[0]?.name);
+    if (e.target?.files[0].size > 1042678) {
+      toast.error("File size greater than 1 MB");
+      e.target.value = "";
+      setPsFiles("");
+    } else {
+      setPsFiles(e.target?.files[0]);
+      setPassportFileName(e.target?.files[0]?.name);
+    }
   }
   function onSslcFileUpload(e) {
     e.preventDefault();
-    setSslcFiles(e.target?.files[0]);
-    setSslcFileName(e.target?.files[0]?.name);
+    if (e.target?.files[0].size > 1042678) {
+      toast.error("File size greater than 1 MB");
+      e.target.value = "";
+
+      setSslcFiles("");
+    } else {
+      setSslcFiles(e.target?.files[0]);
+      setSslcFileName(e.target?.files[0]?.name);
+    }
   }
   function onPlusTwoFileUpload(e) {
     e.preventDefault();
-    setPlusTwoFiles(e.target?.files[0]);
-    setPlustwoFileName(e.target?.files[0]?.name);
+    if (e.target?.files[0].size > 1042678) {
+      toast.error("File size greater than 1 MB");
+      e.target.value = "";
+
+      setPlusTwoFiles("");
+    } else {
+      setPlusTwoFiles(e.target?.files[0]);
+      setPlustwoFileName(e.target?.files[0]?.name);
+    }
   }
   function onDegreeFileUpload(e) {
     e.preventDefault();
-    setDegreeFiles(e.target?.files[0]);
-    setDegreeFileName(e.target?.files[0]?.name);
+    if (e.target?.files[0].size > 1042678) {
+      toast.error("File size greater than 1 MB");
+      e.target.value = "";
+
+      setDegreeFiles("");
+    } else {
+      setDegreeFiles(e.target?.files[0]);
+      setDegreeFileName(e.target?.files[0]?.name);
+    }
   }
   function onIeltsFileUpload(e) {
     e.preventDefault();
-    setIeltsFiles(e.target?.files[0]);
-    setIeltsFileName(e.target?.files[0]?.name);
+    if (e.target?.files[0].size > 1042678) {
+      toast.error("File size greater than 1 MB");
+      e.target.value = "";
+
+      setIeltsFiles("");
+    } else {
+      setIeltsFiles(e.target?.files[0]);
+      setIeltsFileName(e.target?.files[0]?.name);
+    }
   }
   function onExperienceFileUpload(e) {
     e.preventDefault();
-    setExperienceFiles(e.target?.files[0]);
-    setExperienceFileName(e.target?.files[0]?.name);
+    if (e.target?.files[0].size > 1042678) {
+      toast.error("File size greater than 1 MB");
+      e.target.value = "";
+
+      setExperienceFiles("");
+    } else {
+      setExperienceFiles(e.target?.files[0]);
+      setExperienceFileName(e.target?.files[0]?.name);
+    }
   }
   function onSopFileUpload(e) {
     e.preventDefault();
-    setSopFiles(e.target?.files[0]);
-    setSopFileName(e.target?.files[0].name);
+    if (e.target?.files[0].size > 1042678) {
+      toast.error("File size greater than 1 MB");
+      e.target.value = "";
+
+      setSopFiles("");
+    } else {
+      setSopFiles(e.target?.files[0]);
+      setSopFileName(e.target?.files[0].name);
+    }
   }
   function onLorFileUpload(e) {
     e.preventDefault();
-    setLorFiles(e.target?.files[0]);
-    setLorFileName(e.target?.files[0]?.name);
+    if (e.target?.files[0].size > 1042678) {
+      toast.error("File size greater than 1 MB");
+      e.target.value = "";
+
+      setLorFiles("");
+    } else {
+      setLorFiles(e.target?.files[0]);
+      setLorFileName(e.target?.files[0]?.name);
+    }
   }
 
   const uploadCvFile = async () => {
@@ -229,10 +290,16 @@ const Form = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-6 m-auto">
-          <h1 className="text-center display-4 my-4 form__h1">File Uploads</h1>
+        <div className="col-md-6 m-auto upload__top">
+          <h1 className="text-center display-4 my-3 form__h1">File Uploads</h1>
+          <small className="form__small mb-3">
+            Documents should be less than 1MB!
+          </small>
 
-          <form onSubmit={(e) => UploadMultipleFiles(e)}>
+          <form
+            onSubmit={(e) => UploadMultipleFiles(e)}
+            className="upload__form"
+          >
             <div className="mb-2 fileInput__item">
               <label>1. Updated curriculum vitae ( CV )</label>
               <input
@@ -246,7 +313,7 @@ const Form = () => {
               </label> */}
             </div>
             <div className="mb-2 fileInput__item">
-              <label>2. Front and back page of passport copy</label>
+              <label>2. Front and back page of passport copy *</label>
               <input
                 type="file"
                 required
@@ -259,7 +326,7 @@ const Form = () => {
               </label> */}
             </div>
             <div className="mb-2 fileInput__item">
-              <label>3. SSLC Certificate</label>
+              <label>3. SSLC Certificate *</label>
 
               <input
                 type="file"
@@ -273,7 +340,7 @@ const Form = () => {
               </label> */}
             </div>
             <div className="mb-2 fileInput__item">
-              <label>4. Plus two Certificate</label>
+              <label>4. Plus two Certificate *</label>
 
               <input
                 type="file"
@@ -356,7 +423,11 @@ const Form = () => {
                 {lorFileName}
               </label> */}
             </div>
-            <input type="submit" value="Submit" className="register__button" />
+            <input
+              type="submit"
+              value="Submit"
+              className="register__button w-100"
+            />
           </form>
           <hr />
           {/* {singleFiles.map((file)=>{

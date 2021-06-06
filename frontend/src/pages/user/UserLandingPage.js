@@ -3,11 +3,10 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { auth } from "../../firebase";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import firebase from "firebase";
-import { getUsers, updateUser } from "../../actions/userActions";
+import { updateUser } from "../../actions/userActions";
 import "./User.css";
-import { updateUserNot } from "../../functions/auth";
 import { createOrUpdateUser } from "../../functions/auth";
 import { getFiles } from "../../actions/fileActions";
 import UserIMG from "../../components/images/about.png";
@@ -15,15 +14,12 @@ import UserIMG from "../../components/images/about.png";
 const UserLandingPage = () => {
   const user = useSelector((state) => ({ ...state.user }));
   const files = useSelector((state) => state.files);
-  console.log("files>>>>><<<<<", files);
-  // console.log("user>>>>><<<<<", user);
   const dispatch = useDispatch();
 
   useEffect(async () => {
     dispatch(getFiles());
   }, []);
 
-  // console.log("user>>>>>////", user);
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
   const [loading, setLoading] = useState(false);
@@ -53,7 +49,6 @@ const UserLandingPage = () => {
   const handleClick = () => {
     if (files.length === 0) {
       history.push("/upload");
-      console.log("empty files...");
     }
     history.push("/user/status");
   };

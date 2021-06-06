@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
-import { toast } from "react-toastify";
 import PayIMG from "../components/images/pay.png";
 
 function loadScript(src) {
@@ -40,9 +39,10 @@ const Payment = () => {
       body: JSON.stringify({ amount: amount }),
     };
 
-    const data = await fetch("http://oxetest.tk/razorpay", requestOptions).then(
-      (t) => t.json()
-    );
+    const data = await fetch(
+      "https://oxetest.tk/razorpay",
+      requestOptions
+    ).then((t) => t.json());
 
     if (!data) {
       alert("Server error. Are you online?");
@@ -59,7 +59,7 @@ const Payment = () => {
       image:
         "https://operainternational.in/public/frontend/opera/images/logo-opera.png",
       handler: function (response) {
-        console.log(response);
+        // console.log(response);
         alert(response.razorpay_payment_id);
         alert(response.razorpay_order_id);
         alert(response.razorpay_signature);
