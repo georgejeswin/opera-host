@@ -69,9 +69,9 @@ const Form = () => {
 
   function onCvFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1502761) {
-      toast.error("File size greater than 2 MB");
-      // console.log("cv size>>>>", e.target?.files[0].size); 1502761
+    if (e.target?.files[0].size > 1042678) {
+      toast.error("File size greater than 1 MB");
+      // console.log("cv size>>>>", e.target?.files[0].size); 1042678
       e.target.value = "";
       setCvFiles("");
     } else {
@@ -82,7 +82,7 @@ const Form = () => {
   }
   function onPsFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1502761) {
+    if (e.target?.files[0].size > 1042678) {
       toast.error("File size greater than 1 MB");
       e.target.value = "";
       setPsFiles("");
@@ -93,7 +93,7 @@ const Form = () => {
   }
   function onSslcFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1502761) {
+    if (e.target?.files[0].size > 1042678) {
       toast.error("File size greater than 1 MB");
       e.target.value = "";
 
@@ -105,7 +105,7 @@ const Form = () => {
   }
   function onPlusTwoFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1502761) {
+    if (e.target?.files[0].size > 1042678) {
       toast.error("File size greater than 1 MB");
       e.target.value = "";
 
@@ -117,7 +117,7 @@ const Form = () => {
   }
   function onDegreeFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1502761) {
+    if (e.target?.files[0].size > 1042678) {
       toast.error("File size greater than 1 MB");
       e.target.value = "";
 
@@ -129,7 +129,7 @@ const Form = () => {
   }
   function onIeltsFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1502761) {
+    if (e.target?.files[0].size > 1042678) {
       toast.error("File size greater than 1 MB");
       e.target.value = "";
 
@@ -141,7 +141,7 @@ const Form = () => {
   }
   function onExperienceFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1502761) {
+    if (e.target?.files[0].size > 1042678) {
       toast.error("File size greater than 1 MB");
       e.target.value = "";
 
@@ -153,7 +153,7 @@ const Form = () => {
   }
   function onSopFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1502761) {
+    if (e.target?.files[0].size > 1042678) {
       toast.error("File size greater than 1 MB");
       e.target.value = "";
 
@@ -165,7 +165,7 @@ const Form = () => {
   }
   function onLorFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1502761) {
+    if (e.target?.files[0].size > 1042678) {
       toast.error("File size greater than 1 MB");
       e.target.value = "";
 
