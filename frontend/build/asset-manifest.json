@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.4c9b0b60.chunk.css",
-    "main.js": "/static/js/main.31d38b32.chunk.js",
-    "main.js.map": "/static/js/main.31d38b32.chunk.js.map",
+    "main.js": "/static/js/main.b0dca235.chunk.js",
+    "main.js.map": "/static/js/main.b0dca235.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.07f7ea75.js",
     "runtime-main.js.map": "/static/js/runtime-main.07f7ea75.js.map",
     "static/css/2.b06753f4.chunk.css": "/static/css/2.b06753f4.chunk.css",
@@ -19,6 +19,7 @@
     "static/media/12.83b94d7c.png": "/static/media/12.83b94d7c.png",
     "static/media/UNIVERSITIES.4e71c93e.png": "/static/media/UNIVERSITIES.4e71c93e.png",
     "static/media/about.6528bd53.png": "/static/media/about.6528bd53.png",
+    "static/media/logo-white.c15aab24.png": "/static/media/logo-white.c15aab24.png",
     "static/media/logo.e03f8f90.png": "/static/media/logo.e03f8f90.png",
     "static/media/pay.89f85636.png": "/static/media/pay.89f85636.png",
     "static/media/register.3d20be28.jpg": "/static/media/register.3d20be28.jpg",
@@ -30,6 +31,6 @@
     "static/css/2.b06753f4.chunk.css",
     "static/js/2.9fd03570.chunk.js",
     "static/css/main.4c9b0b60.chunk.css",
-    "static/js/main.31d38b32.chunk.js"
+    "static/js/main.b0dca235.chunk.js"
   ]
 }
