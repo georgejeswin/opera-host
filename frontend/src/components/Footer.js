@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 import LOGO from "./images/logo.png";
 
@@ -27,12 +28,22 @@ const Footer = () => {
           </div>
           <div className="footer__third col-md-4 px-5 py-3">
             <h1>Quick Links</h1>
-            <h5>About Us</h5>
-            <h5>Our Services</h5>
+            <Link to="/about">
+              <h5>About Us</h5>
+            </Link>
+            <Link to="/">
+              <h5>Our Services</h5>
+            </Link>
             <h5>Student Register</h5>
-            <h5>Contact Us</h5>
-            <h5>Terms & Conditions</h5>
-            <h5>FAQ</h5>
+            <Link to="/contact">
+              <h5>Contact Us</h5>
+            </Link>
+            <Link to="/privacy">
+              <h5>Privacy Policy</h5>
+            </Link>
+            <Link to="/terms&conditions">
+              <h5>Terms & Conditions</h5>
+            </Link>
           </div>
         </div>
       </div>

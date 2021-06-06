@@ -27,6 +27,8 @@ import UserStatus from "./pages/user/UserStatus";
 import { getFiles } from "./actions/fileActions";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 
 function App() {
   const dispatch = useDispatch();
@@ -75,14 +77,13 @@ function App() {
           <Route exact path="/register" component={Register} />
           <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
-
+          <Route exact path="/privacy" component={Privacy} />
+          <Route exact path="/terms&conditions" component={Terms} />
           <Route exact path="/register/complete" component={RegisterComplete} />
           <Route exact path="/forgot/password" component={ForgotPassword} />
-          {/* <Route exact path="/user/updatename" component={UserNameUpdate} /> */}
 
           <UserPrivateRoute exact path="/user" component={UserLandingPage} />
           <UserPrivateRoute exact path="/user/status" component={UserStatus} />
-
           <UserPrivateRoute exact path="/payments" component={Payment} />
 
           <AdminPrivateRoute

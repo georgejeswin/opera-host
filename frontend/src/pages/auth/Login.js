@@ -120,9 +120,14 @@ const Login = ({ history }) => {
         placeholder="Password"
         onChange={(e) => setPassword(e.target.value)}
       />
-      <Link to="/forgot/password" className="float-right text-danger mt-3">
-        Forgot Password
-      </Link>{" "}
+      <div className="createandforgot pb-3">
+        <Link to="/register" className="text-success mr-5">
+          Create new account?
+        </Link>
+        <Link to="/forgot/password" className="text-danger ml-5">
+          Forgot Password?
+        </Link>
+      </div>
       <Button
         onClick={handleSubmit}
         className="mb-3 login__email"

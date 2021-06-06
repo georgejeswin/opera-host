@@ -24,11 +24,11 @@ const LandingPage = () => {
   return (
     <div className="landingPage">
       <div className="landingPage__contents">
-        <h3>The Best Educational Consultancy</h3>
+        <h3>The Best Educational Services</h3>
         <h1>Opera International</h1>
         <button
           onClick={() => {
-            user ? handleClick(user) : history.push("/login");
+            !user.email ? history.push("/login") : handleClick(user);
           }}
         >
           Register Now!!!

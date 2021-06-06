@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./NavTop.css";
 
 const NavTop = () => {
@@ -29,7 +29,7 @@ const NavTop = () => {
       <div className="navTop__right">
         <button
           onClick={() => {
-            user ? handleClick(user) : history.push("/login");
+            !user.email ? history.push("/login") : handleClick(user);
           }}
         >
           Apply Now!!
