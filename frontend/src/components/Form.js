@@ -69,8 +69,9 @@ const Form = () => {
 
   function onCvFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1042678) {
-      toast.error("File size greater than 1 MB");
+    if (e.target?.files[0].size > 2097668) {
+      toast.error("File size greater than 2 MB");
+      // console.log("cv size>>>>", e.target?.files[0].size);
       e.target.value = "";
       setCvFiles("");
     } else {
@@ -80,8 +81,8 @@ const Form = () => {
   }
   function onPsFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1042678) {
-      toast.error("File size greater than 1 MB");
+    if (e.target?.files[0].size > 2097668) {
+      toast.error("File size greater than 2 MB");
       e.target.value = "";
       setPsFiles("");
     } else {
@@ -91,8 +92,8 @@ const Form = () => {
   }
   function onSslcFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1042678) {
-      toast.error("File size greater than 1 MB");
+    if (e.target?.files[0].size > 2097668) {
+      toast.error("File size greater than 2 MB");
       e.target.value = "";
 
       setSslcFiles("");
@@ -103,8 +104,8 @@ const Form = () => {
   }
   function onPlusTwoFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1042678) {
-      toast.error("File size greater than 1 MB");
+    if (e.target?.files[0].size > 2097668) {
+      toast.error("File size greater than 2 MB");
       e.target.value = "";
 
       setPlusTwoFiles("");
@@ -115,8 +116,8 @@ const Form = () => {
   }
   function onDegreeFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1042678) {
-      toast.error("File size greater than 1 MB");
+    if (e.target?.files[0].size > 2097668) {
+      toast.error("File size greater than 2 MB");
       e.target.value = "";
 
       setDegreeFiles("");
@@ -127,8 +128,8 @@ const Form = () => {
   }
   function onIeltsFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1042678) {
-      toast.error("File size greater than 1 MB");
+    if (e.target?.files[0].size > 2097668) {
+      toast.error("File size greater than 2 MB");
       e.target.value = "";
 
       setIeltsFiles("");
@@ -139,8 +140,8 @@ const Form = () => {
   }
   function onExperienceFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1042678) {
-      toast.error("File size greater than 1 MB");
+    if (e.target?.files[0].size > 2097668) {
+      toast.error("File size greater than 2 MB");
       e.target.value = "";
 
       setExperienceFiles("");
@@ -151,8 +152,8 @@ const Form = () => {
   }
   function onSopFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1042678) {
-      toast.error("File size greater than 1 MB");
+    if (e.target?.files[0].size > 2097668) {
+      toast.error("File size greater than 2 MB");
       e.target.value = "";
 
       setSopFiles("");
@@ -163,8 +164,8 @@ const Form = () => {
   }
   function onLorFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0].size > 1042678) {
-      toast.error("File size greater than 1 MB");
+    if (e.target?.files[0].size > 2097668) {
+      toast.error("File size greater than 2 MB");
       e.target.value = "";
 
       setLorFiles("");
@@ -293,7 +294,7 @@ const Form = () => {
         <div className="col-md-6 m-auto upload__top">
           <h1 className="text-center display-4 my-3 form__h1">File Uploads</h1>
           <small className="form__small mb-3">
-            Documents should be less than 1MB!
+            Documents should be less than 2MB!
           </small>
 
           <form

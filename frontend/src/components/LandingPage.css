@@ -33,10 +33,10 @@
   color: #fff;
   background-color: rgb(84, 175, 84);
   border: none;
-  min-height: 60px;
-  min-width: 220px;
+  min-height: 50px;
+  min-width: 200px;
   margin: 0 !important;
-  font-size: 24px;
+  font-size: 21px;
   font-weight: 700;
   border-radius: 99px;
 }
@@ -67,9 +67,9 @@
     background-size: cover;
   }
   .landingPage__contents button {
-    padding: 8px;
-    min-height: 10px;
-    min-width: 90px;
+    padding: 6px;
+    min-height: 9px;
+    min-width: 80px;
     margin: 0 !important;
     font-size: 10px;
     font-weight: 700;
