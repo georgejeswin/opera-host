@@ -9,8 +9,7 @@ const LandingPage = () => {
   const history = useHistory();
 
   const handleClick = (currentuser) => {
-    console.log("fuckkkk");
-    console.log(currentuser);
+    // console.log(currentuser);
     if (files.length === 0) {
       history.push("/upload");
     }
@@ -29,7 +28,7 @@ const LandingPage = () => {
         <h1>Opera International</h1>
         <button
           onClick={() => {
-            user.length > 0 ? handleClick(user) : history.push("/login");
+            user ? handleClick(user) : history.push("/login");
           }}
         >
           Register Now!!!
