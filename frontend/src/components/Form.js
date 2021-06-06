@@ -43,6 +43,14 @@ const Form = () => {
   const [experienceFiles, setExperienceFiles] = useState([]);
   const [sopFiles, setSopFiles] = useState([]);
   const [lorFiles, setLorFiles] = useState([]);
+  const [ifUploaded, setIfUploaded] = useState({
+    cv: false,
+    degree: false,
+    ielts: false,
+    experience: false,
+    sop: false,
+    lor: false,
+  });
 
   const [cvFileName, setCvFileName] = useState(
     "1. Updated curriculum vitae ( CV )"
@@ -71,20 +79,21 @@ const Form = () => {
 
   function onCvFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0]?.size > 1042678) {
-      toast.error("File size greater than 1 MB, Please compress and upload");
-      // console.log("cv size>>>>", e.target?.files[0].size); 1242678
+    if (e.target?.files[0]?.size > 4042678) {
+      toast.error("File size greater than 4 MB, Please compress and upload");
+      // console.log("cv size>>>>", e.target?.files[0].size); 4042678
       e.target.value = "";
       setCvFiles("");
     } else {
       setCvFiles(e.target?.files[0]);
       setCvFileName(e.target?.files[0]?.name);
+      setIfUploaded({ ...ifUploaded, cv: true });
     }
   }
   function onPsFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0]?.size > 1042678) {
-      toast.error("File size greater than 1 MB, Please compress and upload");
+    if (e.target?.files[0]?.size > 4042678) {
+      toast.error("File size greater than 4 MB, Please compress and upload");
       e.target.value = "";
       setPsFiles("");
     } else {
@@ -94,8 +103,9 @@ const Form = () => {
   }
   function onSslcFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0]?.size > 1042678) {
-      toast.error("File size greater than 1 MB, Please compress and upload");
+    if (e.target?.files[0]?.size > 4042678) {
+      toast.error("File size greater than 4 MB, Please compress and upload");
+
       e.target.value = "";
 
       setSslcFiles("");
@@ -106,8 +116,8 @@ const Form = () => {
   }
   function onPlusTwoFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0]?.size > 1042678) {
-      toast.error("File size greater than 1 MB, Please compress and upload");
+    if (e.target?.files[0]?.size > 4042678) {
+      toast.error("File size greater than 4 MB, Please compress and upload");
       e.target.value = "";
 
       setPlusTwoFiles("");
@@ -118,61 +128,66 @@ const Form = () => {
   }
   function onDegreeFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0]?.size > 1042678) {
-      toast.error("File size greater than 1 MB, Please compress and upload");
+    if (e.target?.files[0]?.size > 4042678) {
+      toast.error("File size greater than 4 MB, Please compress and upload");
       e.target.value = "";
       setDegreeFiles("");
     } else {
       setDegreeFiles(e.target?.files[0]);
       setDegreeFileName(e.target?.files[0]?.name);
+      setIfUploaded({ ...ifUploaded, degree: true });
     }
   }
   function onIeltsFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0]?.size > 1042678) {
-      toast.error("File size greater than 1 MB, Please compress and upload");
+    if (e.target?.files[0]?.size > 4042678) {
+      toast.error("File size greater than 4 MB, Please compress and upload");
       e.target.value = "";
 
       setIeltsFiles("");
     } else {
       setIeltsFiles(e.target?.files[0]);
       setIeltsFileName(e.target?.files[0]?.name);
+      setIfUploaded({ ...ifUploaded, ielts: true });
     }
   }
   function onExperienceFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0]?.size > 1042678) {
-      toast.error("File size greater than 1 MB, Please compress and upload");
+    if (e.target?.files[0]?.size > 4042678) {
+      toast.error("File size greater than 4 MB, Please compress and upload");
       e.target.value = "";
 
       setExperienceFiles("");
     } else {
       setExperienceFiles(e.target?.files[0]);
       setExperienceFileName(e.target?.files[0]?.name);
+      setIfUploaded({ ...ifUploaded, experience: true });
     }
   }
   function onSopFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0]?.size > 1042678) {
-      toast.error("File size greater than 1 MB, Please compress and upload");
+    if (e.target?.files[0]?.size > 4042678) {
+      toast.error("File size greater than 4 MB, Please compress and upload");
       e.target.value = "";
 
       setSopFiles("");
     } else {
       setSopFiles(e.target?.files[0]);
       setSopFileName(e.target?.files[0].name);
+      setIfUploaded({ ...ifUploaded, sop: true });
     }
   }
   function onLorFileUpload(e) {
     e.preventDefault();
-    if (e.target?.files[0]?.size > 1042678) {
-      toast.error("File size greater than 1 MB, Please compress and upload");
+    if (e.target?.files[0]?.size > 4042678) {
+      toast.error("File size greater than 4 MB, Please compress and upload");
       e.target.value = "";
 
       setLorFiles("");
     } else {
       setLorFiles(e.target?.files[0]);
       setLorFileName(e.target?.files[0]?.name);
+      setIfUploaded({ ...ifUploaded, lor: true });
     }
   }
 
@@ -269,23 +284,23 @@ const Form = () => {
       await uploadPsFile();
       await uploadSslcFile();
       await uploadPlusTwoFile();
-      if (cvFiles.length > 0) {
-        uploadCvFile();
+      if (ifUploaded.cv) {
+        await uploadCvFile();
       }
-      if (degreeFiles.length > 0) {
-        uploadDegreeFile();
+      if (ifUploaded.degree) {
+        await uploadDegreeFile();
       }
-      if (ieltsFiles.length > 0) {
-        uploadIeltsFile();
+      if (ifUploaded.ielts) {
+        await uploadIeltsFile();
       }
-      if (experienceFiles.length > 0) {
-        uploadExperienceFile();
+      if (ifUploaded.experience) {
+        await uploadExperienceFile();
       }
-      if (sopFiles.length > 0) {
-        uploadSopFile();
+      if (ifUploaded.sop) {
+        await uploadSopFile();
       }
-      if (lorFiles.length > 0) {
-        uploadLorFile();
+      if (ifUploaded.lor) {
+        await uploadLorFile();
       }
       setUploading(false);
       toast.success("Upload Success, Continue To payment");
@@ -324,9 +339,9 @@ const Form = () => {
               File Uploads
             </h1>
 
-            <small className="form__small mb-3">
+            {/* <small className="form__small mb-3">
               Documents should be less than 1MB!
-            </small>
+            </small> */}
 
             <form
               onSubmit={(e) => UploadMultipleFiles(e)}
