@@ -243,25 +243,25 @@ const Form = () => {
     try {
       setUploading(true);
       await uploadPsFile();
-      if (cvFiles) {
-        await uploadCvFile();
-      }
       await uploadSslcFile();
       await uploadPlusTwoFile();
+      if (cvFiles) {
+        uploadCvFile();
+      }
       if (degreeFiles) {
-        await uploadDegreeFile();
+        uploadDegreeFile();
       }
       if (ieltsFiles) {
-        await uploadIeltsFile();
+        uploadIeltsFile();
       }
       if (experienceFiles) {
-        await uploadExperienceFile();
+        uploadExperienceFile();
       }
       if (sopFiles) {
-        await uploadSopFile();
+        uploadSopFile();
       }
       if (lorFiles) {
-        await uploadLorFile();
+        uploadLorFile();
       }
       setUploading(false);
       toast.success("Upload Success, Continue To payment");
@@ -292,9 +292,9 @@ const Form = () => {
   return (
     <div className="container">
       <div className="row">
-        {uploading ? 
+        {uploading ? (
           <Uploader />
-         : 
+        ) : (
           <div className="col-md-6 m-auto upload__top">
             <h1 className="text-center display-4 my-3 form__h1">
               File Uploads
@@ -447,7 +447,7 @@ const Form = () => {
            )
      })} */}
           </div>
-        }
+        )}
       </div>
     </div>
   );
