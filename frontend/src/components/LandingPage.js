@@ -28,7 +28,7 @@ const LandingPage = () => {
         <h1>Opera International</h1>
         <button
           onClick={() => {
-            user ? handleClick(user) : history.push("/login");
+            !user.email ? history.push("/login") : handleClick(user);
           }}
         >
           Register Now!!!
