@@ -79,6 +79,7 @@ const Form = () => {
     } else {
       setCvFiles(e.target?.files[0]);
       setCvFileName(e.target?.files[0]?.name);
+      
     }
   }
   function onPsFileUpload(e) {
@@ -90,6 +91,7 @@ const Form = () => {
     } else {
       setPsFiles(e.target?.files[0]);
       setPassportFileName(e.target?.files[0]?.name);
+      console.log(e.target?.files[0])
     }
   }
   function onSslcFileUpload(e) {
