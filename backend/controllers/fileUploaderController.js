@@ -2,6 +2,17 @@ import SingleFile from "../models/singlefile.js";
 import MultipleFile from "../models/multiplefile.js";
 import UserModel from "../models/user.js";
 import Mongoose from "mongoose";
+
+import nodemailer from "nodemailer";
+
+let transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "t3stmail25@gmail.com",
+    pass: "#testmail@25",
+  },
+});
+
 const singleFileUpload = async (req, res, next) => {
   try {
     const file = new SingleFile({
@@ -14,6 +25,30 @@ const singleFileUpload = async (req, res, next) => {
     res.status(201).send("File Uploaded Successfully");
   } catch (error) {
     res.status(400).send(error.message);
+  }
+};
+
+export const sentEmail = async (req, res, next) => {
+  console.log("entering mail");
+  try {
+    const user = await UserModel.findById(req.params.id);
+    let mailOptions = {
+      from: "t3stmail25@gmail.com",
+      to: "georgejeswin2000@gmail.com,jeswinmyladoor@gmail.com",
+      subject: "testing from testmail",
+      text: "sent mail>>>....",
+    };
+    transporter.sendMail(mailOptions, function (err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("user>>>");
+        console.log("email sent new>>>>...");
+      }
+    });
+    res.status(200).send("email sent");
+  } catch (error) {
+    console.log(error);
   }
 };
 
@@ -117,6 +152,7 @@ const plusTwoFileUpload = async (req, res, next) => {
         }
       }
     );
+    // const user = await UserModel.findById(req.params.id);
 
     res.status(201).send("Files Uploaded Successfully");
   } catch (error) {

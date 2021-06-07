@@ -5,12 +5,13 @@ import {
   postMessages,
   //   updateMessages,
 } from "../controllers/messageControllers.js";
+import { sentEmail } from "../middlewares/auth.js";
 
 const router = express.Router();
 
 router.get("/", getMessages);
 
-router.post("/", postMessages);
+router.post("/", sentEmail, postMessages);
 
 // router.patch("/:id", updateMessages);
 

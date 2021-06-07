@@ -1,5 +1,6 @@
 .nav {
   display: flex;
+  background-color: #fff;
   color: #3c1c56;
   padding: 10px;
   border-bottom: 1px solid rgb(219, 219, 219);

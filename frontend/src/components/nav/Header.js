@@ -60,7 +60,7 @@ const Header = () => {
   // };
 
   return (
-    <nav className="nav">
+    <nav className="nav sticky-top header__nav">
       <div className="nav-container">
         <div className="navMobile">
           <Link to="/" className="navLogo" onClick={closeMobileMenu}>
