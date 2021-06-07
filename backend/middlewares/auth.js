@@ -1,4 +1,13 @@
 import admin from "../firebase/index.js";
+import nodemailer from "nodemailer";
+
+let transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "t3stmail25@gmail.com",
+    pass: "#testmail@25",
+  },
+});
 
 export const authCheck = async (req, res, next) => {
   // console.log(req.headers); //token
@@ -14,5 +23,28 @@ export const authCheck = async (req, res, next) => {
     res.status(401).json({
       err: "Invalid or expired token",
     });
+  }
+};
+
+export const sentEmail = async (req, res, next) => {
+  console.log("entering mail");
+  try {
+    const user = await UserModel.findById(req.params.id);
+    let mailOptions = {
+      from: "t3stmail25@gmail.com",
+      to: "georgejeswin2000@gmail.com,jeswinmyladoor@gmail.com",
+      subject: "testing from testmail",
+      text: "sent mail>>>....",
+    };
+    transporter.sendMail(mailOptions, function (err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("email sent new>>>>...");
+      }
+    });
+    next();
+  } catch (error) {
+    console.log(error);
   }
 };

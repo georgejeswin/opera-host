@@ -21,6 +21,7 @@ const Register = ({ history }) => {
       handleCodeInApp: true,
     };
     await auth.sendSignInLinkToEmail(email, config);
+
     toast.success(
       `Email is sent to ${email}. Click the link to complete the registration`
     );

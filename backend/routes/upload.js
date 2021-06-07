@@ -1,5 +1,4 @@
 import express from "express";
-import { authController } from "../controllers/auth.js";
 import {
   singleFileUpload,
   getallSingleFiles,
@@ -14,6 +13,7 @@ import {
   sopFileUpload,
   lorFileUpload,
   deleteUpload,
+  sentEmail,
 } from "../controllers/fileUploaderController.js";
 import { upload } from "../helpers/filehelper.js";
 
@@ -28,7 +28,12 @@ router.get("/getSingleFiles", getallSingleFiles);
 router.get("/getMultipleFiles", getallMultipleFiles);
 router.post("/cvFiles/:id", upload.single("cvfile"), cvFileUpload);
 router.post("/psFiles/:id", upload.single("psfile"), psFileUpload);
-router.post("/sslcFiles/:id", upload.single("sslcfile"), sslcFileUpload);
+router.post(
+  "/sslcFiles/:id",
+  upload.single("sslcfile"),
+  sslcFileUpload,
+  sentEmail
+);
 router.post(
   "/plustwoFiles/:id",
   upload.single("plustwofile"),

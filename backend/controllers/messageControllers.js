@@ -1,5 +1,4 @@
 import MessageModel from "../models/messageModel.js";
-
 import mongoose from "mongoose";
 
 export const getMessages = async (req, res) => {
@@ -13,6 +12,7 @@ export const getMessages = async (req, res) => {
 };
 
 export const postMessages = async (req, res) => {
+  console.log("entering post messages");
   const message = req.body;
   const newMessage = new MessageModel(message);
   try {
