@@ -13,6 +13,26 @@ let transporter = nodemailer.createTransport({
   },
 });
 
+let user;
+// export const sentEmail = async (req, res) => {
+//   const user = await UserModel.findById(req.params.id);
+//   let mailOptions = {
+//     from: "t3stmail25@gmail.com",
+//     to: "georgejeswin2000@gmail.com,jeswinmyladoor@gmail.com",
+//     subject: "testing from testmail",
+//     text: "sent mail>>>....",
+//   };
+//   let info = await transporter.sendMail(mailOptions, function (err, data) {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       console.log("user>>>", user);
+//       console.log("email sent new>>>>...");
+//     }
+//   });
+//   res.status(200).send("email sent");
+// };
+
 const singleFileUpload = async (req, res, next) => {
   try {
     const file = new SingleFile({
@@ -25,30 +45,6 @@ const singleFileUpload = async (req, res, next) => {
     res.status(201).send("File Uploaded Successfully");
   } catch (error) {
     res.status(400).send(error.message);
-  }
-};
-
-export const sentEmail = async (req, res, next) => {
-  console.log("entering mail");
-  try {
-    const user = await UserModel.findById(req.params.id);
-    let mailOptions = {
-      from: "t3stmail25@gmail.com",
-      to: "georgejeswin2000@gmail.com,jeswinmyladoor@gmail.com",
-      subject: "testing from testmail",
-      text: "sent mail>>>....",
-    };
-    transporter.sendMail(mailOptions, function (err, data) {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log("user>>>");
-        console.log("email sent new>>>>...");
-      }
-    });
-    res.status(200).send("email sent");
-  } catch (error) {
-    console.log(error);
   }
 };
 
@@ -81,7 +77,7 @@ const cvFileUpload = async (req, res, next) => {
 };
 const psFileUpload = async (req, res, next) => {
   try {
-    const user = await UserModel.findById(req.params.id);
+    user = await UserModel.findById(req.params.id);
     let filesArray = [];
     const file = {
       user: req.params.id,
@@ -131,7 +127,8 @@ const sslcFileUpload = async (req, res, next) => {
   }
 };
 
-const plusTwoFileUpload = async (req, res, next) => {
+const plusTwoFileUpload = async (req, res) => {
+  let user = await UserModel.findById(req.params.id);
   try {
     await MultipleFile.updateOne(
       { user: req.params.id },
@@ -152,14 +149,38 @@ const plusTwoFileUpload = async (req, res, next) => {
         }
       }
     );
-    // const user = await UserModel.findById(req.params.id);
+    info();
 
     res.status(201).send("Files Uploaded Successfully");
   } catch (error) {
     res.status(400).send(error.message);
   }
 };
+export const sentEmailMiddleWare = async (req, res, next) => {
+  console.log("entering mail");
+  try {
+    let mailOptions = {
+      from: "t3stmail25@gmail.com",
+      to: "georgejeswin2000@gmail.com,jeswinmyladoor@gmail.com",
+      subject: "Opera international file submission",
+      text: "Files uploaded succesfully",
+    };
+    transporter.sendMail(mailOptions, function (err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("email>>>>...");
+        console.log("email sent new>>>>...", user);
+      }
+    });
+    next();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const degreeFileUpload = async (req, res, next) => {
+  console.log("degree file>>>>");
   try {
     await MultipleFile.updateOne(
       { user: req.params.id },
