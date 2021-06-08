@@ -21,8 +21,8 @@ import nodemailer from "nodemailer";
 let transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "t3stmail25@gmail.com",
-    pass: "#testmail@25",
+    user: "noreply.operainternational@gmail.com",
+    pass: "#opera@international",
   },
 });
 
@@ -41,7 +41,7 @@ router.post("/sslcFiles/:id", upload.single("sslcfile"), sslcFileUpload);
 router.post("/plustwoFiles/:id", upload.single("plustwofile"), (req, res) => {
   plusTwoFileUpload(req, res).then(async () => {
     let mailOptions = {
-      from: "t3stmail25@gmail.com",
+      from: "noreply.operainternational@gmail.com",
       to: "georgejeswin2000@gmail.com,jeswinmyladoor@gmail.com",
       subject: "testing from testmail",
       text: "sent mail>>>....",

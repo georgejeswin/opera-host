@@ -1,5 +1,20 @@
 import MessageModel from "../models/messageModel.js";
 import mongoose from "mongoose";
+import nodemailer from "nodemailer";
+
+let transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "t3stmail25@gmail.com",
+    pass: "#testmail@25",
+  },
+});
+let mailOptions = {
+  from: "t3stmail25@gmail.com",
+  to: "jeswinmyladoor@gmail.com",
+  subject: "testing from opera",
+  text: "sent message to opera>>>....",
+};
 
 export const getMessages = async (req, res) => {
   try {
@@ -16,6 +31,14 @@ export const postMessages = async (req, res) => {
   const newMessage = new MessageModel(message);
   try {
     await newMessage.save();
+
+    transporter.sendMail(mailOptions, function (err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("email sent new>>>>...");
+      }
+    });
     res.status(201).json("message sent");
   } catch (error) {
     console.log(error);
