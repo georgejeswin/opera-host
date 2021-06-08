@@ -13,7 +13,6 @@ import {
   sopFileUpload,
   lorFileUpload,
   deleteUpload,
-  sentEmailMiddleWare,
 } from "../controllers/fileUploaderController.js";
 import { upload } from "../helpers/filehelper.js";
 
@@ -33,9 +32,6 @@ router.post(
   "/plustwoFiles/:id",
   upload.single("plustwofile"),
   plusTwoFileUpload
-  //  (req, res) => {
-  //   plusTwoFileUpload(req, res).then(() => sentEmail(user));
-  // }
 );
 router.post("/degreeFiles/:id", upload.single("degreefile"), degreeFileUpload);
 router.post("/ieltsFiles/:id", upload.single("ieltsfile"), ieltsFileUpload);
