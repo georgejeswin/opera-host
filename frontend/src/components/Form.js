@@ -284,7 +284,7 @@ const Form = () => {
       setUploading(true);
       await uploadPsFile();
       await uploadSslcFile();
-      // await uploadPlusTwoFile();
+      await uploadPlusTwoFile();
       if (ifUploaded.cv) {
         await uploadCvFile();
       }
