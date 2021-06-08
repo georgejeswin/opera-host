@@ -107,7 +107,6 @@
   display: none;
   color: rgb(238, 238, 238);
   font-size: small;
-  padding: 15px;
 }
 .btn1:hover span {
   display: block;
@@ -174,7 +173,7 @@
   z-index: 9;
 }
 .compCard__img img {
-  max-width: 200px;
+  max-width: 210px;
   min-height: 260px;
   object-fit: cover;
   z-index: 9;

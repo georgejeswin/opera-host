@@ -47,10 +47,10 @@ const CoursesComp = ({ bg, page }) => {
   return (
     <div className="coursesCard" style={{ backgroundImage: `url(${bg})` }}>
       <h4 className="coursesCard__h4">Course</h4>
-      {/* <p>
+      <p style={{ marginBottom: "0px" }}>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, maxime.
         Nulla aperiam dolor....
-      </p> */}
+      </p>
       <Link to="/" className="btn1">
         <span>Learn More</span>
         <i className="fas fa-angle-right" id="fas1"></i>

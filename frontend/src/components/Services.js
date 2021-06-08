@@ -5,7 +5,7 @@ const Services = () => {
   return (
     <div className="services container-fluid" id="services">
       <div className="row">
-        <div className="col-md-3">
+        <div className="col-md-3 service__card">
           <i class="fas fa-book fa-3x"></i>
           <br />
           <br />
@@ -17,7 +17,7 @@ const Services = () => {
             along with fee.
           </p>
         </div>
-        <div className="col-md-3">
+        <div className="col-md-3 service__card">
           <i class="fas fa-globe-europe fa-3x"></i>
           <br />
           <br />
@@ -29,7 +29,7 @@ const Services = () => {
             the local community
           </p>
         </div>
-        <div className="col-md-3">
+        <div className="col-md-3 service__card">
           <i class="fas fa-file-invoice-dollar fa-3x"></i>
           <br />
           <br />
@@ -42,7 +42,7 @@ const Services = () => {
             sponsorships.
           </p>
         </div>
-        <div className="col-md-3">
+        <div className="col-md-3 service__card">
           <i class="fas fa-university fa-3x"></i>
           <br />
           <br />
