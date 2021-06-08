@@ -194,10 +194,9 @@ const AdminLandingPage = () => {
                 <li>
                   <h5>2. Front and back page of passport copy</h5>
                   <p>{fileList?.psfile[0]?.fileName}</p>
-                  <embed
+                  <img
                     className="pdf__files"
                     src={`${url}/${fileList?.psfile[0]?.filePath}`}
-                    type="application/pdf"
                     width="100%"
                     height="300px"
                   />
