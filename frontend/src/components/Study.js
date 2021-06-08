@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 const Study = () => {
   return (
     <div className="study">
+      <h1 className="heading__h1-res">Study Abroad Countries</h1>
+
       <div className="study__left">
         <h1 className="heading__h1">Study Abroad Countries</h1>
         <button className="register__button">View All</button>
       </div>
-      <div className="study__items">
+      <div className="study__items container-fluid">
         <StudyComp bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
         <StudyComp bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
         <StudyComp bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
@@ -23,6 +25,9 @@ const Study = () => {
         <StudyComp bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
         <StudyComp bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
       </div>
+      <button className="register__button-res register__button">
+        View All
+      </button>
     </div>
   );
 };

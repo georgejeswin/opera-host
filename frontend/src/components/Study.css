@@ -1,7 +1,6 @@
 .study {
   display: flex;
   margin: 30px 0;
-
   align-items: center;
 }
 .study__left {
@@ -80,4 +79,22 @@
 }
 .studyCard__button {
   color: white;
+}
+.heading__h1-res {
+  color: rgb(24, 134, 24);
+  font-size: xx-large;
+}
+@media only screen and (max-width: 600px) {
+  .study {
+    flex-direction: column;
+  }
+  .study__left {
+    display: none;
+  }
+}
+@media only screen and (min-width: 601px) {
+  .heading__h1-res,
+  .register__button-res {
+    display: none;
+  }
 }
