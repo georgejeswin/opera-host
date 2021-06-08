@@ -13,7 +13,6 @@ import {
   sopFileUpload,
   lorFileUpload,
   deleteUpload,
-  sentEmailMiddleWare,
 } from "../controllers/fileUploaderController.js";
 import { upload } from "../helpers/filehelper.js";
 
