@@ -99,6 +99,7 @@ const Form = () => {
     } else {
       setPsFiles(e.target?.files[0]);
       setPassportFileName(e.target?.files[0]?.name);
+      console.log(e.target?.files[0])
     }
   }
   function onSslcFileUpload(e) {
@@ -353,7 +354,6 @@ const Form = () => {
                   type="file"
                   className="uploadFile__button"
                   onChange={(e) => onCvFileUpload(e)}
-                  accept=".pdf"
                 />
                 {/* <label className="label" htmlFor="customFile">
                 {cvFileName}
@@ -366,7 +366,6 @@ const Form = () => {
                   required
                   className="uploadFile__button"
                   onChange={(e) => onPsFileUpload(e)}
-                  accept=".pdf"
                 />
                 {/* <label className="label" htmlFor="customFile">
                 {passportFileName}
@@ -380,7 +379,6 @@ const Form = () => {
                   required
                   className="uploadFile__button"
                   onChange={(e) => onSslcFileUpload(e)}
-                  accept=".pdf"
                 />
                 {/* <label className="label" htmlFor="customFile">
                 {sslcFileName}
@@ -394,7 +392,6 @@ const Form = () => {
                   required
                   className="uploadFile__button"
                   onChange={(e) => onPlusTwoFileUpload(e)}
-                  accept=".pdf"
                 />
                 {/* <label className="label" htmlFor="customFile">
                 {plustwoFileName}
@@ -410,7 +407,6 @@ const Form = () => {
                   type="file"
                   className="uploadFile__button"
                   onChange={(e) => onDegreeFileUpload(e)}
-                  accept=".pdf"
                 />
                 {/* <label className="label" htmlFor="customFile">
                 {degreeFileName}
@@ -423,7 +419,6 @@ const Form = () => {
                   type="file"
                   className="uploadFile__button"
                   onChange={(e) => onIeltsFileUpload(e)}
-                  accept=".pdf"
                 />
                 {/* <label className="label" htmlFor="customFile">
                 {ietlsFileName}
@@ -436,7 +431,6 @@ const Form = () => {
                   type="file"
                   className="uploadFile__button"
                   onChange={(e) => onExperienceFileUpload(e)}
-                  accept=".pdf"
                 />
                 {/* <label className="label" htmlFor="customFile">
                 {experienceFileName}
@@ -451,7 +445,6 @@ const Form = () => {
                   type="file"
                   className="uploadFile__button"
                   onChange={(e) => onSopFileUpload(e)}
-                  accept=".pdf"
                 />
                 {/* <label className="label" htmlFor="customFile">
                 {sopFileName}
@@ -464,7 +457,6 @@ const Form = () => {
                   type="file"
                   className="uploadFile__button"
                   onChange={(e) => onLorFileUpload(e)}
-                  accept=".pdf"
                 />
                 {/* <label className="label" htmlFor="customFile">
                 {lorFileName}

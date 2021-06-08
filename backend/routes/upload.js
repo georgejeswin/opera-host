@@ -29,15 +29,15 @@ router.get("/getMultipleFiles", getallMultipleFiles);
 router.post("/cvFiles/:id", upload.single("cvfile"), cvFileUpload);
 router.post("/psFiles/:id", upload.single("psfile"), psFileUpload);
 router.post("/sslcFiles/:id", upload.single("sslcfile"), sslcFileUpload);
-router.post("/plustwoFiles/:id", upload.single("plustwofile"), (req, res) => {
-  plusTwoFileUpload(req, res).then(() => sentEmail(user));
-});
 router.post(
-  "/degreeFiles/:id",
-  upload.single("degreefile"),
-  sentEmailMiddleWare,
-  degreeFileUpload
+  "/plustwoFiles/:id",
+  upload.single("plustwofile"),
+  plusTwoFileUpload
+  //  (req, res) => {
+  //   plusTwoFileUpload(req, res).then(() => sentEmail(user));
+  // }
 );
+router.post("/degreeFiles/:id", upload.single("degreefile"), degreeFileUpload);
 router.post("/ieltsFiles/:id", upload.single("ieltsfile"), ieltsFileUpload);
 router.post(
   "/experienceFiles/:id",

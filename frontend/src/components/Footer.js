@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="container">
         <div className="row ">
           <div className="footer__first col-md-4 px-5 py-3">
-            <img src={LOGO} alt="" />
+            <img src={LOGO} alt="logo" />
             <p>
               MK Tower <br /> Dr Ambedkar Women's College - <br /> Building
               679303 Pattambi
