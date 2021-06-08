@@ -87,11 +87,7 @@ const Form = () => {
     } else {
       setCvFiles(e.target?.files[0]);
       setCvFileName(e.target?.files[0]?.name);
-<<<<<<< HEAD
-      
-=======
       setIfUploaded({ ...ifUploaded, cv: true });
->>>>>>> 117d0bbbb955eda9e5c4774ba96ba5e0be82ed65
     }
   }
   function onPsFileUpload(e) {
