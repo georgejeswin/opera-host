@@ -2,27 +2,24 @@ import SingleFile from "../models/singlefile.js";
 import MultipleFile from "../models/multiplefile.js";
 import UserModel from "../models/user.js";
 import Mongoose from "mongoose";
-
 import nodemailer from "nodemailer";
 
 let transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "t3stmail25@gmail.com",
-    pass: "#testmail@25",
+    user: "noreply.operainternational@gmail.com",
+    pass: "#opera@international",
   },
 });
 
-let user;
-// export const sentEmail = async (req, res) => {
-//   const user = await UserModel.findById(req.params.id);
+// export const sentEmail = async (user) => {
 //   let mailOptions = {
-//     from: "t3stmail25@gmail.com",
-//     to: "georgejeswin2000@gmail.com,jeswinmyladoor@gmail.com",
-//     subject: "testing from testmail",
-//     text: "sent mail>>>....",
+//     from: "noreply.operainternational@gmail.com",
+//     to: "georgejeswin2000@gmail.com",
+//     subject: "Opera International",
+//     text: "Files Subitted",
 //   };
-//   let info = await transporter.sendMail(mailOptions, function (err, data) {
+//   await transporter.sendMail(mailOptions, function (err, data) {
 //     if (err) {
 //       console.log(err);
 //     } else {
@@ -77,7 +74,7 @@ const cvFileUpload = async (req, res, next) => {
 };
 const psFileUpload = async (req, res, next) => {
   try {
-    user = await UserModel.findById(req.params.id);
+    let user = await UserModel.findById(req.params.id);
     let filesArray = [];
     const file = {
       user: req.params.id,
@@ -150,6 +147,7 @@ const plusTwoFileUpload = async (req, res) => {
       }
     );
     info();
+    res.send(user);
 
     res.status(201).send("Files Uploaded Successfully");
   } catch (error) {
@@ -160,17 +158,17 @@ export const sentEmailMiddleWare = async (req, res, next) => {
   console.log("entering mail");
   try {
     let mailOptions = {
-      from: "t3stmail25@gmail.com",
-      to: "georgejeswin2000@gmail.com,jeswinmyladoor@gmail.com",
-      subject: "Opera international file submission",
-      text: "Files uploaded succesfully",
+      from: "noreply.operainternational@gmail.com",
+      to: "georgejeswin2000@gmail.com",
+      subject: "Opera International",
+      text: "Files Subitted",
     };
-    transporter.sendMail(mailOptions, function (err, data) {
+    await transporter.sendMail(mailOptions, function (err, data) {
       if (err) {
         console.log(err);
       } else {
-        console.log("email>>>>...");
-        console.log("email sent new>>>>...", user);
+        console.log("user>>>", user);
+        console.log("email sent new>>>>...");
       }
     });
     next();
