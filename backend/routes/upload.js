@@ -14,7 +14,6 @@ import {
   lorFileUpload,
   deleteUpload,
   sentEmailMiddleWare,
-  sentEmail,
 } from "../controllers/fileUploaderController.js";
 import { upload } from "../helpers/filehelper.js";
 

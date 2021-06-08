@@ -12,23 +12,23 @@ let transporter = nodemailer.createTransport({
   },
 });
 
-export const sentEmail = async (user) => {
-  let mailOptions = {
-    from: "noreply.operainternational@gmail.com",
-    to: "georgejeswin2000@gmail.com",
-    subject: "Opera International",
-    text: "Files Subitted",
-  };
-  await transporter.sendMail(mailOptions, function (err, data) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log("user>>>", user);
-      console.log("email sent new>>>>...");
-    }
-  });
-  res.status(200).send("email sent");
-};
+// export const sentEmail = async (user) => {
+//   let mailOptions = {
+//     from: "noreply.operainternational@gmail.com",
+//     to: "georgejeswin2000@gmail.com",
+//     subject: "Opera International",
+//     text: "Files Subitted",
+//   };
+//   await transporter.sendMail(mailOptions, function (err, data) {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       console.log("user>>>", user);
+//       console.log("email sent new>>>>...");
+//     }
+//   });
+//   res.status(200).send("email sent");
+// };
 
 const singleFileUpload = async (req, res, next) => {
   try {
@@ -158,17 +158,17 @@ export const sentEmailMiddleWare = async (req, res, next) => {
   console.log("entering mail");
   try {
     let mailOptions = {
-      from: "t3stmail25@gmail.com",
-      to: "georgejeswin2000@gmail.com,jeswinmyladoor@gmail.com",
-      subject: "Opera international file submission",
-      text: "Files uploaded succesfully",
+      from: "noreply.operainternational@gmail.com",
+      to: "georgejeswin2000@gmail.com",
+      subject: "Opera International",
+      text: "Files Subitted",
     };
-    transporter.sendMail(mailOptions, function (err, data) {
+    await transporter.sendMail(mailOptions, function (err, data) {
       if (err) {
         console.log(err);
       } else {
-        console.log("email>>>>...");
-        console.log("email sent new>>>>...", user);
+        console.log("user>>>", user);
+        console.log("email sent new>>>>...");
       }
     });
     next();
