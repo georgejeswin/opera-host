@@ -14,17 +14,9 @@ import {
   lorFileUpload,
   deleteUpload,
   sentEmailMiddleWare,
+  sentEmail,
 } from "../controllers/fileUploaderController.js";
 import { upload } from "../helpers/filehelper.js";
-import nodemailer from "nodemailer";
-
-let transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: "noreply.operainternational@gmail.com",
-    pass: "#opera@international",
-  },
-});
 
 const router = express.Router();
 
@@ -39,23 +31,7 @@ router.post("/cvFiles/:id", upload.single("cvfile"), cvFileUpload);
 router.post("/psFiles/:id", upload.single("psfile"), psFileUpload);
 router.post("/sslcFiles/:id", upload.single("sslcfile"), sslcFileUpload);
 router.post("/plustwoFiles/:id", upload.single("plustwofile"), (req, res) => {
-  plusTwoFileUpload(req, res).then(async () => {
-    let mailOptions = {
-      from: "noreply.operainternational@gmail.com",
-      to: "georgejeswin2000@gmail.com,jeswinmyladoor@gmail.com",
-      subject: "testing from testmail",
-      text: "sent mail>>>....",
-    };
-    await transporter.sendMail(mailOptions, function (err, data) {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log("user>>>", user);
-        console.log("email sent new>>>>...");
-      }
-    });
-    res.status(200).send("email sent");
-  });
+  plusTwoFileUpload(req, res).then(() => sentEmail(user));
 });
 router.post(
   "/degreeFiles/:id",

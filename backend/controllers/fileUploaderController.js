@@ -2,6 +2,33 @@ import SingleFile from "../models/singlefile.js";
 import MultipleFile from "../models/multiplefile.js";
 import UserModel from "../models/user.js";
 import Mongoose from "mongoose";
+import nodemailer from "nodemailer";
+
+let transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "noreply.operainternational@gmail.com",
+    pass: "#opera@international",
+  },
+});
+
+export const sentEmail = async (user) => {
+  let mailOptions = {
+    from: "noreply.operainternational@gmail.com",
+    to: "georgejeswin2000@gmail.com",
+    subject: "Opera International",
+    text: "Files Subitted",
+  };
+  await transporter.sendMail(mailOptions, function (err, data) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("user>>>", user);
+      console.log("email sent new>>>>...");
+    }
+  });
+  res.status(200).send("email sent");
+};
 
 const singleFileUpload = async (req, res, next) => {
   try {
@@ -120,6 +147,7 @@ const plusTwoFileUpload = async (req, res) => {
       }
     );
     info();
+    res.send(user);
 
     res.status(201).send("Files Uploaded Successfully");
   } catch (error) {
