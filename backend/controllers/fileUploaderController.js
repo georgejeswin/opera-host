@@ -13,7 +13,6 @@ let transporter = nodemailer.createTransport({
   },
 });
 
-let user;
 // export const sentEmail = async (req, res) => {
 //   const user = await UserModel.findById(req.params.id);
 //   let mailOptions = {
@@ -77,7 +76,7 @@ const cvFileUpload = async (req, res, next) => {
 };
 const psFileUpload = async (req, res, next) => {
   try {
-    user = await UserModel.findById(req.params.id);
+    let user = await UserModel.findById(req.params.id);
     let filesArray = [];
     const file = {
       user: req.params.id,
