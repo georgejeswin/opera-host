@@ -131,7 +131,7 @@ const AdminLandingPage = () => {
     submit(file);
   };
 
-  const url = "http://localhost:3000";
+  const url = "https://oxetest.tk";
 
   return (
     <div>
