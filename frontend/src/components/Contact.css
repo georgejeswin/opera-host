@@ -1,18 +1,24 @@
 .contact {
-  background-color: rgb(240, 240, 240);
+  /* background-color: rgb(240, 240, 240); */
+  background-image: url("https://cdn.wallpapersafari.com/31/75/42YMf6.png");
+  background-size: cover;
+  background-attachment: fixed;
   padding-top: 30px;
   padding-bottom: 30px;
 }
 .contact h1 {
-  color: rgb(57, 21, 87);
+  /* color: rgb(57, 21, 87); */
+  color: #fff;
   font-weight: 600;
   font-size: 45px;
 }
 .contact p {
-  color: rgb(57, 21, 87);
+  /* color: rgb(57, 21, 87); */
+  color: #fff;
 }
 .contact h5 {
-  color: rgb(57, 21, 87);
+  /* color: rgb(57, 21, 87); */
+  color: #fff;
 }
 .contact__left form {
   display: flex;
@@ -30,9 +36,12 @@
   padding: 10px;
   margin: 10px;
   border-radius: 19px;
-  border: 1px solid rgb(57, 21, 87);
-  background-color: rgb(240, 240, 240);
+  border: 1px solid rgb(255, 255, 255);
+  /* background-color: rgb(240, 240, 240); */
+  background-color: transparent;
+  color: #fff;
 }
+
 .contact__left input:focus,
 .contact__left textarea:focus {
   outline: none;

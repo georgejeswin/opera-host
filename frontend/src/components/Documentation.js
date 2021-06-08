@@ -23,7 +23,7 @@ const Documentation = () => {
             <img src={DOC} alt="" />
           </div>
           <div className="col-md-12 col-lg-6 documentation__right">
-            <h1>Universities in UK</h1>
+            <h1>Our Assosiates</h1>
             <hr />
             <img src={U1} alt="" />
             <img src={U2} alt="" />
