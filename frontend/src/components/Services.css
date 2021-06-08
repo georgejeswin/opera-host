@@ -15,7 +15,7 @@
 .services p {
   color: #fff;
 }
-.service__card {
+.services__card {
   display: flex;
   flex-direction: column;
   justify-content: center;

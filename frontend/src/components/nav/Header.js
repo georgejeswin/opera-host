@@ -1,13 +1,5 @@
 import React, { useEffect, useState } from "react";
 import MessageIcon from "@material-ui/icons/Message";
-// import { Menu } from "antd";
-// import {
-//   HomeOutlined,
-//   SettingOutlined,
-//   LogoutOutlined,
-//   UserOutlined,
-//   UserAddOutlined,
-// } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 // import firebase from "firebase";
 import { useSelector } from "react-redux";
@@ -75,6 +67,20 @@ const Header = () => {
           <li className="nav-item">
             <Link to="/" className="nav-links" onClick={closeMobileMenu}>
               Home
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/courses" className="nav-links" onClick={closeMobileMenu}>
+              Courses
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/study-in"
+              className="nav-links"
+              onClick={closeMobileMenu}
+            >
+              Study In
             </Link>
           </li>
           <li className="nav-item">
