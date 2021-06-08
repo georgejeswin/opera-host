@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const uploadUrl = "https://oxetest.tk/backenduploads";
+const uploadUrl = "http://localhost:3000/backenduploads";
 
 export const singleFileUpload = async (data) => {
   try {
@@ -28,6 +28,7 @@ export const cvFileUpload = async (data, userInfo) => {
 };
 export const psFileUpload = async (data, userInfo) => {
   const id = userInfo._id;
+  console.log(id)
   try {
     await axios.post(`${uploadUrl}/psFiles/${id}`, data);
   } catch (error) {

@@ -284,7 +284,7 @@ const Form = () => {
       setUploading(true);
       await uploadPsFile();
       await uploadSslcFile();
-      await uploadPlusTwoFile();
+      // await uploadPlusTwoFile();
       if (ifUploaded.cv) {
         await uploadCvFile();
       }
@@ -363,7 +363,7 @@ const Form = () => {
                 <label>2. Front and back page of passport copy *</label>
                 <input
                   type="file"
-                  required
+                  // required
                   className="uploadFile__button"
                   onChange={(e) => onPsFileUpload(e)}
                 />
@@ -376,7 +376,7 @@ const Form = () => {
 
                 <input
                   type="file"
-                  required
+                  // required
                   className="uploadFile__button"
                   onChange={(e) => onSslcFileUpload(e)}
                 />
@@ -389,7 +389,7 @@ const Form = () => {
 
                 <input
                   type="file"
-                  required
+                  // required
                   className="uploadFile__button"
                   onChange={(e) => onPlusTwoFileUpload(e)}
                 />
