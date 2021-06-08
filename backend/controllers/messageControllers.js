@@ -5,12 +5,12 @@ import nodemailer from "nodemailer";
 let transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "t3stmail25@gmail.com",
-    pass: "#testmail@25",
+    user: "noreply.operainternational@gmail.com",
+    pass: "#opera@international",
   },
 });
 let mailOptions = {
-  from: "t3stmail25@gmail.com",
+  from: "noreply.operainternational@gmail.com",
   to: "jeswinmyladoor@gmail.com",
   subject: "testing from opera",
   text: "sent message to opera>>>....",

@@ -3,35 +3,6 @@ import MultipleFile from "../models/multiplefile.js";
 import UserModel from "../models/user.js";
 import Mongoose from "mongoose";
 
-import nodemailer from "nodemailer";
-
-let transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: "t3stmail25@gmail.com",
-    pass: "#testmail@25",
-  },
-});
-
-// export const sentEmail = async (req, res) => {
-//   const user = await UserModel.findById(req.params.id);
-//   let mailOptions = {
-//     from: "t3stmail25@gmail.com",
-//     to: "georgejeswin2000@gmail.com,jeswinmyladoor@gmail.com",
-//     subject: "testing from testmail",
-//     text: "sent mail>>>....",
-//   };
-//   let info = await transporter.sendMail(mailOptions, function (err, data) {
-//     if (err) {
-//       console.log(err);
-//     } else {
-//       console.log("user>>>", user);
-//       console.log("email sent new>>>>...");
-//     }
-//   });
-//   res.status(200).send("email sent");
-// };
-
 const singleFileUpload = async (req, res, next) => {
   try {
     const file = new SingleFile({
