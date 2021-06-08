@@ -51,10 +51,9 @@ const CoursesComp = ({ bg, page }) => {
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, maxime.
         Nulla aperiam dolor....
       </p> */}
-      <Link to={page}>
-        <p className="coursesCard__button">
-          Read More &nbsp; <i class="fas fa-chevron-right"></i>
-        </p>
+      <Link to="/" className="btn1">
+        <span>Learn More</span>
+        <i className="fas fa-angle-right" id="fas1"></i>
       </Link>
     </div>
     // <Card className={classes.root} className="coursesCard">
