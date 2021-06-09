@@ -181,9 +181,7 @@ const AdminLandingPage = () => {
                 {fileList.cvfile[0].filePath ? (
                   <li>
                     <p>{fileList?.cvfile[0]?.fileName}</p>
-                 
-                      
-                 
+
                      <GoogleDocsViewer
                       width="100%"
                       height="300px"
