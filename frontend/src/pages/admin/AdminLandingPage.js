@@ -132,7 +132,7 @@ const AdminLandingPage = () => {
   };
 
   
-  const url = "http://localhost:3001/";
+  const url = "https://oxetest.tk";
 
   
   return (
@@ -181,16 +181,12 @@ const AdminLandingPage = () => {
                 {fileList.cvfile[0].filePath ? (
                   <li>
                     <p>{fileList?.cvfile[0]?.fileName}</p>
-                    <embed
-                      className="pdf__files"
-                      src={`${url}/${fileList.cvfile[0].filePath}`}
+                 
+                      
+                 
+                     <GoogleDocsViewer
                       width="100%"
                       height="300px"
-                      type="application/pdf"
-                    />
-                     <GoogleDocsViewer
-                      width="600px"
-                      height="780px"
                       fileUrl={`${url}/${fileList.cvfile[0].filePath}`}
                          />
 
@@ -202,16 +198,11 @@ const AdminLandingPage = () => {
                 <li>
                   <h5>2. Front and back page of passport copy</h5>
                   <p>{fileList?.psfile[0]?.fileName}</p>
-                  <embed
-                    className="pdf__files"
-                    src={`${url}/${fileList?.psfile[0]?.filePath}`}
-                    width="100%"
-                    height="300px"
-                    type="application/pdf"
-                  />
-                      <GoogleDocsViewer
-                      width="600px"
-                      height="780px"
+               
+                    
+               <GoogleDocsViewer
+                      width="100%"
+                      height="300px"
                       fileUrl={`${url}/${fileList?.psfile[0]?.filePath}`}
                          />
                 </li>
@@ -219,16 +210,11 @@ const AdminLandingPage = () => {
                   <h5>3. SSLC Certificate</h5>
 
                   <p>{fileList?.sslcfile[0]?.fileName}</p>
-                  <embed
-                    className="pdf__files"
-                    src={`${url}/${fileList?.sslcfile[0]?.filePath}`}
-                    width="100%"
-                    height="300px"
-                    type="application/pdf"
-                  />
+               
+              
                      <GoogleDocsViewer
-                      width="600px"
-                      height="780px"
+                      width="100%"
+                      height="300px"
                       fileUrl={`${url}/${fileList?.sslcfile[0]?.filePath}`}
                          />
                 </li>
@@ -236,16 +222,12 @@ const AdminLandingPage = () => {
                   <h5>4. Plus two Certificate</h5>
 
                   <p>{fileList?.plustwofile[0]?.fileName}</p>
-                  <embed
-                    className="pdf__files"
-                    src={`${url}/${fileList?.plustwofile[0]?.filePath}`}
-                    type="application/pdf"
-                    width="100%"
-                    height="300px"
-                  />
+               
+                    
+                
                    <GoogleDocsViewer
-                      width="600px"
-                      height="780px"
+                      width="100%"
+                      height="300px"
                       fileUrl={`${url}/${fileList?.plustwofile[0]?.filePath}`}
                          />
                 </li>
@@ -256,16 +238,12 @@ const AdminLandingPage = () => {
                 {fileList?.degreefile[0]?.filePath ? (
                   <li>
                     <p>{fileList?.degreefile[0]?.fileName}</p>
-                    <embed
-                      className="pdf__files"
-                      src={`${url}/${fileList?.degreefile[0]?.filePath}`}
-
+                 
+                      
+                 
+                         <GoogleDocsViewer
                       width="100%"
                       height="300px"
-                    />
-                         <GoogleDocsViewer
-                      width="600px"
-                      height="780px"
                       fileUrl={`${url}/${fileList?.degreefile[0]?.filePath}`}
                          />
                   </li>
@@ -278,15 +256,12 @@ const AdminLandingPage = () => {
                 {fileList.ieltsfile[0].filePath ? (
                   <li>
                     <p>{fileList.ieltsfile[0].fileName}</p>
-                    <embed
-                      className="pdf__files"
-                      src={`${url}/${fileList.ieltsfile[0].filePath}`}
+                 
+                      
+                  
+                           <GoogleDocsViewer
                       width="100%"
                       height="300px"
-                    />
-                           <GoogleDocsViewer
-                      width="600px"
-                      height="780px"
                       fileUrl={`${url}/${fileList.ieltsfile[0].filePath}`}
                          />
                   </li>
@@ -299,16 +274,12 @@ const AdminLandingPage = () => {
                 {fileList.experiencefile[0].filePath ? (
                   <li>
                     <p>{fileList?.experiencefile[0]?.fileName}</p>
-                    <embed
-                      className="pdf__files"
-                      src={`${url}/${fileList?.experiencefile[0]?.filePath}`}
-                      type="application/pdf"
+                 
+                      
+             
+                     <GoogleDocsViewer
                       width="100%"
                       height="300px"
-                    />
-                     <GoogleDocsViewer
-                      width="600px"
-                      height="780px"
                       fileUrl={`${url}/${fileList?.experiencefile[0]?.filePath}`}
                          />
                   </li>
@@ -319,8 +290,8 @@ const AdminLandingPage = () => {
 
 
                   <p>{fileList?.experiencefile[0]?.fileName}</p>
-                  <embed
-                    className="pdf__files"
+               
+                    
                     src={`${url}/${fileList?.experiencefile[0]?.filePath}`}
                     type="application/pdf"
                     width="100%"
@@ -333,16 +304,12 @@ const AdminLandingPage = () => {
                 {fileList?.sopfile[0]?.filePath ? (
                   <li>
                     <p>{fileList?.sopfile[0]?.fileName}</p>
-                    <embed
-                      className="pdf__files"
-                      src={`${url}/${fileList?.sopfile[0]?.filePath}`}
-                      type="application/pdf"
+                 
+                      
+          
+                    <GoogleDocsViewer
                       width="100%"
                       height="300px"
-                    />
-                    <GoogleDocsViewer
-                      width="600px"
-                      height="780px"
                       fileUrl={`${url}/${fileList?.sopfile[0]?.filePath}`}
                          />
                   </li>
@@ -353,16 +320,10 @@ const AdminLandingPage = () => {
                 {fileList?.lorfile[0]?.filePath ? (
                   <li>
                     <p>{fileList?.lorfile[0]?.fileName}</p>
-                    <embed
-                      className="pdf__files"
-                      src={`${url}/${fileList?.lorfile[0]?.filePath}`}
-                      type="application/pdf"
+                 
+                     <GoogleDocsViewer
                       width="100%"
                       height="300px"
-                    />
-                     <GoogleDocsViewer
-                      width="600px"
-                      height="780px"
                       fileUrl={`${url}/${fileList?.lorfile[0]?.filePath}`}
                          />
                   </li>
