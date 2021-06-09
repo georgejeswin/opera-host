@@ -7,7 +7,7 @@ import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 import "./AdminLandingPage.css";
 import { IconButton } from "@material-ui/core";
 import { deleteUsers } from "../../actions/userActions";
-
+import GoogleDocsViewer from 'react-google-docs-viewer'
 const AdminLandingPage = () => {
   const files = useSelector((state) => state.files);
   const history = useHistory();
@@ -131,8 +131,10 @@ const AdminLandingPage = () => {
     submit(file);
   };
 
-  const url = "https://oxetest.tk";
+  
+  const url = "http://localhost:3001/";
 
+  
   return (
     <div>
       <div className="container-fluid ">
@@ -182,10 +184,16 @@ const AdminLandingPage = () => {
                     <embed
                       className="pdf__files"
                       src={`${url}/${fileList.cvfile[0].filePath}`}
-                      type="application/pdf"
                       width="100%"
                       height="300px"
+                      type="application/pdf"
                     />
+                     <GoogleDocsViewer
+                      width="600px"
+                      height="780px"
+                      fileUrl={`${url}/${fileList.cvfile[0].filePath}`}
+                         />
+
                   </li>
                 ) : (
                   <h3 className="p-2">File Not uploaded</h3>
@@ -194,12 +202,18 @@ const AdminLandingPage = () => {
                 <li>
                   <h5>2. Front and back page of passport copy</h5>
                   <p>{fileList?.psfile[0]?.fileName}</p>
-                  <img
+                  <embed
                     className="pdf__files"
                     src={`${url}/${fileList?.psfile[0]?.filePath}`}
                     width="100%"
                     height="300px"
+                    type="application/pdf"
                   />
+                      <GoogleDocsViewer
+                      width="600px"
+                      height="780px"
+                      fileUrl={`${url}/${fileList?.psfile[0]?.filePath}`}
+                         />
                 </li>
                 <li>
                   <h5>3. SSLC Certificate</h5>
@@ -208,10 +222,15 @@ const AdminLandingPage = () => {
                   <embed
                     className="pdf__files"
                     src={`${url}/${fileList?.sslcfile[0]?.filePath}`}
-                    type="application/pdf"
                     width="100%"
                     height="300px"
+                    type="application/pdf"
                   />
+                     <GoogleDocsViewer
+                      width="600px"
+                      height="780px"
+                      fileUrl={`${url}/${fileList?.sslcfile[0]?.filePath}`}
+                         />
                 </li>
                 <li>
                   <h5>4. Plus two Certificate</h5>
@@ -224,6 +243,11 @@ const AdminLandingPage = () => {
                     width="100%"
                     height="300px"
                   />
+                   <GoogleDocsViewer
+                      width="600px"
+                      height="780px"
+                      fileUrl={`${url}/${fileList?.plustwofile[0]?.filePath}`}
+                         />
                 </li>
                 <h5>
                   5. Degree certificate with consolidated mark sheet and
@@ -235,10 +259,15 @@ const AdminLandingPage = () => {
                     <embed
                       className="pdf__files"
                       src={`${url}/${fileList?.degreefile[0]?.filePath}`}
-                      type="application/pdf"
+
                       width="100%"
                       height="300px"
                     />
+                         <GoogleDocsViewer
+                      width="600px"
+                      height="780px"
+                      fileUrl={`${url}/${fileList?.degreefile[0]?.filePath}`}
+                         />
                   </li>
                 ) : (
                   <h3 className="p-5">File Not uploaded</h3>
@@ -252,10 +281,14 @@ const AdminLandingPage = () => {
                     <embed
                       className="pdf__files"
                       src={`${url}/${fileList.ieltsfile[0].filePath}`}
-                      type="application/pdf"
                       width="100%"
                       height="300px"
                     />
+                           <GoogleDocsViewer
+                      width="600px"
+                      height="780px"
+                      fileUrl={`${url}/${fileList.ieltsfile[0].filePath}`}
+                         />
                   </li>
                 ) : (
                   <h3 className="p-5">File Not uploaded</h3>
@@ -273,6 +306,11 @@ const AdminLandingPage = () => {
                       width="100%"
                       height="300px"
                     />
+                     <GoogleDocsViewer
+                      width="600px"
+                      height="780px"
+                      fileUrl={`${url}/${fileList?.experiencefile[0]?.filePath}`}
+                         />
                   </li>
                 ) : (
                   <h3 className="p-5">File Not uploaded</h3>
@@ -302,6 +340,11 @@ const AdminLandingPage = () => {
                       width="100%"
                       height="300px"
                     />
+                    <GoogleDocsViewer
+                      width="600px"
+                      height="780px"
+                      fileUrl={`${url}/${fileList?.sopfile[0]?.filePath}`}
+                         />
                   </li>
                 ) : (
                   <h3 className="p-5">File Not uploaded</h3>
@@ -317,6 +360,11 @@ const AdminLandingPage = () => {
                       width="100%"
                       height="300px"
                     />
+                     <GoogleDocsViewer
+                      width="600px"
+                      height="780px"
+                      fileUrl={`${url}/${fileList?.lorfile[0]?.filePath}`}
+                         />
                   </li>
                 ) : (
                   <h3 className="p-5">File Not uploaded</h3>
