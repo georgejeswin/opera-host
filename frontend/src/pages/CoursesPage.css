@@ -1,0 +1,12 @@
+.coursesPage__top {
+  width: 100vw;
+  height: 50vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.447), rgba(61, 59, 59, 0.747)),
+    url("https://www.collegiateparent.com/wp-content/uploads/2020/04/college-landscape2-color-adjusted-e1591220072806.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}

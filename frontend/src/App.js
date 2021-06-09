@@ -7,7 +7,6 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import RegisterComplete from "./pages/auth/RegisterComplete";
 import Header from "./components/nav/Header";
-
 import { auth } from "./firebase";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -16,7 +15,6 @@ import { currentUser } from "./functions/auth";
 import UserLandingPage from "./pages/user/UserLandingPage";
 import UserPrivateRoute from "./components/routes/UserPrivateRoute";
 import AdminPrivateRoute from "./components/routes/AdminPrivateRoute";
-
 import { FileUpload } from "./pages/FileUpload";
 import NavTop from "./components/nav/NavTop";
 import Footer from "./components/Footer";
@@ -25,12 +23,15 @@ import AdminViewMessages from "./pages/admin/AdminViewMessages";
 import Payment from "./pages/Payment";
 import UserStatus from "./pages/user/UserStatus";
 import { getFiles } from "./actions/fileActions";
-import About from "./components/About";
 import Contact from "./components/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Services from "./components/Services";
-
+import AboutPage from "./pages/AboutPage";
+import ServicesPage from "./pages/ServicesPage";
+import ContactPage from "./pages/ContactPage";
+import CoursesPage from "./pages/CoursesPage";
+import StudyPage from "./pages/StudyPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -77,10 +78,11 @@ function App() {
           <UserPrivateRoute exact path="/upload" component={FileUpload} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/services" component={Services} />
-
+          <Route exact path="/about" component={AboutPage} />
+          <Route exact path="/contact" component={ContactPage} />
+          <Route exact path="/services" component={ServicesPage} />
+          <Route exact path="/courses" component={CoursesPage} />
+          <Route exact path="/study-in" component={StudyPage} />
 
           <Route exact path="/privacy" component={Privacy} />
           <Route exact path="/terms&conditions" component={Terms} />
