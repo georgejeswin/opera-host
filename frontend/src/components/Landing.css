@@ -19,6 +19,7 @@
   height: 82vh;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 .landingSlider2 {
   background-image: url("./images//Slider2.jpg");
@@ -30,6 +31,7 @@
   height: 82vh;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 .landingSlider3 {
   background-image: url("./images//Slider3.jpg");
@@ -41,6 +43,7 @@
   height: 82vh;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 .landingSlider1__content {
   display: flex;
@@ -72,6 +75,15 @@
 }
 @media screen and (max-width: 1000px) and (min-width: 551px) {
   .landing {
+    min-height: 360px;
+    object-fit: contain;
+    height: 100%;
+    width: 100vw;
+    background-size: cover;
+  }
+  .landingSlider1,
+  .landingSlider2,
+  .landingSlider3 {
     min-height: 360px;
     object-fit: contain;
     height: 100%;
