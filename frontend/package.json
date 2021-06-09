@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "proxy": "https://oxetest.tk",
+  "proxy": "http://localhost:8000/api",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.4",
@@ -15,12 +15,7 @@
     "firebase-tools": "^9.1.0",
     "react": "^17.0.1",
     "react-confirm-alert": "^2.7.0",
-    "react-doc-viewer": "^0.1.5",
     "react-dom": "^17.0.1",
-    "react-file-viewer": "^1.2.1",
-    "react-file-viewer-extended": "^2.0.3",
-    "react-file-viewers": "^2.2.1",
-    "react-google-docs-viewer": "^1.0.1",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
