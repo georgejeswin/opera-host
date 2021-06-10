@@ -1,6 +1,27 @@
 import React from "react";
 import "./Study.css";
 import { Link } from "react-router-dom";
+import Armenia from "./images/Armenia.jpg";
+import Australia from "./images/australia.jpg";
+import China from "./images/china.jpg";
+import Dubai from "./images/duabai.jpg";
+import France from "./images/france.jpg";
+import Georgia from "./images/georgia.jpg";
+import Germany from "./images/germany.jpg";
+import Ireland from "./images/ireland.jpg";
+import Italy from "./images/italy.jpg";
+import Latvia from "./images/latvia.jpg";
+import Malta from "./images/malta.jpg";
+import Norway from "./images/norway.jpg";
+import NZ from "./images/nz.jpg";
+import Poland from "./images/poland.jpg";
+import Russia from "./images/russia.jpg";
+import Singapore from "./images/Singapore.jpg";
+import Sweden from "./images/swedan.jpg";
+import UK from "./images/uk.jpg";
+import Ukraine from "./images/ukraine1.jpg";
+import USA from "./images/usa.jpg";
+import SL from "./images/switzerland.jpg";
 
 const Study = () => {
   return (
@@ -12,31 +33,27 @@ const Study = () => {
         <button className="register__button">View All</button>
       </div>
       <div className="study__items container-fluid">
-        <CompCard bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <CompCard bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <CompCard bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <CompCard bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <CompCard bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <CompCard bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <CompCard bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <CompCard bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <CompCard bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <CompCard bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <CompCard bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <CompCard bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-
-        {/* <StudyComp bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <StudyComp bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <StudyComp bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <StudyComp bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <StudyComp bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <StudyComp bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <StudyComp bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <StudyComp bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <StudyComp bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <StudyComp bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <StudyComp bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" />
-        <StudyComp bg="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg" /> */}
+        <StudyComp bg={UK} country="UK" />
+        <StudyComp bg={Germany} country="Germany" />
+        <StudyComp bg={NZ} country="New Zeland" />
+        <StudyComp bg={France} country="France" />
+        <StudyComp bg={Australia} country="Australia" />
+        <StudyComp bg={Singapore} country="Singapore" />
+        <StudyComp bg={SL} country="Switzerland" />
+        <StudyComp bg={USA} country="USA" />
+        <StudyComp bg={Ireland} country="Ireland" />
+        <StudyComp bg={Italy} country="Italy" />
+        <StudyComp bg={Ukraine} country="Ukraine" />
+        <StudyComp bg={Russia} country="Russa" />
+        <StudyComp bg={Sweden} country="Sweden" />
+        <StudyComp bg={Armenia} country="Armenia" />
+        <StudyComp bg={China} country="China" />
+        <StudyComp bg={Dubai} country="Dubai" />
+        <StudyComp bg={Georgia} country="Georgia" />
+        <StudyComp bg={Latvia} country="Latvia" />
+        <StudyComp bg={Malta} country="Malta" />
+        <StudyComp bg={Norway} country="Norway" />
+        <StudyComp bg={Poland} country="Poland" />
       </div>
       <button className="register__button-res register__button">
         View All
@@ -45,10 +62,10 @@ const Study = () => {
   );
 };
 
-const StudyComp = ({ bg, page }) => {
+const StudyComp = ({ bg, country }) => {
   return (
     <div className="studyCard" style={{ backgroundImage: `url(${bg})` }}>
-      <h4 className="studyCard__h4">Country</h4>
+      <h4 className="studyCard__h4">{country}</h4>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, maxime.
         Nulla aperiam dolor....
@@ -56,27 +73,6 @@ const StudyComp = ({ bg, page }) => {
       <Link to="/" className="btn1">
         <span>Learn More</span>
         <i className="fas fa-angle-right" id="fas1"></i>
-      </Link>
-    </div>
-  );
-};
-
-const CompCard = ({ bg, page }) => {
-  return (
-    <div className="compCard">
-      <div className="compCard__img">
-        <img src={bg} alt="" />
-      </div>
-      <div className="compCard__contents">
-        <h4>Country</h4>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-          maxime. Nulla aperiam dolor....
-        </p>
-      </div>
-      <Link to="/" className="btn ">
-        <span>Learn More</span>
-        <i className="fas fa-angle-right"></i>
       </Link>
     </div>
   );

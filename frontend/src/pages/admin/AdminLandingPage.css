@@ -5,8 +5,17 @@
   justify-content: space-evenly;
   padding: 0px 0;
 }
+.display__users {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  overflow-x: scroll;
+}
 .show__files {
   list-style: none;
+}
+.adminFiles__img {
+  max-height: 350px;
 }
 .delete__icon {
   color: rgb(90, 51, 126);

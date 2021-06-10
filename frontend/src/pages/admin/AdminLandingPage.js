@@ -7,7 +7,7 @@ import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 import "./AdminLandingPage.css";
 import { IconButton } from "@material-ui/core";
 import { deleteUsers } from "../../actions/userActions";
-import GoogleDocsViewer from 'react-google-docs-viewer';
+import GoogleDocsViewer from "react-google-docs-viewer";
 
 const AdminLandingPage = () => {
   const files = useSelector((state) => state.files);
@@ -16,7 +16,6 @@ const AdminLandingPage = () => {
   const dispatch = useDispatch();
   const [showFiles, setShowFiles] = useState(false);
   const [fileList, setFileList] = useState({});
-  // const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     dispatch(getFiles());
@@ -132,17 +131,15 @@ const AdminLandingPage = () => {
     submit(file);
   };
 
-  
   const url = "https://oxetest.tk";
 
-  
   return (
     <div>
       <div className="container-fluid ">
         <div className="row">
-          <div className="col-md-4 col-sm-12 margin__none">
-            <table className="admin__userName-table col-sm-12">
-              <tbody className="pt-5 mt-5">
+          <div className="col-md-4 col-sm-12 margin__none display__users">
+            <table className="admin__userName-table col-sm-12 ">
+              <tbody className="pt-5 mt-5 ">
                 {files.map((file) => (
                   <tr className="files__row margin__none">
                     <td>
@@ -183,13 +180,49 @@ const AdminLandingPage = () => {
 
                   <li>
                     <p>{fileList?.cvfile[0]?.fileName}</p>
-                       
-                     <GoogleDocsViewer
-                      width="100%"
-                      height="300px"
-                      fileUrl={`${url}/${fileList.cvfile[0].filePath}`}
-                         />
-
+                    {fileList.cvfile[0]?.fileType === "image/png" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.cvfile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : fileList.cvfile[0]?.fileType === "image/jpg" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.cvfile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : fileList.cvfile[0]?.fileType === "image/jpeg" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.cvfile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : fileList.cvfile[0]?.fileType == "application/pdf" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.cvfile[0].filePath}`}
+                      />
+                    ) : fileList.cvfile[0]?.fileType ==
+                      "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.cvfile[0].filePath}`}
+                      />
+                    ) : fileList.cvfile[0]?.fileType ==
+                      "application/octet-stream" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.cvfile[0].filePath}`}
+                      />
+                    ) : (
+                      <h5>
+                        File format not supported {fileList.cvfile[0]?.fileType}
+                      </h5>
+                    )}
                   </li>
                 ) : (
                   <h3 className="p-2">File Not uploaded</h3>
@@ -198,36 +231,146 @@ const AdminLandingPage = () => {
                 <li>
                   <h5>2. Front and back page of passport copy</h5>
                   <p>{fileList?.psfile[0]?.fileName}</p>
-               <GoogleDocsViewer
+                  {fileList.psfile[0]?.fileType === "image/png" ? (
+                    <img
+                      className="adminFiles__img"
+                      src={`${url}/${fileList.psfile[0].filePath}`}
+                      alt="file name"
+                    />
+                  ) : fileList.psfile[0]?.fileType === "image/jpg" ? (
+                    <img
+                      className="adminFiles__img"
+                      src={`${url}/${fileList.psfile[0].filePath}`}
+                      alt="file name"
+                    />
+                  ) : fileList.psfile[0]?.fileType === "image/jpeg" ? (
+                    <img
+                      className="adminFiles__img"
+                      src={`${url}/${fileList.psfile[0].filePath}`}
+                      alt="file name"
+                    />
+                  ) : fileList.psfile[0]?.fileType == "application/pdf" ? (
+                    <GoogleDocsViewer
                       width="100%"
                       height="300px"
-                      fileUrl={`${url}/${fileList?.psfile[0]?.filePath}`}
-                         />
+                      fileUrl={`${url}/${fileList.psfile[0].filePath}`}
+                    />
+                  ) : fileList.psfile[0]?.fileType ==
+                    "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
+                    <GoogleDocsViewer
+                      width="100%"
+                      height="300px"
+                      fileUrl={`${url}/${fileList.psfile[0].filePath}`}
+                    />
+                  ) : fileList.psfile[0]?.fileType ==
+                    "application/octet-stream" ? (
+                    <GoogleDocsViewer
+                      width="100%"
+                      height="300px"
+                      fileUrl={`${url}/${fileList.psfile[0].filePath}`}
+                    />
+                  ) : (
+                    <h5>
+                      File format not supported {fileList.psfile[0]?.fileType}
+                    </h5>
+                  )}
                 </li>
                 <li>
                   <h5>3. SSLC Certificate</h5>
-
                   <p>{fileList?.sslcfile[0]?.fileName}</p>
-               
-              
-                     <GoogleDocsViewer
+
+                  {fileList.sslcfile[0]?.fileType === "image/png" ? (
+                    <img
+                      className="adminFiles__img"
+                      src={`${url}/${fileList.sslcfile[0].filePath}`}
+                      alt="file name"
+                    />
+                  ) : fileList.sslcfile[0]?.fileType === "image/jpg" ? (
+                    <img
+                      className="adminFiles__img"
+                      src={`${url}/${fileList.sslcfile[0].filePath}`}
+                      alt="file name"
+                    />
+                  ) : fileList.sslcfile[0]?.fileType === "image/jpeg" ? (
+                    <img
+                      className="adminFiles__img"
+                      src={`${url}/${fileList.sslcfile[0].filePath}`}
+                      alt="file name"
+                    />
+                  ) : fileList.sslcfile[0]?.fileType == "application/pdf" ? (
+                    <GoogleDocsViewer
                       width="100%"
                       height="300px"
-                      fileUrl={`${url}/${fileList?.sslcfile[0]?.filePath}`}
-                         />
+                      fileUrl={`${url}/${fileList.sslcfile[0].filePath}`}
+                    />
+                  ) : fileList.sslcfile[0]?.fileType ==
+                    "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
+                    <GoogleDocsViewer
+                      width="100%"
+                      height="300px"
+                      fileUrl={`${url}/${fileList.sslcfile[0].filePath}`}
+                    />
+                  ) : fileList.sslcfile[0]?.fileType ==
+                    "application/octet-stream" ? (
+                    <GoogleDocsViewer
+                      width="100%"
+                      height="300px"
+                      fileUrl={`${url}/${fileList.sslcfile[0].filePath}`}
+                    />
+                  ) : (
+                    <h5>
+                      File format not supported {fileList.sslcfile[0]?.fileType}
+                    </h5>
+                  )}
                 </li>
                 <li>
                   <h5>4. Plus two Certificate</h5>
 
                   <p>{fileList?.plustwofile[0]?.fileName}</p>
-               
-                    
-                
-                   <GoogleDocsViewer
+                  {fileList.plustwofile[0]?.fileType === "image/png" ? (
+                    <img
+                      className="adminFiles__img"
+                      src={`${url}/${fileList.plustwofile[0].filePath}`}
+                      alt="file name"
+                    />
+                  ) : fileList.plustwofile[0]?.fileType === "image/jpg" ? (
+                    <img
+                      className="adminFiles__img"
+                      src={`${url}/${fileList.plustwofile[0].filePath}`}
+                      alt="file name"
+                    />
+                  ) : fileList.plustwofile[0]?.fileType === "image/jpeg" ? (
+                    <img
+                      className="adminFiles__img"
+                      src={`${url}/${fileList.plustwofile[0].filePath}`}
+                      alt="file name"
+                    />
+                  ) : fileList.plustwofile[0]?.fileType == "application/pdf" ? (
+                    <GoogleDocsViewer
                       width="100%"
                       height="300px"
-                      fileUrl={`${url}/${fileList?.plustwofile[0]?.filePath}`}
-                         />
+                      fileUrl={`${url}/${fileList.plustwofile[0].filePath}`}
+                    />
+                  ) : fileList.plustwofile[0]?.fileType ==
+                    "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
+                    <GoogleDocsViewer
+                      width="100%"
+                      height="300px"
+                      fileUrl={`${url}/${fileList.plustwofile[0].filePath}`}
+                    />
+                  ) : fileList.plustwofile[0]?.fileType ==
+                    "application/octet-stream" ? (
+                    <GoogleDocsViewer
+                      width="100%"
+                      height="300px"
+                      fileUrl={`${url}/${fileList.plustwofile[0].filePath}`}
+                    />
+                  ) : (
+                    <h5>
+                      File format not supported{" "}
+                      {fileList.plustwofile[0]?.fileType}
+                    </h5>
+                  )}
                 </li>
                 <h5>
                   5. Degree certificate with consolidated mark sheet and
@@ -236,14 +379,52 @@ const AdminLandingPage = () => {
                 {fileList?.degreefile[0]?.filePath ? (
                   <li>
                     <p>{fileList?.degreefile[0]?.fileName}</p>
-                 
-                      
-                 
-                         <GoogleDocsViewer
-                      width="100%"
-                      height="300px"
-                      fileUrl={`${url}/${fileList?.degreefile[0]?.filePath}`}
-                         />
+
+                    {fileList.degreefile[0]?.fileType === "image/png" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.degreefile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : fileList.degreefile[0]?.fileType === "image/jpg" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.degreefile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : fileList.degreefile[0]?.fileType === "image/jpeg" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.degreefile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : fileList.degreefile[0]?.fileType ==
+                      "application/pdf" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.degreefile[0].filePath}`}
+                      />
+                    ) : fileList.degreefile[0]?.fileType ==
+                      "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.degreefile[0].filePath}`}
+                      />
+                    ) : fileList.degreefile[0]?.fileType ==
+                      "application/octet-stream" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.degreefile[0].filePath}`}
+                      />
+                    ) : (
+                      <h5>
+                        File format not supported{" "}
+                        {fileList.degreefile[0]?.fileType}
+                      </h5>
+                    )}
                   </li>
                 ) : (
                   <h3 className="p-5">File Not uploaded</h3>
@@ -254,14 +435,51 @@ const AdminLandingPage = () => {
                 {fileList.ieltsfile[0].filePath ? (
                   <li>
                     <p>{fileList.ieltsfile[0].fileName}</p>
-                 
-                      
-                  
-                           <GoogleDocsViewer
-                      width="100%"
-                      height="300px"
-                      fileUrl={`${url}/${fileList.ieltsfile[0].filePath}`}
-                         />
+
+                    {fileList.ieltsfile[0]?.fileType === "image/png" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.ieltsfile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : fileList.ieltsfile[0]?.fileType === "image/jpg" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.ieltsfile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : fileList.ieltsfile[0]?.fileType === "image/jpeg" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.ieltsfile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : fileList.ieltsfile[0]?.fileType == "application/pdf" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.ieltsfile[0].filePath}`}
+                      />
+                    ) : fileList.ieltsfile[0]?.fileType ==
+                      "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.ieltsfile[0].filePath}`}
+                      />
+                    ) : fileList.ieltsfile[0]?.fileType ==
+                      "application/octet-stream" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.ieltsfile[0].filePath}`}
+                      />
+                    ) : (
+                      <h5>
+                        File format not supported{" "}
+                        {fileList.ieltsfile[0]?.fileType}
+                      </h5>
+                    )}
                   </li>
                 ) : (
                   <h3 className="p-5">File Not uploaded</h3>
@@ -272,14 +490,53 @@ const AdminLandingPage = () => {
                 {fileList.experiencefile[0].filePath ? (
                   <li>
                     <p>{fileList?.experiencefile[0]?.fileName}</p>
-                 
-                      
-             
-                     <GoogleDocsViewer
-                      width="100%"
-                      height="300px"
-                      fileUrl={`${url}/${fileList?.experiencefile[0]?.filePath}`}
-                         />
+
+                    {fileList.experiencefile[0]?.fileType === "image/png" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.experiencefile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : fileList.experiencefile[0]?.fileType === "image/jpg" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.experiencefile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : fileList.experiencefile[0]?.fileType ===
+                      "image/jpeg" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.experiencefile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : fileList.experiencefile[0]?.fileType ==
+                      "application/pdf" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.experiencefile[0].filePath}`}
+                      />
+                    ) : fileList.experiencefile[0]?.fileType ==
+                      "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.experiencefile[0].filePath}`}
+                      />
+                    ) : fileList.experencefile[0]?.fileType ==
+                      "application/octet-stream" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.experiencefile[0].filePath}`}
+                      />
+                    ) : (
+                      <h5>
+                        File format not supported{" "}
+                        {fileList.experiencefile[0]?.fileType}
+                      </h5>
+                    )}
                   </li>
                 ) : (
                   <h3 className="p-5">File Not uploaded</h3>
@@ -291,7 +548,7 @@ const AdminLandingPage = () => {
                
                     
                     src={`${url}/${fileList?.experiencefile[0]?.filePath}`}
-                    type="application/pdf"
+                    type="image/pdf"
                     width="100%"
                     height="300px"
                   />
@@ -302,14 +559,51 @@ const AdminLandingPage = () => {
                 {fileList?.sopfile[0]?.filePath ? (
                   <li>
                     <p>{fileList?.sopfile[0]?.fileName}</p>
-                 
-                      
-          
-                    <GoogleDocsViewer
-                      width="100%"
-                      height="300px"
-                      fileUrl={`${url}/${fileList?.sopfile[0]?.filePath}`}
-                         />
+
+                    {fileList.sopfile[0]?.fileType === "image/png" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.sopfile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : fileList.sopfile[0]?.fileType === "image/jpg" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.sopfile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : fileList.sopfile[0]?.fileType === "image/jpeg" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.sopfile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : fileList.sopfile[0]?.fileType == "application/pdf" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.sopfile[0].filePath}`}
+                      />
+                    ) : fileList.sopfile[0]?.fileType ==
+                      "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.sopfile[0].filePath}`}
+                      />
+                    ) : fileList.sopfile[0]?.fileType ==
+                      "application/octet-stream" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.sopfile[0].filePath}`}
+                      />
+                    ) : (
+                      <h5>
+                        File format not supported{" "}
+                        {fileList.sopfile[0]?.fileType}
+                      </h5>
+                    )}
                   </li>
                 ) : (
                   <h3 className="p-5">File Not uploaded</h3>
@@ -318,12 +612,51 @@ const AdminLandingPage = () => {
                 {fileList?.lorfile[0]?.filePath ? (
                   <li>
                     <p>{fileList?.lorfile[0]?.fileName}</p>
-                 
-                     <GoogleDocsViewer
-                      width="100%"
-                      height="300px"
-                      fileUrl={`${url}/${fileList?.lorfile[0]?.filePath}`}
-                         />
+
+                    {fileList.lorfile[0]?.fileType === "image/png" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.lorfile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : fileList.lorfile[0]?.fileType === "image/jpg" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.lorfile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : fileList.lorfile[0]?.fileType === "image/jpeg" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.lorfile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : fileList.lorfile[0]?.fileType == "application/pdf" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.lorfile[0].filePath}`}
+                      />
+                    ) : fileList.lorfile[0]?.fileType ==
+                      "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.lorfile[0].filePath}`}
+                      />
+                    ) : fileList.lorfile[0]?.fileType ==
+                      "application/octet-stream" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.lorfile[0].filePath}`}
+                      />
+                    ) : (
+                      <h5>
+                        File format not supported{" "}
+                        {fileList.lorfile[0]?.fileType}
+                      </h5>
+                    )}
                   </li>
                 ) : (
                   <h3 className="p-5">File Not uploaded</h3>
