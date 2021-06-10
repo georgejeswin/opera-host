@@ -199,10 +199,12 @@ const AdminLandingPage = () => {
                         alt="file name"
                       />
                     ) : fileList.cvfile[0]?.fileType == "application/pdf" ? (
-                      <GoogleDocsViewer
+                      <embed
+                        className="pdf__files"
+                        src={`${url}/${fileList.cvfile[0].filePath}`}
+                        type="application/pdf"
                         width="100%"
                         height="300px"
-                        fileUrl={`${url}/${fileList.cvfile[0].filePath}`}
                       />
                     ) : fileList.cvfile[0]?.fileType ==
                       "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
@@ -250,10 +252,12 @@ const AdminLandingPage = () => {
                       alt="file name"
                     />
                   ) : fileList.psfile[0]?.fileType == "application/pdf" ? (
-                    <GoogleDocsViewer
+                    <embed
+                      className="pdf__files"
+                      src={`${url}/${fileList.psfile[0].filePath}`}
+                      type="application/pdf"
                       width="100%"
                       height="300px"
-                      fileUrl={`${url}/${fileList.psfile[0].filePath}`}
                     />
                   ) : fileList.psfile[0]?.fileType ==
                     "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
@@ -298,10 +302,12 @@ const AdminLandingPage = () => {
                       alt="file name"
                     />
                   ) : fileList.sslcfile[0]?.fileType == "application/pdf" ? (
-                    <GoogleDocsViewer
+                    <embed
+                      className="pdf__files"
+                      src={`${url}/${fileList.sslcfile[0].filePath}`}
+                      type="application/pdf"
                       width="100%"
                       height="300px"
-                      fileUrl={`${url}/${fileList.sslcfile[0].filePath}`}
                     />
                   ) : fileList.sslcfile[0]?.fileType ==
                     "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
@@ -346,10 +352,12 @@ const AdminLandingPage = () => {
                       alt="file name"
                     />
                   ) : fileList.plustwofile[0]?.fileType == "application/pdf" ? (
-                    <GoogleDocsViewer
+                    <embed
+                      className="pdf__files"
+                      src={`${url}/${fileList.plustwofile[0].filePath}`}
+                      type="application/pdf"
                       width="100%"
                       height="300px"
-                      fileUrl={`${url}/${fileList.plustwofile[0].filePath}`}
                     />
                   ) : fileList.plustwofile[0]?.fileType ==
                     "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
@@ -400,10 +408,12 @@ const AdminLandingPage = () => {
                       />
                     ) : fileList.degreefile[0]?.fileType ==
                       "application/pdf" ? (
-                      <GoogleDocsViewer
+                      <embed
+                        className="pdf__files"
+                        src={`${url}/${fileList.degreefile[0].filePath}`}
+                        type="application/pdf"
                         width="100%"
                         height="300px"
-                        fileUrl={`${url}/${fileList.degreefile[0].filePath}`}
                       />
                     ) : fileList.degreefile[0]?.fileType ==
                       "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
@@ -455,10 +465,12 @@ const AdminLandingPage = () => {
                         alt="file name"
                       />
                     ) : fileList.ieltsfile[0]?.fileType == "application/pdf" ? (
-                      <GoogleDocsViewer
+                      <embed
+                        className="pdf__files"
+                        src={`${url}/${fileList.ieltsfile[0].filePath}`}
+                        type="application/pdf"
                         width="100%"
                         height="300px"
-                        fileUrl={`${url}/${fileList.ieltsfile[0].filePath}`}
                       />
                     ) : fileList.ieltsfile[0]?.fileType ==
                       "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
@@ -512,10 +524,12 @@ const AdminLandingPage = () => {
                       />
                     ) : fileList.experiencefile[0]?.fileType ==
                       "application/pdf" ? (
-                      <GoogleDocsViewer
+                      <embed
+                        className="pdf__files"
+                        src={`${url}/${fileList.experencefile[0].filePath}`}
+                        type="application/pdf"
                         width="100%"
                         height="300px"
-                        fileUrl={`${url}/${fileList.experiencefile[0].filePath}`}
                       />
                     ) : fileList.experiencefile[0]?.fileType ==
                       "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
@@ -579,10 +593,12 @@ const AdminLandingPage = () => {
                         alt="file name"
                       />
                     ) : fileList.sopfile[0]?.fileType == "application/pdf" ? (
-                      <GoogleDocsViewer
+                      <embed
+                        className="pdf__files"
+                        src={`${url}/${fileList.sopfile[0].filePath}`}
+                        type="application/pdf"
                         width="100%"
                         height="300px"
-                        fileUrl={`${url}/${fileList.sopfile[0].filePath}`}
                       />
                     ) : fileList.sopfile[0]?.fileType ==
                       "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
@@ -632,10 +648,12 @@ const AdminLandingPage = () => {
                         alt="file name"
                       />
                     ) : fileList.lorfile[0]?.fileType == "application/pdf" ? (
-                      <GoogleDocsViewer
+                      <embed
+                        className="pdf__files"
+                        src={`${url}/${fileList.lorfile[0].filePath}`}
+                        type="application/pdf"
                         width="100%"
                         height="300px"
-                        fileUrl={`${url}/${fileList.lorfile[0].filePath}`}
                       />
                     ) : fileList.lorfile[0]?.fileType ==
                       "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
