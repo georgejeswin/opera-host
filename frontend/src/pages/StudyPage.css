@@ -13,6 +13,9 @@
 .studyPage__items {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-left: -10px;
 }
 /* .middle {
   position: absolute;
