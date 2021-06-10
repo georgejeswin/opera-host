@@ -89,3 +89,8 @@
 .studyCard__p {
   color: #fff;
 }
+@media only screen and (max-width: 600px) {
+  .studyPage__top {
+    height: 26vh;
+  }
+}

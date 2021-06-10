@@ -10,3 +10,8 @@
   align-items: flex-end;
   justify-content: center;
 }
+@media only screen and (max-width: 600px) {
+  .contactPage__top {
+    height: 26vh;
+  }
+}

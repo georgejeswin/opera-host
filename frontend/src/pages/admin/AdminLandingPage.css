@@ -90,4 +90,7 @@ embed {
   .admin__userName-table {
     width: 100%;
   }
+  .adminFiles__img {
+    max-width: 280px;
+  }
 }

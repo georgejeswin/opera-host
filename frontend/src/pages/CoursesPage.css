@@ -63,6 +63,9 @@ hr.coursePageCard__divider {
     flex-direction: column;
     align-items: center;
   }
+  .coursesPage__top {
+    height: 26vh;
+  }
   .coursePageCard__left {
     width: 100%;
   }
