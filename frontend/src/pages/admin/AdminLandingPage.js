@@ -16,74 +16,6 @@ const AdminLandingPage = () => {
   const dispatch = useDispatch();
   const [showFiles, setShowFiles] = useState(false);
   const [fileList, setFileList] = useState({});
-  // const [loading, setLoading] = useState(false);
-  // const [fileType, setFileType] = useState({
-  //   psfileType: "",
-  //   plustwofileType: "",
-  //   sslcfileType: "",
-  //   cvfileType: "",
-  //   degreefileType: "",
-  //   lorfileType: "",
-  //   experiencefileType: "",
-  //   sopfileType: "",
-  //   ieltsfileType: "",
-  // });
-
-  // const mappedFiles = files.map((file) => {
-  //   if (
-  //     file.psfile[0]?.fileType === "application/png" ||
-  //     "application/jpg" ||
-  //     "application/jpeg"
-  //   ) {
-  //     setFileType(fileType.psfileType === "image");
-  //   } else if (
-  //     file.plustwofile[0]?.fileType === "application/png" ||
-  //     "application/jpg" ||
-  //     "application/jpeg"
-  //   ) {
-  //     setFileType(fileType.plustwofileType === "image");
-  //   } else if (
-  //     file.sslcfile[0]?.fileType === "application/png" ||
-  //     "application/jpg" ||
-  //     "application/jpeg"
-  //   ) {
-  //     setFileType(fileType.sslcfileType === "image");
-  //   } else if (
-  //     file.degreefile[0]?.fileType === "application/png" ||
-  //     "application/jpg" ||
-  //     "application/jpeg"
-  //   ) {
-  //     setFileType(fileType.degreefileType === "image");
-  //   } else if (
-  //     file.ieltsfile[0]?.fileType === "application/png" ||
-  //     "application/jpg" ||
-  //     "application/jpeg"
-  //   ) {
-  //     setFileType(fileType.ieltsfileType === "image");
-  //   } else if (
-  //     file.lorfile[0]?.fileType === "application/png" ||
-  //     "application/jpg" ||
-  //     "application/jpeg"
-  //   ) {
-  //     setFileType(fileType.lorfileType === "image");
-  //   } else if (
-  //     file.sopfile[0]?.fileType === "application/png" ||
-  //     "application/jpg" ||
-  //     "application/jpeg"
-  //   ) {
-  //     setFileType(fileType.sopfileType === "image");
-  //   } else if (
-  //     file.experiencefile[0]?.fileType === "application/png" ||
-  //     "application/jpg" ||
-  //     "application/jpeg"
-  //   ) {
-  //     setFileType(fileType.experiencefileType === "image");
-  //   }
-
-  //   else {
-  //     setFileType(fileType.cvfileType === "image");
-  //   }
-  // });
 
   useEffect(() => {
     dispatch(getFiles());
@@ -205,9 +137,9 @@ const AdminLandingPage = () => {
     <div>
       <div className="container-fluid ">
         <div className="row">
-          <div className="col-md-4 col-sm-12 margin__none">
-            <table className="admin__userName-table col-sm-12">
-              <tbody className="pt-5 mt-5">
+          <div className="col-md-4 col-sm-12 margin__none display__users">
+            <table className="admin__userName-table col-sm-12 ">
+              <tbody className="pt-5 mt-5 ">
                 {files.map((file) => (
                   <tr className="files__row margin__none">
                     <td>
