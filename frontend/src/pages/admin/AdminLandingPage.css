@@ -8,6 +8,9 @@
 .show__files {
   list-style: none;
 }
+.adminFiles__img {
+  max-width: 700px;
+}
 .delete__icon {
   color: rgb(90, 51, 126);
 }
@@ -80,5 +83,8 @@ embed {
   }
   .admin__userName-table {
     width: 100%;
+  }
+  .adminFiles__img {
+    max-width: 350px;
   }
 }

@@ -8,6 +8,7 @@ import "./AdminLandingPage.css";
 import { IconButton } from "@material-ui/core";
 import { deleteUsers } from "../../actions/userActions";
 import GoogleDocsViewer from "react-google-docs-viewer";
+
 const AdminLandingPage = () => {
   const files = useSelector((state) => state.files);
   const history = useHistory();
@@ -16,6 +17,73 @@ const AdminLandingPage = () => {
   const [showFiles, setShowFiles] = useState(false);
   const [fileList, setFileList] = useState({});
   // const [loading, setLoading] = useState(false);
+  // const [fileType, setFileType] = useState({
+  //   psfileType: "",
+  //   plustwofileType: "",
+  //   sslcfileType: "",
+  //   cvfileType: "",
+  //   degreefileType: "",
+  //   lorfileType: "",
+  //   experiencefileType: "",
+  //   sopfileType: "",
+  //   ieltsfileType: "",
+  // });
+
+  // const mappedFiles = files.map((file) => {
+  //   if (
+  //     file.psfile[0]?.fileType === "application/png" ||
+  //     "application/jpg" ||
+  //     "application/jpeg"
+  //   ) {
+  //     setFileType(fileType.psfileType === "image");
+  //   } else if (
+  //     file.plustwofile[0]?.fileType === "application/png" ||
+  //     "application/jpg" ||
+  //     "application/jpeg"
+  //   ) {
+  //     setFileType(fileType.plustwofileType === "image");
+  //   } else if (
+  //     file.sslcfile[0]?.fileType === "application/png" ||
+  //     "application/jpg" ||
+  //     "application/jpeg"
+  //   ) {
+  //     setFileType(fileType.sslcfileType === "image");
+  //   } else if (
+  //     file.degreefile[0]?.fileType === "application/png" ||
+  //     "application/jpg" ||
+  //     "application/jpeg"
+  //   ) {
+  //     setFileType(fileType.degreefileType === "image");
+  //   } else if (
+  //     file.ieltsfile[0]?.fileType === "application/png" ||
+  //     "application/jpg" ||
+  //     "application/jpeg"
+  //   ) {
+  //     setFileType(fileType.ieltsfileType === "image");
+  //   } else if (
+  //     file.lorfile[0]?.fileType === "application/png" ||
+  //     "application/jpg" ||
+  //     "application/jpeg"
+  //   ) {
+  //     setFileType(fileType.lorfileType === "image");
+  //   } else if (
+  //     file.sopfile[0]?.fileType === "application/png" ||
+  //     "application/jpg" ||
+  //     "application/jpeg"
+  //   ) {
+  //     setFileType(fileType.sopfileType === "image");
+  //   } else if (
+  //     file.experiencefile[0]?.fileType === "application/png" ||
+  //     "application/jpg" ||
+  //     "application/jpeg"
+  //   ) {
+  //     setFileType(fileType.experiencefileType === "image");
+  //   }
+
+  //   else {
+  //     setFileType(fileType.cvfileType === "image");
+  //   }
+  // });
 
   useEffect(() => {
     dispatch(getFiles());
@@ -179,12 +247,25 @@ const AdminLandingPage = () => {
                 {fileList.cvfile[0].filePath ? (
                   <li>
                     <p>{fileList?.cvfile[0]?.fileName}</p>
-
-                    <GoogleDocsViewer
-                      width="100%"
-                      height="300px"
-                      fileUrl={`${url}/${fileList.cvfile[0].filePath}`}
-                    />
+                    {fileList.cvfile[0].fileType == "application/png" ||
+                    "application/jpg" ||
+                    "application/jpeg" ? (
+                      <>
+                        <h3>{fileList.cvfile[0]?.fileType}</h3>
+                        <h3>{`${url}/${fileList.cvfile[0].filePath}`}</h3>
+                        <img
+                          className="adminFiles__img"
+                          src={`${url}/${fileList.cvfile[0].filePath}`}
+                          alt="file name"
+                        />
+                      </>
+                    ) : (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.cvfile[0].filePath}`}
+                      />
+                    )}
                   </li>
                 ) : (
                   <h3 className="p-2">File Not uploaded</h3>
@@ -193,34 +274,61 @@ const AdminLandingPage = () => {
                 <li>
                   <h5>2. Front and back page of passport copy</h5>
                   <p>{fileList?.psfile[0]?.fileName}</p>
-
-                  <GoogleDocsViewer
-                    width="100%"
-                    height="300px"
-                    fileUrl={`${url}/${fileList?.psfile[0]?.filePath}`}
-                  />
+                  {fileList.psfile[0]?.fileType === "application/png" ||
+                  "application/jpg" ||
+                  "application/jpeg" ? (
+                    <img
+                      className="adminFiles__img"
+                      src={`${url}/${fileList.psfile[0].filePath}`}
+                      alt="file name"
+                    />
+                  ) : (
+                    <GoogleDocsViewer
+                      width="100%"
+                      height="300px"
+                      fileUrl={`${url}/${fileList.psfile[0].filePath}`}
+                    />
+                  )}
                 </li>
                 <li>
                   <h5>3. SSLC Certificate</h5>
 
                   <p>{fileList?.sslcfile[0]?.fileName}</p>
-
-                  <GoogleDocsViewer
-                    width="100%"
-                    height="300px"
-                    fileUrl={`${url}/${fileList?.sslcfile[0]?.filePath}`}
-                  />
+                  {fileList.sslcfile[0]?.fileType === "application/png" ||
+                  "application/jpg" ||
+                  "application/jpeg" ? (
+                    <img
+                      className="adminFiles__img"
+                      src={`${url}/${fileList.sslcfile[0].filePath}`}
+                      alt="file name"
+                    />
+                  ) : (
+                    <GoogleDocsViewer
+                      width="100%"
+                      height="300px"
+                      fileUrl={`${url}/${fileList.sslcfile[0].filePath}`}
+                    />
+                  )}
                 </li>
                 <li>
                   <h5>4. Plus two Certificate</h5>
 
                   <p>{fileList?.plustwofile[0]?.fileName}</p>
-
-                  <GoogleDocsViewer
-                    width="100%"
-                    height="300px"
-                    fileUrl={`${url}/${fileList?.plustwofile[0]?.filePath}`}
-                  />
+                  {fileList.plustwofile[0]?.fileType === "application/png" ||
+                  "application/jpg" ||
+                  "application/jpeg" ? (
+                    <img
+                      className="adminFiles__img"
+                      src={`${url}/${fileList.plustwofile[0].filePath}`}
+                      alt="file name"
+                    />
+                  ) : (
+                    <GoogleDocsViewer
+                      width="100%"
+                      height="300px"
+                      fileUrl={`${url}/${fileList.plustwofile[0].filePath}`}
+                    />
+                  )}
                 </li>
                 <h5>
                   5. Degree certificate with consolidated mark sheet and
@@ -230,11 +338,21 @@ const AdminLandingPage = () => {
                   <li>
                     <p>{fileList?.degreefile[0]?.fileName}</p>
 
-                    <GoogleDocsViewer
-                      width="100%"
-                      height="300px"
-                      fileUrl={`${url}/${fileList?.degreefile[0]?.filePath}`}
-                    />
+                    {fileList.degreefile[0]?.fileType === "application/png" ||
+                    "application/jpg" ||
+                    "application/jpeg" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.degreefile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.degreefile[0].filePath}`}
+                      />
+                    )}
                   </li>
                 ) : (
                   <h3 className="p-5">File Not uploaded</h3>
@@ -246,11 +364,21 @@ const AdminLandingPage = () => {
                   <li>
                     <p>{fileList.ieltsfile[0].fileName}</p>
 
-                    <GoogleDocsViewer
-                      width="100%"
-                      height="300px"
-                      fileUrl={`${url}/${fileList.ieltsfile[0].filePath}`}
-                    />
+                    {fileList.ieltsfile[0]?.fileType === "application/png" ||
+                    "application/jpg" ||
+                    "application/jpeg" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.ieltsfile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.ieltsfile[0].filePath}`}
+                      />
+                    )}
                   </li>
                 ) : (
                   <h3 className="p-5">File Not uploaded</h3>
@@ -262,11 +390,22 @@ const AdminLandingPage = () => {
                   <li>
                     <p>{fileList?.experiencefile[0]?.fileName}</p>
 
-                    <GoogleDocsViewer
-                      width="100%"
-                      height="300px"
-                      fileUrl={`${url}/${fileList?.experiencefile[0]?.filePath}`}
-                    />
+                    {fileList.experiencefile[0]?.fileType ===
+                      "application/png" ||
+                    "application/jpg" ||
+                    "application/jpeg" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.experiencefile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.experiencefile[0].filePath}`}
+                      />
+                    )}
                   </li>
                 ) : (
                   <h3 className="p-5">File Not uploaded</h3>
@@ -290,11 +429,21 @@ const AdminLandingPage = () => {
                   <li>
                     <p>{fileList?.sopfile[0]?.fileName}</p>
 
-                    <GoogleDocsViewer
-                      width="100%"
-                      height="300px"
-                      fileUrl={`${url}/${fileList?.sopfile[0]?.filePath}`}
-                    />
+                    {fileList.sopfile[0]?.fileType === "application/png" ||
+                    "application/jpg" ||
+                    "application/jpeg" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.sopfile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.sopfile[0].filePath}`}
+                      />
+                    )}
                   </li>
                 ) : (
                   <h3 className="p-5">File Not uploaded</h3>
@@ -304,11 +453,21 @@ const AdminLandingPage = () => {
                   <li>
                     <p>{fileList?.lorfile[0]?.fileName}</p>
 
-                    <GoogleDocsViewer
-                      width="100%"
-                      height="300px"
-                      fileUrl={`${url}/${fileList?.lorfile[0]?.filePath}`}
-                    />
+                    {fileList.lorfile[0]?.fileType === "application/png" ||
+                    "application/jpg" ||
+                    "application/jpeg" ? (
+                      <img
+                        className="adminFiles__img"
+                        src={`${url}/${fileList.lorfile[0].filePath}`}
+                        alt="file name"
+                      />
+                    ) : (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.lorfile[0].filePath}`}
+                      />
+                    )}
                   </li>
                 ) : (
                   <h3 className="p-5">File Not uploaded</h3>
