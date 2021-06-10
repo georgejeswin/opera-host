@@ -11,7 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 245,
+    maxWidth: 445,
   },
   media: {
     height: 240,
@@ -82,22 +82,22 @@ const ServicesCard = ({ img, title, content }) => {
   const classes = useStyles();
   return (
     <Card className={classes.root} className="servicesCard__card">
-      <CardActionArea>
-        <CardMedia className={classes.media} image={img} title={title} />
-        <CardContent>
+      <CardActionArea className="cardActionArea">
+        <div className="card__left">
+          <img src={img} className="card__left-image" alt="" />
+        </div>
+        <CardContent className="cardContent">
           <Typography gutterBottom variant="h5" component="h2">
             {title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             {content}
           </Typography>
+          {/* <Button size="small" color="primary">
+            Learn More
+          </Button> */}
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
     </Card>
   );
 };

@@ -10,7 +10,7 @@
   align-items: flex-end;
   justify-content: center;
 }
-.serviceCard {
+/* .serviceCard {
   max-width: 300px;
   overflow: hidden;
   object-fit: contain;
@@ -40,12 +40,39 @@
   display: flex;
   align-items: center;
   padding: 15px;
+} */
+.services__items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 30px;
 }
 .servicesCard__card {
+  max-width: 600px;
+  margin: 20px;
+  transition: all 0.4s ease-in !important;
+}
+.servicesCard__card:hover {
+  transform: scale(1.03) !important;
+}
+.cardActionArea {
+  display: flex !important;
+}
+/* .card__left {
+  object-fit: contain;
+} */
+.card__left-image {
   max-width: 300px;
+}
+.cardContent {
+  padding: 30px !important;
 }
 @media only screen and (max-width: 600px) {
   .servicesPage__top {
     height: 26vh;
+  }
+  .cardActionArea {
+    flex-direction: column;
   }
 }
