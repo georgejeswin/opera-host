@@ -29,7 +29,7 @@ const StudyPage = () => {
       <div className="studyPage__top">
         <h3 className="top__h3">Study In</h3>
       </div>
-      <div className="studyPage__items">
+      <div className="studyPage__items container-fluid my-5">
         <StudyComp bg={UK} country="UK" />
         <StudyComp bg={Germany} country="Germany" />
         <StudyComp bg={NZ} country="New Zeland" />
@@ -57,16 +57,19 @@ const StudyPage = () => {
 };
 const StudyComp = ({ bg, country }) => {
   return (
-    <div className="studyCard" style={{ backgroundImage: `url(${bg})` }}>
-      <h4 className="studyCard__h4">{country}</h4>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, maxime.
-        Nulla aperiam dolor....
-      </p>
-      <Link to="/" className="btn1">
-        <span>Learn More</span>
-        <i className="fas fa-angle-right" id="fas1"></i>
-      </Link>
+    <div className="studyCardComp">
+      <img src={bg} alt="" className="studyCardComp__img" />
+      <div className="studyComp__content">
+        <h4 className="studyCard__h4">{country}</h4>
+        <p className="studyCard__p">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
+          maxime. Nulla aperiam dolor....
+        </p>
+        <Link to="/" className="btn1">
+          <span>Learn More</span>
+          <i className="fas fa-angle-right" id="fas1"></i>
+        </Link>
+      </div>
     </div>
   );
 };

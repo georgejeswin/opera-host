@@ -23,9 +23,8 @@ const Landing = () => {
     files.filter((file) => {
       if (file.user === currentuser._id) {
         history.push("/user/status");
-      } else {
-        history.push("/upload");
       }
+      history.push("/upload");
     });
   };
   return (

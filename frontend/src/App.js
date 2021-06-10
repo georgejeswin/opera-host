@@ -23,10 +23,8 @@ import AdminViewMessages from "./pages/admin/AdminViewMessages";
 import Payment from "./pages/Payment";
 import UserStatus from "./pages/user/UserStatus";
 import { getFiles } from "./actions/fileActions";
-import Contact from "./components/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
-import Services from "./components/Services";
 import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
 import ContactPage from "./pages/ContactPage";
@@ -56,9 +54,9 @@ AOS.init({
 function App() {
   const dispatch = useDispatch();
 
-  useEffect(async () => {
+  useEffect(() => {
     dispatch(getFiles());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     const unSubscribe = auth.onAuthStateChanged(async (user) => {
