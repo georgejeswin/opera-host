@@ -85,6 +85,6 @@ embed {
     width: 100%;
   }
   .adminFiles__img {
-    max-width: 350px;
+    max-height: 300px;
   }
 }
