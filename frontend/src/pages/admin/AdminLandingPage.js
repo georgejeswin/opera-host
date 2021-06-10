@@ -7,7 +7,8 @@ import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 import "./AdminLandingPage.css";
 import { IconButton } from "@material-ui/core";
 import { deleteUsers } from "../../actions/userActions";
-import GoogleDocsViewer from 'react-google-docs-viewer'
+import GoogleDocsViewer from 'react-google-docs-viewer';
+
 const AdminLandingPage = () => {
   const files = useSelector((state) => state.files);
   const history = useHistory();
@@ -179,9 +180,10 @@ const AdminLandingPage = () => {
                 <h5 className="text-danger">Amount : {fileList?.amount} </h5>
                 <h5>1. Updated curriculum vitae ( CV )</h5>
                 {fileList.cvfile[0].filePath ? (
+
                   <li>
                     <p>{fileList?.cvfile[0]?.fileName}</p>
-
+                       
                      <GoogleDocsViewer
                       width="100%"
                       height="300px"
@@ -196,8 +198,6 @@ const AdminLandingPage = () => {
                 <li>
                   <h5>2. Front and back page of passport copy</h5>
                   <p>{fileList?.psfile[0]?.fileName}</p>
-               
-                    
                <GoogleDocsViewer
                       width="100%"
                       height="300px"
