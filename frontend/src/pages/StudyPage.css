@@ -10,3 +10,7 @@
   align-items: flex-end;
   justify-content: center;
 }
+.studyPage__items {
+  display: flex;
+  flex-wrap: wrap;
+}

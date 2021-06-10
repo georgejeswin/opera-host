@@ -87,7 +87,7 @@ const ServicesCard = ({ img, title, content }) => {
         <CardMedia className={classes.media} image={img} title={title} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Course
+            {title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             {content}
