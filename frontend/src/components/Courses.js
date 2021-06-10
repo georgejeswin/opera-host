@@ -41,7 +41,9 @@ const Courses = () => {
         <CoursesComp bg="https://www.cicnews.com/wp-content/uploads/2020/02/20200220_InternationalStudentsRecordNumbers.jpg" />
         <CoursesComp bg="https://www.cicnews.com/wp-content/uploads/2020/02/20200220_InternationalStudentsRecordNumbers.jpg" /> */}
       </div>
-      <button className="register__button">View All</button>
+      <Link to="/courses">
+        <button className="register__button">View All</button>
+      </Link>
     </div>
   );
 };
@@ -75,7 +77,7 @@ const CompCard = ({ bg, title, content }) => {
           maxime. Nulla aperiam dolor....
         </p>
       </div>
-      <Link to="/" className="btn ">
+      <Link to="/courses" className="btn ">
         <span>Learn More</span>
         <i className="fas fa-angle-right"></i>
       </Link>

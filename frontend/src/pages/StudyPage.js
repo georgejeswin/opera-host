@@ -51,7 +51,7 @@ const StudyPage = () => {
         <StudyComp bg={Malta} country="Malta" />
         <StudyComp bg={Norway} country="Norway" />
         <StudyComp bg={Poland} country="Poland" />
-      </div>{" "}
+      </div>
     </div>
   );
 };
@@ -70,4 +70,28 @@ const StudyComp = ({ bg, country }) => {
     </div>
   );
 };
+
+// const StudyCard = ({ bg, country }) => {
+//   return (
+//     <div className="card middle">
+//       <div className="front">
+//         <img src={bg} alt="" />
+//         <div className="back">
+//           <div
+//             className="back-content middle"
+//             style={{ backgroundImage: `url(${bg})` }}
+//           >
+//             <h2>{country}</h2>
+//             <p>
+//               Lorem ipsum dolor sit amet consectetur adipisicing elit.
+//               Reiciendis quibusdam molestiae incidunt obcaecati maxime magni,
+//               ullam, aperiam dolores eligendi iste beatae in? Architecto saepe
+//               dicta quis, impedit maxime nihil distinctio.
+//             </p>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 export default StudyPage;

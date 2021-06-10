@@ -7,7 +7,7 @@ const About = () => {
     <div className="about container" id="about">
       <div className="row">
         <div className="about__left col-md-6 col-12">
-          <img src={AboutImg} alt="About" />
+          <img src={AboutImg} alt="About" data-aos="fade-right" />
         </div>
         <div className="about__right col-md-6 col-12 p-5">
           <h1>About Opera</h1>

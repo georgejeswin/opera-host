@@ -55,9 +55,11 @@ const Study = () => {
         <StudyComp bg={Norway} country="Norway" />
         <StudyComp bg={Poland} country="Poland" />
       </div>
-      <button className="register__button-res register__button">
-        View All
-      </button>
+      <Link to="/study-in">
+        <button className="register__button-res register__button">
+          View All
+        </button>
+      </Link>
     </div>
   );
 };
@@ -70,7 +72,7 @@ const StudyComp = ({ bg, country }) => {
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, maxime.
         Nulla aperiam dolor....
       </p>
-      <Link to="/" className="btn1">
+      <Link to="/study-in" className="btn1">
         <span>Learn More</span>
         <i className="fas fa-angle-right" id="fas1"></i>
       </Link>
