@@ -110,7 +110,7 @@ const Login = ({ history }) => {
         className="login__username"
         autoFocus
         value={email}
-        placeholder="Username"
+        placeholder="Email"
         onChange={(e) => setEmail(e.target.value)}
       />
       <input
