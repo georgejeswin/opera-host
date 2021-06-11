@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./StudyPage.css";
 import { Link } from "react-router-dom";
 import Armenia from "../components/images/Armenia.jpg";
@@ -26,21 +26,6 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router";
 
 const StudyPage = () => {
-  const user = useSelector((state) => ({ ...state.user }));
-  const files = useSelector((state) => state.files);
-  const history = useHistory();
-  const handleClick = (currentuser) => {
-    if (files.length === 0) {
-      history.push("/upload");
-    }
-    files.filter((file) => {
-      if (file.user === currentuser._id) {
-        history.push("/user/status");
-      } else {
-        history.push("/upload");
-      }
-    });
-  };
   return (
     <div className="studyPage">
       <div className="studyPage__top">
@@ -49,12 +34,24 @@ const StudyPage = () => {
       <div className="studyPage__items container-fluid my-5">
         <StudyPageCard bg={UK} country="UK" />
         <StudyPageCard bg={Germany} country="Germany" />
-        <StudyPageCard bg={NZ} country="New Zeland" />
+        <StudyPageCard
+          bg={NZ}
+          country="New Zeland"
+          content="The eight institutions that make up the New Zealand university system are located in cities across the country’s two main islands, the North and the South. This distribution gives students the chance to pursue a wide range of opportunities in the study, work, recreation and culture."
+        />
         <StudyPageCard bg={France} country="France" />
-        <StudyPageCard bg={Australia} country="Australia" />
+        <StudyPageCard
+          bg={Australia}
+          country="Australia"
+          content="The Australian education system has a strong international reputation and is known for its effective structure and innovative policy developments. Many other countries, eager to improve their own education systems, turn to Australia for advice."
+        />
         <StudyPageCard bg={Singapore} country="Singapore" />
         <StudyPageCard bg={SL} country="Switzerland" />
-        <StudyPageCard bg={USA} country="USA" />
+        <StudyPageCard
+          bg={USA}
+          country="USA"
+          content="American universities are widely known for the quality of their teaching and research. The United States is the number one and largest destination for international students seeking higher education overseas or study abroad."
+        />
         <StudyPageCard bg={Ireland} country="Ireland" />
         <StudyPageCard bg={Italy} country="Italy" />
         <StudyPageCard bg={Ukraine} country="Ukraine" />
@@ -69,38 +66,39 @@ const StudyPage = () => {
         <StudyPageCard bg={Norway} country="Norway" />
         <StudyPageCard bg={Poland} country="Poland" />
       </div>
-      <button
-        className="register__button p-3 mb-5"
-        onClick={() => {
-          !user.email ? history.push("/login") : handleClick(user);
-        }}
-      >
-        Register Now!!!
-      </button>
     </div>
   );
 };
-// const StudyComp = ({ bg, country }) => {
-//   return (
-//     <div className="studyCardComp">
-//       <img src={bg} alt="" className="studyCardComp__img" />
-//       <div className="studyComp__content">
-//         <h4 className="studyCard__h4">{country}</h4>
-//         <p className="studyCard__p">
-//           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-//           maxime. Nulla aperiam dolor.... Lorem ipsum dolor, sit amet
-//           consectetur adipisicing elit. Voluptas, eveniet placeat.
-//         </p>
-//         {/* <Link to="/" className="btn1">
-//           <span>Learn More</span>
-//           <i className="fas fa-angle-right" id="fas1"></i>
-//         </Link> */}
-//       </div>
-//     </div>
-//   );
-// };
 
 const StudyPageCard = ({ bg, content, country }) => {
+  const user = useSelector((state) => ({ ...state.user }));
+  const files = useSelector((state) => state.files);
+  const history = useHistory();
+  const [fileUploaded, setFileUploaded] = useState(false);
+  const filesUploaded = (currentuser) => {
+    files.filter((file) => {
+      if (file.user === currentuser._id) {
+        setFileUploaded(true);
+      }
+    });
+  };
+  useEffect(() => {
+    filesUploaded(user);
+    if (files.length <= 0) {
+      history.push("/user");
+    }
+  }, [files.length, history, user]);
+
+  const handleClick = (currentuser) => {
+    if (files.length === 0) {
+      history.push("/upload");
+    }
+    if (fileUploaded) {
+      history.push("/user/status");
+    } else {
+      history.push("/upload");
+    }
+  };
   return (
     <div className="coursePageCard">
       <div className="coursePageCard__left">
@@ -109,40 +107,18 @@ const StudyPageCard = ({ bg, content, country }) => {
       <div className="coursePageCard__right">
         <h3>{country}</h3>
         <hr className="coursePageCard__divider" />
-        <p className="coursePageCard__p">
-          {" "}
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-          maxime. Nulla aperiam dolor.... Lorem ipsum dolor, sit amet
-          consectetur adipisicing elit. Voluptas, eveniet placeat. Odit esse
-          vitae sit quisquam sint repudiandae, quos, atque error, voluptates
-          accusamus perferendis sapiente libero animi laborum dolores ex.
-        </p>
+        <p className="coursePageCard__p">{content}</p>
+        <button
+          className="register__button"
+          onClick={() => {
+            !user.email ? history.push("/login") : handleClick(user);
+          }}
+        >
+          Apply Now!!
+        </button>
       </div>
     </div>
   );
 };
 
-// const StudyCard = ({ bg, country }) => {
-//   return (
-//     <div className="card middle">
-//       <div className="front">
-//         <img src={bg} alt="" />
-//         <div className="back">
-//           <div
-//             className="back-content middle"
-//             style={{ backgroundImage: `url(${bg})` }}
-//           >
-//             <h2>{country}</h2>
-//             <p>
-//               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-//               Reiciendis quibusdam molestiae incidunt obcaecati maxime magni,
-//               ullam, aperiam dolores eligendi iste beatae in? Architecto saepe
-//               dicta quis, impedit maxime nihil distinctio.
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
 export default StudyPage;

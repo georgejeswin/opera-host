@@ -208,14 +208,15 @@
   font-family: "Poppins", sans-serif;
 }
 .slider2__top {
-  color: rgb(89, 41, 134);
+  color: rgb(14, 100, 14);
   font-size: 40px;
   font-weight: 400;
 }
 .slider2__bottom {
-  color: rgb(89, 41, 134);
-  font-size: 75px;
+  color: rgb(16, 116, 37);
+  font-size: 70px;
   font-weight: bolder;
+  font-family: "Poppins", sans-serif;
 }
 
 @media only screen and (max-width: 550px) {

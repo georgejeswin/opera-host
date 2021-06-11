@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import "./NavTop.css";
@@ -7,18 +7,30 @@ const NavTop = () => {
   const user = useSelector((state) => ({ ...state.user }));
   const files = useSelector((state) => state.files);
   const history = useHistory();
+  const [fileUploaded, setFileUploaded] = useState(false);
+  const filesUploaded = (currentuser) => {
+    files.filter((file) => {
+      if (file.user === currentuser._id) {
+        setFileUploaded(true);
+      }
+    });
+  };
+  useEffect(() => {
+    filesUploaded(user);
+    if (files.length <= 0) {
+      history.push("/user");
+    }
+  }, [files.length, history, user]);
 
   const handleClick = (currentuser) => {
     if (files.length === 0) {
       history.push("/upload");
     }
-    files.filter((file) => {
-      if (file.user === currentuser._id) {
-        history.push("/user/status");
-      } else {
-        history.push("/upload");
-      }
-    });
+    if (fileUploaded) {
+      history.push("/user/status");
+    } else {
+      history.push("/upload");
+    }
   };
   return (
     <div className="navTop">

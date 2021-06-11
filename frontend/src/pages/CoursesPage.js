@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./CoursesPage.css";
 import Management from "../components/images/management.jpg";
 import Medicine from "../components/images/Medicine.jpg";
@@ -12,25 +12,11 @@ import Hospitality from "../components/images/hospitality.jpg";
 import Engineering2 from "../components/images/engineering2.jpg";
 import Fashion from "../components/images/fashion.jpg";
 import Healthcare from "../components/images/HealthCare.jpeg";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { getFiles } from "../actions/fileActions";
 
 const CoursesPage = () => {
-  const user = useSelector((state) => ({ ...state.user }));
-  const files = useSelector((state) => state.files);
-  const history = useHistory();
-  const handleClick = (currentuser) => {
-    if (files.length === 0) {
-      history.push("/upload");
-    }
-    files.filter((file) => {
-      if (file.user === currentuser._id) {
-        history.push("/user/status");
-      } else {
-        history.push("/upload");
-      }
-    });
-  };
   return (
     <div className="coursesPage">
       <div className="coursesPage__top">
@@ -40,58 +26,42 @@ const CoursesPage = () => {
         <CoursePageCard
           bg={Engineering2}
           title="Engineering"
-          content=" Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-          maxime. Nulla aperiam dolor. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-          maxime. Nulla aperiam dolor...."
+          content="Engineering is a stream of education that involves the application of Science, Technology, and Mathematics to design, develop, and build machines, structures and processes. It is one of the vital influences that shape our society."
         />
         <CoursePageCard
           bg={Medicine}
           title="Medicine"
-          content=" Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-          maxime. Nulla aperiam dolor. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-          maxime. Nulla aperiam dolor...."
+          content="A career in medicine is one of the most respected and rewarding professions. Medical courses are offered in various specializations including Medical and Biomedical Sciences, Pharmacy, Allied health, Nursing, Health, and fitness."
         />{" "}
         <CoursePageCard
           bg={IT}
-          title="Information Technology"
-          content=" Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-        maxime. Nulla aperiam dolor. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-        maxime. Nulla aperiam dolor...."
+          title="IT"
+          content="Information Technology is the use of Hardware, Software, services, and supporting infrastructure to manage and deliver information and related services. IT professionals provide technical support, maintenance, device management, and security testing services."
         />{" "}
         <CoursePageCard
           bg={Fashion}
           title="Fashion"
-          content=" Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-      maxime. Nulla aperiam dolor. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-      maxime. Nulla aperiam dolor...."
+          content="Fashion and luxury is one of the most creative course options for those who are passionate about garments/ clothes as well as lifestyle accessories. Fashion and luxury course is one of the most prosperous vocational educational streams and covers all that you need to learn right from design to distribution."
         />{" "}
         <CoursePageCard
           bg={Nursing}
           title="Nursing"
-          content=" Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-    maxime. Nulla aperiam dolor. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-    maxime. Nulla aperiam dolor...."
+          content="Nurses are ranked as the most honest, trusted, and ethical professionals. If you are looking for a rewarding occupation and offers a lifetime of opportunities here is the right sector for you."
         />{" "}
         <CoursePageCard
           bg={Management}
           title="Management"
-          content=" Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-  maxime. Nulla aperiam dolor. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-  maxime. Nulla aperiam dolor...."
+          content="Management is the process of planning, organizing, directing, staffing, controlling, and co-coordinating. It provides the academic knowledge and skills that are required to work for businesses of all sizes – from multinational companies to start–ups."
         />
         <CoursePageCard
           bg={Hospitality}
           title="Hospitality"
-          content=" Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-  maxime. Nulla aperiam dolor. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-  maxime. Nulla aperiam dolor...."
+          content="Hospitality is one of the vast and oldest industries and is the fastest growing lucrative career provider. A career in Hospitality can be immensely rewarding as the sector will offer you a lot, from becoming renewed industry professionals to aspiring business leaders."
         />
         <CoursePageCard
           bg={Healthcare}
           title="Healthcare"
-          content=" Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-maxime. Nulla aperiam dolor. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-maxime. Nulla aperiam dolor...."
+          content="Health Care courses are an ideal career destination if you are passionate about helping people and making a difference in their lives. A large number of students join for health care courses as it offers an ideal career destination."
         />
         {/* <CompCard bg={Engineering2} title="Engineering" />
         <CompCard bg={Medicine} title="Medicine" />
@@ -102,40 +72,39 @@ maxime. Nulla aperiam dolor...."
         <CompCard bg={Hospitality} title="Hospitality" />
         <CompCard bg={Healthcare} title="Health Care" /> */}
       </div>
-      <button
-        className="register__button p-3 mb-5"
-        onClick={() => {
-          !user.email ? history.push("/login") : handleClick(user);
-        }}
-      >
-        Register Now!!!
-      </button>
     </div>
   );
 };
 
-// const CompCard = ({ bg, title, content }) => {
-//   return (
-//     <div className="compCard">
-//       <div className="compCard__img">
-//         <img src={bg} alt="" />
-//       </div>
-//       <div className="compCard__contents">
-//         <h4>{title}</h4>
-//         <p>
-//           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-//           maxime. Nulla aperiam dolor....
-//         </p>
-//       </div>
-//       <Link to="/" className="btn ">
-//         <span>Learn More</span>
-//         <i className="fas fa-angle-right"></i>
-//       </Link>
-//     </div>
-//   );
-// };
-
 const CoursePageCard = ({ bg, content, title }) => {
+  const user = useSelector((state) => ({ ...state.user }));
+  const files = useSelector((state) => state.files);
+  const history = useHistory();
+  const [fileUploaded, setFileUploaded] = useState(false);
+  const filesUploaded = (currentuser) => {
+    files.filter((file) => {
+      if (file.user === currentuser._id) {
+        setFileUploaded(true);
+      }
+    });
+  };
+  useEffect(() => {
+    filesUploaded(user);
+    if (files.length <= 0) {
+      history.push("/user");
+    }
+  }, [files.length, history, user]);
+
+  const handleClick = (currentuser) => {
+    if (files.length === 0) {
+      history.push("/upload");
+    }
+    if (fileUploaded) {
+      history.push("/user/status");
+    } else {
+      history.push("/upload");
+    }
+  };
   return (
     <div className="coursePageCard">
       <div className="coursePageCard__left">
@@ -145,6 +114,14 @@ const CoursePageCard = ({ bg, content, title }) => {
         <h3>{title}</h3>
         <hr className="coursePageCard__divider" />
         <p className="coursePageCard__p"> {content}</p>
+        <button
+          className="register__button"
+          onClick={() => {
+            !user.email ? history.push("/login") : handleClick(user);
+          }}
+        >
+          Apply Now!!
+        </button>
       </div>
     </div>
   );
