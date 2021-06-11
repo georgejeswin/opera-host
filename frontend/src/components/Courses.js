@@ -19,14 +19,46 @@ const Courses = () => {
     <div className="courses">
       <h1 className="heading__h1">Study Abroad Courses</h1>
       <div className="courses__items container-fluid">
-        <CourseCard bg={Engineering2} title="Engineering" />
-        <CourseCard bg={Medicine} title="Medicine" />
-        <CourseCard bg={IT} title="Information Technology" />
-        <CourseCard bg={Fashion} title="Fashion" />
-        <CourseCard bg={Nursing} title="Nursing" />
-        <CourseCard bg={Management} title="Management" />
-        <CourseCard bg={Hospitality} title="Hospitality" />
-        <CourseCard bg={Healthcare} title="Health Care" />
+        <CourseCard
+          bg={Engineering2}
+          title="Engineering"
+          content="Engineering is a stream of education that involves the application of Science, Technology, and Mathematics to design, develop, and build machines...."
+        />
+        <CourseCard
+          bg={Medicine}
+          title="Medicine"
+          content="A career in medicine is one of the most respected and rewarding professions. Medical courses are offered in various specializations including Medical and Biomedical Sciences..."
+        />
+        <CourseCard
+          bg={IT}
+          title="Information Technology"
+          content="Information Technology is the use of Hardware, Software, services, and supporting infrastructure to manage and deliver information and related services...."
+        />
+        <CourseCard
+          bg={Fashion}
+          title="Fashion"
+          content="Fashion and luxury is one of the most creative course options for those who are passionate about garments/ clothes as well as lifestyle accessories. Fashion and luxury course is....."
+        />
+        <CourseCard
+          bg={Nursing}
+          title="Nursing"
+          content="Nurses are ranked as the most honest, trusted, and ethical professionals. If you are looking for a rewarding occupation and offers a lifetime of opportunities here is the right sector for you."
+        />
+        <CourseCard
+          bg={Management}
+          title="Management"
+          content="Management is the process of planning, organizing, directing, staffing, controlling, and co-coordinating. It provides the academic knowledge and skills that are required to..."
+        />
+        <CourseCard
+          bg={Hospitality}
+          title="Hospitality"
+          content="Hospitality is one of the vast and oldest industries and is the fastest growing lucrative career provider. A career in Hospitality can be immensely rewarding as the sector will offer...."
+        />
+        <CourseCard
+          bg={Healthcare}
+          title="Health Care"
+          content="Health Care courses are an ideal career destination if you are passionate about helping people and making a difference in their lives. A large number of students join for health care..."
+        />
 
         {/* <CoursesCourse bg="" />
         <CoursesComp bg="" />
@@ -72,10 +104,7 @@ const CourseCard = ({ bg, title, content }) => {
       </div>
       <div className="courseCard__contents">
         <h4>{title}</h4>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-          maxime. Nulla aperiam dolor....
-        </p>
+        <p>{content}</p>
       </div>
       <Link to="/courses" className="btn ">
         <span>Learn More</span>
