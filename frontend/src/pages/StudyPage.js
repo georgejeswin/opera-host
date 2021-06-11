@@ -55,25 +55,25 @@ const StudyPage = () => {
     </div>
   );
 };
-const StudyComp = ({ bg, country }) => {
-  return (
-    <div className="studyCardComp">
-      <img src={bg} alt="" className="studyCardComp__img" />
-      <div className="studyComp__content">
-        <h4 className="studyCard__h4">{country}</h4>
-        <p className="studyCard__p">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-          maxime. Nulla aperiam dolor.... Lorem ipsum dolor, sit amet
-          consectetur adipisicing elit. Voluptas, eveniet placeat.
-        </p>
-        {/* <Link to="/" className="btn1">
-          <span>Learn More</span>
-          <i className="fas fa-angle-right" id="fas1"></i>
-        </Link> */}
-      </div>
-    </div>
-  );
-};
+// const StudyComp = ({ bg, country }) => {
+//   return (
+//     <div className="studyCardComp">
+//       <img src={bg} alt="" className="studyCardComp__img" />
+//       <div className="studyComp__content">
+//         <h4 className="studyCard__h4">{country}</h4>
+//         <p className="studyCard__p">
+//           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
+//           maxime. Nulla aperiam dolor.... Lorem ipsum dolor, sit amet
+//           consectetur adipisicing elit. Voluptas, eveniet placeat.
+//         </p>
+//         {/* <Link to="/" className="btn1">
+//           <span>Learn More</span>
+//           <i className="fas fa-angle-right" id="fas1"></i>
+//         </Link> */}
+//       </div>
+//     </div>
+//   );
+// };
 
 const StudyPageCard = ({ bg, content, country }) => {
   return (

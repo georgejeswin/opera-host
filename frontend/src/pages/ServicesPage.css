@@ -1,3 +1,6 @@
+.servicesPage {
+  background-color: rgb(240, 239, 239);
+}
 .servicesPage__top {
   width: 100vw;
   height: 50vh;
@@ -67,6 +70,27 @@
 }
 .cardContent {
   padding: 30px !important;
+}
+.servicePageCard__left {
+  display: flex;
+  align-items: center;
+}
+.servicePageCard__left img {
+  min-height: 310px;
+  object-fit: cover;
+  max-height: 310px;
+  max-width: 300px;
+  border-radius: 10px;
+}
+.servicePageCard__right {
+  padding: 11px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.servicePageCard__right h3 {
+  font-size: 22px;
 }
 @media only screen and (max-width: 600px) {
   .servicesPage__top {

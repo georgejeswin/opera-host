@@ -25,7 +25,7 @@ const ServicesPage = () => {
         <h3 className="top__h3">Our Services</h3>
       </div>
       <div className="services__items container-fluid">
-        <ServicesCard
+        <ServicesPageCard
           img="https://cdn.statically.io/img/866821.smushcdn.com/1939086/wp-content/uploads/student-counselling-advice.jpg?lossy=1&strip=1&webp=1&quality=100&f=auto"
           title="Admission Counseling"
           content=" We access your qualification, interest and aptitude and suggest you
@@ -33,7 +33,7 @@ const ServicesPage = () => {
             and institute, application forms are filled and sendto institute
             along with fee."
         />
-        <ServicesCard
+        <ServicesPageCard
           img="https://flyonacademy.com/wp-content/uploads/2019/01/confidential-assistance-home.jpg"
           title="Placement Assistance"
           content=" By our network of high quality academicians and professionals
@@ -42,7 +42,7 @@ const ServicesPage = () => {
             the local community"
         />
 
-        <ServicesCard
+        <ServicesPageCard
           img="https://www.tomorrowmakers.com/sites/default/files/2020-02/financial%20planning%20dummies%20updated.jpg"
           title="Financial Guidelines"
           content=" To find the finance required for the desired study package and
@@ -51,7 +51,7 @@ const ServicesPage = () => {
             students who are eligible to get received scholarships or
             sponsorships."
         />
-        <ServicesCard
+        <ServicesPageCard
           img="https://www.chetanyacareers.com/wp-content/uploads/2020/12/image-international-student-population-2.jpg"
           title="Career Guidance"
           content=" We help students to plan their career according to the rapidly
@@ -78,27 +78,42 @@ const ServicesPage = () => {
 //   );
 // };
 
-const ServicesCard = ({ img, title, content }) => {
-  const classes = useStyles();
+// const ServicesCard = ({ img, title, content }) => {
+//   const classes = useStyles();
+//   return (
+//     <Card className={classes.root} className="servicesCard__card">
+//       <CardActionArea className="cardActionArea">
+//         <div className="card__left">
+//           <img src={img} className="card__left-image" alt="" />
+//         </div>
+//         <CardContent className="cardContent">
+//           <Typography gutterBottom variant="h5" component="h2">
+//             {title}
+//           </Typography>
+//           <Typography variant="body2" color="textSecondary" component="p">
+//             {content}
+//           </Typography>
+//           {/* <Button size="small" color="primary">
+//             Learn More
+//           </Button> */}
+//         </CardContent>
+//       </CardActionArea>
+//     </Card>
+//   );
+// };
+
+const ServicesPageCard = ({ img, content, title }) => {
   return (
-    <Card className={classes.root} className="servicesCard__card">
-      <CardActionArea className="cardActionArea">
-        <div className="card__left">
-          <img src={img} className="card__left-image" alt="" />
-        </div>
-        <CardContent className="cardContent">
-          <Typography gutterBottom variant="h5" component="h2">
-            {title}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {content}
-          </Typography>
-          {/* <Button size="small" color="primary">
-            Learn More
-          </Button> */}
-        </CardContent>
-      </CardActionArea>
-    </Card>
+    <div className="coursePageCard">
+      <div className="servicePageCard__left">
+        <img src={img} alt="" />
+      </div>
+      <div className="servicePageCard__right">
+        <h3>{title}</h3>
+        <hr className="coursePageCard__divider" />
+        <p className="coursePageCard__p">{content}</p>
+      </div>
+    </div>
   );
 };
 
