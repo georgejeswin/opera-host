@@ -119,7 +119,7 @@ const CoursePageCard = ({ bg, content, title }) => {
       <div className="coursePageCard__right">
         <h3>{title}</h3>
         <hr className="coursePageCard__divider" />
-        <p>{content}</p>
+        <p className="coursePageCard__p"> {content}</p>
       </div>
     </div>
   );

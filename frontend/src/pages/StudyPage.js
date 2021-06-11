@@ -30,27 +30,27 @@ const StudyPage = () => {
         <h3 className="top__h3">Study In</h3>
       </div>
       <div className="studyPage__items container-fluid my-5">
-        <StudyComp bg={UK} country="UK" />
-        <StudyComp bg={Germany} country="Germany" />
-        <StudyComp bg={NZ} country="New Zeland" />
-        <StudyComp bg={France} country="France" />
-        <StudyComp bg={Australia} country="Australia" />
-        <StudyComp bg={Singapore} country="Singapore" />
-        <StudyComp bg={SL} country="Switzerland" />
-        <StudyComp bg={USA} country="USA" />
-        <StudyComp bg={Ireland} country="Ireland" />
-        <StudyComp bg={Italy} country="Italy" />
-        <StudyComp bg={Ukraine} country="Ukraine" />
-        <StudyComp bg={Russia} country="Russa" />
-        <StudyComp bg={Sweden} country="Sweden" />
-        <StudyComp bg={Armenia} country="Armenia" />
-        <StudyComp bg={China} country="China" />
-        <StudyComp bg={Dubai} country="Dubai" />
-        <StudyComp bg={Georgia} country="Georgia" />
-        <StudyComp bg={Latvia} country="Latvia" />
-        <StudyComp bg={Malta} country="Malta" />
-        <StudyComp bg={Norway} country="Norway" />
-        <StudyComp bg={Poland} country="Poland" />
+        <StudyPageCard bg={UK} country="UK" />
+        <StudyPageCard bg={Germany} country="Germany" />
+        <StudyPageCard bg={NZ} country="New Zeland" />
+        <StudyPageCard bg={France} country="France" />
+        <StudyPageCard bg={Australia} country="Australia" />
+        <StudyPageCard bg={Singapore} country="Singapore" />
+        <StudyPageCard bg={SL} country="Switzerland" />
+        <StudyPageCard bg={USA} country="USA" />
+        <StudyPageCard bg={Ireland} country="Ireland" />
+        <StudyPageCard bg={Italy} country="Italy" />
+        <StudyPageCard bg={Ukraine} country="Ukraine" />
+        <StudyPageCard bg={Russia} country="Russia" />
+        <StudyPageCard bg={Sweden} country="Sweden" />
+        <StudyPageCard bg={Armenia} country="Armenia" />
+        <StudyPageCard bg={China} country="China" />
+        <StudyPageCard bg={Dubai} country="Dubai" />
+        <StudyPageCard bg={Georgia} country="Georgia" />
+        <StudyPageCard bg={Latvia} country="Latvia" />
+        <StudyPageCard bg={Malta} country="Malta" />
+        <StudyPageCard bg={Norway} country="Norway" />
+        <StudyPageCard bg={Poland} country="Poland" />
       </div>
     </div>
   );
@@ -63,12 +63,35 @@ const StudyComp = ({ bg, country }) => {
         <h4 className="studyCard__h4">{country}</h4>
         <p className="studyCard__p">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-          maxime. Nulla aperiam dolor....
+          maxime. Nulla aperiam dolor.... Lorem ipsum dolor, sit amet
+          consectetur adipisicing elit. Voluptas, eveniet placeat.
         </p>
-        <Link to="/" className="btn1">
+        {/* <Link to="/" className="btn1">
           <span>Learn More</span>
           <i className="fas fa-angle-right" id="fas1"></i>
-        </Link>
+        </Link> */}
+      </div>
+    </div>
+  );
+};
+
+const StudyPageCard = ({ bg, content, country }) => {
+  return (
+    <div className="coursePageCard">
+      <div className="coursePageCard__left">
+        <img src={bg} alt="" />
+      </div>
+      <div className="coursePageCard__right">
+        <h3>{country}</h3>
+        <hr className="coursePageCard__divider" />
+        <p className="coursePageCard__p">
+          {" "}
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
+          maxime. Nulla aperiam dolor.... Lorem ipsum dolor, sit amet
+          consectetur adipisicing elit. Voluptas, eveniet placeat. Odit esse
+          vitae sit quisquam sint repudiandae, quos, atque error, voluptates
+          accusamus perferendis sapiente libero animi laborum dolores ex.
+        </p>
       </div>
     </div>
   );

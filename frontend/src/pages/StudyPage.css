@@ -1,3 +1,6 @@
+.studyPage {
+  background-color: rgb(241, 240, 240);
+}
 .studyPage__top {
   width: 100vw;
   height: 50vh;
@@ -83,11 +86,12 @@
   max-height: 400px;
 }
 .studyComp__content {
-  margin-top: -200px;
+  margin-top: -340px;
   padding: 10px;
+  z-index: 200;
 }
 .studyCard__p {
-  color: #fff;
+  color: rgb(233, 233, 233);
 }
 @media only screen and (max-width: 600px) {
   .studyPage__top {
