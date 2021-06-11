@@ -8,6 +8,8 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -19,6 +21,21 @@ const useStyles = makeStyles({
 });
 
 const ServicesPage = () => {
+  const user = useSelector((state) => ({ ...state.user }));
+  const files = useSelector((state) => state.files);
+  const history = useHistory();
+  const handleClick = (currentuser) => {
+    if (files.length === 0) {
+      history.push("/upload");
+    }
+    files.filter((file) => {
+      if (file.user === currentuser._id) {
+        history.push("/user/status");
+      } else {
+        history.push("/upload");
+      }
+    });
+  };
   return (
     <div className="servicesPage">
       <div className="servicesPage__top">
@@ -60,6 +77,14 @@ const ServicesPage = () => {
             in completion of their courses"
         />
       </div>
+      <button
+        className="register__button p-3 mb-5"
+        onClick={() => {
+          !user.email ? history.push("/login") : handleClick(user);
+        }}
+      >
+        Register Now!!!
+      </button>
     </div>
   );
 };

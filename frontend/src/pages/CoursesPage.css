@@ -1,5 +1,8 @@
 .coursesPage {
   background-color: rgb(236, 236, 236);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .coursesPage__top {
   width: 100vw;

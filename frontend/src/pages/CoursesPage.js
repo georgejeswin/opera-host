@@ -12,8 +12,25 @@ import Hospitality from "../components/images/hospitality.jpg";
 import Engineering2 from "../components/images/engineering2.jpg";
 import Fashion from "../components/images/fashion.jpg";
 import Healthcare from "../components/images/HealthCare.jpeg";
+import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 const CoursesPage = () => {
+  const user = useSelector((state) => ({ ...state.user }));
+  const files = useSelector((state) => state.files);
+  const history = useHistory();
+  const handleClick = (currentuser) => {
+    if (files.length === 0) {
+      history.push("/upload");
+    }
+    files.filter((file) => {
+      if (file.user === currentuser._id) {
+        history.push("/user/status");
+      } else {
+        history.push("/upload");
+      }
+    });
+  };
   return (
     <div className="coursesPage">
       <div className="coursesPage__top">
@@ -85,6 +102,14 @@ maxime. Nulla aperiam dolor...."
         <CompCard bg={Hospitality} title="Hospitality" />
         <CompCard bg={Healthcare} title="Health Care" /> */}
       </div>
+      <button
+        className="register__button p-3 mb-5"
+        onClick={() => {
+          !user.email ? history.push("/login") : handleClick(user);
+        }}
+      >
+        Register Now!!!
+      </button>
     </div>
   );
 };

@@ -19,7 +19,7 @@ import Russia from "./images/russia.jpg";
 import Singapore from "./images/Singapore.jpg";
 import Sweden from "./images/swedan.jpg";
 import UK from "./images/uk.jpg";
-import Ukraine from "./images/ukraine1.jpg";
+import Ukraine from "./images/ukraine.jpg";
 import USA from "./images/usa.jpg";
 import SL from "./images/switzerland.jpg";
 

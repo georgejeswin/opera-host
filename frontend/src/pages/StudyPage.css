@@ -1,5 +1,8 @@
 .studyPage {
   background-color: rgb(241, 240, 240);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .studyPage__top {
   width: 100vw;

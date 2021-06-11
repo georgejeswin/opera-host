@@ -19,11 +19,28 @@ import Russia from "../components/images/russia.jpg";
 import Singapore from "../components/images/Singapore.jpg";
 import Sweden from "../components/images/swedan.jpg";
 import UK from "../components/images/uk.jpg";
-import Ukraine from "../components/images/ukraine1.jpg";
+import Ukraine from "../components/images/ukraine.jpg";
 import USA from "../components/images/usa.jpg";
 import SL from "../components/images/switzerland.jpg";
+import { useSelector } from "react-redux";
+import { useHistory } from "react-router";
 
 const StudyPage = () => {
+  const user = useSelector((state) => ({ ...state.user }));
+  const files = useSelector((state) => state.files);
+  const history = useHistory();
+  const handleClick = (currentuser) => {
+    if (files.length === 0) {
+      history.push("/upload");
+    }
+    files.filter((file) => {
+      if (file.user === currentuser._id) {
+        history.push("/user/status");
+      } else {
+        history.push("/upload");
+      }
+    });
+  };
   return (
     <div className="studyPage">
       <div className="studyPage__top">
@@ -52,6 +69,14 @@ const StudyPage = () => {
         <StudyPageCard bg={Norway} country="Norway" />
         <StudyPageCard bg={Poland} country="Poland" />
       </div>
+      <button
+        className="register__button p-3 mb-5"
+        onClick={() => {
+          !user.email ? history.push("/login") : handleClick(user);
+        }}
+      >
+        Register Now!!!
+      </button>
     </div>
   );
 };
