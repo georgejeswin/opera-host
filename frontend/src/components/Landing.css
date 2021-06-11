@@ -49,6 +49,21 @@
   background-color: rgb(66, 143, 66);
   transition: 600ms linear;
 }
+.landing__button {
+  color: #fff;
+  background-color: rgb(84, 175, 84);
+  border: none;
+  min-height: 50px;
+  min-width: 200px;
+  margin: 0 !important;
+  font-size: 21px;
+  font-weight: 700;
+  border-radius: 99px;
+}
+.landing__button:hover {
+  background-color: rgb(66, 143, 66);
+  transition: 600ms linear;
+}
 @media only screen and (max-width: 550px) {
   /* .landingPage {
     background-image: none;
@@ -80,6 +95,15 @@
     font-weight: 700;
     border-radius: 99px;
   }
+  .landing__button {
+    padding: 6px;
+    min-height: 9px;
+    min-width: 80px;
+    margin: 0 !important;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 99px;
+  }
 }
 @media screen and (max-width: 1000px) and (min-width: 551px) {
   .landingPage__contents {
@@ -100,6 +124,15 @@
     background-size: cover;
   }
   .landingPage__contents button {
+    padding: 12px;
+    min-height: 20px;
+    min-width: 140px;
+    margin: 0 !important;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 99px;
+  }
+  .landing__button {
     padding: 12px;
     min-height: 20px;
     min-width: 140px;
@@ -162,6 +195,29 @@
   justify-content: flex-start;
   color: rgb(255, 255, 255);
 }
+.landingSlider3 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.landingSlider3__content {
+  padding: 100px;
+}
+.landingSlider3__content {
+  padding-left: 20px;
+  font-family: "Poppins", sans-serif;
+}
+.slider2__top {
+  color: rgb(89, 41, 134);
+  font-size: 40px;
+  font-weight: 400;
+}
+.slider2__bottom {
+  color: rgb(89, 41, 134);
+  font-size: 75px;
+  font-weight: bolder;
+}
+
 @media only screen and (max-width: 550px) {
   .landingSlider1,
   .landingSlider2,
@@ -179,6 +235,22 @@
     height: 100%;
     width: 100vw;
     background-size: cover;
+  }
+  .landingSlider3__content {
+    padding: 25px;
+  }
+  .landingSlider3__content {
+    padding-left: 5px;
+  }
+  .slider2__top {
+    color: rgb(89, 41, 134);
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .slider2__bottom {
+    color: rgb(89, 41, 134);
+    font-size: 22px;
+    font-weight: bolder;
   }
 }
 @media screen and (max-width: 1000px) and (min-width: 551px) {

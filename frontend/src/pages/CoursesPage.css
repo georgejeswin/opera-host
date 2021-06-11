@@ -42,8 +42,8 @@
   max-width: 250px;
   object-fit: cover;
   border-radius: 10px;
-  max-height: 400px;
-  min-height: 400px;
+  max-height: 300px;
+  min-height: 300px;
 }
 .coursePageCard__right {
   display: flex;

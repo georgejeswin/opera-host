@@ -32,7 +32,7 @@ const ForgotPassword = ({ history }) => {
       })
       .catch((error) => {
         setLoading(false);
-        toast.error(error.message);
+        toast.error("Please enter a valid email address!");
         console.log(error);
       });
   };
