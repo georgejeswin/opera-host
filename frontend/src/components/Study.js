@@ -32,7 +32,7 @@ const Study = () => {
         <h1 className="heading__h1">Study Abroad Countries</h1>
         <button className="register__button">View All</button>
       </div>
-      <div className="study__items container-fluid">
+      <div className="study__items ">
         <StudyComp bg={UK} country="UK" />
         <StudyComp bg={Germany} country="Germany" />
         <StudyComp bg={NZ} country="New Zeland" />
@@ -67,7 +67,7 @@ const StudyComp = ({ bg, country }) => {
   return (
     <div className="studyCardComp">
       <img src={bg} alt="" className="studyCardComp__img" />
-      <div className="studyComp__content">
+      <div className="studyCardComp__content">
         <h4 className="studyCard__h4">{country}</h4>
         <p className="studyCard__p">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,

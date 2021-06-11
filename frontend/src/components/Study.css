@@ -21,7 +21,7 @@
   font-size: 36px;
   padding: 20px;
 }
-.studyCard {
+/* .studyCard {
   max-width: 270px;
   min-width: 270px;
   min-height: 400px;
@@ -37,11 +37,11 @@
   justify-content: flex-end;
   color: white;
   transition: all 0.4s ease-in;
-}
-.studyCard:hover {
+} */
+/* .studyCard:hover {
   transform: scale(1.03);
-}
-.studyCard__button {
+} */
+/* .studyCard__button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,11 +54,11 @@
   display: none;
   color: #fff;
   transition: all 0.7s ease;
-}
-.studyCard__button:hover span {
+} */
+/* .studyCard__button:hover span {
   display: block;
   transition: all 0.7s ease;
-}
+} */
 .studyCard__h4 {
   color: white;
   font-weight: bold;
@@ -191,15 +191,9 @@
 .compCard__img img:hover {
   transform: scale(1.05);
 }
-.compCard__contents {
-  min-width: 270px;
-  background-color: rgb(226, 226, 226);
-  z-index: 1;
-  border-radius: 20px;
-  padding-top: 70px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+.studyCardComp__content {
+  margin-top: -190px;
+  padding: 8px;
 }
 .btn {
   margin-top: -30px;
