@@ -13,15 +13,14 @@ const About = () => {
           <h1>About Opera</h1>
           <p>
             With A decade of excellent experience, OPERA INTERNATIONAL helps
-            students to find admissions in the top colleges in the country.
-            Today, we represent various institutes, colleges and universities
-            from INDIA AND ABROAD in india Mangalore, Bangalore, Karnataka,
-            Tamilnadu, Kerala etc. <br /> Our mission is to be the best centre
-            of excellence in educational consultancy for all the professional
-            courses to suit the ever changing needs of the society. <br /> our
-            vision is to create high quality academicians and professionals
-            through value education and training that has global focus enriched
-            by extensive interactions.
+            students to find admissions in the top colleges abroad. Today, we
+            represent various institutes, colleges and universities from ABROAD
+            in UK, Australia, Germany, New Zeland, Poland etc. <br /> Our
+            mission is to be the best centre of excellence in educational
+            consultancy for all the professional courses to suit the ever
+            changing needs of the society. <br /> our vision is to create high
+            quality academicians and professionals through value education and
+            training that has global focus enriched by extensive interactions.
             <br />
             We value : Quality in our service, Reputation and reorganization of
             the colleges, Excellent academic environment, Quality education and

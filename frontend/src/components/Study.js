@@ -32,7 +32,7 @@ const Study = () => {
         <h1 className="heading__h1">Study Abroad Countries</h1>
         <button className="register__button">View All</button>
       </div>
-      <div className="study__items ">
+      <div className="study__items container-fluid">
         <StudyComp bg={UK} country="UK" />
         <StudyComp bg={Germany} country="Germany" />
         <StudyComp bg={NZ} country="New Zeland" />

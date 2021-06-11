@@ -99,4 +99,8 @@
   .cardActionArea {
     flex-direction: column;
   }
+  .servicePageCard__left img {
+    min-width: 100%;
+    max-width: 100%;
+  }
 }

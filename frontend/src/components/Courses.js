@@ -19,16 +19,16 @@ const Courses = () => {
     <div className="courses">
       <h1 className="heading__h1">Study Abroad Courses</h1>
       <div className="courses__items container-fluid">
-        <CompCard bg={Engineering2} title="Engineering" />
-        <CompCard bg={Medicine} title="Medicine" />
-        <CompCard bg={IT} title="Information Technology" />
-        <CompCard bg={Fashion} title="Fashion" />
-        <CompCard bg={Nursing} title="Nursing" />
-        <CompCard bg={Management} title="Management" />
-        <CompCard bg={Hospitality} title="Hospitality" />
-        <CompCard bg={Healthcare} title="Health Care" />
+        <CourseCard bg={Engineering2} title="Engineering" />
+        <CourseCard bg={Medicine} title="Medicine" />
+        <CourseCard bg={IT} title="Information Technology" />
+        <CourseCard bg={Fashion} title="Fashion" />
+        <CourseCard bg={Nursing} title="Nursing" />
+        <CourseCard bg={Management} title="Management" />
+        <CourseCard bg={Hospitality} title="Hospitality" />
+        <CourseCard bg={Healthcare} title="Health Care" />
 
-        {/* <CoursesComp bg="" />
+        {/* <CoursesCourse bg="" />
         <CoursesComp bg="" />
         <CoursesComp bg="" />
         <CoursesComp bg="https://asiasociety.org/sites/default/files/styles/1200w/public/B/blog-australianstudents.png" />
@@ -64,13 +64,13 @@ const Courses = () => {
 //   );
 // };
 
-const CompCard = ({ bg, title, content }) => {
+const CourseCard = ({ bg, title, content }) => {
   return (
-    <div className="compCard">
-      <div className="compCard__img">
+    <div className="courseCard">
+      <div className="courseCard__img">
         <img src={bg} alt="" />
       </div>
-      <div className="compCard__contents">
+      <div className="courseCard__contents">
         <h4>{title}</h4>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
