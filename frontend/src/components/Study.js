@@ -22,39 +22,57 @@ import UK from "./images/uk.jpg";
 import Ukraine from "./images/ukraine.jpg";
 import USA from "./images/usa.jpg";
 import SL from "./images/switzerland.jpg";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper.min.css";
+import "swiper/components/pagination/pagination.min.css";
+import SwiperCore, { EffectFade, Autoplay, Pagination } from "swiper/core";
+SwiperCore.use([Autoplay, EffectFade, Pagination]);
 const Study = () => {
   return (
     <div className="study">
+     
       <h1 className="heading__h1-res">Study Abroad Countries</h1>
 
       <div className="study__left">
         <h1 className="heading__h1">Study Abroad Countries</h1>
         <button className="register__button">View All</button>
       </div>
+      <Swiper
+        slidesPerView={3}
+        // spaceBetween={10}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false
+        }}
+        className="mySwiper"
+      >
       <div className="study__items container-fluid">
-        <StudyComp bg={UK} country="UK" />
-        <StudyComp bg={Germany} country="Germany" />
-        <StudyComp bg={NZ} country="New Zeland" />
-        <StudyComp bg={France} country="France" />
-        <StudyComp bg={Australia} country="Australia" />
-        <StudyComp bg={Singapore} country="Singapore" />
-        <StudyComp bg={SL} country="Switzerland" />
-        <StudyComp bg={USA} country="USA" />
-        <StudyComp bg={Ireland} country="Ireland" />
-        <StudyComp bg={Italy} country="Italy" />
-        <StudyComp bg={Ukraine} country="Ukraine" />
-        <StudyComp bg={Russia} country="Russa" />
-        <StudyComp bg={Sweden} country="Sweden" />
-        <StudyComp bg={Armenia} country="Armenia" />
-        <StudyComp bg={China} country="China" />
-        <StudyComp bg={Dubai} country="Dubai" />
-        <StudyComp bg={Georgia} country="Georgia" />
-        <StudyComp bg={Latvia} country="Latvia" />
-        <StudyComp bg={Malta} country="Malta" />
-        <StudyComp bg={Norway} country="Norway" />
-        <StudyComp bg={Poland} country="Poland" />
+     
+      
+      <SwiperSlide> <StudyComp bg={UK} country="UK" /> </SwiperSlide>
+      <SwiperSlide> <StudyComp bg={Germany} country="Germany" /> </SwiperSlide>  
+      <SwiperSlide>  <StudyComp bg={NZ} country="New Zeland" />  </SwiperSlide>
+      <SwiperSlide>  <StudyComp bg={France} country="France" />  </SwiperSlide>
+      <SwiperSlide>  <StudyComp bg={Australia} country="Australia" /> </SwiperSlide>
+      <SwiperSlide>  <StudyComp bg={Singapore} country="Singapore" />  </SwiperSlide>
+      <SwiperSlide> <StudyComp bg={SL} country="Switzerland" />  </SwiperSlide> 
+      <SwiperSlide>  <StudyComp bg={USA} country="USA" />  </SwiperSlide>
+      <SwiperSlide> <StudyComp bg={Ireland} country="Ireland" /> </SwiperSlide> 
+      <SwiperSlide>  <StudyComp bg={Italy} country="Italy" />  </SwiperSlide>
+      <SwiperSlide>  <StudyComp bg={Ukraine} country="Ukraine" />  </SwiperSlide>
+      <SwiperSlide> <StudyComp bg={Russia} country="Russa" /></SwiperSlide>  
+      <SwiperSlide><StudyComp bg={Sweden} country="Sweden" /></SwiperSlide>  
+      <SwiperSlide> <StudyComp bg={Armenia} country="Armenia" /></SwiperSlide> 
+      <SwiperSlide> <StudyComp bg={China} country="China" /></SwiperSlide> 
+      <SwiperSlide><StudyComp bg={Dubai} country="Dubai" /></SwiperSlide>  
+      <SwiperSlide> <StudyComp bg={Georgia} country="Georgia" /></SwiperSlide>  
+      <SwiperSlide><StudyComp bg={Latvia} country="Latvia" /></SwiperSlide>  
+      <SwiperSlide><StudyComp bg={Malta} country="Malta" /></SwiperSlide>  
+      <SwiperSlide><StudyComp bg={Norway} country="Norway" /></SwiperSlide>  
+       <SwiperSlide><StudyComp bg={Poland} country="Poland" /></SwiperSlide> 
+       
       </div>
+      </Swiper>
       <Link to="/study-in">
         <button className="register__button-res register__button">
           View All
