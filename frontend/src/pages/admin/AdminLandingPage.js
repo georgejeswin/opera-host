@@ -19,6 +19,7 @@ const AdminLandingPage = () => {
 
   useEffect(() => {
     dispatch(getFiles());
+    console.log("filelist.>>>>", files);
   }, [dispatch]);
 
   const submit = (file) => {
@@ -45,8 +46,8 @@ const AdminLandingPage = () => {
 
   const handleClick = async (file) => {
     const list = {
-      name: file.name,
-      user: file.user,
+      name: file?.name,
+      user: file?.user,
       cvfile: [
         {
           fileName: file?.cvfile[0]?.fileName,
@@ -529,7 +530,7 @@ const AdminLandingPage = () => {
                       "application/pdf" ? (
                       <embed
                         className="pdf__files"
-                        src={`${url}/${fileList.experencefile[0].filePath}`}
+                        src={`${url}/${fileList.experiencefile[0].filePath}`}
                         type="application/pdf"
                         width="100%"
                         height="300px"
