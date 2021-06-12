@@ -124,8 +124,8 @@
 }
 .study .swiper-slide {
   min-width: 270px !important;
-  margin-right: 10px;
   max-width: 270px;
+  margin-right: 10px;
 }
 .study .swiper__slide {
   margin: 20px !important;
@@ -219,4 +219,30 @@
 .btn {
   margin-top: -30px;
   z-index: 9;
+}
+@media only screen and (max-width: 600px) {
+  .study .swiper-slide {
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .study .swiper__slide {
+    margin: 0px !important;
+  }
+  .study .swiper-container {
+    max-width: 100vw !important;
+  }
+  .study .swipper-wrapper,
+  .study .swiper-slide,
+  .study .swiper-slide-prev {
+    width: 100vw !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .study .swiper-slide {
+    margin-right: 0px !important;
+  }
 }

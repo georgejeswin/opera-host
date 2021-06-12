@@ -32,7 +32,7 @@ const Study = () => {
   const [mobile, setMobile] = useState(4);
   useEffect(() => {
     if (window.innerWidth <= 800) {
-      setMobile(1.35);
+      setMobile(1);
     }
   }, [window.innerWidth]);
   return (
