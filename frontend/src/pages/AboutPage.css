@@ -16,3 +16,8 @@
   font-size: 40px;
   font-weight: bolder;
 }
+@media only screen and (max-width: 600px) {
+  .aboutPage__top {
+    height: 26vh;
+  }
+}

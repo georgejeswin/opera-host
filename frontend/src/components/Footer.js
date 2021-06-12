@@ -55,6 +55,7 @@ const Footer = () => {
             href="https://oxeads.tk"
             style={{ color: "lightgray" }}
             target="_blank"
+            rel="noreferrer"
           >
             Oxe Ads
           </a>{" "}

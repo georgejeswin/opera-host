@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 // import uploadIMG from "../components/images/upload-right.png";
 import "./Form.css";
@@ -52,29 +52,29 @@ const Form = () => {
     lor: false,
   });
 
-  const [cvFileName, setCvFileName] = useState(
-    "1. Updated curriculum vitae ( CV )"
-  );
-  const [passportFileName, setPassportFileName] = useState(
-    "2 fileInput__item. Front and back page of passport copy"
-  );
-  const [sslcFileName, setSslcFileName] = useState("3. SSLC Certificate");
-  const [plustwoFileName, setPlustwoFileName] = useState(
-    "4. Plus two Certificate"
-  );
-  const [degreeFileName, setDegreeFileName] = useState(
-    "5. Degree certificate with consolidated mark sheet and semester certificates"
-  );
-  const [ietlsFileName, setIeltsFileName] = useState(
-    "6. English language test result -IELTS  ( If any )"
-  );
-  const [experienceFileName, setExperienceFileName] = useState(
-    "7. Experience letter ( If any )"
-  );
-  const [sopFileName, setSopFileName] = useState(
-    "8. Statement of purpose - SOP for your selected programmes"
-  );
-  const [lorFileName, setLorFileName] = useState("9. Letter of reccomendation");
+  // const [cvFileName, setCvFileName] = useState(
+  //   "1. Updated curriculum vitae ( CV )"
+  // );
+  // const [passportFileName, setPassportFileName] = useState(
+  //   "2 fileInput__item. Front and back page of passport copy"
+  // );
+  // const [sslcFileName, setSslcFileName] = useState("3. SSLC Certificate");
+  // const [plustwoFileName, setPlustwoFileName] = useState(
+  //   "4. Plus two Certificate"
+  // );
+  // const [degreeFileName, setDegreeFileName] = useState(
+  //   "5. Degree certificate with consolidated mark sheet and semester certificates"
+  // );
+  // const [ietlsFileName, setIeltsFileName] = useState(
+  //   "6. English language test result -IELTS  ( If any )"
+  // );
+  // const [experienceFileName, setExperienceFileName] = useState(
+  //   "7. Experience letter ( If any )"
+  // );
+  // const [sopFileName, setSopFileName] = useState(
+  //   "8. Statement of purpose - SOP for your selected programmes"
+  // );
+  // const [lorFileName, setLorFileName] = useState("9. Letter of reccomendation");
   const userInfo = useSelector((state) => state.user);
 
   function onCvFileUpload(e) {
@@ -86,7 +86,7 @@ const Form = () => {
       setCvFiles("");
     } else {
       setCvFiles(e.target?.files[0]);
-      setCvFileName(e.target?.files[0]?.name);
+      // setCvFileName(e.target?.files[0]?.name);
       setIfUploaded({ ...ifUploaded, cv: true });
     }
   }
@@ -98,8 +98,8 @@ const Form = () => {
       setPsFiles("");
     } else {
       setPsFiles(e.target?.files[0]);
-      setPassportFileName(e.target?.files[0]?.name);
-      console.log(e.target?.files[0])
+      // setPassportFileName(e.target?.files[0]?.name);
+      console.log(e.target?.files[0]);
     }
   }
   function onSslcFileUpload(e) {
@@ -112,7 +112,7 @@ const Form = () => {
       setSslcFiles("");
     } else {
       setSslcFiles(e.target?.files[0]);
-      setSslcFileName(e.target?.files[0]?.name);
+      // setSslcFileName(e.target?.files[0]?.name);
     }
   }
   function onPlusTwoFileUpload(e) {
@@ -124,7 +124,7 @@ const Form = () => {
       setPlusTwoFiles("");
     } else {
       setPlusTwoFiles(e.target?.files[0]);
-      setPlustwoFileName(e.target?.files[0]?.name);
+      // setPlustwoFileName(e.target?.files[0]?.name);
     }
   }
   function onDegreeFileUpload(e) {
@@ -135,7 +135,7 @@ const Form = () => {
       setDegreeFiles("");
     } else {
       setDegreeFiles(e.target?.files[0]);
-      setDegreeFileName(e.target?.files[0]?.name);
+      // setDegreeFileName(e.target?.files[0]?.name);
       setIfUploaded({ ...ifUploaded, degree: true });
     }
   }
@@ -148,7 +148,7 @@ const Form = () => {
       setIeltsFiles("");
     } else {
       setIeltsFiles(e.target?.files[0]);
-      setIeltsFileName(e.target?.files[0]?.name);
+      // setIeltsFileName(e.target?.files[0]?.name);
       setIfUploaded({ ...ifUploaded, ielts: true });
     }
   }
@@ -161,7 +161,7 @@ const Form = () => {
       setExperienceFiles("");
     } else {
       setExperienceFiles(e.target?.files[0]);
-      setExperienceFileName(e.target?.files[0]?.name);
+      // setExperienceFileName(e.target?.files[0]?.name);
       setIfUploaded({ ...ifUploaded, experience: true });
     }
   }
@@ -174,7 +174,7 @@ const Form = () => {
       setSopFiles("");
     } else {
       setSopFiles(e.target?.files[0]);
-      setSopFileName(e.target?.files[0].name);
+      // setSopFileName(e.target?.files[0].name);
       setIfUploaded({ ...ifUploaded, sop: true });
     }
   }
@@ -187,7 +187,7 @@ const Form = () => {
       setLorFiles("");
     } else {
       setLorFiles(e.target?.files[0]);
-      setLorFileName(e.target?.files[0]?.name);
+      // setLorFileName(e.target?.files[0]?.name);
       setIfUploaded({ ...ifUploaded, lor: true });
     }
   }

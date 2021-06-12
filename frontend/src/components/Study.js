@@ -19,7 +19,7 @@ import Russia from "./images/russia.jpg";
 import Singapore from "./images/Singapore.jpg";
 import Sweden from "./images/swedan.jpg";
 import UK from "./images/uk.jpg";
-import Ukraine from "./images/ukraine1.jpg";
+import Ukraine from "./images/ukraine.jpg";
 import USA from "./images/usa.jpg";
 import SL from "./images/switzerland.jpg";
 
@@ -55,27 +55,46 @@ const Study = () => {
         <StudyComp bg={Norway} country="Norway" />
         <StudyComp bg={Poland} country="Poland" />
       </div>
-      <button className="register__button-res register__button">
-        View All
-      </button>
-    </div>
-  );
-};
-
-const StudyComp = ({ bg, country }) => {
-  return (
-    <div className="studyCard" style={{ backgroundImage: `url(${bg})` }}>
-      <h4 className="studyCard__h4">{country}</h4>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, maxime.
-        Nulla aperiam dolor....
-      </p>
-      <Link to="/" className="btn1">
-        <span>Learn More</span>
-        <i className="fas fa-angle-right" id="fas1"></i>
+      <Link to="/study-in">
+        <button className="register__button-res register__button">
+          View All
+        </button>
       </Link>
     </div>
   );
 };
+const StudyComp = ({ bg, country }) => {
+  return (
+    <div className="studyCardComp">
+      <img src={bg} alt="" className="studyCardComp__img" />
+      <div className="studyCardComp__content">
+        <h4 className="studyCard__h4">{country}</h4>
+        <p className="studyCard__p">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
+          maxime. Nulla aperiam dolor....
+        </p>
+        <Link to="/study-in" className="btn1">
+          <span>Learn More</span>
+          <i className="fas fa-angle-right" id="fas1"></i>
+        </Link>
+      </div>
+    </div>
+  );
+};
+// const StudyComp = ({ bg, country }) => {
+//   return (
+//     <div className="studyCard" style={{ backgroundImage: `url(${bg})` }}>
+//       <h4 className="studyCard__h4">{country}</h4>
+//       <p>
+//         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, maxime.
+//         Nulla aperiam dolor....
+//       </p>
+//       <Link to="/study-in" className="btn1">
+//         <span>Learn More</span>
+//         <i className="fas fa-angle-right" id="fas1"></i>
+//       </Link>
+//     </div>
+//   );
+// };
 
 export default Study;

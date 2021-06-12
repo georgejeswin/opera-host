@@ -1,32 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ServicesPage.css";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
-
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 245,
-  },
-  media: {
-    height: 240,
-  },
-});
+import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 const ServicesPage = () => {
+  const user = useSelector((state) => ({ ...state.user }));
+  const files = useSelector((state) => state.files);
+  const history = useHistory();
+  const [fileUploaded, setFileUploaded] = useState(false);
+  const filesUploaded = (currentuser) => {
+    files.filter((file) => {
+      if (file.user === currentuser._id) {
+        setFileUploaded(true);
+      }
+    });
+  };
+  useEffect(() => {
+    filesUploaded(user);
+    if (files.length <= 0) {
+      history.push("/user");
+    }
+  }, [files.length, history, user]);
+
+  const handleClick = (currentuser) => {
+    if (files.length === 0) {
+      history.push("/upload");
+    }
+    if (fileUploaded) {
+      history.push("/user/status");
+    } else {
+      history.push("/upload");
+    }
+  };
   return (
     <div className="servicesPage">
       <div className="servicesPage__top">
         <h3 className="top__h3">Our Services</h3>
       </div>
       <div className="services__items container-fluid">
-        <ServicesCard
+        <ServicesPageCard
           img="https://cdn.statically.io/img/866821.smushcdn.com/1939086/wp-content/uploads/student-counselling-advice.jpg?lossy=1&strip=1&webp=1&quality=100&f=auto"
           title="Admission Counseling"
           content=" We access your qualification, interest and aptitude and suggest you
@@ -34,7 +46,7 @@ const ServicesPage = () => {
             and institute, application forms are filled and sendto institute
             along with fee."
         />
-        <ServicesCard
+        <ServicesPageCard
           img="https://flyonacademy.com/wp-content/uploads/2019/01/confidential-assistance-home.jpg"
           title="Placement Assistance"
           content=" By our network of high quality academicians and professionals
@@ -43,7 +55,7 @@ const ServicesPage = () => {
             the local community"
         />
 
-        <ServicesCard
+        <ServicesPageCard
           img="https://www.tomorrowmakers.com/sites/default/files/2020-02/financial%20planning%20dummies%20updated.jpg"
           title="Financial Guidelines"
           content=" To find the finance required for the desired study package and
@@ -52,7 +64,7 @@ const ServicesPage = () => {
             students who are eligible to get received scholarships or
             sponsorships."
         />
-        <ServicesCard
+        <ServicesPageCard
           img="https://www.chetanyacareers.com/wp-content/uploads/2020/12/image-international-student-population-2.jpg"
           title="Career Guidance"
           content=" We help students to plan their career according to the rapidly
@@ -61,45 +73,30 @@ const ServicesPage = () => {
             in completion of their courses"
         />
       </div>
+      <button
+        className="register__button p-3 mb-5"
+        onClick={() => {
+          !user.email ? history.push("/login") : handleClick(user);
+        }}
+      >
+        Register Now!!!
+      </button>
     </div>
   );
 };
 
-// const ServiceCard = ({ img, title, content }) => {
-//   return (
-//     <div className="serviceCard">
-//       <img src={img} alt="" className="serviceCard__img" />
-//       <h3>{title}</h3>
-//       <p>{content}</p>
-//       <Link to="/" className="serviceCard__link">
-//         Learn More &nbsp;
-//         <i className="fas fa-angle-right"></i>
-//       </Link>
-//     </div>
-//   );
-// };
-
-const ServicesCard = ({ img, title, content }) => {
-  const classes = useStyles();
+const ServicesPageCard = ({ img, content, title }) => {
   return (
-    <Card className={classes.root} className="servicesCard__card">
-      <CardActionArea>
-        <CardMedia className={classes.media} image={img} title={title} />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {title}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {content}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
-    </Card>
+    <div className="coursePageCard">
+      <div className="servicePageCard__left">
+        <img src={img} alt="" />
+      </div>
+      <div className="servicePageCard__right">
+        <h3>{title}</h3>
+        <hr className="coursePageCard__divider" />
+        <p className="coursePageCard__p">{content}</p>
+      </div>
+    </div>
   );
 };
 

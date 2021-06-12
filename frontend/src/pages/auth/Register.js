@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { auth } from "../../firebase";
 import { toast } from "react-toastify";
 import REGISTERIMG from "../../components/images/register.jpg";
+import { Link } from "react-router-dom";
 
 const Register = ({ history }) => {
   const [email, setEmail] = useState("");
@@ -44,8 +45,12 @@ const Register = ({ history }) => {
         value={email}
         placeholder="Enter your Email"
         onChange={(e) => setEmail(e.target.value)}
-      />{" "}
-      <br />
+      />
+      <div className="alreadyuser ">
+        <Link to="/login" className="text-success ">
+          Have an account ?
+        </Link>
+      </div>
       <button type="submit" className="register__button">
         Register
       </button>

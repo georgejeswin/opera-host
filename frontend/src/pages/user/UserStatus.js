@@ -8,17 +8,6 @@ const UserStatus = () => {
   const user = useSelector((state) => ({ ...state.user }));
   const files = useSelector((state) => state.files);
   const history = useHistory();
-
-  useEffect(async () => {
-    filesUploaded(user);
-    if (files.length <= 0) {
-      history.push("/user");
-    }
-  }, [files.length]);
-
-  const [fileUploaded, setFileUploaded] = useState(false);
-  const [paymentDone, setPaymentDone] = useState(false);
-
   const filesUploaded = (currentuser) => {
     files.filter((file) => {
       if (file.user === currentuser._id) {
@@ -31,6 +20,16 @@ const UserStatus = () => {
       }
     });
   };
+  useEffect(() => {
+    filesUploaded(user);
+    if (files.length <= 0) {
+      history.push("/user");
+    }
+  }, [files.length, history, user]);
+
+  const [fileUploaded, setFileUploaded] = useState(false);
+  const [paymentDone, setPaymentDone] = useState(false);
+
   return (
     <div className="container">
       <div className="row">

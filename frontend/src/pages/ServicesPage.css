@@ -1,3 +1,9 @@
+.servicesPage {
+  background-color: rgb(240, 239, 239);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .servicesPage__top {
   width: 100vw;
   height: 50vh;
@@ -10,7 +16,7 @@
   align-items: flex-end;
   justify-content: center;
 }
-.serviceCard {
+/* .serviceCard {
   max-width: 300px;
   overflow: hidden;
   object-fit: contain;
@@ -40,7 +46,64 @@
   display: flex;
   align-items: center;
   padding: 15px;
+} */
+.services__items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 30px;
 }
 .servicesCard__card {
+  max-width: 600px;
+  margin: 20px;
+  transition: all 0.4s ease-in !important;
+}
+.servicesCard__card:hover {
+  transform: scale(1.03) !important;
+}
+.cardActionArea {
+  display: flex !important;
+}
+/* .card__left {
+  object-fit: contain;
+} */
+.card__left-image {
   max-width: 300px;
+}
+.cardContent {
+  padding: 30px !important;
+}
+.servicePageCard__left {
+  display: flex;
+  align-items: center;
+}
+.servicePageCard__left img {
+  min-height: 310px;
+  object-fit: cover;
+  max-height: 310px;
+  max-width: 300px;
+  border-radius: 10px;
+}
+.servicePageCard__right {
+  padding: 11px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.servicePageCard__right h3 {
+  font-size: 22px;
+}
+@media only screen and (max-width: 600px) {
+  .servicesPage__top {
+    height: 26vh;
+  }
+  .cardActionArea {
+    flex-direction: column;
+  }
+  .servicePageCard__left img {
+    min-width: 100%;
+    max-width: 100%;
+  }
 }

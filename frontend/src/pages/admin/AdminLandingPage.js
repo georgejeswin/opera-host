@@ -19,7 +19,7 @@ const AdminLandingPage = () => {
 
   useEffect(() => {
     dispatch(getFiles());
-  }, []);
+  }, [dispatch]);
 
   const submit = (file) => {
     confirmAlert({
@@ -177,7 +177,6 @@ const AdminLandingPage = () => {
                 <h5 className="text-danger">Amount : {fileList?.amount} </h5>
                 <h5>1. Updated curriculum vitae ( CV )</h5>
                 {fileList.cvfile[0].filePath ? (
-
                   <li>
                     <p>{fileList?.cvfile[0]?.fileName}</p>
                     {fileList.cvfile[0]?.fileType === "image/png" ? (
@@ -198,7 +197,7 @@ const AdminLandingPage = () => {
                         src={`${url}/${fileList.cvfile[0].filePath}`}
                         alt="file name"
                       />
-                    ) : fileList.cvfile[0]?.fileType == "application/pdf" ? (
+                    ) : fileList.cvfile[0]?.fileType === "application/pdf" ? (
                       <embed
                         className="pdf__files"
                         src={`${url}/${fileList.cvfile[0].filePath}`}
@@ -206,7 +205,7 @@ const AdminLandingPage = () => {
                         width="100%"
                         height="300px"
                       />
-                    ) : fileList.cvfile[0]?.fileType ==
+                    ) : fileList.cvfile[0]?.fileType ===
                       "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
                         <>
                       
@@ -254,7 +253,7 @@ const AdminLandingPage = () => {
                       src={`${url}/${fileList.psfile[0].filePath}`}
                       alt="file name"
                     />
-                  ) : fileList.psfile[0]?.fileType == "application/pdf" ? (
+                  ) : fileList.psfile[0]?.fileType === "application/pdf" ? (
                     <embed
                       className="pdf__files"
                       src={`${url}/${fileList.psfile[0].filePath}`}
@@ -262,14 +261,14 @@ const AdminLandingPage = () => {
                       width="100%"
                       height="300px"
                     />
-                  ) : fileList.psfile[0]?.fileType ==
+                  ) : fileList.psfile[0]?.fileType ===
                     "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
                     <GoogleDocsViewer
                       width="100%"
                       height="300px"
                       fileUrl={`${url}/${fileList.psfile[0].filePath}`}
                     />
-                  ) : fileList.psfile[0]?.fileType ==
+                  ) : fileList.psfile[0]?.fileType ===
                     "application/octet-stream" ? (
                     <GoogleDocsViewer
                       width="100%"
@@ -304,7 +303,7 @@ const AdminLandingPage = () => {
                       src={`${url}/${fileList.sslcfile[0].filePath}`}
                       alt="file name"
                     />
-                  ) : fileList.sslcfile[0]?.fileType == "application/pdf" ? (
+                  ) : fileList.sslcfile[0]?.fileType === "application/pdf" ? (
                     <embed
                       className="pdf__files"
                       src={`${url}/${fileList.sslcfile[0].filePath}`}
@@ -312,14 +311,14 @@ const AdminLandingPage = () => {
                       width="100%"
                       height="300px"
                     />
-                  ) : fileList.sslcfile[0]?.fileType ==
+                  ) : fileList.sslcfile[0]?.fileType ===
                     "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
                     <GoogleDocsViewer
                       width="100%"
                       height="300px"
                       fileUrl={`${url}/${fileList.sslcfile[0].filePath}`}
                     />
-                  ) : fileList.sslcfile[0]?.fileType ==
+                  ) : fileList.sslcfile[0]?.fileType ===
                     "application/octet-stream" ? (
                     <GoogleDocsViewer
                       width="100%"
@@ -354,7 +353,8 @@ const AdminLandingPage = () => {
                       src={`${url}/${fileList.plustwofile[0].filePath}`}
                       alt="file name"
                     />
-                  ) : fileList.plustwofile[0]?.fileType == "application/pdf" ? (
+                  ) : fileList.plustwofile[0]?.fileType ===
+                    "application/pdf" ? (
                     <embed
                       className="pdf__files"
                       src={`${url}/${fileList.plustwofile[0].filePath}`}
@@ -362,14 +362,14 @@ const AdminLandingPage = () => {
                       width="100%"
                       height="300px"
                     />
-                  ) : fileList.plustwofile[0]?.fileType ==
+                  ) : fileList.plustwofile[0]?.fileType ===
                     "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
                     <GoogleDocsViewer
                       width="100%"
                       height="300px"
                       fileUrl={`${url}/${fileList.plustwofile[0].filePath}`}
                     />
-                  ) : fileList.plustwofile[0]?.fileType ==
+                  ) : fileList.plustwofile[0]?.fileType ===
                     "application/octet-stream" ? (
                     <GoogleDocsViewer
                       width="100%"
@@ -409,7 +409,7 @@ const AdminLandingPage = () => {
                         src={`${url}/${fileList.degreefile[0].filePath}`}
                         alt="file name"
                       />
-                    ) : fileList.degreefile[0]?.fileType ==
+                    ) : fileList.degreefile[0]?.fileType ===
                       "application/pdf" ? (
                       <embed
                         className="pdf__files"
@@ -418,14 +418,14 @@ const AdminLandingPage = () => {
                         width="100%"
                         height="300px"
                       />
-                    ) : fileList.degreefile[0]?.fileType ==
+                    ) : fileList.degreefile[0]?.fileType ===
                       "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
                       <GoogleDocsViewer
                         width="100%"
                         height="300px"
                         fileUrl={`${url}/${fileList.degreefile[0].filePath}`}
                       />
-                    ) : fileList.degreefile[0]?.fileType ==
+                    ) : fileList.degreefile[0]?.fileType ===
                       "application/octet-stream" ? (
                       <GoogleDocsViewer
                         width="100%"
@@ -467,7 +467,8 @@ const AdminLandingPage = () => {
                         src={`${url}/${fileList.ieltsfile[0].filePath}`}
                         alt="file name"
                       />
-                    ) : fileList.ieltsfile[0]?.fileType == "application/pdf" ? (
+                    ) : fileList.ieltsfile[0]?.fileType ===
+                      "application/pdf" ? (
                       <embed
                         className="pdf__files"
                         src={`${url}/${fileList.ieltsfile[0].filePath}`}
@@ -475,14 +476,14 @@ const AdminLandingPage = () => {
                         width="100%"
                         height="300px"
                       />
-                    ) : fileList.ieltsfile[0]?.fileType ==
+                    ) : fileList.ieltsfile[0]?.fileType ===
                       "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
                       <GoogleDocsViewer
                         width="100%"
                         height="300px"
                         fileUrl={`${url}/${fileList.ieltsfile[0].filePath}`}
                       />
-                    ) : fileList.ieltsfile[0]?.fileType ==
+                    ) : fileList.ieltsfile[0]?.fileType ===
                       "application/octet-stream" ? (
                       <GoogleDocsViewer
                         width="100%"
@@ -525,7 +526,7 @@ const AdminLandingPage = () => {
                         src={`${url}/${fileList.experiencefile[0].filePath}`}
                         alt="file name"
                       />
-                    ) : fileList.experiencefile[0]?.fileType ==
+                    ) : fileList.experiencefile[0]?.fileType ===
                       "application/pdf" ? (
                       <embed
                         className="pdf__files"
@@ -534,14 +535,14 @@ const AdminLandingPage = () => {
                         width="100%"
                         height="300px"
                       />
-                    ) : fileList.experiencefile[0]?.fileType ==
+                    ) : fileList.experiencefile[0]?.fileType ===
                       "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
                       <GoogleDocsViewer
                         width="100%"
                         height="300px"
                         fileUrl={`${url}/${fileList.experiencefile[0].filePath}`}
                       />
-                    ) : fileList.experencefile[0]?.fileType ==
+                    ) : fileList.experencefile[0]?.fileType ===
                       "application/octet-stream" ? (
                       <GoogleDocsViewer
                         width="100%"
@@ -595,7 +596,7 @@ const AdminLandingPage = () => {
                         src={`${url}/${fileList.sopfile[0].filePath}`}
                         alt="file name"
                       />
-                    ) : fileList.sopfile[0]?.fileType == "application/pdf" ? (
+                    ) : fileList.sopfile[0]?.fileType === "application/pdf" ? (
                       <embed
                         className="pdf__files"
                         src={`${url}/${fileList.sopfile[0].filePath}`}
@@ -603,14 +604,14 @@ const AdminLandingPage = () => {
                         width="100%"
                         height="300px"
                       />
-                    ) : fileList.sopfile[0]?.fileType ==
+                    ) : fileList.sopfile[0]?.fileType ===
                       "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
                       <GoogleDocsViewer
                         width="100%"
                         height="300px"
                         fileUrl={`${url}/${fileList.sopfile[0].filePath}`}
                       />
-                    ) : fileList.sopfile[0]?.fileType ==
+                    ) : fileList.sopfile[0]?.fileType ===
                       "application/octet-stream" ? (
                       <GoogleDocsViewer
                         width="100%"
@@ -650,7 +651,7 @@ const AdminLandingPage = () => {
                         src={`${url}/${fileList.lorfile[0].filePath}`}
                         alt="file name"
                       />
-                    ) : fileList.lorfile[0]?.fileType == "application/pdf" ? (
+                    ) : fileList.lorfile[0]?.fileType === "application/pdf" ? (
                       <embed
                         className="pdf__files"
                         src={`${url}/${fileList.lorfile[0].filePath}`}
@@ -658,14 +659,14 @@ const AdminLandingPage = () => {
                         width="100%"
                         height="300px"
                       />
-                    ) : fileList.lorfile[0]?.fileType ==
+                    ) : fileList.lorfile[0]?.fileType ===
                       "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
                       <GoogleDocsViewer
                         width="100%"
                         height="300px"
                         fileUrl={`${url}/${fileList.lorfile[0].filePath}`}
                       />
-                    ) : fileList.lorfile[0]?.fileType ==
+                    ) : fileList.lorfile[0]?.fileType ===
                       "application/octet-stream" ? (
                       <GoogleDocsViewer
                         width="100%"

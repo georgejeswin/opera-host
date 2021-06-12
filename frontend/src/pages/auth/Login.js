@@ -8,11 +8,8 @@ import { Spin, Space } from "antd";
 import { Link } from "react-router-dom";
 import { createOrUpdateUser } from "../../functions/auth";
 import "./Login.css";
-import { currentUser } from "../../functions/auth";
-// import { auth } from "./firebase";
 
 import REGISTERIMG from "../../components/images/register.jpg";
-// import LOGINIMG from "../../components/images/login-image.png";
 
 const Login = ({ history }) => {
   const dispatch = useDispatch();
@@ -21,9 +18,7 @@ const Login = ({ history }) => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const { user } = useSelector((state) => ({ ...state }));
-  if (user) {
-    var userName = user.name;
-  }
+
   useEffect(() => {
     if (user && user.token) {
       history.push("/");

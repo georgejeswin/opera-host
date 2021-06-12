@@ -10,6 +10,7 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
     "antd": "^4.9.4",
+    "aos": "^2.3.4",
     "axios": "^0.21.1",
     "file-type": "^16.5.0",
     "file-viewer": "^1.2.0",

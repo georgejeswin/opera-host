@@ -116,6 +116,11 @@
   align-items: center;
   justify-content: space-between;
 }
+.alreadyuser {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
 @media only screen and (max-width: 600px) {
   .login__username,
   .login__password,
