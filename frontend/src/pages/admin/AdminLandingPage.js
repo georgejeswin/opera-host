@@ -685,7 +685,7 @@ const AdminLandingPage = () => {
               </ul>
             ) : (
               <h2 className="status__h1 p-5 m-2">
-                Select a candidate to view Files
+                Select on a candidate to view Files
               </h2>
             )}
           </div>
