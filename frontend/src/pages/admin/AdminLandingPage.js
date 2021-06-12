@@ -542,7 +542,7 @@ const AdminLandingPage = () => {
                         height="300px"
                         fileUrl={`${url}/${fileList.experiencefile[0].filePath}`}
                       />
-                    ) : fileList.experencefile[0]?.fileType ===
+                    ) : fileList.experiencefile[0]?.fileType ===
                       "application/octet-stream" ? (
                       <GoogleDocsViewer
                         width="100%"
