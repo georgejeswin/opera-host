@@ -73,6 +73,7 @@ const Study = () => {
       <SwiperSlide><StudyComp bg={Malta} country="Malta" /></SwiperSlide>  
       <SwiperSlide><StudyComp bg={Norway} country="Norway" /></SwiperSlide>  
        <SwiperSlide><StudyComp bg={Poland} country="Poland" /></SwiperSlide> 
+       <SwiperSlide><StudyComp bg={Poland} country="Poland" /></SwiperSlide> 
        
       </div>
       </Swiper>
