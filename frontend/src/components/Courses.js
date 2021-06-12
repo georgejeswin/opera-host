@@ -22,12 +22,12 @@ const Courses = () => {
         <CourseCard
           bg={Engineering2}
           title="Engineering"
-          content="Engineering is a stream of education that involves the application of Science, Technology, and Mathematics to design, develop, and build machines...."
+          content="Engineering is a stream of education that involves the application of Science, Technology, and Mathematics to design, develop, and build machines structures and..."
         />
         <CourseCard
           bg={Medicine}
           title="Medicine"
-          content="A career in medicine is one of the most respected and rewarding professions. Medical courses are offered in various specializations including Medical and Biomedical Sciences..."
+          content="A career in medicine is one of the most respected and rewarding professions. Medical courses are offered in various specializations including Medical and Biomedical.."
         />
         <CourseCard
           bg={IT}

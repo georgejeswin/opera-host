@@ -28,7 +28,6 @@
 }
 .landingPage__contents h1 {
   font-family: "Poppins", sans-serif;
-
   color: rgb(250, 250, 250);
   font-size: 70px;
   letter-spacing: 3px;
@@ -49,20 +48,39 @@
   background-color: rgb(66, 143, 66);
   transition: 600ms linear;
 }
-.landing__button {
-  color: #fff;
-  background-color: rgb(84, 175, 84);
-  border: none;
-  min-height: 50px;
-  min-width: 200px;
-  margin: 0 !important;
-  font-size: 21px;
-  font-weight: 700;
-  border-radius: 99px;
-}
 .landing__button:hover {
   background-color: rgb(66, 143, 66);
   transition: 600ms linear;
+}
+.landingSlider2__h3 {
+  color: rgb(19, 94, 19) !important;
+}
+.landingSlider2__h1 {
+  color: rgb(15, 107, 15) !important;
+  letter-spacing: 1px !important;
+  font-size: 60px !important;
+  font-weight: 900 !important;
+}
+.landingSlider2__button {
+  background-color: rgb(50, 116, 55) !important;
+}
+.landingSlider2__button:hover {
+  background-color: rgb(74, 141, 80) !important;
+}
+.landingSlider1__h1 {
+  color: rgb(0, 0, 0) !important;
+  letter-spacing: 1px !important;
+  font-size: 60px !important;
+  font-weight: 900 !important;
+}
+.landingSlider1__span {
+  color: rgb(94, 37, 148);
+}
+.landingSlider1__button {
+  background-color: rgb(94, 37, 148) !important;
+}
+.landingSlider1__button:hover {
+  background-color: rgb(115, 57, 170) !important;
 }
 @media only screen and (max-width: 550px) {
   /* .landingPage {
@@ -96,13 +114,23 @@
     border-radius: 99px;
   }
   .landing__button {
-    padding: 6px;
-    min-height: 9px;
-    min-width: 80px;
+    padding: 6px !important;
+    min-height: 19px !important;
+    min-width: 90px !important;
+    font-size: 10px !important;
     margin: 0 !important;
     font-size: 10px;
     font-weight: 700;
     border-radius: 99px;
+  }
+
+  .landingSlider2__h1 {
+    font-size: 20px !important;
+    max-width: 250px;
+  }
+  .landingSlider1__h1 {
+    font-size: 20px !important;
+    max-width: 250px;
   }
 }
 @media screen and (max-width: 1000px) and (min-width: 551px) {
@@ -132,14 +160,22 @@
     font-weight: 700;
     border-radius: 99px;
   }
+  .landingSlider3__content {
+    padding: 20px !important;
+  }
   .landing__button {
-    padding: 12px;
     min-height: 20px;
-    min-width: 140px;
-    margin: 0 !important;
+    min-width: 140px !important;
+    margin-top: 0 !important;
     font-size: 14px;
     font-weight: 700;
     border-radius: 99px;
+  }
+  .landingSlider2__h1 {
+    font-size: 28px !important;
+  }
+  .landingSlider1__h1 {
+    font-size: 38px !important;
   }
 }
 
@@ -195,13 +231,26 @@
   justify-content: flex-start;
   color: rgb(255, 255, 255);
 }
+.landingSlider2__button {
+  color: #fff;
+  background-color: rgb(50, 117, 41);
+  border: none;
+  min-height: 50px;
+  min-width: 200px;
+  font-size: 21px;
+  font-weight: 700;
+  border-radius: 99px;
+  margin-top: 270px;
+  margin-left: 40px;
+}
 .landingSlider3 {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 .landingSlider3__content {
-  padding: 100px;
+  display: flex;
+  padding: 90px;
 }
 .landingSlider3__content {
   padding-left: 20px;
@@ -218,7 +267,19 @@
   font-weight: bolder;
   font-family: "Poppins", sans-serif;
 }
-
+.landing__button {
+  background-color: rgb(31, 152, 161);
+  color: #fff;
+  background-color: rgb(50, 117, 41);
+  border: none;
+  min-height: 50px;
+  min-width: 200px;
+  font-size: 21px;
+  font-weight: 700;
+  border-radius: 99px;
+  margin-top: 270px;
+  margin-left: 40px;
+}
 @media only screen and (max-width: 550px) {
   .landingSlider1,
   .landingSlider2,

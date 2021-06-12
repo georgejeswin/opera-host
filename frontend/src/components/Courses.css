@@ -63,6 +63,7 @@
   border-radius: 20px;
   padding: 25px;
   min-width: 270px;
+  min-height: 250px;
 }
 .courseCard__contents h4 {
   margin-top: 36px;
