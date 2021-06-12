@@ -26,14 +26,18 @@ const Footer = ({ history }) => {
             <h5>Housing</h5>
             <h5>Information Technologies</h5>
             <h5>Student Life</h5>
+            <h5>Career Guidance</h5>
           </div>
           <div className="footer__third col-md-4 px-5 py-3">
             <h1>Quick Links</h1>
             <Link to="/about">
               <h5>About Us</h5>
             </Link>
-            <Link to="/">
+            <Link to="/services">
               <h5>Our Services</h5>
+            </Link>
+            <Link to="/courses">
+              <h5>Courses</h5>
             </Link>
             <h5>Student Register</h5>
             <Link to="/contact">

@@ -96,7 +96,10 @@ const Landing = () => {
               <div className="landingPage__contents">
                 <h3 className="landingSlider2__h3">Start Learning Today</h3>
                 <h1 className="landingSlider2__h1">
-                  Decide Your Course Of Future <br />
+                  <span className="landingSlider2__span">
+                    Decide Your Course Of Future
+                  </span>
+                  <br />
                   With Us
                 </h1>
 
