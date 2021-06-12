@@ -5,6 +5,8 @@
   padding: 10px;
   border-bottom: 1px solid rgb(219, 219, 219);
   max-height: 90px;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 .navLogo img {
   max-height: 150px;
@@ -74,7 +76,7 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 0.5rem 0.6rem;
+  padding: 0.5rem 0.5rem;
   height: 100%;
 }
 
@@ -100,7 +102,7 @@
 .menu-icon {
   display: none;
 }
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1123px) {
   .nav {
     padding: 0;
   }
