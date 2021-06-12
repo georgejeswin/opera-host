@@ -7,7 +7,7 @@
 }
 
 .heading__h1 {
-  color: rgb(19, 102, 19);
+  color: rgb(33, 146, 33) !important;
   font-size: 36px;
   font-weight: bold;
 }
