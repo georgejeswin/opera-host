@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Study.css";
 import { Link } from "react-router-dom";
 import Armenia from "./images/Armenia.jpg";
@@ -29,6 +29,12 @@ import "swiper/components/pagination/pagination.min.css";
 import SwiperCore, { EffectFade, Autoplay, Pagination } from "swiper/core";
 SwiperCore.use([Autoplay, EffectFade, Pagination]);
 const Study = () => {
+  const [mobile, setMobile] = useState(4);
+  useEffect(() => {
+    if (window.innerWidth <= 600) {
+      setMobile(1.35);
+    }
+  }, [window.innerWidth]);
   return (
     <div className="study">
       <h1 className="heading__h1-res">Study Abroad Countries</h1>
@@ -41,7 +47,7 @@ const Study = () => {
         </Link>
       </div>
       <Swiper
-        slidesPerView={4}
+        slidesPerView={mobile}
         className="swiper__slide"
         // spaceBetween={10}
         autoplay={{

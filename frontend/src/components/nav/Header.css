@@ -104,6 +104,10 @@
 }
 @media screen and (max-width: 1123px) {
   .nav {
+    overflow-x: visible;
+    overflow-y: visible;
+  }
+  .nav {
     padding: 0;
   }
   .navbar {
