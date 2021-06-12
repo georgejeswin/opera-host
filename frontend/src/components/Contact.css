@@ -1,7 +1,7 @@
 .contact {
   /* background-color: rgb(240, 240, 240); */
   background: linear-gradient(rgba(0, 0, 0, 0.747), rgba(61, 59, 59, 0.747)),
-    url("https://cdn.wallpapersafari.com/31/75/42YMf6.png");
+    url("../components/images/bg-color.webp");
   background-size: cover;
   background-attachment: fixed;
   padding-top: 30px;

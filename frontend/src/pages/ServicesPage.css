@@ -8,7 +8,7 @@
   width: 100vw;
   height: 50vh;
   background: linear-gradient(rgba(0, 0, 0, 0.447), rgba(61, 59, 59, 0.747)),
-    url("https://brand.wisc.edu/content/uploads/2016/12/bascom-fall-1500x500-1500x500.jpg");
+    url("../components/images/services.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

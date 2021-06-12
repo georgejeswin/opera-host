@@ -9,7 +9,7 @@ import Study from "./Study";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Landing />
       <About />
       <Study />
@@ -17,7 +17,7 @@ const Home = () => {
       <Courses />
       <Documentation />
       <Contact />
-    </div>
+    </>
   );
 };
 

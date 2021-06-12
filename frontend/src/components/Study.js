@@ -35,7 +35,10 @@ const Study = () => {
 
       <div className="study__left">
         <h1 className="heading__h1">Study Abroad Countries</h1>
-        <button className="register__button">View All</button>
+        <p>The Best Places to Study Abroad</p>
+        <Link to="/study-in">
+          <button className="register__button">View All</button>
+        </Link>
       </div>
       <Swiper
         slidesPerView={3}
@@ -81,16 +84,13 @@ const Study = () => {
     </div>
   );
 };
-const StudyComp = ({ bg, country }) => {
+const StudyComp = ({ bg, country, content }) => {
   return (
     <div className="studyCardComp">
       <img src={bg} alt="" className="studyCardComp__img" />
       <div className="studyCardComp__content">
         <h4 className="studyCard__h4">{country}</h4>
-        <p className="studyCard__p">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-          maxime. Nulla aperiam dolor....
-        </p>
+        <p className="studyCard__p">{content}</p>
         <Link to="/study-in" className="btn1">
           <span>Learn More</span>
           <i className="fas fa-angle-right" id="fas1"></i>

@@ -101,11 +101,12 @@ function App() {
           <Route exact path="/services" component={ServicesPage} />
           <Route exact path="/courses" component={CoursesPage} />
           <Route exact path="/study-in" component={StudyPage} />
-
           <Route exact path="/privacy" component={Privacy} />
           <Route exact path="/terms&conditions" component={Terms} />
           <Route exact path="/register/complete" component={RegisterComplete} />
           <Route exact path="/forgot/password" component={ForgotPassword} />
+
+          <Route exact path="/" component={Home} />
 
           <UserPrivateRoute exact path="/user" component={UserLandingPage} />
           <UserPrivateRoute exact path="/user/status" component={UserStatus} />
@@ -121,7 +122,6 @@ function App() {
             path="/admin/messages"
             component={AdminViewMessages}
           />
-          <Route exact path="/" component={Home} />
         </Switch>
         <Footer />
       </Router>

@@ -12,9 +12,8 @@ import Hospitality from "../components/images/hospitality.jpg";
 import Engineering2 from "../components/images/engineering2.jpg";
 import Fashion from "../components/images/fashion.jpg";
 import Healthcare from "../components/images/HealthCare.jpeg";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { getFiles } from "../actions/fileActions";
 
 const CoursesPage = () => {
   return (
