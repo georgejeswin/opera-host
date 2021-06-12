@@ -26,12 +26,12 @@ const Landing = () => {
   };
   useEffect(() => {
     filesUploaded(user);
-    if (files.length <= 0) {
-      history.push("/user");
-    }
-  }, [files.length, history, user]);
+    // if (files.length <= 0) {
+    //   history.push("/user");
+    // }
+  }, [user]);
 
-  const handleClick = (currentuser) => {
+  const handleClick = () => {
     if (files.length === 0) {
       history.push("/upload");
     }
@@ -40,13 +40,6 @@ const Landing = () => {
     } else {
       history.push("/upload");
     }
-    // files.filter((file) => {
-    //   if (file.user === currentuser._id) {
-    //     history.push("/user/status");
-    //   } else {
-    //     history.push("/upload");
-    //   }
-    // });
   };
   return (
     <>
@@ -70,7 +63,7 @@ const Landing = () => {
                 <h1>Opera International</h1>
                 <button
                   onClick={() => {
-                    !user.email ? history.push("/login") : handleClick(user);
+                    !user.email ? history.push("/login") : handleClick();
                   }}
                 >
                   Register Now!!!

@@ -27,15 +27,6 @@ const UserLandingPage = () => {
   let history = useHistory();
   var currentId = user._id;
 
-  // const paymentDoneCheck = () => {
-  //   files.filter((file) => {
-  //     // console.log("found him>>>>", file.user === user._id);
-  //     if (file.user === user._id && file.paided) {
-  //       setPaymentDone(true);
-  //       console.log("paid", paymentDone);
-  //     }
-  //   });
-  // };
   const logout = () => {
     firebase.auth().signOut();
     localStorage.removeItem("userInfo");
@@ -71,15 +62,6 @@ const UserLandingPage = () => {
         setFullName("");
       })
       .catch((err) => console.log(err));
-
-    // history.push("/");
-
-    // e.preventDefault();
-    // console.log("check.....>>>");
-    // if (currentId) {
-    //   dispatch(updateUser(currentId, { ...user, name: fullName }));
-    //   console.log("updated.....>>>");
-    // }
   };
 
   const handleSubmit = async (e) => {

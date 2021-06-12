@@ -8,7 +8,7 @@
   width: 100vw;
   height: 50vh;
   background: linear-gradient(rgba(0, 0, 0, 0.447), rgba(61, 59, 59, 0.747)),
-    url("https://www.macleans.ca/wp-content/uploads/2020/08/CANADA-COLLEGE-APPLIED-RESEARCH-MOHAWK-NIAGARA-COLLEGE-AUG21.jpg");
+    url("../components/images/studyin.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -22,6 +22,13 @@
   align-items: center;
   justify-content: center;
   margin-left: -10px;
+}
+.studyPageCard__left img {
+  max-width: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  max-height: 430px;
+  min-height: 430px;
 }
 /* .middle {
   position: absolute;
@@ -68,8 +75,8 @@
 .studyCardComp {
   max-width: 270px;
   min-width: 270px;
-  min-height: 400px;
-  max-height: 400px;
+  min-height: 500px;
+  max-height: 500px;
   margin: 5px;
   padding: 14px;
   display: flex;
@@ -99,5 +106,10 @@
 @media only screen and (max-width: 600px) {
   .studyPage__top {
     height: 26vh;
+  }
+  .studyPageCard__left img {
+    max-height: 100%;
+    min-height: 100%;
+    max-width: 100%;
   }
 }

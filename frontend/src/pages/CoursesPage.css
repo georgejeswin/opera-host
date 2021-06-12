@@ -40,6 +40,7 @@
 .coursePageCard__left {
   flex: 0.5;
   border-radius: 10px;
+  align-content: center;
 }
 .coursePageCard__left img {
   max-width: 250px;
@@ -47,6 +48,7 @@
   border-radius: 10px;
   max-height: 370px;
   min-height: 370px;
+  align-content: center;
 }
 .coursePageCard__right {
   display: flex;
