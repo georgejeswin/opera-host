@@ -18,7 +18,9 @@ const mulitipleFileSchema = new Schema(
       default: false,
       // captured
     },
-
+    university: {
+      type: String
+    },
     cvfile: [
       {
         user: {

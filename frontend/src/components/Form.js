@@ -18,6 +18,7 @@ import {
   ExperienceFileUpload,
   SopFileUpload,
   LorFileUpload,
+  universityUpload,
   // getMultipleFiles,
 } from "../data/api";
 import Uploader from "./Uploader";
@@ -43,6 +44,7 @@ const Form = () => {
   const [experienceFiles, setExperienceFiles] = useState([]);
   const [sopFiles, setSopFiles] = useState([]);
   const [lorFiles, setLorFiles] = useState([]);
+  const [university, setUniversity] = useState('');
   const [ifUploaded, setIfUploaded] = useState({
     cv: false,
     degree: false,
@@ -52,29 +54,7 @@ const Form = () => {
     lor: false,
   });
 
-  // const [cvFileName, setCvFileName] = useState(
-  //   "1. Updated curriculum vitae ( CV )"
-  // );
-  // const [passportFileName, setPassportFileName] = useState(
-  //   "2 fileInput__item. Front and back page of passport copy"
-  // );
-  // const [sslcFileName, setSslcFileName] = useState("3. SSLC Certificate");
-  // const [plustwoFileName, setPlustwoFileName] = useState(
-  //   "4. Plus two Certificate"
-  // );
-  // const [degreeFileName, setDegreeFileName] = useState(
-  //   "5. Degree certificate with consolidated mark sheet and semester certificates"
-  // );
-  // const [ietlsFileName, setIeltsFileName] = useState(
-  //   "6. English language test result -IELTS  ( If any )"
-  // );
-  // const [experienceFileName, setExperienceFileName] = useState(
-  //   "7. Experience letter ( If any )"
-  // );
-  // const [sopFileName, setSopFileName] = useState(
-  //   "8. Statement of purpose - SOP for your selected programmes"
-  // );
-  // const [lorFileName, setLorFileName] = useState("9. Letter of reccomendation");
+ 
   const userInfo = useSelector((state) => state.user);
 
   function onCvFileUpload(e) {
@@ -192,6 +172,10 @@ const Form = () => {
     }
   }
 
+ const  onUniversityUpload = (e)=>{
+  e.preventDefault();
+  setUniversity(e.target.value)
+ }
   const uploadCvFile = async () => {
     if (cvFiles) {
       const formData = new FormData();
@@ -270,6 +254,15 @@ const Form = () => {
       console.log("no lor file");
     }
   };
+  const uploadUniversity = async () => {
+    if (university) {
+      await universityUpload(university, userInfo);
+      setUniversity('')
+      console.log("uploaded");
+    } else {
+      console.log("no lor file");
+    }
+  };
 
   // const uploadSingleFile =  async(e)=>{
   //   e.preventDefault()
@@ -280,6 +273,7 @@ const Form = () => {
   // }
   const UploadMultipleFiles = async (e) => {
     e.preventDefault();
+    
     try {
       setUploading(true);
       await uploadPsFile();
@@ -303,6 +297,7 @@ const Form = () => {
       if (ifUploaded.lor) {
         await uploadLorFile();
       }
+      uploadUniversity()
       setUploading(false);
       toast.success("Upload Success, Continue To payment");
       history.push("/payments");
@@ -310,7 +305,9 @@ const Form = () => {
       setUploading(false);
       toast.error("Upload failed, Please Try Again");
     }
+    
   };
+  
   // const getSingleFileslist = async () => {
   //   try {
   //     const fileslist = await getSingleFiles();
@@ -461,6 +458,18 @@ const Form = () => {
                 {/* <label className="label" htmlFor="customFile">
                 {lorFileName}
               </label> */}
+              </div>
+              <div className="mb-2 fileInput__item">
+                <label>10. Choose University</label>
+
+                <input
+                  type="text"
+                  value={university}
+                  placeholder="Enter University"
+                  className="uploadFile__button"
+                  onChange={onUniversityUpload}
+                />
+    
               </div>
               <input
                 type="submit"

@@ -91,6 +91,15 @@ export const LorFileUpload = async (data, userInfo) => {
     throw error;
   }
 };
+export const universityUpload = async (data, userInfo) => {
+  console.log(data)
+  const id = userInfo._id;
+  try {
+    await axios.post(`${uploadUrl}/university/${id}`, {data});
+  } catch (error) {
+    throw error;
+  }
+};
 // export const getMultipleFiles = async () => {
 //   try {
 //     const { data } = await axios.get("/getMultipleFiles");

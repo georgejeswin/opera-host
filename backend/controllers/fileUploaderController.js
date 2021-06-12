@@ -309,6 +309,19 @@ const lorFileUpload = async (req, res, next) => {
     res.status(400).send(error.message);
   }
 };
+const universityUpload = async (req, res, next) => {
+  try {
+    console.log(req.body.data)
+    await MultipleFile.updateOne(
+      { user: req.params.id },
+      {university: req.body.data}
+    );
+
+    res.status(201).send("Files Uploaded Successfully");
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+};
 
 const getallSingleFiles = async (req, res, next) => {
   try {
@@ -360,5 +373,6 @@ export {
   getallSingleFiles,
   sopFileUpload,
   lorFileUpload,
+  universityUpload,
   getallMultipleFiles,
 };
