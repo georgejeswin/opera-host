@@ -1,6 +1,6 @@
 .aboutPage__top {
   width: 100vw;
-  height: 50vh;
+  height: 60vh;
   background: linear-gradient(rgba(0, 0, 0, 0.447), rgba(61, 59, 59, 0.747)),
     url("../components/images/about.jpeg");
   background-repeat: no-repeat;
@@ -16,8 +16,30 @@
   font-size: 40px;
   font-weight: bolder;
 }
+.about__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about__row {
+  margin-top: -30px;
+}
+.why__choose-1 {
+  display: none;
+}
 @media only screen and (max-width: 600px) {
   .aboutPage__top {
     height: 26vh;
+  }
+  .heading__h1 {
+    font-size: 29px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .why__choose-1 {
+    display: flex;
+  }
+  .why__choose-2 {
+    display: none !important;
   }
 }

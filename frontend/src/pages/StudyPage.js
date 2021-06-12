@@ -163,10 +163,7 @@ const StudyPageCard = ({ bg, content, country }) => {
   };
   useEffect(() => {
     filesUploaded(user);
-    if (files.length <= 0) {
-      history.push("/user");
-    }
-  }, [files.length, history, user]);
+  }, [user]);
 
   const handleClick = (currentuser) => {
     if (files.length === 0) {

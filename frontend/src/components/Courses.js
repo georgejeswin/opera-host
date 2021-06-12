@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Courses.css";
 import { Link } from "react-router-dom";
 import Management from "./images/management.jpg";
@@ -13,54 +13,92 @@ import Hospitality from "./images/hospitality.jpg";
 import Engineering2 from "./images/engineering2.jpg";
 import Fashion from "./images/fashion.jpg";
 import Healthcare from "./images/HealthCare.jpeg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper.min.css";
+import "swiper/components/pagination/pagination.min.css";
+import SwiperCore, { EffectFade, Autoplay, Pagination } from "swiper/core";
+SwiperCore.use([Autoplay, EffectFade, Pagination]);
 
 const Courses = () => {
+  const [mobile, setMobile] = useState(4);
+  useEffect(() => {
+    if (window.innerWidth <= 800) {
+      setMobile(1.22);
+    }
+  }, [window.innerWidth]);
   return (
     <div className="courses">
       <h1 className="heading__h1">Study Abroad Courses</h1>
-      <div className="courses__items container-fluid">
-        <CourseCard
-          bg={Engineering2}
-          title="Engineering"
-          content="Engineering is a stream of education that involves the application of Science, Technology, and Mathematics to design, develop, and build machines...."
-        />
-        <CourseCard
-          bg={Medicine}
-          title="Medicine"
-          content="A career in medicine is one of the most respected and rewarding professions. Medical courses are offered in various specializations including Medical and Biomedical Sciences..."
-        />
-        <CourseCard
-          bg={IT}
-          title="Information Technology"
-          content="Information Technology is the use of Hardware, Software, services, and supporting infrastructure to manage and deliver information and related services...."
-        />
-        <CourseCard
-          bg={Fashion}
-          title="Fashion"
-          content="Fashion and luxury is one of the most creative course options for those who are passionate about garments/ clothes as well as lifestyle accessories. Fashion and luxury course is....."
-        />
-        <CourseCard
-          bg={Nursing}
-          title="Nursing"
-          content="Nurses are ranked as the most honest, trusted, and ethical professionals. If you are looking for a rewarding occupation and offers a lifetime of opportunities here is the right sector for you."
-        />
-        <CourseCard
-          bg={Management}
-          title="Management"
-          content="Management is the process of planning, organizing, directing, staffing, controlling, and co-coordinating. It provides the academic knowledge and skills that are required to..."
-        />
-        <CourseCard
-          bg={Hospitality}
-          title="Hospitality"
-          content="Hospitality is one of the vast and oldest industries and is the fastest growing lucrative career provider. A career in Hospitality can be immensely rewarding as the sector will offer...."
-        />
-        <CourseCard
-          bg={Healthcare}
-          title="Health Care"
-          content="Health Care courses are an ideal career destination if you are passionate about helping people and making a difference in their lives. A large number of students join for health care..."
-        />
+      <Swiper
+        slidesPerView={mobile}
+        className="swiper__slide"
+        // spaceBetween={10}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        className="mySwiper"
+      >
+        <div className="courses__items container">
+          <SwiperSlide>
+            <CourseCard
+              bg={Engineering2}
+              title="Engineering"
+              content="Engineering is a stream of education that involves the application of Science, Technology, and Mathematics to design, develop, and build machines structures and..."
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <CourseCard
+              bg={Medicine}
+              title="Medicine"
+              content="A career in medicine is one of the most respected and rewarding professions. Medical courses are offered in various specializations including Medical and Biomedical.."
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <CourseCard
+              bg={IT}
+              title="Information Technology"
+              content="Information Technology is the use of Hardware, Software, services, and supporting infrastructure to manage and deliver information and related services...."
+            />
+          </SwiperSlide>
 
-        {/* <CoursesCourse bg="" />
+          <SwiperSlide>
+            <CourseCard
+              bg={Fashion}
+              title="Fashion"
+              content="Fashion and luxury is one of the most creative course options for those who are passionate about garments/ clothes as well as lifestyle accessories. Fashion and luxury course is....."
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <CourseCard
+              bg={Nursing}
+              title="Nursing"
+              content="Nurses are ranked as the most honest, trusted, and ethical professionals. If you are looking for a rewarding occupation and offers a lifetime of opportunities here is the right sector for you."
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <CourseCard
+              bg={Management}
+              title="Management"
+              content="Management is the process of planning, organizing, directing, staffing, controlling, and co-coordinating. It provides the academic knowledge and skills that are required to..."
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <CourseCard
+              bg={Hospitality}
+              title="Hospitality"
+              content="Hospitality is one of the vast and oldest industries and is the fastest growing lucrative career provider. A career in Hospitality can be immensely rewarding as the sector will offer...."
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <CourseCard
+              bg={Healthcare}
+              title="Health Care"
+              content="Health Care courses are an ideal career destination if you are passionate about helping people and making a difference in their lives. A large number of students join for health care..."
+            />
+          </SwiperSlide>
+
+          {/* <CoursesCourse bg="" />
         <CoursesComp bg="" />
         <CoursesComp bg="" />
         <CoursesComp bg="https://asiasociety.org/sites/default/files/styles/1200w/public/B/blog-australianstudents.png" />
@@ -72,7 +110,8 @@ const Courses = () => {
         <CoursesComp bg="https://www.cicnews.com/wp-content/uploads/2020/02/20200220_InternationalStudentsRecordNumbers.jpg" />
         <CoursesComp bg="https://www.cicnews.com/wp-content/uploads/2020/02/20200220_InternationalStudentsRecordNumbers.jpg" />
         <CoursesComp bg="https://www.cicnews.com/wp-content/uploads/2020/02/20200220_InternationalStudentsRecordNumbers.jpg" /> */}
-      </div>
+        </div>
+      </Swiper>
       <Link to="/courses">
         <button className="register__button">View All</button>
       </Link>

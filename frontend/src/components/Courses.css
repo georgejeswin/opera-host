@@ -7,7 +7,7 @@
 }
 
 .heading__h1 {
-  color: rgb(19, 102, 19);
+  color: rgb(33, 146, 33) !important;
   font-size: 36px;
   font-weight: bold;
 }
@@ -34,7 +34,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-right: 20px;
+  margin-right: 10px;
+  margin-left: 20px;
 }
 .courseCard__img {
   z-index: 9;
@@ -62,8 +63,21 @@
   background: rgb(233, 233, 233);
   border-radius: 20px;
   padding: 25px;
-  min-width: 270px;
+  min-width: 290px;
+  min-height: 270px;
+  max-height: 270px;
 }
 .courseCard__contents h4 {
   margin-top: 36px;
+}
+.courses .swiper-slide {
+  min-width: 300px !important;
+  margin-right: 10px;
+  max-width: 300px !important;
+}
+.courses .swiper__slide {
+  margin: 20px !important;
+}
+.courses .swiper-container {
+  max-width: 100vw !important;
 }

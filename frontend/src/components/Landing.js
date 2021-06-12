@@ -71,22 +71,40 @@ const Landing = () => {
               </div>
             </div>
           </SwiperSlide>
-          {/* <SwiperSlide>
+          <SwiperSlide>
             <div className="landingSlider1">
-              <div className="landingSlider1__content">
-                <h2>Best services</h2>
+              <div className="landingPage__contents">
+                <h1 className="landingSlider1__h1">
+                  Get Your <br /> Dream{" "}
+                  <span className="landingSlider1__span">Courses In</span>
+                  <br /> Dream{" "}
+                  <span className="landingSlider1__span">
+                    College & University
+                  </span>
+                </h1>
+
+                <Link to="/study-in">
+                  <button className="landingSlider1__button">
+                    Find Destination
+                  </button>
+                </Link>
               </div>
             </div>
-          </SwiperSlide> */}
+          </SwiperSlide>
           <SwiperSlide>
             <div className="landingSlider2">
-              <div className="landingSlider2__content p-3">
-                <div className="slider2__top">Opera has More than</div>
-                <div className="slider2__bottom">180 Majors and Minors</div>
+              <div className="landingPage__contents">
+                <h3 className="landingSlider2__h3">Start Learning Today</h3>
+                <h1 className="landingSlider2__h1">
+                  <span className="landingSlider2__span">
+                    Decide Your Course Of Future
+                  </span>
+                  <br />
+                  With Us
+                </h1>
+
                 <Link to="/courses">
-                  <button className="landing__button mt-2">
-                    Explore Courses
-                  </button>
+                  <button className="landingSlider2__button">Courses</button>
                 </Link>
               </div>
             </div>

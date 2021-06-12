@@ -207,13 +207,12 @@ const AdminLandingPage = () => {
                       />
                     ) : fileList.cvfile[0]?.fileType ===
                       "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ? (
-                        <>
-                      
-                      <GoogleDocsViewer
-                        width="100%"
-                        height="300px"
-                        fileUrl={`${url}/${fileList.cvfile[0].filePath}`}
-                      />
+                      <>
+                        <GoogleDocsViewer
+                          width="100%"
+                          height="300px"
+                          fileUrl={`${url}/${fileList.cvfile[0].filePath}`}
+                        />
                       </>
                     ) : fileList.cvfile[0]?.fileType ==
                       "application/octet-stream" ? (
@@ -685,7 +684,9 @@ const AdminLandingPage = () => {
                 )}
               </ul>
             ) : (
-              ""
+              <h2 className="status__h1 p-5 m-2">
+                Select a candidate to view Files
+              </h2>
             )}
           </div>
         </div>

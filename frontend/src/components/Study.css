@@ -122,12 +122,23 @@
   font-size: 22px;
   color: rgb(255, 255, 255);
 }
+.study .swiper-slide {
+  min-width: 270px !important;
+  margin-right: 10px;
+  max-width: 270px;
+}
+.study .swiper__slide {
+  margin: 20px !important;
+}
 @media only screen and (max-width: 600px) {
   .study {
     flex-direction: column;
   }
   .study__left {
     display: none;
+  }
+  .study .swiper-container {
+    max-width: 100vw !important;
   }
 }
 @media only screen and (min-width: 601px) {
@@ -197,6 +208,9 @@
 }
 .compCard__img img:hover {
   transform: scale(1.05);
+}
+.studyCardComp {
+  margin-right: 10px !important;
 }
 .studyCardComp__content {
   margin-top: -200px;

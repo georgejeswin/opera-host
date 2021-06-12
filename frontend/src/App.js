@@ -30,6 +30,7 @@ import ServicesPage from "./pages/ServicesPage";
 import ContactPage from "./pages/ContactPage";
 import CoursesPage from "./pages/CoursesPage";
 import StudyPage from "./pages/StudyPage";
+import ScrollToTop from "./functions/ScrollToTop";
 import AOS from "aos";
 AOS.init({
   disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
@@ -88,6 +89,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <ScrollToTop />
         <NavTop />
         {/* <NavBar /> */}
         <Header />

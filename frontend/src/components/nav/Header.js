@@ -33,23 +33,7 @@ const Header = () => {
   }, [button]);
   window.addEventListener("resize", showButton);
 
-  // const [current, setcurrent] = useState("");
-  // const dispatch = useDispatch();
-  // let history = useHistory();
   let { user } = useSelector((state) => ({ ...state }));
-
-  // const handleClick = (e) => {
-  //   setcurrent(e.key);
-  // };
-
-  // const logout = () => {
-  //   firebase.auth().signOut();
-  //   dispatch({
-  //     type: "LOGOUT",
-  //     payload: null,
-  //   });
-  //   history.push("/login");
-  // };
 
   return (
     <nav className="nav sticky-top header__nav">
@@ -85,11 +69,8 @@ const Header = () => {
           </li>
           <li className="nav-item">
             <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
-              About
-            </Link>
-            {/* <a href="#about" className="nav-links" onClick={closeMobileMenu}>
               About Us
-            </a> */}
+            </Link>
           </li>
 
           <li className="nav-item">
@@ -100,47 +81,20 @@ const Header = () => {
             >
               Services
             </Link>
-            {/* <a href="#services" className="nav-links" onClick={closeMobileMenu}>
-              Services
-            </a> */}
           </li>
-          {user && (
-            <>
-              {/* <li className="nav-item">
-                <a
-                  href="#documentation"
-                  className="nav-links"
-                  onClick={closeMobileMenu}
-                >
-                  Documentation
-                </a>
-              </li> */}
-              <li className="nav-item">
-                <Link
-                  to="/contact"
-                  className="nav-links"
-                  onClick={closeMobileMenu}
-                >
-                  Contact
-                </Link>
-                {/* <a
-                  href="#contact"
-                  className="nav-links"
-                  onClick={closeMobileMenu}
-                >
-                  Contact
-                </a> */}
-              </li>
-            </>
-          )}
+          {/* {user && (
+            <> */}
+          <li className="nav-item">
+            <Link to="/contact" className="nav-links" onClick={closeMobileMenu}>
+              Contact
+            </Link>
+          </li>
+          {/* </>
+          )} */}
 
           <li className="nav-item" onClick={closeMobileMenu}>
             {user ? (
               <Link to="/user" className="header__login">
-                {/* <p className="nav-links">
-                  <i className="far fa-user "></i>
-                  &nbsp;{user.name}
-                </p> */}
                 <p
                   className="nav-links"
                   style={{
@@ -170,20 +124,27 @@ const Header = () => {
               </Link>
             </li>
           )}
-          <li className="nav-item" onClick={closeMobileMenu}>
-            {user && user.role === "admin" ? (
-              <Link to="/admin/messages">
-                <p className="nav-links">
-                  <IconButton>
-                    <MessageIcon />
-                  </IconButton>
-                </p>
-              </Link>
-            ) : (
-              ""
-            )}
-          </li>
           {user && user.role === "admin" ? (
+            <>
+              <li className="nav-item" onClick={closeMobileMenu}>
+                <Link to="/admin/messages">
+                  <p className="nav-links">
+                    <IconButton>
+                      <MessageIcon />
+                    </IconButton>
+                  </p>
+                </Link>
+              </li>
+              <li className="nav-item" onClick={closeMobileMenu}>
+                <Link to="/admin/dashboard" className="header__login">
+                  <p className="nav-links">Admin</p>
+                </Link>
+              </li>
+            </>
+          ) : (
+            ""
+          )}
+          {/* {user && user.role === "admin" ? (
             <li className="nav-item" onClick={closeMobileMenu}>
               <Link to="/admin/dashboard" className="header__login">
                 <p className="nav-links">Admin</p>
@@ -191,41 +152,10 @@ const Header = () => {
             </li>
           ) : (
             ""
-          )}
+          )} */}
         </ul>
       </div>
     </nav>
-    // <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
-    //   <Link to="/">
-    //     <img src={LOGO} alt="Opera" />
-    //   </Link>
-
-    //   {!user && (
-    //     <Item key="login" className="float-right" icon={<UserOutlined />}>
-    //       <Link to="login">Login</Link>
-    //     </Item>
-    //   )}
-    //   {!user && (
-    //     <Item key="register" className="float-right" icon={<UserAddOutlined />}>
-    //       <Link to="register">Register</Link>
-    //     </Item>
-    //   )}
-
-    //   {user && (
-    //     <SubMenu
-    //       className="float-right"
-    //       key="SubMenu"
-    //       icon={<SettingOutlined />}
-    //       title={user.email && user.email.split("@")[0]}
-    //     >
-    //       <Item key="setting:1">Option 1</Item>
-    //       <Item key="setting:2">Option 2</Item>
-    //       <Item icon={<LogoutOutlined />} onClick={logout}>
-    //         Logout
-    //       </Item>
-    //     </SubMenu>
-    //   )}
-    // </Menu>
   );
 };
 
