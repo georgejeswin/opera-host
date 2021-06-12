@@ -19,6 +19,9 @@
   -moz-box-shadow: -1px -6px 24px -8px rgba(59, 59, 59, 1);
   border-radius: 10x;
 }
+.study__left p {
+  color: rgb(31, 201, 31);
+}
 .heading__h1 {
   color: rgb(31, 201, 31);
   font-size: 36px;

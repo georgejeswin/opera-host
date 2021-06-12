@@ -31,6 +31,7 @@ const Study = () => {
 
       <div className="study__left">
         <h1 className="heading__h1">Study Abroad Countries</h1>
+        <p>The Best Places to Study Abroad</p>
         <Link to="/study-in">
           <button className="register__button">View All</button>
         </Link>
