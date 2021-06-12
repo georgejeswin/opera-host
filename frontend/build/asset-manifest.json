@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.7ded7501.chunk.css",
-    "main.js": "/static/js/main.1a6987e2.chunk.js",
-    "main.js.map": "/static/js/main.1a6987e2.chunk.js.map",
+    "main.js": "/static/js/main.cc4fb756.chunk.js",
+    "main.js.map": "/static/js/main.cc4fb756.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d54c724d.js",
     "runtime-main.js.map": "/static/js/runtime-main.d54c724d.js.map",
     "static/css/2.0558ed32.chunk.css": "/static/css/2.0558ed32.chunk.css",
@@ -26,16 +26,19 @@
     "static/media/UNIVERSITIES.4e71c93e.png": "/static/media/UNIVERSITIES.4e71c93e.png",
     "static/media/about.6528bd53.png": "/static/media/about.6528bd53.png",
     "static/media/AboutPage.css": "/static/media/about.d1c8b35b.jpeg",
+    "static/media/admission.30dec77d.jpeg": "/static/media/admission.30dec77d.jpeg",
     "static/media/australia.c160c1ff.jpg": "/static/media/australia.c160c1ff.jpg",
     "static/media/Study.css": "/static/media/bg-color.5259e6da.webp",
     "static/media/Services.css": "/static/media/bg-color2.dd2de44c.jpeg",
     "static/media/canada.4a63b809.jpg": "/static/media/canada.4a63b809.jpg",
     "static/media/china.791cda65.jpg": "/static/media/china.791cda65.jpg",
     "static/media/ContactPage.css": "/static/media/contact.222cca38.jpeg",
+    "static/media/councelling.85873370.jpeg": "/static/media/councelling.85873370.jpeg",
     "static/media/CoursesPage.css": "/static/media/courses.6d97db0a.jpg",
     "static/media/duabai.39cea1ee.jpg": "/static/media/duabai.39cea1ee.jpg",
     "static/media/engineering2.73092fb4.jpg": "/static/media/engineering2.73092fb4.jpg",
     "static/media/fashion.c4665bc0.jpg": "/static/media/fashion.c4665bc0.jpg",
+    "static/media/finance.566fd645.jpeg": "/static/media/finance.566fd645.jpeg",
     "static/media/france.e825e8f7.jpg": "/static/media/france.e825e8f7.jpg",
     "static/media/georgia.5df51a81.jpg": "/static/media/georgia.5df51a81.jpg",
     "static/media/germany.90287c69.jpg": "/static/media/germany.90287c69.jpg",
@@ -51,6 +54,7 @@
     "static/media/nursing.fb9e76aa.jpg": "/static/media/nursing.fb9e76aa.jpg",
     "static/media/nz.b82ed506.jpg": "/static/media/nz.b82ed506.jpg",
     "static/media/pay.89f85636.png": "/static/media/pay.89f85636.png",
+    "static/media/placement.dfb2b10d.jpeg": "/static/media/placement.dfb2b10d.jpeg",
     "static/media/poland.0925fec6.jpg": "/static/media/poland.0925fec6.jpg",
     "static/media/register.3d20be28.jpg": "/static/media/register.3d20be28.jpg",
     "static/media/russia.d9085a15.jpg": "/static/media/russia.d9085a15.jpg",
@@ -70,6 +74,6 @@
     "static/css/2.0558ed32.chunk.css",
     "static/js/2.0b0d276f.chunk.js",
     "static/css/main.7ded7501.chunk.css",
-    "static/js/main.1a6987e2.chunk.js"
+    "static/js/main.cc4fb756.chunk.js"
   ]
 }

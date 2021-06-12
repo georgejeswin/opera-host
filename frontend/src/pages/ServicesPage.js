@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./ServicesPage.css";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import Placement from "../components/images/placement.jpeg";
+import Councelling from "../components/images/councelling.jpeg";
+import Finance from "../components/images/finance.jpeg";
+import Career from "../components/images/admission.jpeg";
 
 const ServicesPage = () => {
   const user = useSelector((state) => ({ ...state.user }));
@@ -36,7 +40,7 @@ const ServicesPage = () => {
       </div>
       <div className="services__items container-fluid">
         <ServicesPageCard
-          img="https://cdn.statically.io/img/866821.smushcdn.com/1939086/wp-content/uploads/student-counselling-advice.jpg?lossy=1&strip=1&webp=1&quality=100&f=auto"
+          img={Career}
           title="Admission Counseling"
           content=" We access your qualification, interest and aptitude and suggest you
             the best course and institute around. Once you decide for the course
@@ -44,7 +48,7 @@ const ServicesPage = () => {
             along with fee."
         />
         <ServicesPageCard
-          img="https://flyonacademy.com/wp-content/uploads/2019/01/confidential-assistance-home.jpg"
+          img={Placement}
           title="Placement Assistance"
           content=" By our network of high quality academicians and professionals
             worldwide, we arrange various job opportunities for the students to
@@ -53,7 +57,7 @@ const ServicesPage = () => {
         />
 
         <ServicesPageCard
-          img="https://www.tomorrowmakers.com/sites/default/files/2020-02/financial%20planning%20dummies%20updated.jpg"
+          img={Finance}
           title="Financial Guidelines"
           content=" To find the finance required for the desired study package and
             ensure its stability, we assist the students and parents to avail
@@ -62,7 +66,7 @@ const ServicesPage = () => {
             sponsorships."
         />
         <ServicesPageCard
-          img="https://www.chetanyacareers.com/wp-content/uploads/2020/12/image-international-student-population-2.jpg"
+          img={Councelling}
           title="Career Guidance"
           content=" We help students to plan their career according to the rapidly
             changing needs of the complex global economy & We assist in all the
