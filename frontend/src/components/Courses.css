@@ -86,7 +86,7 @@
 .courses .swiper-slide-prev {
   width: 400px !important;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .courses .swiper-slide {
     min-width: 100vw !important;
     max-width: 100vw !important;
