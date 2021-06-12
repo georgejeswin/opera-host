@@ -22,7 +22,7 @@ SwiperCore.use([Autoplay, EffectFade, Pagination]);
 const Courses = () => {
   const [mobile, setMobile] = useState(4);
   useEffect(() => {
-    if (window.innerWidth <= 600) {
+    if (window.innerWidth <= 800) {
       setMobile(1.22);
     }
   }, [window.innerWidth]);
