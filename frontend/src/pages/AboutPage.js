@@ -40,6 +40,9 @@ const AboutPage = () => {
           </div>
         </div>
         <div className="row about__row">
+          <div className="about__left col-md-6 col-12 why__choose-1">
+            <img src={WhyChoose} alt="About" data-aos="fade-right" />
+          </div>
           <div className="about__right col-md-6 col-12 p-5">
             <h1>Why Choose Us</h1>
             <p>
@@ -55,7 +58,7 @@ const AboutPage = () => {
               plans.
             </p>
           </div>
-          <div className="about__left col-md-6 col-12">
+          <div className="about__left col-md-6 col-12 why__choose-2">
             <img src={WhyChoose} alt="About" data-aos="fade-right" />
           </div>
         </div>{" "}

@@ -41,7 +41,7 @@ const Study = () => {
         </Link>
       </div>
       <Swiper
-        slidesPerView={3}
+        slidesPerView={4}
         className="swiper__slide"
         // spaceBetween={10}
         autoplay={{

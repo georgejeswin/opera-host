@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.f72b5045.chunk.css",
-    "main.js": "/static/js/main.5ba00fd5.chunk.js",
-    "main.js.map": "/static/js/main.5ba00fd5.chunk.js.map",
+    "main.css": "/static/css/main.7bdeedd0.chunk.css",
+    "main.js": "/static/js/main.dc8cae34.chunk.js",
+    "main.js.map": "/static/js/main.dc8cae34.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.7264f885.js",
     "runtime-main.js.map": "/static/js/runtime-main.7264f885.js.map",
     "static/css/2.0558ed32.chunk.css": "/static/css/2.0558ed32.chunk.css",
-    "static/js/2.aa81558d.chunk.js": "/static/js/2.aa81558d.chunk.js",
-    "static/js/2.aa81558d.chunk.js.map": "/static/js/2.aa81558d.chunk.js.map",
+    "static/js/2.4c4df8dc.chunk.js": "/static/js/2.4c4df8dc.chunk.js",
+    "static/js/2.4c4df8dc.chunk.js.map": "/static/js/2.4c4df8dc.chunk.js.map",
     "static/js/3.12b4939b.chunk.js": "/static/js/3.12b4939b.chunk.js",
     "static/js/3.12b4939b.chunk.js.map": "/static/js/3.12b4939b.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.0558ed32.chunk.css.map": "/static/css/2.0558ed32.chunk.css.map",
-    "static/css/main.f72b5045.chunk.css.map": "/static/css/main.f72b5045.chunk.css.map",
-    "static/js/2.aa81558d.chunk.js.LICENSE.txt": "/static/js/2.aa81558d.chunk.js.LICENSE.txt",
+    "static/css/main.7bdeedd0.chunk.css.map": "/static/css/main.7bdeedd0.chunk.css.map",
+    "static/js/2.4c4df8dc.chunk.js.LICENSE.txt": "/static/js/2.4c4df8dc.chunk.js.LICENSE.txt",
     "static/media/10.8301e419.png": "/static/media/10.8301e419.png",
     "static/media/11.e937f73e.png": "/static/media/11.e937f73e.png",
     "static/media/12.83b94d7c.png": "/static/media/12.83b94d7c.png",
@@ -63,13 +63,13 @@
     "static/media/upload-right.5bd1fbd0.png": "/static/media/upload-right.5bd1fbd0.png",
     "static/media/usa.6cd13953.jpg": "/static/media/usa.6cd13953.jpg",
     "static/media/why-best.6621e861.png": "/static/media/why-best.6621e861.png",
-    "static/media/why-choose-us.21c77fd7.png": "/static/media/why-choose-us.21c77fd7.png"
+    "static/media/why-choose-us.7e55c286.png": "/static/media/why-choose-us.7e55c286.png"
   },
   "entrypoints": [
     "static/js/runtime-main.7264f885.js",
     "static/css/2.0558ed32.chunk.css",
-    "static/js/2.aa81558d.chunk.js",
-    "static/css/main.f72b5045.chunk.css",
-    "static/js/main.5ba00fd5.chunk.js"
+    "static/js/2.4c4df8dc.chunk.js",
+    "static/css/main.7bdeedd0.chunk.css",
+    "static/js/main.dc8cae34.chunk.js"
   ]
 }

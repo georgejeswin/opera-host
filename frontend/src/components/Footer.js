@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
 import LOGO from "./images/logo-white.png";
+import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 
-const Footer = () => {
+const Footer = ({ history }) => {
   return (
     <div className="footer pt-4">
       <div className="container">
@@ -49,17 +50,24 @@ const Footer = () => {
       </div>
       <hr className="footer__hr" />
       <div className="footer__copyright container">
-        <p>
-          Copyright: All rights reserved 2021,{" "}
-          <a
-            href="https://oxeads.tk"
-            style={{ color: "lightgray" }}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Oxe Ads
-          </a>{" "}
-        </p>
+        <div className="footer__copyright-left">
+          <p>
+            Copyright: All rights reserved 2021,{" "}
+            <a
+              href="https://oxeads.tk"
+              style={{ color: "lightgray" }}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Oxe Ads
+            </a>
+          </p>
+        </div>
+        {/* <div className="footer__copyright-right">
+          <div className="scrolltotop" onClick={scrollup}>
+            <ArrowUpwardIcon />
+          </div>
+        </div> */}
       </div>
     </div>
   );

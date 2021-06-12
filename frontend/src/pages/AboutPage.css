@@ -24,11 +24,22 @@
 .about__row {
   margin-top: -30px;
 }
+.why__choose-1 {
+  display: none;
+}
 @media only screen and (max-width: 600px) {
   .aboutPage__top {
     height: 26vh;
   }
   .heading__h1 {
     font-size: 29px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .why__choose-1 {
+    display: flex;
+  }
+  .why__choose-2 {
+    display: none !important;
   }
 }
