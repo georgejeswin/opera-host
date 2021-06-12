@@ -31,7 +31,9 @@ const Study = () => {
 
       <div className="study__left">
         <h1 className="heading__h1">Study Abroad Countries</h1>
-        <button className="register__button">View All</button>
+        <Link to="/study-in">
+          <button className="register__button">View All</button>
+        </Link>
       </div>
       <div className="study__items container-fluid">
         <StudyComp

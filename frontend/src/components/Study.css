@@ -6,6 +6,9 @@
 .study__left {
   display: flex;
   flex-direction: column;
+  background: linear-gradient(rgba(0, 0, 0, 0.747), rgba(61, 59, 59, 0.747)),
+    url("../components/images/bg-color.webp");
+  background-position: right;
   align-items: center;
   justify-content: center;
   min-width: 300px;
@@ -17,7 +20,7 @@
   border-radius: 10x;
 }
 .heading__h1 {
-  color: rgb(24, 134, 24);
+  color: rgb(31, 201, 31);
   font-size: 36px;
   padding: 20px;
 }
