@@ -81,3 +81,28 @@
 .courses .swiper-container {
   max-width: 100vw !important;
 }
+.courses .swipper-wrapper,
+.courses .swiper-slide,
+.courses .swiper-slide-prev {
+  width: 400px !important;
+}
+@media only screen and (max-width: 600px) {
+  .courses .swiper-slide {
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .courses .swiper__slide {
+    margin: 0px !important;
+  }
+  .courses .swiper-container {
+    max-width: 100vw !important;
+  }
+  .courses .swipper-wrapper,
+  .courses .swiper-slide,
+  .courses .swiper-slide-prev {
+    width: 100vw !important;
+  }
+}
