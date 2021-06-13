@@ -209,18 +209,34 @@
 .compCard__img img:hover {
   transform: scale(1.05);
 }
-.studyCardComp {
+/* .studyCardComp {
   margin-right: 10px !important;
-}
+} */
 .studyCardComp__content {
   margin-top: -200px;
   padding: 8px;
+}
+.fa-chevron-left,
+.fa-chevron-right {
+  color: rgb(137, 128, 145);
+  padding: 10px;
+  margin-top: 30px;
+  display: none;
 }
 .btn {
   margin-top: -30px;
   z-index: 9;
 }
 @media only screen and (max-width: 800px) {
+  .studyCardComp {
+    padding: 0px !important;
+    min-height: 500px;
+    max-height: 500px;
+  }
+  .fa-chevron-left,
+  .fa-chevron-right {
+    display: flex;
+  }
   .study .swiper-slide {
     min-width: 100vw !important;
     max-width: 100vw !important;
