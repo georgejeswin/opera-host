@@ -43,7 +43,7 @@ router.post(
 );
 router.post("/sopFiles/:id", upload.single("sopfile"), sopFileUpload);
 router.post("/lorFiles/:id", upload.single("lorfile"), lorFileUpload);
-router.post("/university/:id", upload.single("university"), universityUpload);
+router.post("/university/:id", universityUpload);
 // router.post("/sentmail", sentEmail);
 router.delete("/getMultipleFiles/:id", deleteUpload);
 

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const uploadUrl = "https://oxetest.tk/backenduploads";
+const uploadUrl = "http://localhost:3000/backenduploads";
 
 export const singleFileUpload = async (data) => {
   try {
