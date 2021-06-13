@@ -42,6 +42,9 @@
   cursor: pointer;
   background-color: rgb(92, 28, 122);
 }
+.footer__copyright-left {
+  font-size: large;
+}
 @media only screen and (max-width: 750px) {
   .footer h1 {
     font-size: xx-large;
@@ -49,5 +52,18 @@
   .footer__third,
   .footer__second {
     margin-top: 0px;
+  }
+  .footer__copyright {
+    flex-direction: column;
+  }
+  .footer__copyright-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer__copyright-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

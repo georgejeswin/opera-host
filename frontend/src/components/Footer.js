@@ -19,14 +19,30 @@ const Footer = ({ history }) => {
             <p>info.operainternational@gmail.com</p>
           </div>
           <div className="footer__second col-md-4 px-5 py-3">
-            <h1>Services</h1>
-            <h5>Financial Aid</h5>
-            <h5>Secure Service</h5>
-            <h5>Internet Service</h5>
-            <h5>Housing</h5>
-            <h5>Information Technologies</h5>
-            <h5>Student Life</h5>
-            <h5>Career Guidance</h5>
+            <Link to="/services">
+              <h1>Services</h1>
+            </Link>
+            <Link to="/services">
+              <h5>Financial Aid</h5>
+            </Link>
+            <Link to="/services">
+              <h5>Secure Service</h5>
+            </Link>
+            <Link to="/services">
+              <h5>Internet Service</h5>
+            </Link>
+            <Link to="/services">
+              <h5>Housing</h5>
+            </Link>
+            <Link to="/services">
+              <h5>Information Technologies</h5>
+            </Link>
+            <Link to="/services">
+              <h5>Student Life</h5>
+            </Link>
+            <Link to="/services">
+              <h5>Career Guidance</h5>
+            </Link>
           </div>
           <div className="footer__third col-md-4 px-5 py-3">
             <h1>Quick Links</h1>
@@ -39,7 +55,9 @@ const Footer = ({ history }) => {
             <Link to="/courses">
               <h5>Courses</h5>
             </Link>
-            <h5>Student Register</h5>
+            <Link to="/login">
+              <h5>Student Register</h5>
+            </Link>
             <Link to="/contact">
               <h5>Contact Us</h5>
             </Link>
@@ -55,8 +73,13 @@ const Footer = ({ history }) => {
       <hr className="footer__hr" />
       <div className="footer__copyright container">
         <div className="footer__copyright-left">
-          <p>
-            Copyright: All rights reserved 2021,{" "}
+          <small>
+            Copyright: All rights reserved 2021, Opera International{" "}
+          </small>
+        </div>
+        <div className="footer__copyright-right">
+          <small>
+            Concept, Designed and Developed by: &nbsp;
             <a
               href="https://oxeads.tk"
               style={{ color: "lightgray" }}
@@ -65,13 +88,11 @@ const Footer = ({ history }) => {
             >
               Oxe Ads
             </a>
-          </p>
-        </div>
-        {/* <div className="footer__copyright-right">
-          <div className="scrolltotop" onClick={scrollup}>
+          </small>
+          {/* <div className="scrolltotop" onClick={scrollup}>
             <ArrowUpwardIcon />
-          </div>
-        </div> */}
+          </div> */}
+        </div>
       </div>
     </div>
   );

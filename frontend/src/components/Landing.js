@@ -97,10 +97,9 @@ const Landing = () => {
                 <h3 className="landingSlider2__h3">Start Learning Today</h3>
                 <h1 className="landingSlider2__h1">
                   <span className="landingSlider2__span">
-                    Decide Your Course Of Future
+                    Decide Your Course Of Future <br />
+                    With Us
                   </span>
-                  <br />
-                  With Us
                 </h1>
 
                 <Link to="/courses">
