@@ -44,7 +44,7 @@ const Form = () => {
   const [experienceFiles, setExperienceFiles] = useState([]);
   const [sopFiles, setSopFiles] = useState([]);
   const [lorFiles, setLorFiles] = useState([]);
-  const [university, setUniversity] = useState('');
+  const [university, setUniversity] = useState("");
   const [ifUploaded, setIfUploaded] = useState({
     cv: false,
     degree: false,
@@ -54,7 +54,6 @@ const Form = () => {
     lor: false,
   });
 
- 
   const userInfo = useSelector((state) => state.user);
 
   function onCvFileUpload(e) {
@@ -79,7 +78,7 @@ const Form = () => {
     } else {
       setPsFiles(e.target?.files[0]);
       // setPassportFileName(e.target?.files[0]?.name);
-      console.log(e.target?.files[0]);
+      // console.log(e.target?.files[0]);
     }
   }
   function onSslcFileUpload(e) {
@@ -172,10 +171,10 @@ const Form = () => {
     }
   }
 
- const  onUniversityUpload = (e)=>{
-  e.preventDefault();
-  setUniversity(e.target.value)
- }
+  const onUniversityUpload = (e) => {
+    e.preventDefault();
+    setUniversity(e.target.value);
+  };
   const uploadCvFile = async () => {
     if (cvFiles) {
       const formData = new FormData();
@@ -257,7 +256,7 @@ const Form = () => {
   const uploadUniversity = async () => {
     if (university) {
       await universityUpload(university, userInfo);
-      setUniversity('')
+      setUniversity("");
       console.log("uploaded");
     } else {
       console.log("no lor file");
@@ -273,7 +272,7 @@ const Form = () => {
   // }
   const UploadMultipleFiles = async (e) => {
     e.preventDefault();
-    
+
     try {
       setUploading(true);
       await uploadPsFile();
@@ -297,7 +296,7 @@ const Form = () => {
       if (ifUploaded.lor) {
         await uploadLorFile();
       }
-      uploadUniversity()
+      uploadUniversity();
       setUploading(false);
       toast.success("Upload Success, Continue To payment");
       history.push("/payments");
@@ -305,9 +304,8 @@ const Form = () => {
       setUploading(false);
       toast.error("Upload failed, Please Try Again");
     }
-    
   };
-  
+
   // const getSingleFileslist = async () => {
   //   try {
   //     const fileslist = await getSingleFiles();
@@ -346,7 +344,154 @@ const Form = () => {
               className="upload__form"
             >
               <div className="mb-2 fileInput__item">
-                <label>1. Updated curriculum vitae ( CV )</label>
+                <label>1. Choose University</label>
+                <select
+                  required
+                  value={university}
+                  placeholder="Select University"
+                  onChange={onUniversityUpload}
+                  className="uploadFile__button"
+                >
+                  <option value="">No University Selected</option>
+                  <option value="ANGLIA RUSKIN UNIVERSITY">
+                    ANGLIA RUSKIN UNIVERSITY
+                  </option>
+                  <option value="BOURNEMOUTH UNIVERSITY">
+                    BOURNEMOUTH UNIVERSITY
+                  </option>
+                  <option value="BPP UNIVERSITY">BPP UNIVERSITY</option>
+                  <option value="CARDIFF UNIVERSITY">CARDIFF UNIVERSITY</option>
+                  <option value="CHESTER UNIVERSITY">CHESTER UNIVERSITY</option>
+                  <option value="COVENTRY UNIVERSITY">
+                    COVENTRY UNIVERSITY
+                  </option>
+                  <option value="DE MONTFORT UNIVERSITY">
+                    DE MONTFORT UNIVERSITY
+                  </option>
+                  <option value="EDINBURGH NAPIER UNIVERSITY">
+                    EDINBURGH NAPIER UNIVERSITY
+                  </option>
+                  <option value="EDINBURGH UNIVERSITY">
+                    EDINBURGH UNIVERSITY
+                  </option>
+                  <option value="HARIOT WATT UNIVERSITY">
+                    HARIOT WATT UNIVERSITY
+                  </option>
+                  <option value="IMPERIAL COLLEGE LONDON">
+                    IMPERIAL COLLEGE LONDON
+                  </option>
+                  <option value="KING'S COLLEGE LONDON">
+                    KING'S COLLEGE LONDON
+                  </option>
+                  <option value="LEEDS BECKETT UNIVERSITY">
+                    LEEDS BECKETT UNIVERSITY
+                  </option>
+                  <option value="LONDON METROPOLITAN UNIVERSITY">
+                    LONDON METROPOLITAN UNIVERSITY
+                  </option>
+                  <option value="MANCHESTER METROPOLITAN UNIVERSITY">
+                    MANCHESTER METROPOLITAN UNIVERSITY
+                  </option>
+                  <option value="MIDDLESEX UNIVERSITY">
+                    MIDDLESEX UNIVERSITY
+                  </option>
+                  <option value="NORTHOMPTON UNIVERSITY">
+                    NORTHOMPTON UNIVERSITY
+                  </option>
+                  <option value="NORTHUMBRIA UNIVERSITY">
+                    NORTHUMBRIA UNIVERSITY
+                  </option>
+                  <option value="NOTTINGHAM UNIVERSITY">
+                    NOTTINGHAM UNIVERSITY
+                  </option>
+                  <option value="OXFORD UNIVERSITY">OXFORD UNIVERSITY</option>
+                  <option value="SHAFFIELD HALLAM UNIVERSITY">
+                    SHAFFIELD HALLAM UNIVERSITY
+                  </option>
+                  <option value="SOLENT UNIVERSITY">SOLENT UNIVERSITY</option>
+                  <option value="STAFFORDSHIRE UNIVERSITY">
+                    STAFFORDSHIRE UNIVERSITY
+                  </option>
+                  <option value="TEESSIDE UNIVERSITY">
+                    TEESSIDE UNIVERSITY
+                  </option>
+                  <option value="THE UNIVERSITY OF LIVERPOOL">
+                    THE UNIVERSITY OF LIVERPOOL
+                  </option>
+                  <option value="ULSTER UNIVERSITY ">ULSTER UNIVERSITY</option>
+                  <option value="UNI OF WALES">UNI OF WALES</option>
+                  <option value="UNIVERSITY OF ROEHAMPTON">
+                    UNIVERSITY OF ROEHAMPTON
+                  </option>
+                  <option value="UNIVERSITY COLLEGE LONDON">
+                    UNIVERSITY COLLEGE LONDON
+                  </option>
+                  <option value="UNIVERSITY OF  CENTRAL LENKASHIRE">
+                    UNIVERSITY OF CENTRAL LENKASHIRE
+                  </option>
+                  <option value="UNIVERSITY OF BOLTON ">
+                    UNIVERSITY OF BOLTON
+                  </option>
+                  <option value="UNIVERSITY OF BRISTOL ">
+                    UNIVERSITY OF BRISTOL
+                  </option>
+                  <option value="UNIVERSITY OF CAMBRIDGE">
+                    UNIVERSITY OF CAMBRIDGE
+                  </option>
+                  <option value="UNIVERSITY OF EAST LONDON">
+                    UNIVERSITY OF EAST LONDON
+                  </option>
+                  <option value="UNIVERSITY OF EDINBURGH">
+                    UNIVERSITY OF EDINBURGH
+                  </option>
+                  <option value="UNIVERSITY OF EDINBURGH">
+                    UNIVERSITY OF EDINBURGH
+                  </option>
+                  <option value="UNIVERSITY OF GREENWICH">
+                    UNIVERSITY OF GREENWICH
+                  </option>
+                  <option value="UNIVERSITY OF HERTFORDSHIRE">
+                    UNIVERSITY OF HERTFORDSHIRE
+                  </option>
+                  <option value="UNIVERSITY OF HUDDERSFIELD">
+                    UNIVERSITY OF HUDDERSFIELD
+                  </option>
+                  <option value="UNIVERSITY OF LEEDS">
+                    UNIVERSITY OF LEEDS
+                  </option>
+                  <option value="UNIVERSITY OF LEICESTER">
+                    UNIVERSITY OF LEICESTER
+                  </option>
+                  <option value="UNIVERSITY OF MANCHESTER">
+                    UNIVERSITY OF MANCHESTER
+                  </option>
+                  <option value="UNIVERSITY OF NOTTINGHAM">
+                    UNIVERSITY OF NOTTINGHAM
+                  </option>
+                  <option value="UNIVERSITY OF SALFORD">
+                    UNIVERSITY OF SALFORD
+                  </option>
+                  <option value="UNIVERSITY OF SOUTH WALES">
+                    UNIVERSITY OF SOUTH WALES
+                  </option>
+                  <option value="UNIVERSITY OF SOUTHOMPTON">
+                    UNIVERSITY OF SOUTHOMPTON
+                  </option>
+                  <option value="UNIVERSITY OF WEST LONDON">
+                    UNIVERSITY OF WEST LONDON
+                  </option>
+                </select>
+
+                {/* <input
+                  type="text"
+                  value={university}
+                  placeholder="Enter University"
+                  className="uploadFile__button"
+                  onChange={onUniversityUpload}
+                /> */}
+              </div>
+              <div className="mb-2 fileInput__item">
+                <label>2. Updated curriculum vitae ( CV )</label>
                 <input
                   type="file"
                   className="uploadFile__button"
@@ -360,7 +505,7 @@ const Form = () => {
                 <label>2. Front and back page of passport copy *</label>
                 <input
                   type="file"
-                  // required
+                  required
                   className="uploadFile__button"
                   onChange={(e) => onPsFileUpload(e)}
                 />
@@ -369,11 +514,11 @@ const Form = () => {
               </label> */}
               </div>
               <div className="mb-2 fileInput__item">
-                <label>3. SSLC Certificate *</label>
+                <label>4. SSLC Certificate *</label>
 
                 <input
                   type="file"
-                  // required
+                  required
                   className="uploadFile__button"
                   onChange={(e) => onSslcFileUpload(e)}
                 />
@@ -382,11 +527,11 @@ const Form = () => {
               </label> */}
               </div>
               <div className="mb-2 fileInput__item">
-                <label>4. Plus two Certificate *</label>
+                <label>5. Plus two Certificate *</label>
 
                 <input
                   type="file"
-                  // required
+                  required
                   className="uploadFile__button"
                   onChange={(e) => onPlusTwoFileUpload(e)}
                 />
@@ -396,7 +541,7 @@ const Form = () => {
               </div>
               <div className="mb-2 fileInput__item">
                 <label>
-                  5. Degree certificate with consolidated mark sheet and
+                  6. Degree certificate with consolidated mark sheet and
                   semester certificates
                 </label>
 
@@ -410,7 +555,7 @@ const Form = () => {
               </label> */}
               </div>
               <div className="mb-2 fileInput__item">
-                <label>6. English language test result -IELTS ( If any )</label>
+                <label>7. English language test result -IELTS ( If any )</label>
 
                 <input
                   type="file"
@@ -422,7 +567,7 @@ const Form = () => {
               </label> */}
               </div>
               <div className="mb-2 fileInput__item">
-                <label>7. Experience letter ( If any )</label>
+                <label>8. Experience letter ( If any )</label>
 
                 <input
                   type="file"
@@ -435,7 +580,7 @@ const Form = () => {
               </div>
               <div className="mb-2 fileInput__item">
                 <label>
-                  8. Statement of purpose - SOP for your selected programmes
+                  9. Statement of purpose - SOP for your selected programmes
                 </label>
 
                 <input
@@ -448,7 +593,7 @@ const Form = () => {
               </label> */}
               </div>
               <div className="mb-2 fileInput__item">
-                <label>9. Letter of reccomendation</label>
+                <label>10. Letter of reccomendation</label>
 
                 <input
                   type="file"
@@ -459,18 +604,7 @@ const Form = () => {
                 {lorFileName}
               </label> */}
               </div>
-              <div className="mb-2 fileInput__item">
-                <label>10. Choose University</label>
 
-                <input
-                  type="text"
-                  value={university}
-                  placeholder="Enter University"
-                  className="uploadFile__button"
-                  onChange={onUniversityUpload}
-                />
-    
-              </div>
               <input
                 type="submit"
                 value="Submit"
@@ -478,14 +612,6 @@ const Form = () => {
               />
             </form>
             <hr />
-            {/* {singleFiles.map((file)=>{
-           return(
-             <div>
-            <h4>{file.fileName}</h4>
-            <embed src={`${api}${file.filePath}`} type="application/pdf" width="100%" height="300px" />
-            </div>
-           )
-     })} */}
           </div>
         )}
       </div>

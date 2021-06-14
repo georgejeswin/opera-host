@@ -25,7 +25,7 @@ const Courses = () => {
     if (window.innerWidth <= 800) {
       setMobile(0.98);
     }
-  }, [window.innerWidth]);
+  }, []);
   return (
     <div className="courses">
       <h1 className="heading__h1">Study Abroad Courses</h1>

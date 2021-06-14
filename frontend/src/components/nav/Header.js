@@ -95,7 +95,7 @@ const Header = () => {
           <li className="nav-item" onClick={closeMobileMenu}>
             {user ? (
               <Link to="/user" className="header__login">
-                <p
+                <div
                   className="nav-links"
                   style={{
                     display: "flex",
@@ -105,7 +105,7 @@ const Header = () => {
                 >
                   <Avatar src={user?.picture} /> &nbsp;
                   {!user.picture && user.name}
-                </p>
+                </div>
               </Link>
             ) : (
               <Link className="nav-links" to="/login">

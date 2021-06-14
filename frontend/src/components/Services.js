@@ -6,7 +6,7 @@ const Services = () => {
     <div className="services container-fluid" id="services">
       <div className="row">
         <div className="col-md-3 services__card">
-          <i class="fas fa-book fa-3x"></i>
+          <i className="fas fa-book fa-3x"></i>
           <br />
           <br />
           <h3>Admission Counseling</h3>
@@ -18,7 +18,7 @@ const Services = () => {
           </p>
         </div>
         <div className="col-md-3 services__card">
-          <i class="fas fa-globe-europe fa-3x"></i>
+          <i className="fas fa-globe-europe fa-3x"></i>
           <br />
           <br />
           <h3>Placement Assistance</h3>
@@ -30,7 +30,7 @@ const Services = () => {
           </p>
         </div>
         <div className="col-md-3 services__card">
-          <i class="fas fa-file-invoice-dollar fa-3x"></i>
+          <i className="fas fa-file-invoice-dollar fa-3x"></i>
           <br />
           <br />
           <h3>Financial Guidelines</h3>
@@ -43,7 +43,7 @@ const Services = () => {
           </p>
         </div>
         <div className="col-md-3 services__card">
-          <i class="fas fa-university fa-3x"></i>
+          <i className="fas fa-university fa-3x"></i>
           <br />
           <br />
           <h3>Career Guidance</h3>

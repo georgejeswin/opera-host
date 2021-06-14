@@ -19,7 +19,7 @@ const AdminLandingPage = () => {
 
   useEffect(() => {
     dispatch(getFiles());
-    console.log("filelist.>>>>", files);
+    // console.log("filelist.>>>>", files);
   }, [dispatch]);
 
   const submit = (file) => {
@@ -142,7 +142,7 @@ const AdminLandingPage = () => {
             <table className="admin__userName-table col-sm-12 ">
               <tbody className="pt-5 mt-5 ">
                 {files.map((file) => (
-                  <tr className="files__row margin__none">
+                  <tr className="files__row margin__none" key={file._id}>
                     <td>
                       <div
                         className="user__name"
@@ -159,7 +159,6 @@ const AdminLandingPage = () => {
                         </IconButton>
                       </div>
                     </td>
-                    <br />
                   </tr>
                 ))}
               </tbody>
@@ -176,7 +175,13 @@ const AdminLandingPage = () => {
                 )}
 
                 <h5 className="text-danger">Amount : {fileList?.amount} </h5>
-                <h5>1. Updated curriculum vitae ( CV )</h5>
+                <li>
+                  <h5 className="my-3">
+                    1. University: {fileList?.university}
+                  </h5>
+                </li>
+
+                <h5>2. Updated curriculum vitae ( CV )</h5>
                 {fileList.cvfile[0].filePath ? (
                   <li>
                     <p>{fileList?.cvfile[0]?.fileName}</p>
@@ -233,7 +238,7 @@ const AdminLandingPage = () => {
                 )}
 
                 <li>
-                  <h5>2. Front and back page of passport copy</h5>
+                  <h5>3. Front and back page of passport copy</h5>
                   <p>{fileList?.psfile[0]?.fileName}</p>
                   {fileList.psfile[0]?.fileType === "image/png" ? (
                     <img
@@ -282,7 +287,7 @@ const AdminLandingPage = () => {
                   )}
                 </li>
                 <li>
-                  <h5>3. SSLC Certificate</h5>
+                  <h5>4. SSLC Certificate</h5>
                   <p>{fileList?.sslcfile[0]?.fileName}</p>
 
                   {fileList.sslcfile[0]?.fileType === "image/png" ? (
@@ -332,7 +337,7 @@ const AdminLandingPage = () => {
                   )}
                 </li>
                 <li>
-                  <h5>4. Plus two Certificate</h5>
+                  <h5>5. Plus two Certificate</h5>
 
                   <p>{fileList?.plustwofile[0]?.fileName}</p>
                   {fileList.plustwofile[0]?.fileType === "image/png" ? (
@@ -384,7 +389,7 @@ const AdminLandingPage = () => {
                   )}
                 </li>
                 <h5>
-                  5. Degree certificate with consolidated mark sheet and
+                  6. Degree certificate with consolidated mark sheet and
                   semester certificates
                 </h5>
                 {fileList?.degreefile[0]?.filePath ? (
@@ -443,7 +448,7 @@ const AdminLandingPage = () => {
                   <h3 className="p-5">File Not uploaded</h3>
                 )}
 
-                <h5>6. English language test result -IELTS ( If any )</h5>
+                <h5>7. English language test result -IELTS ( If any )</h5>
 
                 {fileList.ieltsfile[0].filePath ? (
                   <li>
@@ -501,7 +506,7 @@ const AdminLandingPage = () => {
                   <h3 className="p-5">File Not uploaded</h3>
                 )}
 
-                <h5>7. Experience letter ( If any )</h5>
+                <h5>8. Experience letter ( If any )</h5>
 
                 {fileList.experiencefile[0].filePath ? (
                   <li>
@@ -572,7 +577,7 @@ const AdminLandingPage = () => {
                   />
                 </li> */}
                 <h5>
-                  8. Statement of purpose - SOP for your selected programmes
+                  9. Statement of purpose - SOP for your selected programmes
                 </h5>
                 {fileList?.sopfile[0]?.filePath ? (
                   <li>
@@ -628,7 +633,7 @@ const AdminLandingPage = () => {
                 ) : (
                   <h3 className="p-5">File Not uploaded</h3>
                 )}
-                <h5>9. Letter of reccomendation</h5>
+                <h5>10. Letter of reccomendation</h5>
                 {fileList?.lorfile[0]?.filePath ? (
                   <li>
                     <p>{fileList?.lorfile[0]?.fileName}</p>
