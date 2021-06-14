@@ -15,6 +15,7 @@
   border: 1px solid rgb(103, 38, 163);
   width: 500px;
   outline: none;
+  background-color: #fff;
 }
 .form__small {
   color: rgb(111, 34, 184);

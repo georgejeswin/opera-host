@@ -23,7 +23,7 @@ const Courses = () => {
   const [mobile, setMobile] = useState(4);
   useEffect(() => {
     if (window.innerWidth <= 800) {
-      setMobile(0.98);
+      setMobile(1);
     }
   }, []);
   return (

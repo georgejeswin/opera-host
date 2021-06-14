@@ -122,8 +122,10 @@ const AdminLandingPage = () => {
       ],
       amount: file?.amount,
       paided: file?.paided,
+      university: file?.university,
     };
     await setFileList(list);
+    console.log("fileList>>>...", fileList);
 
     setShowFiles(!showFiles);
   };
