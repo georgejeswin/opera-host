@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.6b037c12.chunk.css",
+    "main.css": "/static/css/main.9135175a.chunk.css",
     "main.js": "/static/js/main.5e147ede.chunk.js",
     "main.js.map": "/static/js/main.5e147ede.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d54c724d.js",
@@ -12,7 +12,7 @@
     "static/js/3.7a93ecbc.chunk.js.map": "/static/js/3.7a93ecbc.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.0558ed32.chunk.css.map": "/static/css/2.0558ed32.chunk.css.map",
-    "static/css/main.6b037c12.chunk.css.map": "/static/css/main.6b037c12.chunk.css.map",
+    "static/css/main.9135175a.chunk.css.map": "/static/css/main.9135175a.chunk.css.map",
     "static/js/2.f2945ddc.chunk.js.LICENSE.txt": "/static/js/2.f2945ddc.chunk.js.LICENSE.txt",
     "static/media/Armenia.273525fb.jpg": "/static/media/Armenia.273525fb.jpg",
     "static/media/HealthCare.3adad323.jpeg": "/static/media/HealthCare.3adad323.jpeg",
@@ -72,7 +72,7 @@
     "static/js/runtime-main.d54c724d.js",
     "static/css/2.0558ed32.chunk.css",
     "static/js/2.f2945ddc.chunk.js",
-    "static/css/main.6b037c12.chunk.css",
+    "static/css/main.9135175a.chunk.css",
     "static/js/main.5e147ede.chunk.js"
   ]
 }

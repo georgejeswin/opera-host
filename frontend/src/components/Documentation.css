@@ -24,9 +24,9 @@
   align-items: center;
   justify-content: center;
 }
-/* .documentation__right-images img {
+.documentation__right-images img {
   max-width: 300px;
-} */
+}
 @media only screen and (max-width: 600px) {
   .documentation__right {
     display: flex;
