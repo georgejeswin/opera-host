@@ -10,6 +10,7 @@
 }
 .about__right h1 {
   padding-top: 20px;
+  margin-top: 30px;
   font-weight: 600;
   color: rgb(24, 134, 24);
 }
@@ -32,6 +33,8 @@
   }
   .about__right h1 {
     font-size: xx-large;
+    margin-top: 0px;
+    padding-top: 0px;
   }
 }
 

@@ -9,7 +9,7 @@ const About = () => {
         <div className="about__left col-md-6 col-12">
           <img src={AboutImg} alt="About" data-aos="fade-right" />
         </div>
-        <div className="about__right col-md-6 col-12 p-5">
+        <div className="about__right col-md-6 col-12 px-4">
           <h1>About Opera</h1>
           <p>
             With A decade of excellent experience, OPERA INTERNATIONAL helps

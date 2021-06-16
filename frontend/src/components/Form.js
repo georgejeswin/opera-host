@@ -494,6 +494,7 @@ const Form = () => {
                 <label>2. Updated curriculum vitae ( CV )</label>
                 <input
                   type="file"
+                  placeholder="choose file"
                   className="uploadFile__button"
                   onChange={(e) => onCvFileUpload(e)}
                 />

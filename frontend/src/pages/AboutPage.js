@@ -18,7 +18,7 @@ const AboutPage = () => {
           <div className="about__left col-md-6 col-12">
             <img src={AboutImg} alt="About" data-aos="fade-right" />
           </div>
-          <div className="about__right col-md-6 col-12 p-5">
+          <div className="about__right col-md-6 col-12 px-4">
             <p>
               With A decade of excellent experience, OPERA INTERNATIONAL helps
               students to find admissions in the top colleges abroad. Today, we
@@ -43,7 +43,7 @@ const AboutPage = () => {
           <div className="about__left col-md-6 col-12 why__choose-1">
             <img src={WhyChoose} alt="About" data-aos="fade-right" />
           </div>
-          <div className="about__right col-md-6 col-12 p-5">
+          <div className="about__right col-md-6 col-12 px-4">
             <h1>Why Choose Us</h1>
             <p>
               At Opera, We always provide detailed information about overseas
@@ -66,7 +66,7 @@ const AboutPage = () => {
           <div className="about__left col-md-6 col-12">
             <img src={WhyBest} alt="About" data-aos="fade-right" />
           </div>
-          <div className="about__right col-md-6 col-12 p-5">
+          <div className="about__right col-md-6 col-12 px-4">
             <h1>Why we are the best study abroad consultants in Kerala</h1>
 
             <p>
