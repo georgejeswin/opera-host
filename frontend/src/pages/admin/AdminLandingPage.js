@@ -134,7 +134,7 @@ const AdminLandingPage = () => {
     submit(file);
   };
 
-  const url = "https://oxetest.tk";
+  const url = "https://operaonlineapplication.in";
 
   return (
     <div>

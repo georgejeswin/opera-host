@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "https://oxetest.tk";
+const url = "https://operaonlineapplication.in";
 
 export const createOrUpdateUser = async (authToken) => {
   return await axios.post(

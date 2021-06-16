@@ -4,7 +4,6 @@ import {
   updateUserName,
   userController,
 } from "../controllers/user.js";
-import { authCheck } from "../middlewares/auth.js";
 
 const router = express.Router();
 router.use(function (req, res, next) {

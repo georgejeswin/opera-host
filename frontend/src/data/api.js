@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const uploadUrl = "https://oxetest.tk/backenduploads";
+const uploadUrl = "https://operaonlineapplication.in/backenduploads";
 
 export const singleFileUpload = async (data) => {
   try {
@@ -28,7 +28,7 @@ export const cvFileUpload = async (data, userInfo) => {
 };
 export const psFileUpload = async (data, userInfo) => {
   const id = userInfo._id;
-  console.log(id)
+  console.log(id);
   try {
     await axios.post(`${uploadUrl}/psFiles/${id}`, data);
   } catch (error) {
@@ -92,10 +92,10 @@ export const LorFileUpload = async (data, userInfo) => {
   }
 };
 export const universityUpload = async (data, userInfo) => {
-  console.log(data)
+  console.log(data);
   const id = userInfo._id;
   try {
-    await axios.post(`${uploadUrl}/university/${id}`, {data});
+    await axios.post(`${uploadUrl}/university/${id}`, { data });
   } catch (error) {
     throw error;
   }
@@ -114,20 +114,25 @@ export const getMultipleFilesRedux = async () =>
   await axios.get(`${uploadUrl}//getMultipleFiles`);
 
 export const deleteMultipleFiles = (id) =>
-  axios.delete(`https://oxetest.tk/backenduploads/getMultipleFiles/${id}`);
+  axios.delete(
+    `https://operaonlineapplication.in/backenduploads/getMultipleFiles/${id}`
+  );
 
 // User name update
 
 export const updateUserName = async (id, updatedUser) => {
-  await axios.patch(`https://oxetest.tk/backenduser/${id}`, updatedUser);
+  await axios.patch(
+    `https://operaonlineapplication.in/backenduser/${id}`,
+    updatedUser
+  );
 };
 
 export const deleteUser = (id) =>
-  axios.delete(`https://oxetest.tk/backenduser/${id}`);
+  axios.delete(`https://operaonlineapplication.in/backenduser/${id}`);
 
 //messages api
 
-const url = "https://oxetest.tk/backendmessages";
+const url = "https://operaonlineapplication.in/backendmessages";
 
 export const fetchMessages = () => axios.get(url);
 

@@ -17,7 +17,7 @@ function loadScript(src) {
   });
 }
 
-const __DEV__ = document.domain === "oxetest.tk";
+const __DEV__ = document.domain === "operaonlineapplication.in";
 
 const Payment = () => {
   const history = useHistory();
@@ -40,7 +40,7 @@ const Payment = () => {
     };
 
     const data = await fetch(
-      "https://oxetest.tk/razorpay",
+      "https://operaonlineapplication.in/razorpay",
       requestOptions
     ).then((t) => t.json());
 
