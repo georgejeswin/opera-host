@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.9135175a.chunk.css",
-    "main.js": "/static/js/main.4d9e81ca.chunk.js",
-    "main.js.map": "/static/js/main.4d9e81ca.chunk.js.map",
+    "main.css": "/static/css/main.6118cf1a.chunk.css",
+    "main.js": "/static/js/main.103d0e1a.chunk.js",
+    "main.js.map": "/static/js/main.103d0e1a.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d54c724d.js",
     "runtime-main.js.map": "/static/js/runtime-main.d54c724d.js.map",
     "static/css/2.0558ed32.chunk.css": "/static/css/2.0558ed32.chunk.css",
-    "static/js/2.f2945ddc.chunk.js": "/static/js/2.f2945ddc.chunk.js",
-    "static/js/2.f2945ddc.chunk.js.map": "/static/js/2.f2945ddc.chunk.js.map",
+    "static/js/2.e8e16efc.chunk.js": "/static/js/2.e8e16efc.chunk.js",
+    "static/js/2.e8e16efc.chunk.js.map": "/static/js/2.e8e16efc.chunk.js.map",
     "static/js/3.7a93ecbc.chunk.js": "/static/js/3.7a93ecbc.chunk.js",
     "static/js/3.7a93ecbc.chunk.js.map": "/static/js/3.7a93ecbc.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.0558ed32.chunk.css.map": "/static/css/2.0558ed32.chunk.css.map",
-    "static/css/main.9135175a.chunk.css.map": "/static/css/main.9135175a.chunk.css.map",
-    "static/js/2.f2945ddc.chunk.js.LICENSE.txt": "/static/js/2.f2945ddc.chunk.js.LICENSE.txt",
+    "static/css/main.6118cf1a.chunk.css.map": "/static/css/main.6118cf1a.chunk.css.map",
+    "static/js/2.e8e16efc.chunk.js.LICENSE.txt": "/static/js/2.e8e16efc.chunk.js.LICENSE.txt",
     "static/media/Armenia.273525fb.jpg": "/static/media/Armenia.273525fb.jpg",
     "static/media/HealthCare.3adad323.jpeg": "/static/media/HealthCare.3adad323.jpeg",
     "static/media/IT.db9ceb63.jpg": "/static/media/IT.db9ceb63.jpg",
@@ -25,8 +25,8 @@
     "static/media/AboutPage.css": "/static/media/about.d1c8b35b.jpeg",
     "static/media/admission.30dec77d.jpeg": "/static/media/admission.30dec77d.jpeg",
     "static/media/australia.c160c1ff.jpg": "/static/media/australia.c160c1ff.jpg",
-    "static/media/Study.css": "/static/media/bg-color.5259e6da.webp",
     "static/media/Services.css": "/static/media/bg-color2.dd2de44c.jpeg",
+    "static/media/Study.css": "/static/media/bgColor.7c31058a.jpg",
     "static/media/canada.4a63b809.jpg": "/static/media/canada.4a63b809.jpg",
     "static/media/china.791cda65.jpg": "/static/media/china.791cda65.jpg",
     "static/media/ContactPage.css": "/static/media/contact.222cca38.jpeg",
@@ -71,8 +71,8 @@
   "entrypoints": [
     "static/js/runtime-main.d54c724d.js",
     "static/css/2.0558ed32.chunk.css",
-    "static/js/2.f2945ddc.chunk.js",
-    "static/css/main.9135175a.chunk.css",
-    "static/js/main.4d9e81ca.chunk.js"
+    "static/js/2.e8e16efc.chunk.js",
+    "static/css/main.6118cf1a.chunk.css",
+    "static/js/main.103d0e1a.chunk.js"
   ]
 }

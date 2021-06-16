@@ -10,7 +10,9 @@ const Footer = ({ history }) => {
       <div className="container">
         <div className="row ">
           <div className="footer__first col-md-4 px-5 py-3">
-            <img src={LOGO} alt="logo" />
+            <Link to="/">
+              <img src={LOGO} alt="logo" />
+            </Link>
             <p>
               MK Tower <br /> Dr Ambedkar Women's College - <br /> Building
               679303 Pattambi
@@ -43,6 +45,9 @@ const Footer = ({ history }) => {
             <Link to="/services">
               <h5>Career Guidance</h5>
             </Link>
+            <Link to="/services">
+              <h5>Placement Assistance</h5>
+            </Link>
           </div>
           <div className="footer__third col-md-4 px-5 py-3">
             <h1>Quick Links</h1>
@@ -54,6 +59,9 @@ const Footer = ({ history }) => {
             </Link>
             <Link to="/courses">
               <h5>Courses</h5>
+            </Link>
+            <Link to="/study-in">
+              <h5>Study In</h5>
             </Link>
             <Link to="/login">
               <h5>Student Register</h5>

@@ -110,6 +110,7 @@
 }
 .register__right img {
   max-width: 700px;
+  max-height: 500px;
 }
 .createandforgot {
   display: flex;
