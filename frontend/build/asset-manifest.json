@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.0ad84573.chunk.css",
-    "main.js": "/static/js/main.f36d8d2e.chunk.js",
-    "main.js.map": "/static/js/main.f36d8d2e.chunk.js.map",
+    "main.css": "/static/css/main.6b037c12.chunk.css",
+    "main.js": "/static/js/main.5e147ede.chunk.js",
+    "main.js.map": "/static/js/main.5e147ede.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d54c724d.js",
     "runtime-main.js.map": "/static/js/runtime-main.d54c724d.js.map",
     "static/css/2.0558ed32.chunk.css": "/static/css/2.0558ed32.chunk.css",
@@ -12,11 +12,8 @@
     "static/js/3.7a93ecbc.chunk.js.map": "/static/js/3.7a93ecbc.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.0558ed32.chunk.css.map": "/static/css/2.0558ed32.chunk.css.map",
-    "static/css/main.0ad84573.chunk.css.map": "/static/css/main.0ad84573.chunk.css.map",
+    "static/css/main.6b037c12.chunk.css.map": "/static/css/main.6b037c12.chunk.css.map",
     "static/js/2.f2945ddc.chunk.js.LICENSE.txt": "/static/js/2.f2945ddc.chunk.js.LICENSE.txt",
-    "static/media/10.8301e419.png": "/static/media/10.8301e419.png",
-    "static/media/11.e937f73e.png": "/static/media/11.e937f73e.png",
-    "static/media/12.83b94d7c.png": "/static/media/12.83b94d7c.png",
     "static/media/Armenia.273525fb.jpg": "/static/media/Armenia.273525fb.jpg",
     "static/media/HealthCare.3adad323.jpeg": "/static/media/HealthCare.3adad323.jpeg",
     "static/media/IT.db9ceb63.jpg": "/static/media/IT.db9ceb63.jpg",
@@ -39,6 +36,8 @@
     "static/media/engineering2.73092fb4.jpg": "/static/media/engineering2.73092fb4.jpg",
     "static/media/fashion.c4665bc0.jpg": "/static/media/fashion.c4665bc0.jpg",
     "static/media/finance.566fd645.jpeg": "/static/media/finance.566fd645.jpeg",
+    "static/media/flag.1.237642df.png": "/static/media/flag.1.237642df.png",
+    "static/media/flag.2.f7c3693a.png": "/static/media/flag.2.f7c3693a.png",
     "static/media/france.e825e8f7.jpg": "/static/media/france.e825e8f7.jpg",
     "static/media/georgia.5df51a81.jpg": "/static/media/georgia.5df51a81.jpg",
     "static/media/germany.90287c69.jpg": "/static/media/germany.90287c69.jpg",
@@ -73,7 +72,7 @@
     "static/js/runtime-main.d54c724d.js",
     "static/css/2.0558ed32.chunk.css",
     "static/js/2.f2945ddc.chunk.js",
-    "static/css/main.0ad84573.chunk.css",
-    "static/js/main.f36d8d2e.chunk.js"
+    "static/css/main.6b037c12.chunk.css",
+    "static/js/main.5e147ede.chunk.js"
   ]
 }

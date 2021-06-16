@@ -89,7 +89,7 @@ const CoursePageCard = ({ bg, content, title }) => {
   };
   useEffect(() => {
     filesUploaded(user);
-  }, [user]);
+  }, [user, filesUploaded]);
 
   const handleClick = (currentuser) => {
     if (files.length === 0) {
