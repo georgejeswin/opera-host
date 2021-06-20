@@ -229,6 +229,13 @@ const AdminLandingPage = () => {
                         height="300px"
                         fileUrl={`${url}/${fileList.cvfile[0].filePath}`}
                       />
+                    ) : fileList.cvfile[0]?.fileType ==
+                      "application/vnd.ms-excel" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.cvfile[0].filePath}`}
+                      />
                     ) : (
                       <h5>
                         File format not supported {fileList.cvfile[0]?.fileType}
@@ -282,6 +289,13 @@ const AdminLandingPage = () => {
                       height="300px"
                       fileUrl={`${url}/${fileList.psfile[0].filePath}`}
                     />
+                  ) : fileList.psfile[0]?.fileType ===
+                    "application/vnd.ms-excel" ? (
+                    <GoogleDocsViewer
+                      width="100%"
+                      height="300px"
+                      fileUrl={`${url}/${fileList.psfile[0].filePath}`}
+                    />
                   ) : (
                     <h5>
                       File format not supported {fileList.psfile[0]?.fileType}
@@ -327,6 +341,13 @@ const AdminLandingPage = () => {
                     />
                   ) : fileList.sslcfile[0]?.fileType ===
                     "application/octet-stream" ? (
+                    <GoogleDocsViewer
+                      width="100%"
+                      height="300px"
+                      fileUrl={`${url}/${fileList.sslcfile[0].filePath}`}
+                    />
+                  ) : fileList.sslcfile[0]?.fileType ===
+                    "application/vnd.ms-excel" ? (
                     <GoogleDocsViewer
                       width="100%"
                       height="300px"
@@ -383,6 +404,13 @@ const AdminLandingPage = () => {
                       height="300px"
                       fileUrl={`${url}/${fileList.plustwofile[0].filePath}`}
                     />
+                  ) : fileList.plustwofile[0]?.fileType ===
+                    "application/vnd.ms-excel" ? (
+                    <GoogleDocsViewer
+                      width="100%"
+                      height="300px"
+                      fileUrl={`${url}/${fileList.plustwofile[0].filePath}`}
+                    />
                   ) : (
                     <h5>
                       File format not supported{" "}
@@ -434,6 +462,13 @@ const AdminLandingPage = () => {
                       />
                     ) : fileList.degreefile[0]?.fileType ===
                       "application/octet-stream" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.degreefile[0].filePath}`}
+                      />
+                    ) : fileList.degreefile[0]?.fileType ===
+                      "application/vnd.ms-excel" ? (
                       <GoogleDocsViewer
                         width="100%"
                         height="300px"
@@ -497,6 +532,13 @@ const AdminLandingPage = () => {
                         height="300px"
                         fileUrl={`${url}/${fileList.ieltsfile[0].filePath}`}
                       />
+                    ) : fileList.ieltsfile[0]?.fileType ===
+                      "application/vnd.ms-excel" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.ieltsfile[0].filePath}`}
+                      />
                     ) : (
                       <h5>
                         File format not supported{" "}
@@ -551,6 +593,13 @@ const AdminLandingPage = () => {
                       />
                     ) : fileList.experiencefile[0]?.fileType ===
                       "application/octet-stream" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.experiencefile[0].filePath}`}
+                      />
+                    ) : fileList.experiencefile[0]?.fileType ===
+                      "application/vnd.ms-excel" ? (
                       <GoogleDocsViewer
                         width="100%"
                         height="300px"
@@ -625,6 +674,13 @@ const AdminLandingPage = () => {
                         height="300px"
                         fileUrl={`${url}/${fileList.sopfile[0].filePath}`}
                       />
+                    ) : fileList.sopfile[0]?.fileType ===
+                      "application/vnd.ms-excel" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.sopfile[0].filePath}`}
+                      />
                     ) : (
                       <h5>
                         File format not supported{" "}
@@ -675,6 +731,13 @@ const AdminLandingPage = () => {
                       />
                     ) : fileList.lorfile[0]?.fileType ===
                       "application/octet-stream" ? (
+                      <GoogleDocsViewer
+                        width="100%"
+                        height="300px"
+                        fileUrl={`${url}/${fileList.lorfile[0].filePath}`}
+                      />
+                    ) : fileList.lorfile[0]?.fileType ===
+                      "application/vnd.ms-excel" ? (
                       <GoogleDocsViewer
                         width="100%"
                         height="300px"
