@@ -62,3 +62,6 @@
     transform: rotate(360deg);
   }
 }
+.payment__small {
+  font-size: x-small;
+}
