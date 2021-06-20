@@ -1,13 +1,15 @@
 import admin from "../firebase/index.js";
-import nodemailer from "nodemailer";
+// import Mongoose from "mongoose";
+// import UserModel from "../models/user.js";
+// import nodemailer from "nodemailer";
 
-let transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: "t3stmail25@gmail.com",
-    pass: "#testmail@25",
-  },
-});
+// let transporter = nodemailer.createTransport({
+//   service: "gmail",
+//   auth: {
+//     user: "t3stmail25@gmail.com",
+//     pass: "#testmail@25",
+//   },
+// });
 
 export const authCheck = async (req, res, next) => {
   // console.log(req.headers); //token
@@ -25,6 +27,17 @@ export const authCheck = async (req, res, next) => {
     });
   }
 };
+
+// export const adminCheck = async (req, res, next) => {
+//   try {
+//     await UserModel.find({ admin: true }).then(() => {
+//       console.log(req.params._id);
+//       next();
+//     });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 
 // export const sentEmail = async (req, res, next) => {
 //   console.log("entering mail");

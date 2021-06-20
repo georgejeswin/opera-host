@@ -3,7 +3,6 @@ import {
   deleteMessage,
   getMessages,
   postMessages,
-  //   updateMessages,
 } from "../controllers/messageControllers.js";
 
 const router = express.Router();

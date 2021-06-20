@@ -168,6 +168,16 @@ const Privacy = () => {
         by this privacy statement. You should exercise caution and look at the
         privacy statement applicable to the website in question.
       </p>
+      <h1 className="status__h1 py-5">REGISTRATION FEE</h1>
+      <p>
+        Every student have to pay a base amount of 20,000 rupees as admission
+        fees. It is not refundable and it will be deducted from the course fees
+        which student is selecting. The student can also pay the amount later.
+      </p>
+      <p>
+        An bill for the amount that student paid will be send to his/her email
+        id. The students/parents can contact us for further enquiry.
+      </p>
       <h1 className="status__h1 py-5">REFUND POLICY</h1>
       <h5>1.0 DESCRIPTION AND SCOPE:</h5>
       <p>

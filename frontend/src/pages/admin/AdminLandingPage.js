@@ -125,7 +125,7 @@ const AdminLandingPage = () => {
       university: file?.university,
     };
     await setFileList(list);
-    console.log("fileList>>>...", fileList);
+    // console.log("fileList>>>...", fileList);
 
     setShowFiles(!showFiles);
   };
