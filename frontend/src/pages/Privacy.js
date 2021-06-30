@@ -179,24 +179,24 @@ const Privacy = () => {
         id. The students/parents can contact us for further enquiry.
       </p>
       <h1 className="status__h1 py-5">REFUND POLICY</h1>
-      <h5>1.0 DESCRIPTION AND SCOPE:</h5>
+      <h5>Description and Scope</h5>
       <p>
         We may collect the following information: This policy describes refund
         provisions available to candidates for all registrations and other
         service charges received by Opera International(Educational Consultancy)
         for the services provided to the candidates of Opera.
       </p>
-      <h5>2.0 RESPONSIBILITY:</h5>
+      <h5>Responsibility</h5>
       <p>
         The Accounts Manager and Division Heads have the overall responsibility
         of this policy under the direction of the OD, MD&CEO.
       </p>
-      <h5>3.0 AUTHORITY:</h5>
+      <h5>Authority</h5>
       <p>
         This procedure is issued by MR and approved by OD and can be amended
         only by him/her.
       </p>
-      <h5>4.0 DEFINITIONS:</h5>
+      <h5>Definitions</h5>
       <p>
         Refund- A repayment of fees and funds collected by Opera for the
         provision of a service. <br /> Candidate- refers to Student and also
@@ -206,7 +206,7 @@ const Privacy = () => {
         Operations Director <br /> MD – Managing Director <br /> CEO- Chief
         Executive Officer <br /> RP- Refund Policy
       </p>
-      <h5>5.0 PROCEDURE:</h5>
+      <h5>Procedure</h5>
       <p>
         Refunds are made in accordance with the procedure as outlined in the
         following section.
@@ -234,10 +234,127 @@ const Privacy = () => {
         on the advice from the institution. Once the refund claim is settled, no
         further queries will be entertained by Opera pertaining to that claim.
       </p>
-      <h5>6.0 RECORDS:</h5>
+      <h5>Records</h5>
       <p>
         Records of refunds paid will be maintained in the Student Profile in
         CRM/MD and Refund Register maintained in Accounts Department.
+      </p>
+      <h1 className="status__h1 py-5">STUDENT ACCOMMODATION</h1>
+      <p>
+        If you've chosen your course and institution, the next step is to start
+        thinking about your accommodation options. Keep in mind that most
+        institutions will have accommodation services to help you. Opera
+        educational consultancy will help students for their housing and
+        accomodation whichever country or university he/she chooses. Our team
+        will take care of the accomodation needs for the students reaching at
+        their study destination.We will provide information on the range of
+        accommodation options and their associated costs and help you prepare to
+        make the move.
+      </p>
+      <h5 className="my-4">Types of student accommodation</h5>
+      <li>Halls of residence and colleges</li>
+      <li>College apartments</li>
+      <li>Homestay</li>
+      <li>Renting</li>
+      <li>Hostels</li>
+      <h5 className="my-4">Halls of residence and colleges</h5>
+      <p>
+        These are usually affiliated with or owned by an institution and are
+        located on campus or close to it. Students usually rent a single bedroom
+        and share facilities like bathrooms and kitchen facilities, although
+        some institutions may provide apartment-style rooms with private
+        bathrooms and kitchenettes.
+      </p>
+      <p>
+        All utilities (electricity, gas and water) are included in the fees, and
+        internet access is usually provided in each room, although this may not
+        be included in the cost of the room. Colleges tend to offer a range of
+        student services such as daily meals in a formal dining room and
+        academic tuition, while residences may offer students more independence,
+        often giving students the ability to make their own meals in shared
+        kitchens.
+      </p>
+      <h5 className="my-4">College apartments</h5>
+      <p>
+        College apartments provide students with a more independent style of
+        living than university colleges or halls of residence. Apartments are
+        generally self-contained and include a kitchen, bathroom and small
+        living area. Utilities may or may not be covered in the rental costs and
+        you may have to pay extra for internet and phone services. You may find
+        that some apartments are affiliated with institutions, while others are
+        privately owned.
+      </p>
+      <h5 className="my-4">Homestay</h5>
+      <p>
+        This involves renting a room in a private home and sharing with the
+        existing owners (usually a family). You will usually have your own
+        bedroom and share most facilities. Meals may be provided.
+      </p>
+      <h5 className="my-4">Renting</h5>
+      <p>
+        This may involve moving out on your own or into a shared house or flat
+        with friends (or even strangers). You can find share houses through word
+        of mouth, real estate websites, newspapers or on student noticeboards on
+        campus.
+      </p>
+      <p>
+        The cost of rental accommodation varies greatly depending on your
+        location, as well as the type of accommodation you choose (a house or
+        apartment, for example).
+      </p>
+      <h5 className="my-4">Hostels</h5>
+      <p>
+        Hostel accommodation is a popular option for students who are moving
+        from a regional area, interstate or overseas to study. They often
+        provide a good short-term option until something more permanent can be
+        arranged.
+      </p>
+      <p>
+        Hostels generally provide a furnished bedroom with access to a shared
+        bathroom and kitchen, laundry, lounge area and recreation facilities
+        (such as pool tables and arcade game machines). You may find that meals
+        are provided, although this is not always the case. There is sometimes
+        the option to stay in dorm-style or twin-share rooms, and short-term
+        rental options are generally available.
+        <br />
+        The price of hostel accommodation depends both on location and the types
+        of services provided. You can also expect to pay more for private or
+        twin-share rooms than dorm-style accommodation.
+      </p>
+      <h1 className="status__h1 py-5">FINANCIAL AIDS</h1>
+      <p>
+        Financial aid is money to help pay for college. Grants, work-study,
+        loans, and scholarships help make college affordable. Opera
+        International Educational Consultancy team will help each of the
+        students if they are applying for a financial aid such as educational
+        loans, scholarships etc.
+      </p>
+      <h5 className="my-4">Scholarships</h5>
+      <p>
+        Scholarships are also gift aid. Scholarships come from governments,
+        colleges and private organizations. They may be awarded for academic or
+        athletic ability, interest in a certain subject, or volunteer work, for
+        example. International students are eligible for applying for
+        scholarships in various countries. Students can find various
+        scholarships from sites like DAAD. Our team will support for your dream
+        study destination.
+      </p>
+      <h5 className="my-4">Loans</h5>
+      <p>
+        Borrowing money from a bank, government or lending company is called
+        taking out a loan. A loan must be paid back with an extra charge called
+        interest. All loans are considered self-help aid. Loans must be repaid
+        and all loans are optional.Unlike consumer loans, student loans have
+        longer terms of repayment and in most cases do not enter repayment until
+        you leave school. Interest rates vary but are usually lower than rates
+        on loans made to the general public. The precise terms of the loans are
+        contained in the promissory notes that borrowers must sign.
+      </p>
+      <h5 className="my-4">Part Time Jobs</h5>
+      <p>
+        Opera international team will help and support students to find a part
+        time jobs in the area near college/university for students to pay for
+        part of their college fees/cost of living.
       </p>
     </div>
   );
