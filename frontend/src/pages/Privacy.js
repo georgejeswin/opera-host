@@ -353,7 +353,7 @@ const Privacy = () => {
       <h5 className="my-4">Work-Study Program</h5>
       <p>
         Work-study is a component of self-help aid. The work-study program at
-        which university or college you are stdying is designed to promote the
+        which university/college you are stdying is designed to promote the
         part-time employment of college students who have demonstrated financial
         need and who require the wages from employment to pursue their
         educational objectives. Opera international team will help and support
