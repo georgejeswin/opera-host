@@ -350,11 +350,15 @@ const Privacy = () => {
         on loans made to the general public. The precise terms of the loans are
         contained in the promissory notes that borrowers must sign.
       </p>
-      <h5 className="my-4">Part Time Jobs</h5>
+      <h5 className="my-4">Work-Study Program</h5>
       <p>
-        Opera international team will help and support students to find a part
-        time jobs in the area near college/university for students to pay for
-        part of their college fees/cost of living.
+        Work-study is a component of self-help aid. The work-study program at
+        which university or college you are stdying is designed to promote the
+        part-time employment of college students who have demonstrated financial
+        need and who require the wages from employment to pursue their
+        educational objectives. Opera international team will help and support
+        students to find a part time jobs in the area near college/university
+        for students to pay for part of their college fees/cost of living.
       </p>
     </div>
   );
