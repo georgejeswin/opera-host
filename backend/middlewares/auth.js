@@ -28,21 +28,21 @@ export const authCheck = async (req, res, next) => {
   }
 };
 
-export const adminCheck = async (req, res, next) => {
-  try {
-    const admin = req.cookies["$op_ad"];
-    console.log("Cookies: ", admin);
-    if (admin) {
-      next();
-    } else {
-      res.status(404).json({
-        error: "Unauthorized access, Please login and try again",
-      });
-    }
-  } catch (error) {
-    console.log(error);
-  }
-};
+// export const adminCheck = async (req, res, next) => {
+//   try {
+//     const admin = req.cookies["$op_ad"];
+//     console.log("Cookies: ", admin);
+//     if (admin) {
+//       next();
+//     } else {
+//       res.status(404).json({
+//         error: "Unauthorized access, Please login and try again",
+//       });
+//     }
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 
 // export const sentEmail = async (req, res, next) => {
 //   console.log("entering mail");
