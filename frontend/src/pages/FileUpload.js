@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 
 export const FileUpload = () => {
-  // const user = JSON.parse(localStorage.getItem('userInfo'))
   const [fileUploaded, setFileUploaded] = useState(false);
   const user = useSelector((state) => ({ ...state.user }));
 

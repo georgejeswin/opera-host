@@ -8,8 +8,9 @@ import { Spin, Space } from "antd";
 import { Link } from "react-router-dom";
 import { createOrUpdateUser } from "../../functions/auth";
 import "./Login.css";
-
 import REGISTERIMG from "../../components/images/register.jpg";
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
 
 const Login = ({ history }) => {
   const dispatch = useDispatch();
@@ -47,6 +48,11 @@ const Login = ({ history }) => {
         .then((res) => {
           const { data } = res;
           localStorage.setItem("userInfo", JSON.stringify(data));
+          cookies.set("user-cookie", JSON.stringify(data), { path: "/" });
+          if (res.data.role === "admin") {
+            cookies.set("$op_ad", "true", { path: "/" });
+          }
+
           dispatch({
             type: "LOGGEED_IN_USER",
             payload: {

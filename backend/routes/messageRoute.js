@@ -4,13 +4,14 @@ import {
   getMessages,
   postMessages,
 } from "../controllers/messageControllers.js";
+import { adminCheck } from "../middlewares/auth.js";
 
 const router = express.Router();
 
-router.get("/", getMessages);
+router.get("/", adminCheck, getMessages);
 
 router.post("/", postMessages);
 
-router.delete("/:id", deleteMessage);
+router.delete("/:id", adminCheck, deleteMessage);
 
 export default router;

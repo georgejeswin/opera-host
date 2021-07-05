@@ -19,7 +19,6 @@ let mailOptions = {
 export const getMessages = async (req, res) => {
   try {
     const messages = await MessageModel.find();
-
     res.status(200).json(messages);
   } catch (error) {
     res.status(404).send({ error: error.message });

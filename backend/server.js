@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 import morgan from "morgan";
 import dotenv from "dotenv";
 import path from "path";
@@ -23,6 +24,7 @@ app.use(morgan("dev"));
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+app.use(cookieParser());
 const __dirname = path.resolve();
 
 app.use(express.static(path.join(__dirname, "../frontend/build")));

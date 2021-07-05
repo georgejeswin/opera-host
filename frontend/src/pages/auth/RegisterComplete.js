@@ -3,6 +3,8 @@ import { auth } from "../../firebase";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { createOrUpdateUser } from "../../functions/auth";
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
 
 const RegisterComplete = ({ history }) => {
   const [email, setEmail] = useState("");
@@ -50,6 +52,11 @@ const RegisterComplete = ({ history }) => {
           .then((res) => {
             const { data } = res;
             localStorage.setItem("userInfo", JSON.stringify(data));
+            cookies.set("user-cookie", JSON.stringify(data), { path: "/" });
+            if (data.role === "admin") {
+              cookies.set("$op_ad", "true", { path: "/" });
+            }
+
             dispatch({
               type: "LOGGEED_IN_USER",
               payload: {

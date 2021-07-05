@@ -11,6 +11,7 @@ export const authController = async (req, res) => {
     if (user) {
       res.json(user);
       console.log("USER UPDATED ", user);
+      res.cookie("user", user, { expiresIn: "1d" });
     } else {
       const newUser = await new UserModel({
         email,

@@ -10,6 +10,8 @@ import "./User.css";
 import { createOrUpdateUser } from "../../functions/auth";
 import { getFiles } from "../../actions/fileActions";
 import UserIMG from "../../components/images/about.png";
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
 
 const UserLandingPage = () => {
   const user = useSelector((state) => ({ ...state.user }));
@@ -31,6 +33,9 @@ const UserLandingPage = () => {
     firebase.auth().signOut();
     localStorage.removeItem("userInfo");
     localStorage.removeItem("user-info");
+    cookies.remove("user-cookie");
+    cookies.remove("$op_ad");
+
     dispatch({
       type: "LOGOUT",
       payload: null,
