@@ -4,7 +4,7 @@ import {
   updateUserName,
   userController,
 } from "../controllers/user.js";
-import { loggedInCheck } from "../middlewares/auth.js";
+import { adminCheck } from "../middlewares/auth.js";
 
 const router = express.Router();
 router.use(function (req, res, next) {
@@ -15,7 +15,7 @@ router.use(function (req, res, next) {
   );
   next();
 });
-router.get("/", loggedInCheck, userController);
+router.get("/", adminCheck, userController);
 router.patch("/:id", updateUserName);
 router.delete("/:id", deleteUser);
 
