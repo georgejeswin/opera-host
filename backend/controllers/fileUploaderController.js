@@ -339,6 +339,16 @@ const getallMultipleFiles = async (req, res, next) => {
     res.status(400).send(error.message);
   }
 };
+// const getUserFiles=async(req,res)=>{
+//   try {
+//     const id=req.params.id;
+//     console.log('id');
+//     const userFiles=await MultipleFile.findOne(({_id:id}))
+//     res.status(200).send(userFiles)
+//   } catch (error) {
+//     res.status(400).send(error.message)
+//   }
+// }
 
 const fileSizeFormatter = (bytes, decimal) => {
   if (bytes === 0) {

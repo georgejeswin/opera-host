@@ -14,9 +14,7 @@ const UserStatus = () => {
         setFileUploaded(true);
         if (file.paided === true) {
           setPaymentDone(true);
-        } else {
-          console.log("not paid");
-        }
+        } 
       }
     });
   };

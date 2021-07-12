@@ -8,6 +8,15 @@ export const getFiles = () => async (dispatch) => {
     console.log(error);
   }
 };
+
+// const getUserFiles=()=>async(dispatch)=>{
+//   try {
+    
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
 export const deleteMultipleFile = (id) => async (dispatch) => {
   try {
     await deleteMultipleFiles(id);
