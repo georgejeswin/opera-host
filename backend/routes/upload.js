@@ -16,7 +16,7 @@ import {
   universityUpload,
 } from "../controllers/fileUploaderController.js";
 import { upload } from "../helpers/filehelper.js";
-import { adminCheck, authCheck } from "../middlewares/auth.js";
+import { loggedInCheck } from "../middlewares/auth.js";
 
 const router = express.Router();
 
@@ -26,7 +26,7 @@ const router = express.Router();
 //router
 router.post("/singleFile", upload.single("file"), singleFileUpload);
 router.get("/getSingleFiles", getallSingleFiles);
-router.get("/getMultipleFiles",authCheck, getallMultipleFiles);
+router.get("/getMultipleFiles",loggedInCheck, getallMultipleFiles);
 // router.get('/getUserFiles',getUserFiles)
 router.post("/cvFiles/:id", upload.single("cvfile"), cvFileUpload);
 router.post("/psFiles/:id", upload.single("psfile"), psFileUpload);
