@@ -56,9 +56,7 @@ const razorpay = new Razorpay({
 
 app.post("/verification", async (req, res) => {
   // do a validation
-  const secret = "12345678";
-
-  console.log(req.body);
+  const secret = "opera@45678";
 
   const shasum = crypto.createHmac("sha256", secret);
   shasum.update(JSON.stringify(req.body));
