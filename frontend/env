@@ -1,0 +1,4 @@
+REACT_APP_REGISTER_REDIRECT_URL='https://operaonlineapplication.in/register/complete'
+REACT_APP_FORGOT_PASSWORD_REDIRECT='https://operaonlineapplication.in/login'
+REACT_APP_API='https://operaonlineapplication.in/api'
+RAZORPAY_KEY='rzp_live_FVdIfbwzZ73C7t'

@@ -1,0 +1,4 @@
+DATABASE='mongodb+srv://admin:9GRkgVmGfG3bSlKA@cluster0.encio.mongodb.net/operaDB?retryWrites=true'
+PORT=3000
+RAZORPAY_KEY = 'rzp_live_FVdIfbwzZ73C7t'
+RAZORPAY_SECERET = 'KKV4j784EgEsQWnGhuB0gqJt'
