@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.4c270bdd.chunk.css",
-    "main.js": "/static/js/main.99e5bfc9.chunk.js",
-    "main.js.map": "/static/js/main.99e5bfc9.chunk.js.map",
+    "main.js": "/static/js/main.f3fd381e.chunk.js",
+    "main.js.map": "/static/js/main.f3fd381e.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.431462f4.js",
     "runtime-main.js.map": "/static/js/runtime-main.431462f4.js.map",
     "static/css/2.0558ed32.chunk.css": "/static/css/2.0558ed32.chunk.css",
-    "static/js/2.35818872.chunk.js": "/static/js/2.35818872.chunk.js",
-    "static/js/2.35818872.chunk.js.map": "/static/js/2.35818872.chunk.js.map",
+    "static/js/2.0f0874b1.chunk.js": "/static/js/2.0f0874b1.chunk.js",
+    "static/js/2.0f0874b1.chunk.js.map": "/static/js/2.0f0874b1.chunk.js.map",
     "static/js/3.f6ecbbdc.chunk.js": "/static/js/3.f6ecbbdc.chunk.js",
     "static/js/3.f6ecbbdc.chunk.js.map": "/static/js/3.f6ecbbdc.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.0558ed32.chunk.css.map": "/static/css/2.0558ed32.chunk.css.map",
     "static/css/main.4c270bdd.chunk.css.map": "/static/css/main.4c270bdd.chunk.css.map",
-    "static/js/2.35818872.chunk.js.LICENSE.txt": "/static/js/2.35818872.chunk.js.LICENSE.txt",
+    "static/js/2.0f0874b1.chunk.js.LICENSE.txt": "/static/js/2.0f0874b1.chunk.js.LICENSE.txt",
     "static/media/404.998c7b67.png": "/static/media/404.998c7b67.png",
     "static/media/Armenia.273525fb.jpg": "/static/media/Armenia.273525fb.jpg",
     "static/media/HealthCare.3adad323.jpeg": "/static/media/HealthCare.3adad323.jpeg",
@@ -72,8 +72,8 @@
   "entrypoints": [
     "static/js/runtime-main.431462f4.js",
     "static/css/2.0558ed32.chunk.css",
-    "static/js/2.35818872.chunk.js",
+    "static/js/2.0f0874b1.chunk.js",
     "static/css/main.4c270bdd.chunk.css",
-    "static/js/main.99e5bfc9.chunk.js"
+    "static/js/main.f3fd381e.chunk.js"
   ]
 }
