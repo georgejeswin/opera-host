@@ -142,7 +142,7 @@ const AdminLandingPage = () => {
           <div className="col-md-4 col-sm-12 margin__none display__users">
             <table className="admin__userName-table col-sm-12 ">
               <tbody className="pt-5 mt-5 ">
-                {files.map((file) => (
+                {files?.map((file) => (
                   <tr className="files__row margin__none" key={file._id}>
                     <td>
                       <div
