@@ -9,14 +9,21 @@ const UserStatus = () => {
   const files = useSelector((state) => state.files);
   const history = useHistory();
   const filesUploaded = (currentuser) => {
-    files.filter((file) => {
-      if (file.user === currentuser._id) {
-        setFileUploaded(true);
-        if (file.paided === true) {
-          setPaymentDone(true);
-        } 
+    if(files.length>0){
+      setFileUploaded(true);
+      if(files.paided===true){
+        setPaymentDone(true);
       }
-    });
+    }
+    
+    // files.filter((file) => {
+    //   if (file.user === currentuser._id) {
+    //     setFileUploaded(true);
+    //     if (file.paided === true) {
+    //       setPaymentDone(true);
+    //     } 
+    //   }
+    // });
   };
   useEffect(() => {
     filesUploaded(user);
