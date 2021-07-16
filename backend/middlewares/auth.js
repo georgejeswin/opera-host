@@ -45,7 +45,7 @@ export const adminCheck = async (req, res, next) => {
 
 export const loggedInCheck = async (req, res, next) => {
   try {
-    const user = req.cookies["user-cookie"];
+    const user = req.cookies["opid"];
     if (user) {
       next();
     } else {

@@ -33,6 +33,7 @@ import StudyPage from "./pages/StudyPage";
 import ScrollToTop from "./functions/ScrollToTop";
 import NotFound from "./pages/NotFound";
 
+
 function App() {
   const dispatch = useDispatch();
 
@@ -47,7 +48,6 @@ function App() {
         currentUser(idTokenResult.token)
           .then((res) => {
             const { data } = res;
-            localStorage.setItem("user-info", JSON.stringify(data));
             dispatch({
               type: "LOGGEED_IN_USER",
               payload: {

@@ -8,9 +8,10 @@ import firebase from "firebase";
 import { updateUser } from "../../actions/userActions";
 import "./User.css";
 import { createOrUpdateUser } from "../../functions/auth";
-import { getFiles } from "../../actions/fileActions";
+// import { getUserFiles } from "../../actions/fileActions";
 import UserIMG from "../../components/images/about.png";
 import Cookies from "universal-cookie";
+import { getFiles } from "../../actions/fileActions";
 const cookies = new Cookies();
 
 const UserLandingPage = () => {
@@ -31,9 +32,7 @@ const UserLandingPage = () => {
 
   const logout = () => {
     firebase.auth().signOut();
-    localStorage.removeItem("userInfo");
-    localStorage.removeItem("user-info");
-    cookies.remove("user-cookie");
+    cookies.remove('opid')
     cookies.remove("$op_ad");
 
     dispatch({
@@ -55,7 +54,7 @@ const UserLandingPage = () => {
     createOrUpdateUser(user.token)
       .then((res) => {
         const { data } = res;
-        localStorage.setItem("userInfo", JSON.stringify(data));
+        // localStorage.setItem("userInfo", JSON.stringify(data));
         dispatch({
           type: "LOGGEED_IN_USER",
           payload: {

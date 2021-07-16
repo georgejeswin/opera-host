@@ -111,12 +111,17 @@ export const universityUpload = async (data, userInfo) => {
 // };
 
 export const getMultipleFilesRedux = async () =>
-  await axios.get(`${uploadUrl}//getMultipleFiles`);
+  await axios.get(`${uploadUrl}/getMultipleFiles`);
 
 export const deleteMultipleFiles = (id) =>
   axios.delete(
     `https://operaonlineapplication.in/backenduploads/getMultipleFiles/${id}`
   );
+
+//get user files
+// export const getUserFilesRedux = async () =>
+//   await axios.get(`${uploadUrl}/getUserFiles`);
+
 
 // User name update
 

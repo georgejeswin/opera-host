@@ -19,7 +19,6 @@ const AdminLandingPage = () => {
 
   useEffect(() => {
     dispatch(getFiles());
-    // console.log("filelist.>>>>", files);
   }, [dispatch]);
 
   const submit = (file) => {

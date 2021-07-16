@@ -14,7 +14,6 @@ const cookies = new Cookies();
 
 const Login = ({ history }) => {
   const dispatch = useDispatch();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -47,8 +46,9 @@ const Login = ({ history }) => {
       createOrUpdateUser(idTokenResult.token)
         .then((res) => {
           const { data } = res;
-          localStorage.setItem("userInfo", JSON.stringify(data));
-          cookies.set("user-cookie", JSON.stringify(data), { path: "/" });
+          // localStorage.setItem("userInfo", JSON.stringify(data));
+          // cookies.set("user-cookie", JSON.stringify(data), { path: "/" });
+          cookies.set("opid", data._id, { path: "/" });
           if (res.data.role === "admin") {
             cookies.set("$op_ad", "true", { path: "/" });
           }

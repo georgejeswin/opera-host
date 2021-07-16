@@ -9,9 +9,10 @@ export const getFiles = () => async (dispatch) => {
   }
 };
 
-// const getUserFiles=()=>async(dispatch)=>{
+// export const getUserFiles=()=>async(dispatch)=>{
 //   try {
-    
+//     const { data } = await getUserFilesRedux();
+//     dispatch({ type: "FETCH_USER_FILES", payload: data });
 //   } catch (error) {
 //     console.log(error);
 //   }

@@ -14,9 +14,10 @@ import {
   lorFileUpload,
   deleteUpload,
   universityUpload,
+  getUserFiles
 } from "../controllers/fileUploaderController.js";
 import { upload } from "../helpers/filehelper.js";
-import { loggedInCheck } from "../middlewares/auth.js";
+import {  loggedInCheck } from "../middlewares/auth.js";
 
 const router = express.Router();
 
@@ -27,7 +28,7 @@ const router = express.Router();
 router.post("/singleFile", upload.single("file"), singleFileUpload);
 router.get("/getSingleFiles", getallSingleFiles);
 router.get("/getMultipleFiles",loggedInCheck, getallMultipleFiles);
-// router.get('/getUserFiles',getUserFiles)
+router.get('/getUserFiles',loggedInCheck, getUserFiles)
 router.post("/cvFiles/:id", upload.single("cvfile"), cvFileUpload);
 router.post("/psFiles/:id", upload.single("psfile"), psFileUpload);
 router.post("/sslcFiles/:id", upload.single("sslcfile"), sslcFileUpload);
