@@ -178,7 +178,7 @@ const Form = () => {
       const formData = new FormData();
       formData.append("cvfile", cvFiles);
       await cvFileUpload(formData, userInfo);
-      console.log("uploaded");
+      // console.log("uploaded");
     } else {
       console.log("no cv file");
     }
@@ -187,26 +187,26 @@ const Form = () => {
     const formData = new FormData();
     formData.append("psfile", psFiles);
     await psFileUpload(formData, userInfo);
-    console.log("uploaded");
+    // console.log("uploaded");
   };
   const uploadSslcFile = async () => {
     const formData = new FormData();
     formData.append("sslcfile", sslcFiles);
     await SslcFileUpload(formData, userInfo);
-    console.log("uploaded");
+    // console.log("uploaded");
   };
   const uploadPlusTwoFile = async () => {
     const formData = new FormData();
     formData.append("plustwofile", plusTwoFiles);
     await PlusTwoFileUpload(formData, userInfo);
-    console.log("uploaded");
+    // console.log("uploaded");
   };
   const uploadDegreeFile = async () => {
     if (degreeFiles) {
       const formData = new FormData();
       formData.append("degreefile", degreeFiles);
       await DegreeFileUpload(formData, userInfo);
-      console.log("uploaded");
+      // console.log("uploaded");
     } else {
       console.log("no degree file");
     }
@@ -216,7 +216,7 @@ const Form = () => {
       const formData = new FormData();
       formData.append("ieltsfile", ieltsFiles);
       await IeltsFileUpload(formData, userInfo);
-      console.log("uploaded");
+      // console.log("uploaded");
     } else {
       console.log("no ielts file");
     }
@@ -226,7 +226,7 @@ const Form = () => {
       const formData = new FormData();
       formData.append("experiencefile", experienceFiles);
       await ExperienceFileUpload(formData, userInfo);
-      console.log("uploaded");
+      // console.log("uploaded");
     } else {
       console.log("no experience file");
     }
@@ -236,7 +236,7 @@ const Form = () => {
       const formData = new FormData();
       formData.append("sopfile", sopFiles);
       await SopFileUpload(formData, userInfo);
-      console.log("uploaded");
+      // console.log("uploaded");
     } else {
       console.log("no sop file");
     }
@@ -246,7 +246,7 @@ const Form = () => {
       const formData = new FormData();
       formData.append("lorfile", lorFiles);
       await LorFileUpload(formData, userInfo);
-      console.log("uploaded");
+      // console.log("uploaded");
     } else {
       console.log("no lor file");
     }
@@ -255,7 +255,7 @@ const Form = () => {
     if (university) {
       await universityUpload(university, userInfo);
       setUniversity("");
-      console.log("uploaded");
+      // console.log("uploaded");
     } else {
       console.log("no lor file");
     }

@@ -47,7 +47,7 @@ function App() {
         const idTokenResult = await user.getIdTokenResult();
         currentUser(idTokenResult.token)
           .then((res) => {
-            const { data } = res;
+            // const { data } = res;
             dispatch({
               type: "LOGGEED_IN_USER",
               payload: {
