@@ -343,7 +343,7 @@ const getUserFiles=async(req,res)=>{
   try {
     const id=req.cookies['opid'];
     var _id = Mongoose.Types.ObjectId(id);
-    const userFiles=await MultipleFile.findOne({user:_id})
+    const userFiles=await MultipleFile.findOne({user:_id});
     res.status(200).send(userFiles)
   } catch (error) {
     res.status(400).send(error.message)
