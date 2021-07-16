@@ -333,23 +333,32 @@ const getallSingleFiles = async (req, res, next) => {
 };
 const getallMultipleFiles = async (req, res, next) => {
   try {
-    const files = await MultipleFile.find().sort({ date: -1 });
-    console.log("id>>>>>>>>>>>>>>>>>>",req.params.id,"user>>>>>>>>>>>",req.params.name);
-    res.status(200).send(files);
+    const admin=req.cookies['$op_ad'];
+    const id=req.cookies['opid'];
+    var _id = Mongoose.Types.ObjectId(id);
+    if(admin){
+      const files = await MultipleFile.find().sort({ date: -1 });
+      res.status(200).send(files);
+    }else if(_id){
+      const files=await MultipleFile.findOne({user:_id});
+      res.status(200).send(files);
+    }else{
+      res.status(404).send("Error 404")
+    }
   } catch (error) {
     res.status(400).send(error.message);
   }
 };
-const getUserFiles=async(req,res)=>{
-  try {
-    const id=req.cookies['opid'];
-    var _id = Mongoose.Types.ObjectId(id);
-    const userFiles=await MultipleFile.findOne({user:_id});
-    res.status(200).send(userFiles)
-  } catch (error) {
-    res.status(400).send(error.message)
-  }
-}
+// const getUserFiles=async(req,res)=>{
+//   try {
+//     const id=req.cookies['opid'];
+//     var _id = Mongoose.Types.ObjectId(id);
+//     const userFiles=await MultipleFile.findOne({user:_id});
+//     res.status(200).send(userFiles)
+//   } catch (error) {
+//     res.status(400).send(error.message)
+//   }
+// }
 
 const fileSizeFormatter = (bytes, decimal) => {
   if (bytes === 0) {
@@ -386,5 +395,4 @@ export {
   lorFileUpload,
   universityUpload,
   getallMultipleFiles,
-  getUserFiles
 };
