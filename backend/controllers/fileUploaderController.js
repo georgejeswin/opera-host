@@ -334,6 +334,7 @@ const getallSingleFiles = async (req, res, next) => {
 const getallMultipleFiles = async (req, res, next) => {
   try {
     const files = await MultipleFile.find().sort({ date: -1 });
+    console.log("id>>>>>>>>>>>>>>>>>>",req.params.id,"user>>>>>>>>>>>",req.params.name);
     res.status(200).send(files);
   } catch (error) {
     res.status(400).send(error.message);

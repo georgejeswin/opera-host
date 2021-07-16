@@ -47,12 +47,10 @@ export const loggedInCheck = async (req, res, next) => {
   try {
     const user = req.cookies["opid"];
     if (user) {
-      console.log("Yes");
-      console.log(user);
       next();
     } else {
       res.status(404).json({
-        error: "bad access, Please login and try again",
+        error: "unauthorized access, Please login and try again",
       });
     }
   } catch (error) {
