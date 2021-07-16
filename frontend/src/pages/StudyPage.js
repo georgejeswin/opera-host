@@ -155,11 +155,14 @@ const StudyPageCard = ({ bg, content, country }) => {
   const history = useHistory();
   const [fileUploaded, setFileUploaded] = useState(false);
   const filesUploaded = (currentuser) => {
-    files.filter((file) => {
-      if (file.user === currentuser._id) {
-        setFileUploaded(true);
-      }
-    });
+    if (files.user === currentuser._id) {
+      setFileUploaded(true);
+  }
+    // files.filter((file) => {
+    //   if (file.user === currentuser._id) {
+    //     setFileUploaded(true);
+    //   }
+    // });
   };
   useEffect(() => {
     filesUploaded(user);

@@ -13,9 +13,9 @@ const ServicesPage = () => {
   const history = useHistory();
   const [fileUploaded, setFileUploaded] = useState(false);
   const filesUploaded = (currentuser) => {
-    if(files.length>0){
+    if (files.user === currentuser._id) {
       setFileUploaded(true);
-    }
+  }
     // files.filter((file) => {
     //   if (file.user === currentuser._id) {
     //     setFileUploaded(true);
