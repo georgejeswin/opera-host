@@ -9,11 +9,14 @@ const NavTop = () => {
   const history = useHistory();
   const [fileUploaded, setFileUploaded] = useState(false);
   const filesUploaded = (currentuser) => {
-    files.filter((file) => {
-      if (file.user === currentuser._id) {
-        setFileUploaded(true);
-      }
-    });
+    if(files.length>0){
+      setFileUploaded(true);
+    }
+    // files.filter((file) => {
+    //   if (file.user === currentuser._id) {
+    //     setFileUploaded(true);
+    //   }
+    // });
   };
   useEffect(() => {
     filesUploaded(user);
