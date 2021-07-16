@@ -44,8 +44,9 @@ const UserLandingPage = () => {
   const handleClick = () => {
     if (files.length === 0) {
       history.push("/upload");
+    }else{
+      history.push("/user/status");
     }
-    history.push("/user/status");
   };
 
   const handleNameUpdate = (e) => {
