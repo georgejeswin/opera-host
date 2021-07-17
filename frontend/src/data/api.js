@@ -28,7 +28,7 @@ export const cvFileUpload = async (data, userInfo) => {
 };
 export const psFileUpload = async (data, userInfo) => {
   const id = userInfo._id;
-  console.log(id);
+  // console.log(id);
   try {
     await axios.post(`${uploadUrl}/psFiles/${id}`, data);
   } catch (error) {
@@ -92,7 +92,7 @@ export const LorFileUpload = async (data, userInfo) => {
   }
 };
 export const universityUpload = async (data, userInfo) => {
-  console.log(data);
+  // console.log(data);
   const id = userInfo._id;
   try {
     await axios.post(`${uploadUrl}/university/${id}`, { data });

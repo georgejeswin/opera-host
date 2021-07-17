@@ -52,12 +52,9 @@ const RegisterComplete = ({ history }) => {
           .then((res) => {
             const { data } = res;
             cookies.set("opid", data._id, { path: "/" });
-            // localStorage.setItem("userInfo", JSON.stringify(data));
-            // cookies.set("user-cookie", JSON.stringify(data), { path: "/" });
             if (data.role === "admin") {
               cookies.set("$op_ad", "true", { path: "/" });
             }
-
             dispatch({
               type: "LOGGEED_IN_USER",
               payload: {
@@ -71,7 +68,6 @@ const RegisterComplete = ({ history }) => {
             });
           })
           .catch((err) => console.log(err));
-
         //redirect
         history.push("/user");
       }

@@ -46,8 +46,6 @@ const Login = ({ history }) => {
       createOrUpdateUser(idTokenResult.token)
         .then((res) => {
           const { data } = res;
-          // localStorage.setItem("userInfo", JSON.stringify(data));
-          // cookies.set("user-cookie", JSON.stringify(data), { path: "/" });
           cookies.set("opid", data._id, { path: "/" });
           if (res.data.role === "admin") {
             cookies.set("$op_ad", "true", { path: "/" });
@@ -82,6 +80,11 @@ const Login = ({ history }) => {
         const idTokenResult = await user.getIdTokenResult();
         createOrUpdateUser(idTokenResult.token)
           .then((res) => {
+          const { data } = res;
+          cookies.set("opid", data._id, { path: "/" });
+          if (res.data.role === "admin") {
+            cookies.set("$op_ad", "true", { path: "/" });
+          }
             dispatch({
               type: "LOGGEED_IN_USER",
               payload: {

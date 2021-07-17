@@ -25,8 +25,7 @@ const NavTop = () => {
   const handleClick = (currentuser) => {
     if (files.length === 0) {
       history.push("/upload");
-    }
-    if (fileUploaded) {
+    }else if (fileUploaded) {
       history.push("/user/status");
     } else {
       history.push("/upload");

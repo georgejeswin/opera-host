@@ -32,6 +32,8 @@ import CoursesPage from "./pages/CoursesPage";
 import StudyPage from "./pages/StudyPage";
 import ScrollToTop from "./functions/ScrollToTop";
 import NotFound from "./pages/NotFound";
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
 
 
 function App() {
@@ -47,8 +49,11 @@ function App() {
         const idTokenResult = await user.getIdTokenResult();
         currentUser(idTokenResult.token)
           .then((res) => {
-            // const { data } = res;
-            dispatch({
+            const { data } = res;
+            cookies.set("opid", data._id, { path: "/" });
+            if (res.data.role === "admin") {
+              cookies.set("$op_ad", "true", { path: "/" });
+            }            dispatch({
               type: "LOGGEED_IN_USER",
               payload: {
                 name: res.data.name,
