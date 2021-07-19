@@ -26,10 +26,10 @@ const Payment = () => {
   const [amount, setAmount] = useState(null);
   async function displayRazorpay(e) {
     e.preventDefault();
-    if (amount < 20000) {
-      toast.error("Minimum amount for registration is 20,000");
-      history.push("/payments");
-    } else {
+    // if (amount < 20000) {
+    //   toast.error("Minimum amount for registration is 20,000");
+    //   history.push("/payments");
+    // } else {
       const res = await loadScript(
         "https://checkout.razorpay.com/v1/checkout.js"
       );
@@ -65,9 +65,9 @@ const Payment = () => {
           "https://operainternational.in/public/frontend/opera/images/logo-opera.png",
         handler: function (response) {
           // console.log(response);
-          alert(response.razorpay_payment_id);
-          alert(response.razorpay_order_id);
-          alert(response.razorpay_signature);
+          alert("Payment id",response.razorpay_payment_id);
+          // alert(response.razorpay_order_id);
+          // alert(response.razorpay_signature);
           history.push("/");
         },
         prefill: {
@@ -80,7 +80,7 @@ const Payment = () => {
       };
       const paymentObject = new window.Razorpay(options);
       paymentObject.open();
-    }
+    // }
   }
 
   return (
@@ -93,7 +93,7 @@ const Payment = () => {
               type="number"
               className="payment__amount"
               required
-              placeholder="minimum 20,000"
+              placeholder="Enter amount"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
             />
