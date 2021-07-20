@@ -12,7 +12,6 @@ import GoogleDocsViewer from "react-google-docs-viewer";
 const AdminLandingPage = () => {
   const files = useSelector((state) => state.files);
   const history = useHistory();
-
   const dispatch = useDispatch();
   const [showFiles, setShowFiles] = useState(false);
   const [fileList, setFileList] = useState({});
@@ -30,8 +29,8 @@ const AdminLandingPage = () => {
         {
           label: "Yes",
           onClick: () => {
-            dispatch(deleteUsers(file.user));
-            dispatch(deleteMultipleFile(file._id));
+            dispatch(deleteUsers(file?.user));
+            dispatch(deleteMultipleFile(file?._id));
             setShowFiles(false);
           },
         },
@@ -181,7 +180,6 @@ const AdminLandingPage = () => {
                     1. University: {fileList?.university}
                   </h5>
                 </li>
-
                 <h5>2. Updated curriculum vitae ( CV )</h5>
                 {fileList.cvfile[0].filePath ? (
                   <li>
